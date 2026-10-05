@@ -1,0 +1,45 @@
+# https://nestler.dev/robots.txt
+# Letzte Aktualisierung: 2026-10-05
+
+# --- Alle Crawler: Grundregeln ---
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*?q=
+Disallow: /*?utm_
+
+# --- KI-Crawler explizit erlaubt (Sichtbarkeit in AI-Suche) ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# --- Aggressive SEO-Scraper blocken ---
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# --- Sitemap-Verweis ---
+Sitemap: https://nestler.dev/sitemap.xml
+Host: https://nestler.dev

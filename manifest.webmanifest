@@ -1,0 +1,66 @@
+{
+  "name": "Nestler – Webentwickler für barrierefreie Interfaces",
+  "short_name": "nestler.dev",
+  "description": "Freelance Webentwickler für schnelle, barrierefreie Interfaces mit Charakter. Frontend, Full-Stack, WCAG 2.2 AA.",
+  "lang": "de-DE",
+  "dir": "ltr",
+  "start_url": "/?utm_source=pwa",
+  "scope": "/",
+  "id": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#0a0a0b",
+  "theme_color": "#0a0a0b",
+  "categories": ["business", "developer", "portfolio", "productivity"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Kontakt",
+      "short_name": "Kontakt",
+      "description": "Projekt direkt anfragen",
+      "url": "/#contact",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Playground",
+      "short_name": "Playground",
+      "description": "Live HTML/CSS/JS Editor öffnen",
+      "url": "/#playground",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "FAQ",
+      "short_name": "FAQ",
+      "description": "Häufige Fragen zu Webentwicklung",
+      "url": "/#faq",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ],
+  "prefer_related_applications": false
+}
