@@ -41,7 +41,10 @@
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f6f6f3" media="(prefers-color-scheme: light)">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 <link rel="manifest" href="/manifest.webmanifest">
 
 <!-- ===== STRUCTURED DATA ===== -->
@@ -199,9 +202,9 @@
   --border:#2a2a33;
   --text:#e9e9ec;
   --muted:#8d8d99;
-  --accent:#c6ff3d;
+  --accent:#4a86ff;
   --accent-ink:#0a0a0b;
-  --accent-2:#7c5cff;
+  --accent-2:#00d5ff;
   --danger:#ff6b6b;
   --ok:#3ddc97;
   --radius:16px;
@@ -219,9 +222,9 @@
   --border:#dcdad4;
   --text:#14141a;
   --muted:#5b5b68;
-  --accent:#14713a;
+  --accent:#1a5dff;
   --accent-ink:#ffffff;
-  --accent-2:#5b3df5;
+  --accent-2:#0043c7;
   --shadow:0 18px 50px -18px rgba(20,20,26,.28);
 }
 [data-theme="synth"]{
@@ -344,14 +347,19 @@ header.site.stuck{border-bottom-color:var(--border)}
 .brand{
   font-family:var(--mono);font-weight:700;font-size:1rem;
   text-decoration:none;color:var(--text);letter-spacing:-.02em;
-  margin-right:auto;display:flex;align-items:center;gap:.5rem;
+  margin-right:auto;display:flex;align-items:center;gap:.55rem;
 }
-.brand .mark{
-  width:10px;height:10px;background:var(--accent);border-radius:2px;
-  transform:rotate(45deg);flex:none;
-  transition:transform .4s cubic-bezier(.2,.8,.2,1);
+.brand .logo{
+  width:26px;height:26px;flex:none;border-radius:6px;
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .3s;
+  box-shadow:0 2px 8px -2px rgba(26,93,255,.4);
 }
-.brand:hover .mark{transform:rotate(225deg) scale(1.2)}
+.brand:hover .logo{
+  transform:rotate(-6deg) scale(1.08);
+  box-shadow:0 4px 14px -2px rgba(26,93,255,.6);
+}
+.brand .dev{color:var(--accent)}
+
 .nav-links{display:flex;gap:.25rem;align-items:center;list-style:none;margin:0;padding:0}
 .nav-links a{
   color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;
@@ -774,6 +782,9 @@ footer.site{
   font-size:.87rem;color:var(--muted);
 }
 .foot-grid{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start}
+.foot-brand{display:flex;align-items:center;gap:.55rem;margin-bottom:.5rem}
+.foot-brand img,
+.foot-brand svg{width:22px;height:22px;border-radius:5px;flex:none}
 .foot-links{display:flex;gap:1.25rem;flex-wrap:wrap;list-style:none;margin:0;padding:0}
 .foot-links button{
   background:none;border:0;padding:0;color:var(--muted);cursor:pointer;
@@ -797,6 +808,7 @@ footer.site{
 @media (max-width: 380px){
   #sound-toggle { display: none; }
   .brand { font-size: .9rem; }
+  .brand .logo { width: 22px; height: 22px; }
   .icon-btn { width: 34px; height: 34px; }
   .icon-btn svg { width: 15px; height: 15px; }
 }
@@ -862,7 +874,14 @@ footer.site{
   <div class="wrap">
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="#top" class="brand" aria-label="Sebastian Friedrich Nestler — zur Startseite">
-        <span class="mark" aria-hidden="true"></span>nestler<span style="color:var(--accent)">.dev</span>
+        <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SN">
+          <rect width="100" height="100" rx="18" fill="#ffffff"/>
+          <text x="50" y="74" text-anchor="middle"
+                font-family="'Arial Black','Helvetica Neue',Helvetica,Arial,sans-serif"
+                font-size="72" font-weight="900" letter-spacing="-6"
+                fill="#1a5dff">SN</text>
+        </svg>
+        nestler<span class="dev">.dev</span>
       </a>
 
       <ul class="nav-links" id="nav-links">
@@ -1454,9 +1473,18 @@ footer.site{
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <p style="font-family:var(--mono);font-weight:700;color:var(--text);margin:0 0 .5rem">
-          nestler<span style="color:var(--accent)">.dev</span>
-        </p>
+        <div class="foot-brand">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SN">
+            <rect width="100" height="100" rx="18" fill="#ffffff"/>
+            <text x="50" y="74" text-anchor="middle"
+                  font-family="'Arial Black','Helvetica Neue',Helvetica,Arial,sans-serif"
+                  font-size="72" font-weight="900" letter-spacing="-6"
+                  fill="#1a5dff">SN</text>
+          </svg>
+          <p style="font-family:var(--mono);font-weight:700;color:var(--text);margin:0">
+            nestler<span style="color:var(--accent)">.dev</span>
+          </p>
+        </div>
         <p style="margin:0">Sebastian Friedrich Nestler · Webentwicklung mit Anspruch.</p>
       </div>
 
@@ -2149,8 +2177,8 @@ body {
   font-size: .7rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: #c6ff3d;
-  border: 1px solid #c6ff3d55;
+  color: #4a86ff;
+  border: 1px solid #4a86ff55;
   border-radius: 999px;
   padding: .25rem .7rem;
   margin-bottom: 1rem;
@@ -2160,7 +2188,7 @@ h1 { margin: 0 0 .6rem; font-size: 1.6rem; letter-spacing: -.02em; }
 p  { color: #9a9aa6; line-height: 1.6; margin: 0 0 1.2rem; }
 
 button {
-  background: #c6ff3d;
+  background: #4a86ff;
   color: #0a0a0b;
   border: 0;
   padding: .7rem 1.4rem;
@@ -2170,9 +2198,9 @@ button {
   transition: transform .15s ease;
 }
 button:hover { transform: translateY(-2px); }
-button:focus-visible { outline: 3px solid #c6ff3d; outline-offset: 3px; }
+button:focus-visible { outline: 3px solid #4a86ff; outline-offset: 3px; }
 
-.out { color: #c6ff3d; font-weight: 600; margin-top: 1rem; }`,
+.out { color: #4a86ff; font-weight: 600; margin-top: 1rem; }`,
     js: `const btn = document.getElementById('btn');
 const out = document.getElementById('out');
 let count = 0;
