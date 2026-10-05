@@ -269,6 +269,11 @@ a:hover{text-decoration-thickness:2px}
   border-radius:6px;
 }
 
+/* WCAG 2.2 — 2.4.11 Focus Not Obscured: Fokus-Elemente nicht unter Sticky-Header verstecken */
+:where(section, [id], a, button, input, textarea, select, summary, details) {
+  scroll-margin-top: 90px;
+}
+
 ::selection{background:var(--accent);color:var(--accent-ink)}
 
 .sr-only{
@@ -464,13 +469,26 @@ h1.title .dev{color:var(--muted);font-weight:400}
   overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
 }
 .marquee-track{display:flex;gap:3rem;width:max-content;animation:scroll 32s linear infinite}
-.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track{animation-play-state:paused}
+.marquee.paused .marquee-track{animation-play-state:paused}
 @keyframes scroll{to{transform:translateX(-50%)}}
 .marquee-track span{
   font-family:var(--mono);font-size:.85rem;color:var(--muted);
   letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;
 }
 .marquee-track span::before{content:"◆ ";color:var(--accent);opacity:.5}
+
+/* Marquee Pause-Button (WCAG 2.2.2) */
+.marquee-toggle{
+  display:block;margin:.75rem auto 0;
+  background:var(--surface);border:1px solid var(--border);
+  color:var(--muted);padding:.4rem 1rem;border-radius:999px;
+  font-size:.78rem;font-family:var(--mono);cursor:pointer;
+  transition:color .2s,border-color .2s,transform .18s;
+}
+.marquee-toggle:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+.marquee-toggle[aria-pressed="true"]{color:var(--accent);border-color:var(--accent)}
 
 /* ============================================================
    5. REVEAL
@@ -894,7 +912,7 @@ footer.site{
         </div>
         <div class="term-body" id="term-output" role="log" aria-live="polite" aria-label="Terminal-Ausgabe" tabindex="0">
           <div class="term-line out">Willkommen bei nestler.dev v3.0</div>
-          <div class="term-line out">Tippe <span style="color:var(--accent)">help</span> für alle Befehle.</div>
+          <div class="term-line out">Tippe <span lang="en" style="color:var(--accent)">help</span> für alle Befehle.</div>
         </div>
         <div class="term-input-row">
           <span aria-hidden="true">❯</span>
@@ -906,9 +924,14 @@ footer.site{
       </div>
     </div>
 
-    <div class="marquee" aria-hidden="true">
+    <!-- Marquee mit Pause-Button (WCAG 2.2.2) -->
+    <div class="marquee" id="marquee-wrap" aria-hidden="true">
       <div class="marquee-track" id="marquee"></div>
     </div>
+    <button type="button" class="marquee-toggle" id="marquee-toggle"
+            aria-pressed="false" aria-label="Laufband anhalten">
+      ⏸ Laufband anhalten
+    </button>
   </div>
 </section>
 
@@ -1062,9 +1085,9 @@ footer.site{
           <span class="ico" aria-hidden="true">⌨️</span>
           <div>
             <h3>1 · Interaktives Terminal</h3>
-            <p>Echte Kommandos statt Deko. <code style="font-family:var(--mono);color:var(--accent)">whoami</code>,
-               <code style="font-family:var(--mono);color:var(--accent)">theme matrix</code> oder
-               <code style="font-family:var(--mono);color:var(--accent)">sudo</code> — probier's aus.</p>
+            <p>Echte Kommandos statt Deko. <code style="font-family:var(--mono);color:var(--accent)" lang="en">whoami</code>,
+               <code style="font-family:var(--mono);color:var(--accent)" lang="en">theme matrix</code> oder
+               <code style="font-family:var(--mono);color:var(--accent)" lang="en">sudo</code> — probier's aus.</p>
           </div>
         </div>
       </div>
@@ -1119,7 +1142,7 @@ footer.site{
           <div>
             <h3>Bonus · Barrierefrei by Design</h3>
             <p>Skip-Link, Fokus-Trap in Dialogen, ARIA-Live-Regionen, Tooltips auch per Tastatur,
-               <code style="font-family:var(--mono);color:var(--accent)">prefers-reduced-motion</code>-Support.</p>
+               <code style="font-family:var(--mono);color:var(--accent)" lang="en">prefers-reduced-motion</code>-Support.</p>
           </div>
         </div>
       </div>
@@ -1510,6 +1533,22 @@ footer.site{
     track.innerHTML = html + html;
   })();
 
+  /* Marquee Pause-Button — WCAG 2.2.2 (Pause, Stop, Hide) */
+  (function marqueeControl() {
+    const wrap = $('#marquee-wrap');
+    const btn  = $('#marquee-toggle');
+    if (!wrap || !btn) return;
+
+    btn.addEventListener('click', () => {
+      const paused = wrap.classList.toggle('paused');
+      btn.setAttribute('aria-pressed', String(paused));
+      btn.textContent = paused ? '▶ Laufband fortsetzen' : '⏸ Laufband anhalten';
+      btn.setAttribute('aria-label', paused
+        ? 'Laufband fortsetzen' : 'Laufband anhalten');
+      announce(paused ? 'Laufband angehalten' : 'Laufband läuft weiter');
+    });
+  })();
+
   /* ==========================================================
      HEADER: sticky state, mobile menu, scroll progress
      ========================================================== */
@@ -1641,7 +1680,7 @@ footer.site{
   window.addEventListener('scroll', hideTip, { passive: true });
 
   /* ==========================================================
-     FOCUS TRAP helper
+     FOCUS TRAP helper (nur für echte Modals wie die Palette)
      ========================================================== */
   function trapFocus(container, e) {
     const focusables = $$(
@@ -1682,6 +1721,7 @@ footer.site{
     { id: 'theme-synth',    icon: '🌸', label: 'Theme: Synthwave',      hint: '',    run: () => setTheme('synth') },
     { id: 'theme-matrix',   icon: '🟢', label: 'Theme: Matrix',         hint: '',    run: () => setTheme('matrix') },
     { id: 'sound',          icon: '🔊', label: 'UI-Sounds umschalten',  hint: '',    run: () => soundBtn.click() },
+    { id: 'marquee',        icon: '⏸', label: 'Laufband an/aus',        hint: '',    run: () => $('#marquee-toggle').click() },
     { id: 'cookies',        icon: '🍪', label: 'Cookie-Einstellungen',  hint: '',    run: () => openCookies() },
     { id: 'terminal',       icon: '⌨️', label: 'Terminal fokussieren',  hint: 'G T', run: () => { go('#top'); setTimeout(() => termInput.focus(), 450); } },
     { id: 'matrix-egg',     icon: '🕶️', label: 'Matrix-Regen starten',  hint: '',    run: () => startMatrix() },
@@ -1694,7 +1734,7 @@ footer.site{
     const el = document.querySelector(sel);
     if (!el) return;
     closePalette();
-    const top = el.getBoundingClientRect().top + window.scrollY - 70;
+    const top = el.getBoundingClientRect().top + window.scrollY - 90;
     window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
     setTimeout(() => {
       el.setAttribute('tabindex', '-1');
@@ -2504,8 +2544,18 @@ ${codeJs.value}
 
   $('#cookie-reopen').addEventListener('click', openCookies);
 
+  /*
+   * WCAG 2.1.2 No Keyboard Trap:
+   * Cookie-Banner ist aria-modal="false" — Nutzer müssen per Tab raustabben können.
+   * Fokus-Falle bewusst NICHT aktiv. Escape schließt mit "Nur notwendige".
+   */
   banner.addEventListener('keydown', e => {
-    if (e.key === 'Tab') trapFocus(banner, e);
+    if (e.key === 'Escape') {
+      saveConsent({
+        necessary: true, stats: false, media: false,
+        date: new Date().toISOString()
+      });
+    }
   });
 
   initCookies();
