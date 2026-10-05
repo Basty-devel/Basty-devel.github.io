@@ -740,10 +740,8 @@ footer.site{
 .legal{max-width:56ch;line-height:1.7;margin-top:1.25rem;font-size:.8rem}
 
 /* ============================================================
-   17. RESPONSIVE POLISH — Fixes für alle Geräte
+   17. RESPONSIVE POLISH
    ============================================================ */
-
-/* Fix 1: iOS-Zoom bei Formularfeldern verhindern (font-size < 16px → Zoom) */
 @media (max-width: 640px){
   .field input,
   .field textarea,
@@ -753,16 +751,12 @@ footer.site{
     font-size: 16px;
   }
 }
-
-/* Fix 2: Sehr schmale Geräte — Header entlasten */
 @media (max-width: 380px){
   #sound-toggle { display: none; }
   .brand { font-size: .9rem; }
   .icon-btn { width: 34px; height: 34px; }
   .icon-btn svg { width: 15px; height: 15px; }
 }
-
-/* Fix 3: Hero-H1 auf kleinen Displays */
 @media (max-width: 420px){
   h1.title {
     font-size: 2rem;
@@ -771,32 +765,22 @@ footer.site{
   h1.title br { display: none; }
   .lede { font-size: 1rem; }
 }
-
-/* Fix 4: Lange E-Mail-Adressen umbruchfähig */
 .card a[href^="mailto:"]{
   word-break: break-all;
   overflow-wrap: anywhere;
 }
-
-/* Fix 5: Terminal kompakter auf Mobile */
 @media (max-width: 640px){
   .term-body { height: 220px; }
 }
-
-/* Fix 6: Inline-Code in Features umbruchfähig */
 .feature code,
 .card code {
   word-break: break-word;
   overflow-wrap: anywhere;
   font-size: .85em;
 }
-
-/* Fix 7: Contact-Grid auf Tablet früher stapeln */
 @media (max-width: 860px){
   #contact .grid-2 { grid-template-columns: 1fr; }
 }
-
-/* Fix 8 (Bonus): Playground-Textareas auf Mobile mind. 16px */
 @media (max-width: 640px){
   .pg-pane textarea {
     min-height: 240px;
@@ -807,8 +791,6 @@ footer.site{
   }
   .pg-split { min-height: auto; }
 }
-
-/* Fix 9 (Bonus): Cookie-Banner safe-area-aware auf iPhone */
 @supports (padding: env(safe-area-inset-bottom)) {
   .cookie {
     bottom: calc(1rem + env(safe-area-inset-bottom));
@@ -817,14 +799,10 @@ footer.site{
     padding-bottom: calc(6rem + env(safe-area-inset-bottom));
   }
 }
-
-/* Fix 10 (Bonus): Lange Terminal-Befehle brechen sauber */
 .term-line {
   overflow-wrap: anywhere;
   word-break: break-word;
 }
-
-/* Fix 11 (Bonus): Hero-CTAs auf Mobile volle Breite */
 @media (max-width: 480px){
   .hero-cta { flex-direction: column; }
   .hero-cta .btn { width: 100%; justify-content: center; }
@@ -2406,11 +2384,12 @@ ${codeJs.value}
     try {
       /*
        * ------------------------------------------------------------
-       * FormSubmit.co — kostenloser Form-Endpoint für statische Seiten.
-       * Erste Einsendung löst eine Aktivierungs-E-Mail an snestler110@gmail.com aus.
+       * FormSubmit.co — AJAX-Endpoint mit Custom-Hash.
+       * Die Empfänger-Adresse (snestler110@gmail.com) ist serverseitig
+       * bei FormSubmit hinterlegt und steht NICHT im Quellcode.
        * ------------------------------------------------------------
        */
-      const ENDPOINT = 'https://formsubmit.co/ajax/snestler110@gmail.com';
+      const ENDPOINT = 'https://formsubmit.co/ajax/80c5984bee05d716423ff081c5932487';
 
       const res = await fetch(ENDPOINT, {
         method: 'POST',
