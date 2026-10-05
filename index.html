@@ -15,7 +15,7 @@
 <meta name="keywords" content="Webentwickler, Frontend Entwickler, Barrierefreiheit, WCAG, Freelance Developer, Deutschland, TypeScript, React, Performance">
 <meta name="language" content="de">
 <meta name="geo.region" content="DE">
-<meta name="geo.placename" content="Deutschland">
+<meta name="geo.placename" content="Aue-Bad Schlema">
 
 <!-- ===== OPEN GRAPH ===== -->
 <meta property="og:type" content="website">
@@ -61,6 +61,14 @@
       "email": "snestler110@gmail.com",
       "jobTitle": "Webentwickler & Full-Stack Developer",
       "description": "Freelance Webentwickler für barrierefreie, schnelle Interfaces. Spezialisiert auf TypeScript, React, Svelte und WCAG 2.2 AA.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Albert-Schweitzer-Str. 19",
+        "postalCode": "08280",
+        "addressLocality": "Aue-Bad Schlema",
+        "addressRegion": "Sachsen",
+        "addressCountry": "DE"
+      },
       "knowsAbout": [
         "Webentwicklung",
         "Frontend-Architektur",
@@ -100,6 +108,13 @@
       "image": "https://nestler.dev/og-image.png",
       "description": "Freelance Webentwicklung: barrierefreie Frontends, Design-Systeme, Web-Apps und Performancesoptimierung.",
       "provider": { "@id": "https://nestler.dev/#person" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Albert-Schweitzer-Str. 19",
+        "postalCode": "08280",
+        "addressLocality": "Aue-Bad Schlema",
+        "addressCountry": "DE"
+      },
       "areaServed": {
         "@type": "Country",
         "name": "Deutschland"
@@ -119,7 +134,8 @@
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://nestler.dev/#top" },
         { "@type": "ListItem", "position": 2, "name": "Über", "item": "https://nestler.dev/#about" },
-        { "@type": "ListItem", "position": 3, "name": "Kontakt", "item": "https://nestler.dev/#contact" }
+        { "@type": "ListItem", "position": 3, "name": "Impressum", "item": "https://nestler.dev/#imprint" },
+        { "@type": "ListItem", "position": 4, "name": "Kontakt", "item": "https://nestler.dev/#contact" }
       ]
     },
     {
@@ -269,7 +285,7 @@ a:hover{text-decoration-thickness:2px}
   border-radius:6px;
 }
 
-/* WCAG 2.2 — 2.4.11 Focus Not Obscured: Fokus-Elemente nicht unter Sticky-Header verstecken */
+/* WCAG 2.2 — 2.4.11 Focus Not Obscured */
 :where(section, [id], a, button, input, textarea, select, summary, details) {
   scroll-margin-top: 90px;
 }
@@ -609,7 +625,17 @@ details.card[open] summary::before{transform:rotate(45deg)}
 details.card[open]{border-color:color-mix(in srgb,var(--accent) 40%,var(--border))}
 
 /* ============================================================
-   10. FORM
+   10. IMPRESSUM
+   ============================================================ */
+#imprint address{
+  font-style:normal;
+  line-height:1.8;
+  color:var(--muted);
+}
+#imprint address strong{color:var(--text)}
+
+/* ============================================================
+   11. FORM
    ============================================================ */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 @media (max-width:640px){.form-grid{grid-template-columns:1fr}}
@@ -643,7 +669,7 @@ label .req{color:var(--danger);font-size:.9em}
 .form-status.bad{border-color:color-mix(in srgb,var(--danger) 50%,transparent);color:var(--danger)}
 
 /* ============================================================
-   11. TOOLTIP
+   12. TOOLTIP
    ============================================================ */
 .tooltip{
   position:fixed;top:0;left:0;z-index:2000;pointer-events:none;
@@ -661,7 +687,7 @@ label .req{color:var(--danger);font-size:.9em}
 .tooltip.below::after{top:auto;bottom:100%;border-top-color:transparent;border-bottom-color:var(--text)}
 
 /* ============================================================
-   12. COMMAND PALETTE
+   13. COMMAND PALETTE
    ============================================================ */
 .overlay{
   position:fixed;inset:0;z-index:1500;
@@ -694,7 +720,7 @@ label .req{color:var(--danger);font-size:.9em}
 .palette .empty{padding:2rem;text-align:center;color:var(--muted);font-size:.9rem}
 
 /* ============================================================
-   13. COOKIE BANNER
+   14. COOKIE BANNER
    ============================================================ */
 .cookie{
   position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);
@@ -717,7 +743,7 @@ label .req{color:var(--danger);font-size:.9em}
 .pref span{color:var(--muted);font-size:.8rem}
 
 /* ============================================================
-   14. MATRIX CANVAS + PARTY
+   15. MATRIX CANVAS + PARTY
    ============================================================ */
 #matrix{position:fixed;inset:0;z-index:1400;pointer-events:none;opacity:0;transition:opacity .4s}
 #matrix.on{opacity:.85}
@@ -725,7 +751,7 @@ html.party{animation:party 1.2s linear infinite}
 @keyframes party{to{filter:hue-rotate(360deg)}}
 
 /* ============================================================
-   15. CURSOR
+   16. CURSOR
    ============================================================ */
 .cursor-dot,.cursor-ring{
   position:fixed;top:0;left:0;pointer-events:none;z-index:1800;
@@ -741,7 +767,7 @@ html.party{animation:party 1.2s linear infinite}
 @media (hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
 
 /* ============================================================
-   16. FOOTER
+   17. FOOTER
    ============================================================ */
 footer.site{
   border-top:1px solid var(--border);padding:3rem 0 6rem;
@@ -758,7 +784,7 @@ footer.site{
 .legal{max-width:56ch;line-height:1.7;margin-top:1.25rem;font-size:.8rem}
 
 /* ============================================================
-   17. RESPONSIVE POLISH
+   18. RESPONSIVE POLISH
    ============================================================ */
 @media (max-width: 640px){
   .field input,
@@ -1216,6 +1242,105 @@ footer.site{
   </div>
 </section>
 
+<!-- ===================== IMPRESSUM ===================== -->
+<section id="imprint" aria-labelledby="imprint-title">
+  <div class="wrap">
+    <p class="eyebrow reveal">Rechtliches</p>
+    <h2 id="imprint-title" class="reveal">Impressum</h2>
+
+    <div class="grid grid-2" style="margin-top:2rem;align-items:start">
+      <div class="card reveal">
+        <h3>Angaben gemäß § 5 DDG</h3>
+        <address>
+          <strong>Sebastian Friedrich Nestler</strong><br>
+          Albert-Schweitzer-Str. 19<br>
+          08280 Aue-Bad Schlema OT Aue<br>
+          Deutschland
+        </address>
+      </div>
+
+      <div class="card reveal">
+        <h3>Kontakt</h3>
+        <address>
+          E-Mail: <a href="mailto:snestler110@gmail.com">snestler110@gmail.com</a>
+        </address>
+        <p style="margin-top:.9rem;font-size:.85rem;color:var(--muted)">
+          Anfragen werden in der Regel innerhalb von 24 Stunden beantwortet.
+        </p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Umsatzsteuer</h3>
+        <p style="color:var(--muted);font-size:.92rem">
+          Gemäß § 19 UStG wird keine Umsatzsteuer berechnet
+          (Kleinunternehmerregelung).
+        </p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Verbraucherstreitbeilegung</h3>
+        <p style="color:var(--muted);font-size:.92rem">
+          Ich bin nicht verpflichtet und nicht bereit, an einem
+          Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+          teilzunehmen. Zur außergerichtlichen Beilegung von Streitigkeiten
+          kontaktiere mich bitte direkt per E-Mail.
+        </p>
+      </div>
+
+      <div class="card reveal" style="grid-column:1/-1">
+        <h3>Haftung für Inhalte</h3>
+        <p style="color:var(--muted);font-size:.92rem;line-height:1.7">
+          Als Diensteanbieter bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte
+          auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
+          Nach §§ 8 bis 10 DDG bin ich als Diensteanbieter jedoch nicht
+          verpflichtet, übermittelte oder gespeicherte fremde Informationen
+          zu überwachen oder nach Umständen zu forschen, die auf eine
+          rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung
+          oder Sperrung der Nutzung von Informationen nach den allgemeinen
+          Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist
+          jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten
+          Rechtsverletzung möglich.
+        </p>
+      </div>
+
+      <div class="card reveal" style="grid-column:1/-1">
+        <h3>Haftung für Links</h3>
+        <p style="color:var(--muted);font-size:.92rem;line-height:1.7">
+          Mein Angebot enthält Links zu externen Websites Dritter, auf deren
+          Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden
+          Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten
+          Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten
+          verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der
+          Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige
+          Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine
+          permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch
+          ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar.
+          Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Links
+          umgehend entfernen.
+        </p>
+      </div>
+
+      <div class="card reveal" style="grid-column:1/-1">
+        <h3>Urheberrecht</h3>
+        <p style="color:var(--muted);font-size:.92rem;line-height:1.7">
+          Die durch mich erstellten Inhalte und Werke auf diesen Seiten
+          unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
+          Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
+          Grenzen des Urheberrechts bedürfen meiner schriftlichen Zustimmung.
+          Downloads und Kopien dieser Seite sind nur für den privaten, nicht
+          kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser
+          Seite nicht von mir erstellt wurden, werden die Urheberrechte
+          Dritter beachtet. Insbesondere werden Inhalte Dritter als solche
+          gekennzeichnet. Solltest du trotzdem auf eine Urheberrechtsverletzung
+          aufmerksam werden, bitte ich um einen entsprechenden Hinweis.
+          Bei Bekanntwerden von Rechtsverletzungen werde ich derartige
+          Inhalte umgehend entfernen.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== CONTACT ===================== -->
 <section id="contact">
   <div class="wrap">
@@ -1339,9 +1464,9 @@ footer.site{
         <li><a href="#about">Über</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li><a href="#imprint">Impressum</a></li>
         <li><a href="#contact">Kontakt</a></li>
         <li><a href="#privacy" id="open-privacy">Datenschutz</a></li>
-        <li><a href="#imprint" id="open-imprint">Impressum</a></li>
         <li><button type="button" id="cookie-reopen">Cookie-Einstellungen</button></li>
       </ul>
     </div>
@@ -1533,7 +1658,7 @@ footer.site{
     track.innerHTML = html + html;
   })();
 
-  /* Marquee Pause-Button — WCAG 2.2.2 (Pause, Stop, Hide) */
+  /* Marquee Pause-Button — WCAG 2.2.2 */
   (function marqueeControl() {
     const wrap = $('#marquee-wrap');
     const btn  = $('#marquee-toggle');
@@ -1680,7 +1805,7 @@ footer.site{
   window.addEventListener('scroll', hideTip, { passive: true });
 
   /* ==========================================================
-     FOCUS TRAP helper (nur für echte Modals wie die Palette)
+     FOCUS TRAP (nur für echte Modals wie die Palette)
      ========================================================== */
   function trapFocus(container, e) {
     const focusables = $$(
@@ -1715,6 +1840,7 @@ footer.site{
     { id: 'nav-playground', icon: '🧪', label: 'Playground öffnen',     hint: 'G P', run: () => go('#playground') },
     { id: 'nav-features',   icon: '✨', label: 'Features',              hint: 'G F', run: () => go('#features') },
     { id: 'nav-faq',        icon: '❓', label: 'FAQ',                   hint: 'G Q', run: () => go('#faq') },
+    { id: 'nav-imprint',    icon: '📄', label: 'Impressum',             hint: 'G I', run: () => go('#imprint') },
     { id: 'nav-contact',    icon: '✉️', label: 'Kontakt',               hint: 'G C', run: () => go('#contact') },
     { id: 'theme-dark',     icon: '🌑', label: 'Theme: Dark',           hint: '',    run: () => setTheme('dark') },
     { id: 'theme-light',    icon: '☀️', label: 'Theme: Light',          hint: '',    run: () => setTheme('light') },
@@ -1854,7 +1980,6 @@ footer.site{
     if (e.target === paletteOverlay) closePalette();
   });
 
-  /* Global shortcuts */
   document.addEventListener('keydown', e => {
     const mod = e.ctrlKey || e.metaKey;
     if (mod && e.key.toLowerCase() === 'k') {
@@ -2423,11 +2548,8 @@ ${codeJs.value}
 
     try {
       /*
-       * ------------------------------------------------------------
        * FormSubmit.co — AJAX-Endpoint mit Custom-Hash.
-       * Die Empfänger-Adresse (snestler110@gmail.com) ist serverseitig
-       * bei FormSubmit hinterlegt und steht NICHT im Quellcode.
-       * ------------------------------------------------------------
+       * Empfänger: snestler110@gmail.com (serverseitig bei FormSubmit hinterlegt).
        */
       const ENDPOINT = 'https://formsubmit.co/ajax/80c5984bee05d716423ff081c5932487';
 
@@ -2546,8 +2668,8 @@ ${codeJs.value}
 
   /*
    * WCAG 2.1.2 No Keyboard Trap:
-   * Cookie-Banner ist aria-modal="false" — Nutzer müssen per Tab raustabben können.
-   * Fokus-Falle bewusst NICHT aktiv. Escape schließt mit "Nur notwendige".
+   * Cookie-Banner ist aria-modal="false" — kein Fokus-Trap.
+   * Escape schließt mit "Nur notwendige".
    */
   banner.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
@@ -2563,15 +2685,13 @@ ${codeJs.value}
   /* ==========================================================
      LEGAL LINKS
      ========================================================== */
-  ['open-privacy', 'open-imprint'].forEach(id => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.addEventListener('click', e => {
+  const privacyLink = document.getElementById('open-privacy');
+  if (privacyLink) {
+    privacyLink.addEventListener('click', e => {
       e.preventDefault();
-      announce('Rechtstexte bitte durch eigene ersetzen.');
       go('#privacy');
     });
-  });
+  }
 
   /* ==========================================================
      MISC
