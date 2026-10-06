@@ -266,42 +266,20 @@
   --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
 }
 [data-theme="light"]{
-  --bg:#f6f6f3;
-  --surface:#ffffff;
-  --surface-2:#eeeceb;
-  --border:#b8b6ae;
-  --text:#14141a;
-  --muted:#4a4a5c;
-  --accent:#1a5dff;
-  --accent-ink:#ffffff;
-  --accent-2:#0043c7;
-  --danger:#c53030;
-  --ok:#0e8a5a;
+  --bg:#f6f6f3; --surface:#ffffff; --surface-2:#eeeceb; --border:#b8b6ae;
+  --text:#14141a; --muted:#4a4a5c; --accent:#1a5dff; --accent-ink:#ffffff;
+  --accent-2:#0043c7; --danger:#c53030; --ok:#0e8a5a;
   --shadow:0 18px 50px -18px rgba(20,20,26,.28);
 }
 [data-theme="synth"]{
-  --bg:#0d0716;
-  --surface:#170d24;
-  --surface-2:#211334;
-  --border:#4a2d73;
-  --text:#f4ecff;
-  --muted:#b9a4d4;
-  --accent:#ff4fd8;
-  --accent-ink:#12001a;
-  --accent-2:#33e1ff;
-  --shadow:0 18px 60px -12px rgba(255,79,216,.28);
+  --bg:#0d0716; --surface:#170d24; --surface-2:#211334; --border:#4a2d73;
+  --text:#f4ecff; --muted:#b9a4d4; --accent:#ff4fd8; --accent-ink:#12001a;
+  --accent-2:#33e1ff; --shadow:0 18px 60px -12px rgba(255,79,216,.28);
 }
 [data-theme="matrix"]{
-  --bg:#000600;
-  --surface:#041004;
-  --surface-2:#072007;
-  --border:#1a5c1a;
-  --text:#c8ffc8;
-  --muted:#7ac47a;
-  --accent:#22ff6b;
-  --accent-ink:#001100;
-  --accent-2:#00d5ff;
-  --shadow:0 18px 50px -12px rgba(34,255,107,.25);
+  --bg:#000600; --surface:#041004; --surface-2:#072007; --border:#1a5c1a;
+  --text:#c8ffc8; --muted:#7ac47a; --accent:#22ff6b; --accent-ink:#001100;
+  --accent-2:#00d5ff; --shadow:0 18px 50px -12px rgba(34,255,107,.25);
 }
 
 /* ============================================================
@@ -314,18 +292,12 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
 }
 body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--font);
-  font-size:clamp(1rem,.95rem + .25vw,1.0625rem);
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
+  margin:0; background:var(--bg); color:var(--text); font-family:var(--font);
+  font-size:clamp(1rem,.95rem + .25vw,1.0625rem); line-height:1.65;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
 }
 body::before{
-  content:"";
-  position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.035;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   mix-blend-mode:overlay;
 }
@@ -333,29 +305,14 @@ img,svg,canvas{max-width:100%;display:block}
 button,input,textarea,select{font:inherit;color:inherit}
 a{color:var(--accent);text-underline-offset:.25em}
 a:hover{text-decoration-thickness:2px}
-
 ::placeholder{color:var(--muted);opacity:1}
-
 :where(a,button,input,textarea,select,summary,[tabindex]):focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:3px;
-  border-radius:6px;
+  outline:2px solid var(--accent); outline-offset:3px; border-radius:6px;
 }
-:where(section, [id], a, button, input, textarea, select, summary, details) {
-  scroll-margin-top: 90px;
-}
+:where(section, [id], a, button, input, textarea, select, summary, details) { scroll-margin-top: 90px; }
 ::selection{background:var(--accent);color:var(--accent-ink)}
-
-.sr-only{
-  position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
-  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
-}
-.skip{
-  position:fixed;top:-100px;left:16px;z-index:9999;
-  background:var(--accent);color:var(--accent-ink);
-  padding:.75rem 1.25rem;border-radius:0 0 var(--radius-sm) var(--radius-sm);
-  font-weight:700;text-decoration:none;transition:top .18s ease;
-}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:fixed;top:-100px;left:16px;z-index:9999;background:var(--accent);color:var(--accent-ink);padding:.75rem 1.25rem;border-radius:0 0 var(--radius-sm) var(--radius-sm);font-weight:700;text-decoration:none;transition:top .18s ease}
 .skip:focus{top:0}
 
 /* ============================================================
@@ -363,11 +320,7 @@ a:hover{text-decoration-thickness:2px}
    ============================================================ */
 .wrap{width:min(100% - 2.5rem,var(--max));margin-inline:auto;position:relative;z-index:2}
 section{padding:clamp(4rem,9vw,7.5rem) 0;position:relative}
-.eyebrow{
-  font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--accent);margin:0 0 .9rem;
-  display:flex;align-items:center;gap:.6rem;
-}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 .9rem;display:flex;align-items:center;gap:.6rem}
 .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);flex:none}
 h1,h2,h3{line-height:1.12;letter-spacing:-.025em;margin:0 0 .6em;font-weight:800}
 h2{font-size:clamp(1.9rem,1.3rem + 2.4vw,3rem)}
@@ -378,62 +331,24 @@ h3{font-size:1.15rem;letter-spacing:-.01em}
 /* ============================================================
    3. PROGRESS + HEADER
    ============================================================ */
-#progress{
-  position:fixed;top:0;left:0;height:2px;width:0%;
-  background:linear-gradient(90deg,var(--accent),var(--accent-2));
-  z-index:1000;transition:width .1s linear;
-}
-header.site{
-  position:sticky;top:0;z-index:900;
-  backdrop-filter:blur(14px) saturate(1.4);
-  background:color-mix(in srgb,var(--bg) 78%,transparent);
-  border-bottom:1px solid transparent;
-  transition:border-color .25s ease,background .25s ease;
-}
+#progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent-2));z-index:1000;transition:width .1s linear}
+header.site{position:sticky;top:0;z-index:900;backdrop-filter:blur(14px) saturate(1.4);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid transparent;transition:border-color .25s ease,background .25s ease}
 header.site.stuck{border-bottom-color:var(--border)}
 .nav{display:flex;align-items:center;gap:1rem;padding:.85rem 0}
-.brand{
-  font-family:var(--mono);font-weight:700;font-size:1rem;
-  text-decoration:none;color:var(--text);letter-spacing:-.02em;
-  margin-right:auto;display:flex;align-items:center;gap:.55rem;
-}
-.brand .logo{
-  width:26px;height:26px;flex:none;border-radius:6px;
-  transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .3s;
-  box-shadow:0 2px 8px -2px rgba(26,93,255,.4);
-}
+.brand{font-family:var(--mono);font-weight:700;font-size:1rem;text-decoration:none;color:var(--text);letter-spacing:-.02em;margin-right:auto;display:flex;align-items:center;gap:.55rem}
+.brand .logo{width:26px;height:26px;flex:none;border-radius:6px;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .3s;box-shadow:0 2px 8px -2px rgba(26,93,255,.4)}
 .brand:hover .logo{transform:rotate(-6deg) scale(1.08);box-shadow:0 4px 14px -2px rgba(26,93,255,.6)}
 .brand .dev{color:var(--accent)}
-
 .nav-links{display:flex;gap:.25rem;align-items:center;list-style:none;margin:0;padding:0}
-.nav-links a{
-  color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;
-  padding:.5rem .7rem;border-radius:8px;transition:color .2s,background .2s;
-}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;padding:.5rem .7rem;border-radius:8px;transition:color .2s,background .2s}
 .nav-links a:hover{color:var(--text);background:var(--surface-2)}
-
-.icon-btn{
-  background:var(--surface);border:1px solid var(--border);color:var(--text);
-  width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
-  cursor:pointer;transition:transform .18s cubic-bezier(.2,.8,.2,1),border-color .2s,background .2s;
-  flex:none;
-}
+.icon-btn{background:var(--surface);border:1px solid var(--border);color:var(--text);width:38px;height:38px;border-radius:10px;display:grid;place-items:center;cursor:pointer;transition:transform .18s cubic-bezier(.2,.8,.2,1),border-color .2s,background .2s;flex:none}
 .icon-btn:hover{border-color:var(--accent);background:var(--surface-2);transform:translateY(-2px)}
 .icon-btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.kbd-hint{
-  font-family:var(--mono);font-size:.68rem;color:var(--muted);
-  border:1px solid var(--border);border-radius:6px;padding:.15rem .4rem;
-}
+.kbd-hint{font-family:var(--mono);font-size:.68rem;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:.15rem .4rem}
 .menu-toggle{display:none}
-
 @media (max-width:860px){
-  .nav-links{
-    position:absolute;top:100%;left:0;right:0;
-    flex-direction:column;align-items:stretch;
-    background:var(--surface);border-bottom:1px solid var(--border);
-    padding:.75rem 1.25rem 1.25rem;gap:.15rem;
-    display:none;
-  }
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--surface);border-bottom:1px solid var(--border);padding:.75rem 1.25rem 1.25rem;gap:.15rem;display:none}
   .nav-links.open{display:flex}
   .nav-links a{padding:.8rem .6rem;font-size:1rem}
   .menu-toggle{display:grid}
@@ -446,38 +361,15 @@ header.site.stuck{border-bottom-color:var(--border)}
 .hero{padding-top:clamp(3rem,7vw,6rem);padding-bottom:clamp(3rem,6vw,5rem)}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:start}
 @media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
-.status{
-  display:inline-flex;align-items:center;gap:.55rem;
-  font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;
-  color:var(--muted);border:1px solid var(--border);border-radius:999px;
-  padding:.35rem .85rem;margin-bottom:1.5rem;background:var(--surface);
-}
-.status .dot{
-  width:7px;height:7px;border-radius:50%;background:var(--ok);flex:none;
-  box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 70%,transparent);
-  animation:pulse 2.4s infinite;
-}
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 60%,transparent)}
-  70%{box-shadow:0 0 0 9px transparent}
-  100%{box-shadow:0 0 0 0 transparent}
-}
+.status{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:.35rem .85rem;margin-bottom:1.5rem;background:var(--surface)}
+.status .dot{width:7px;height:7px;border-radius:50%;background:var(--ok);flex:none;box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 70%,transparent);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 60%,transparent)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
 h1.title{font-size:clamp(2.5rem,1.4rem + 5.4vw,5rem);letter-spacing:-.045em;margin-bottom:1.1rem}
 h1.title .dev{color:var(--muted);font-weight:400}
-.caret{
-  display:inline-block;width:.06em;height:.85em;background:var(--accent);
-  margin-left:.08em;vertical-align:-.06em;animation:blink 1.05s steps(1) infinite;
-}
+.caret{display:inline-block;width:.06em;height:.85em;background:var(--accent);margin-left:.08em;vertical-align:-.06em;animation:blink 1.05s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 .hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
-
-.btn{
-  display:inline-flex;align-items:center;gap:.55rem;
-  padding:.78rem 1.4rem;border-radius:999px;font-weight:650;font-size:.93rem;
-  text-decoration:none;cursor:pointer;border:1px solid transparent;
-  transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .2s,color .2s,border-color .2s;
-  position:relative;
-}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.78rem 1.4rem;border-radius:999px;font-weight:650;font-size:.93rem;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .2s,color .2s,border-color .2s;position:relative}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:translateY(0)}
 .btn-primary{background:var(--accent);color:var(--accent-ink);box-shadow:0 6px 24px -8px color-mix(in srgb,var(--accent) 65%,transparent)}
@@ -487,25 +379,15 @@ h1.title .dev{color:var(--muted);font-weight:400}
 .btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
 /* Terminal */
-.terminal{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  box-shadow:var(--shadow);overflow:hidden;font-family:var(--mono);font-size:.83rem;
-}
-.term-bar{
-  display:flex;align-items:center;gap:.5rem;padding:.6rem .85rem;
-  background:var(--surface-2);border-bottom:1px solid var(--border);
-}
+.terminal{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;font-family:var(--mono);font-size:.83rem}
+.term-bar{display:flex;align-items:center;gap:.5rem;padding:.6rem .85rem;background:var(--surface-2);border-bottom:1px solid var(--border)}
 .term-bar .dots{display:flex;gap:.35rem}
 .term-bar .dots i{width:10px;height:10px;border-radius:50%;background:var(--border);display:block}
 .term-bar .dots i:nth-child(1){background:#ff5f57}
 .term-bar .dots i:nth-child(2){background:#febc2e}
 .term-bar .dots i:nth-child(3){background:#28c840}
 .term-bar .fname{color:var(--muted);font-size:.75rem;margin-inline:auto}
-.term-body{
-  padding:.9rem 1rem;height:280px;overflow-y:auto;
-  display:flex;flex-direction:column;gap:.15rem;
-  scrollbar-width:thin;
-}
+.term-body{padding:.9rem 1rem;height:280px;overflow-y:auto;display:flex;flex-direction:column;gap:.15rem;scrollbar-width:thin}
 .term-body::-webkit-scrollbar{width:8px}
 .term-body::-webkit-scrollbar-thumb{background:var(--border);border-radius:8px}
 .term-line{white-space:pre-wrap;word-break:break-word}
@@ -515,40 +397,19 @@ h1.title .dev{color:var(--muted);font-weight:400}
 .term-line.ok{color:var(--ok)}
 .term-line.err{color:var(--danger)}
 .term-line a{color:var(--accent-2)}
-.term-input-row{
-  display:flex;align-items:center;gap:.5rem;
-  border-top:1px solid var(--border);padding:.6rem 1rem;background:var(--surface);
-}
+.term-input-row{display:flex;align-items:center;gap:.5rem;border-top:1px solid var(--border);padding:.6rem 1rem;background:var(--surface)}
 .term-input-row span{color:var(--accent)}
-.term-input-row input{
-  flex:1;background:transparent;border:0;outline:none;
-  font-family:var(--mono);font-size:.83rem;color:var(--text);padding:.25rem 0;
-}
+.term-input-row input{flex:1;background:transparent;border:0;outline:none;font-family:var(--mono);font-size:.83rem;color:var(--text);padding:.25rem 0}
 
 /* Marquee */
-.marquee{
-  margin-top:clamp(3rem,6vw,5rem);
-  border-block:1px solid var(--border);padding:1rem 0;
-  overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
-}
+.marquee{margin-top:clamp(3rem,6vw,5rem);border-block:1px solid var(--border);padding:1rem 0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
 .marquee-track{display:flex;gap:3rem;width:max-content;animation:scroll 32s linear infinite}
-.marquee:hover .marquee-track,
-.marquee:focus-within .marquee-track{animation-play-state:paused}
+.marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
 .marquee.paused .marquee-track{animation-play-state:paused}
 @keyframes scroll{to{transform:translateX(-50%)}}
-.marquee-track span{
-  font-family:var(--mono);font-size:.85rem;color:var(--muted);
-  letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;
-}
+.marquee-track span{font-family:var(--mono);font-size:.85rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
 .marquee-track span::before{content:"◆ ";color:var(--accent);opacity:.5}
-
-.marquee-toggle{
-  display:block;margin:.75rem auto 0;
-  background:var(--surface);border:1px solid var(--border);
-  color:var(--muted);padding:.4rem 1rem;border-radius:999px;
-  font-size:.78rem;font-family:var(--mono);cursor:pointer;
-  transition:color .2s,border-color .2s,transform .18s;
-}
+.marquee-toggle{display:block;margin:.75rem auto 0;background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:.4rem 1rem;border-radius:999px;font-size:.78rem;font-family:var(--mono);cursor:pointer;transition:color .2s,border-color .2s,transform .18s}
 .marquee-toggle:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
 .marquee-toggle[aria-pressed="true"]{color:var(--accent);border-color:var(--accent)}
 
@@ -565,17 +426,8 @@ h1.title .dev{color:var(--muted);font-weight:400}
 .grid{display:grid;gap:1.1rem}
 .grid-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-
-.card{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  padding:1.5rem;position:relative;overflow:hidden;
-  transition:transform .28s cubic-bezier(.2,.8,.2,1),border-color .28s,box-shadow .28s;
-}
-.card::after{
-  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-  background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--accent) 10%,transparent),transparent 65%);
-  opacity:0;transition:opacity .3s;
-}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;position:relative;overflow:hidden;transition:transform .28s cubic-bezier(.2,.8,.2,1),border-color .28s,box-shadow .28s}
+.card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--accent) 10%,transparent),transparent 65%);opacity:0;transition:opacity .3s}
 .card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 45%,var(--border));box-shadow:var(--shadow)}
 .card:hover::after{opacity:1}
 .card h3{margin-bottom:.45rem}
@@ -587,32 +439,17 @@ h1.title .dev{color:var(--muted);font-weight:400}
 .skill-head{display:flex;justify-content:space-between;font-size:.88rem;margin-bottom:.5rem}
 .skill-head .pct{font-family:var(--mono);color:var(--muted);font-size:.8rem}
 .bar{height:6px;background:var(--surface-2);border-radius:99px;overflow:hidden}
-.bar i{
-  display:block;height:100%;width:0;border-radius:99px;
-  background:linear-gradient(90deg,var(--accent),var(--accent-2));
-  transition:width 1.1s cubic-bezier(.2,.8,.2,1);
-}
+.bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
 .tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.4rem}
-.tag{
-  font-family:var(--mono);font-size:.74rem;color:var(--muted);
-  border:1px solid var(--border);border-radius:999px;padding:.28rem .7rem;
-  transition:color .2s,border-color .2s,transform .2s;
-}
+.tag{font-family:var(--mono);font-size:.74rem;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:.28rem .7rem;transition:color .2s,border-color .2s,transform .2s}
 .tag:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
 
 /* ============================================================
    7. PLAYGROUND
    ============================================================ */
-.playground{
-  border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
-  background:var(--surface);box-shadow:var(--shadow);
-}
+.playground{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
 .pg-tabs{display:flex;gap:.25rem;padding:.55rem .65rem;background:var(--surface-2);border-bottom:1px solid var(--border);flex-wrap:wrap}
-.pg-tab{
-  background:transparent;border:1px solid transparent;color:var(--muted);
-  padding:.4rem .85rem;border-radius:8px;cursor:pointer;font-family:var(--mono);
-  font-size:.78rem;transition:all .2s;
-}
+.pg-tab{background:transparent;border:1px solid transparent;color:var(--muted);padding:.4rem .85rem;border-radius:8px;cursor:pointer;font-family:var(--mono);font-size:.78rem;transition:all .2s}
 .pg-tab[aria-selected="true"]{background:var(--surface);border-color:var(--border);color:var(--accent)}
 .pg-tab:hover:not([aria-selected="true"]){color:var(--text)}
 .pg-split{display:grid;grid-template-columns:1fr 1fr;min-height:340px}
@@ -620,33 +457,19 @@ h1.title .dev{color:var(--muted);font-weight:400}
 .pg-pane{position:relative;min-height:340px}
 .pg-pane + .pg-pane{border-left:1px solid var(--border)}
 @media (max-width:820px){.pg-pane + .pg-pane{border-left:0;border-top:1px solid var(--border)}}
-.pg-pane textarea{
-  width:100%;height:100%;min-height:340px;resize:vertical;
-  background:transparent;border:0;outline:none;padding:1rem;
-  font-family:var(--mono);font-size:.82rem;line-height:1.6;color:var(--text);
-  tab-size:2;
-}
+.pg-pane textarea{width:100%;height:100%;min-height:340px;resize:vertical;background:transparent;border:0;outline:none;padding:1rem;font-family:var(--mono);font-size:.82rem;line-height:1.6;color:var(--text);tab-size:2}
 .pg-pane iframe{width:100%;height:100%;min-height:340px;border:0;background:#fff}
 .pg-pane[hidden]{display:none}
 .pg-actions{display:flex;gap:.5rem;align-items:center;padding:.6rem .75rem;border-top:1px solid var(--border);background:var(--surface-2);flex-wrap:wrap}
 .pg-actions .spacer{margin-left:auto}
-.mini{
-  background:var(--surface);border:1px solid var(--border);color:var(--text);
-  padding:.42rem .8rem;border-radius:8px;font-size:.78rem;cursor:pointer;
-  font-family:var(--mono);transition:all .2s;
-}
+.mini{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:.42rem .8rem;border-radius:8px;font-size:.78rem;cursor:pointer;font-family:var(--mono);transition:all .2s}
 .mini:hover{border-color:var(--accent);color:var(--accent)}
 
 /* ============================================================
    8. FEATURES
    ============================================================ */
 .feature{display:flex;gap:1rem;align-items:flex-start}
-.feature .ico{
-  width:40px;height:40px;flex:none;border-radius:11px;display:grid;place-items:center;
-  background:color-mix(in srgb,var(--accent) 14%,transparent);
-  border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);
-  font-size:1.1rem;
-}
+.feature .ico{width:40px;height:40px;flex:none;border-radius:11px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 14%,transparent);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);font-size:1.1rem}
 .feature h3{margin-bottom:.3rem;font-size:1.02rem}
 
 /* ============================================================
@@ -654,41 +477,22 @@ h1.title .dev{color:var(--muted);font-weight:400}
    ============================================================ */
 .value-card{display:flex;flex-direction:column;gap:1rem;height:100%}
 .value-head{display:flex;align-items:center;gap:1rem;margin-bottom:.25rem}
-.value-badge{
-  font-family:var(--mono);font-size:.95rem;font-weight:800;letter-spacing:-.02em;
-  color:var(--accent-ink);background:var(--accent);
-  padding:.35rem .75rem;border-radius:999px;flex:none;line-height:1;
-  box-shadow:0 4px 14px -6px color-mix(in srgb,var(--accent) 60%,transparent);
-}
+.value-badge{font-family:var(--mono);font-size:.95rem;font-weight:800;letter-spacing:-.02em;color:var(--accent-ink);background:var(--accent);padding:.35rem .75rem;border-radius:999px;flex:none;line-height:1;box-shadow:0 4px 14px -6px color-mix(in srgb,var(--accent) 60%,transparent)}
 .value-head h3{margin:0;font-size:1.05rem;letter-spacing:-.01em;line-height:1.25}
 .value-card p{margin:0;font-size:.94rem;line-height:1.65;color:var(--muted)}
-.value-list{
-  list-style:none;margin:.5rem 0 0;padding:0;
-  display:grid;gap:.4rem;font-size:.85rem;color:var(--muted);
-  border-top:1px solid var(--border);padding-top:1rem;
-}
+.value-list{list-style:none;margin:.5rem 0 0;padding:0;display:grid;gap:.4rem;font-size:.85rem;color:var(--muted);border-top:1px solid var(--border);padding-top:1rem}
 .value-list li{display:flex;align-items:flex-start;gap:.55rem}
 .value-list li::before{content:"✓";color:var(--ok);font-weight:800;flex:none;font-size:.9em;margin-top:.05em}
 
 /* ============================================================
-   10. PREISE / ANGEBOT
+   10. PREISE
    ============================================================ */
 .price-grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:2.5rem}
-.price-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  padding:clamp(1.5rem,3vw,2rem);display:flex;flex-direction:column;gap:.75rem;position:relative;
-}
+.price-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(1.5rem,3vw,2rem);display:flex;flex-direction:column;gap:.75rem;position:relative}
 .price-card.featured{border-color:color-mix(in srgb,var(--accent) 60%,var(--border));box-shadow:0 12px 40px -14px color-mix(in srgb,var(--accent) 45%,transparent)}
-.price-card .price-tag{
-  position:absolute;top:-12px;right:1.5rem;background:var(--accent);color:var(--accent-ink);
-  font-family:var(--mono);font-size:.72rem;font-weight:800;padding:.3rem .75rem;
-  border-radius:999px;letter-spacing:.05em;
-}
+.price-card .price-tag{position:absolute;top:-12px;right:1.5rem;background:var(--accent);color:var(--accent-ink);font-family:var(--mono);font-size:.72rem;font-weight:800;padding:.3rem .75rem;border-radius:999px;letter-spacing:.05em}
 .price-card h3{margin:0;font-size:1.2rem;letter-spacing:-.015em}
-.price-card .price-value{
-  font-family:var(--mono);font-size:clamp(1.6rem,1.2rem + 1.5vw,2.1rem);font-weight:800;
-  color:var(--text);letter-spacing:-.03em;line-height:1;margin:.25rem 0 .5rem;
-}
+.price-card .price-value{font-family:var(--mono);font-size:clamp(1.6rem,1.2rem + 1.5vw,2.1rem);font-weight:800;color:var(--text);letter-spacing:-.03em;line-height:1;margin:.25rem 0 .5rem}
 .price-card .price-value small{display:block;font-size:.55em;color:var(--muted);font-weight:500;letter-spacing:0;margin-top:.4rem}
 .price-card .price-note{font-size:.83rem;color:var(--muted)}
 .price-card ul{list-style:none;padding:0;margin:.5rem 0 1rem;display:grid;gap:.5rem;font-size:.9rem;color:var(--muted);flex:1}
@@ -696,78 +500,32 @@ h1.title .dev{color:var(--muted);font-weight:400}
 .price-card ul li::before{content:"✓";color:var(--ok);font-weight:800;flex:none}
 
 /* ============================================================
-   11. AVATAR / DIGITALER ZWILLING
+   11. AVATAR
    ============================================================ */
 .avatar-steps{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem;counter-reset:avatar-step}
 .avatar-steps li{counter-increment:avatar-step;display:grid;grid-template-columns:auto 1fr;gap:0 .9rem;align-items:start}
-.avatar-steps li::before{
-  content:counter(avatar-step,decimal-leading-zero);
-  grid-row:1 / span 2;grid-column:1;
-  font-family:var(--mono);font-weight:700;font-size:.9rem;color:var(--accent);
-  width:2.2em;height:2.2em;display:grid;place-items:center;
-  border:1px solid color-mix(in srgb,var(--accent) 40%,var(--border));border-radius:10px;
-  background:color-mix(in srgb,var(--accent) 8%,transparent);align-self:start;
-}
+.avatar-steps li::before{content:counter(avatar-step,decimal-leading-zero);grid-row:1 / span 2;grid-column:1;font-family:var(--mono);font-weight:700;font-size:.9rem;color:var(--accent);width:2.2em;height:2.2em;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--accent) 40%,var(--border));border-radius:10px;background:color-mix(in srgb,var(--accent) 8%,transparent);align-self:start}
 .avatar-steps li strong{grid-column:2;grid-row:1;display:block;color:var(--text);font-size:.95rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.2rem}
 .avatar-steps li span{grid-column:2;grid-row:2;color:var(--muted);font-size:.88rem;line-height:1.6}
-.avatar-badge{
-  display:inline-flex;align-items:center;gap:.5rem;
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,var(--border));
-  background:color-mix(in srgb,var(--accent) 10%,transparent);
-  padding:.3rem .7rem;border-radius:999px;margin-bottom:1rem;
-}
+.avatar-badge{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,var(--border));background:color-mix(in srgb,var(--accent) 10%,transparent);padding:.3rem .7rem;border-radius:999px;margin-bottom:1rem}
 
 /* ============================================================
-   12. AGENTIC VIDEO — Promotion + Facade
+   12. AGENTIC VIDEO
    ============================================================ */
-.agentic-promo{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:clamp(1.5rem,3vw,2.5rem);
-  margin-top:3rem;
-  align-items:start;
-}
-@media (max-width:860px){
-  .agentic-promo{grid-template-columns:1fr}
-}
-.agentic-promo__text h3{
-  font-size:clamp(1.3rem,1.1rem + 1vw,1.7rem);
-  letter-spacing:-.02em;
-  margin:0 0 .75rem;
-}
-.agentic-promo__text p{
-  color:var(--muted);
-  font-size:.95rem;
-  line-height:1.7;
-  margin:0 0 1rem;
-}
-.agentic-promo__list{
-  list-style:none;
-  padding:0;
-  margin:1.25rem 0 0;
-  display:grid;
-  gap:.6rem;
-  font-size:.9rem;
-  color:var(--muted);
-}
-.agentic-promo__list li{
-  display:flex;
-  gap:.6rem;
-  align-items:flex-start;
-}
-.agentic-promo__list li::before{
-  content:"→";
-  color:var(--accent);
-  font-weight:800;
-  flex:none;
-}
+.agentic-promo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,3vw,2.5rem);margin-top:3rem;align-items:start}
+@media (max-width:860px){.agentic-promo{grid-template-columns:1fr}}
+.agentic-promo__text h3{font-size:clamp(1.3rem,1.1rem + 1vw,1.7rem);letter-spacing:-.02em;margin:0 0 .75rem}
+.agentic-promo__text p{color:var(--muted);font-size:.95rem;line-height:1.7;margin:0 0 1rem}
+.agentic-promo__list{list-style:none;padding:0;margin:1.25rem 0 0;display:grid;gap:.6rem;font-size:.9rem;color:var(--muted)}
+.agentic-promo__list li{display:flex;gap:.6rem;align-items:flex-start}
+.agentic-promo__list li::before{content:"→";color:var(--accent);font-weight:800;flex:none}
 
 /* Video Facade — DSGVO-konform Click-to-Load */
 .video-facade{
   position:relative;
   width:100%;
   aspect-ratio:16 / 9;
+  min-height:220px; /* Fallback für Browser ohne aspect-ratio */
   border-radius:var(--radius);
   overflow:hidden;
   border:1px solid var(--border);
@@ -776,97 +534,39 @@ h1.title .dev{color:var(--muted);font-weight:400}
   cursor:pointer;
   transition:transform .3s cubic-bezier(.2, .8, .2, 1),border-color .3s;
 }
-.video-facade:hover{
-  transform:translateY(-3px);
-  border-color:color-mix(in srgb,var(--accent) 50%,var(--border));
-}
-.video-facade__button{
-  all:unset;
-  display:block;
-  width:100%;
-  height:100%;
-  position:relative;
-  cursor:pointer;
-}
-.video-facade__thumb{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:opacity .4s ease,transform .5s cubic-bezier(.2,.8,.2,1);
-}
-.video-facade:hover .video-facade__thumb{
-  transform:scale(1.03);
-}
+.video-facade:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 50%,var(--border))}
+.video-facade__button{all:unset;display:block;width:100%;height:100%;position:relative;cursor:pointer}
+.video-facade__thumb{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .4s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
+.video-facade:hover .video-facade__thumb{transform:scale(1.03)}
 .video-facade__play{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:72px;
-  height:72px;
-  background:var(--accent);
-  color:var(--accent-ink);
-  border-radius:50%;
-  display:grid;
-  place-items:center;
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:72px;height:72px;
+  background:#4a86ff;color:#0a0a0b;
+  border-radius:50%;display:grid;place-items:center;
   transition:transform .25s cubic-bezier(.2, .8, .2, 1),background .25s;
-  box-shadow:0 10px 30px -8px color-mix(in srgb,var(--accent) 70%,transparent);
+  box-shadow:0 10px 30px -8px rgba(74,134,255,.7);
 }
-.video-facade:hover .video-facade__play{
-  transform:translate(-50%,-50%) scale(1.1);
-  background:var(--accent-2);
-}
-.video-facade__play svg{
-  margin-left:4px;
-}
-.video-facade__iframe-container{
-  position:absolute;
-  inset:0;
-  background:#000;
-}
-.video-facade__iframe-container iframe{
-  width:100%;
-  height:100%;
-  border:0;
-  display:block;
-}
-.video-facade__button:focus-visible{
-  outline:3px solid var(--accent);
-  outline-offset:-3px;
-  border-radius:var(--radius);
-}
+.video-facade:hover .video-facade__play{transform:translate(-50%,-50%) scale(1.1);background:#00d5ff}
+.video-facade__play svg{margin-left:4px}
+.video-facade__iframe-container{position:absolute;inset:0;background:#000}
+.video-facade__iframe-container iframe{width:100%;height:100%;border:0;display:block}
+.video-facade__button:focus-visible{outline:3px solid #4a86ff;outline-offset:-3px;border-radius:var(--radius)}
 
 /* ============================================================
    13. FAQ
    ============================================================ */
 details.card summary{list-style:none;display:flex;align-items:center;gap:.6rem}
 details.card summary::-webkit-details-marker{display:none}
-details.card summary::before{
-  content:"+";font-family:var(--mono);font-weight:700;color:var(--accent);
-  font-size:1.15rem;width:1.2em;flex:none;
-  transition:transform .25s cubic-bezier(.2,.8,.2,1);
-}
+details.card summary::before{content:"+";font-family:var(--mono);font-weight:700;color:var(--accent);font-size:1.15rem;width:1.2em;flex:none;transition:transform .25s cubic-bezier(.2,.8,.2,1)}
 details.card[open] summary::before{transform:rotate(45deg)}
 details.card[open]{border-color:color-mix(in srgb,var(--accent) 40%,var(--border))}
 
 /* ============================================================
-   14. PERFORMANCE / PSI-SEKTION
+   14. PERFORMANCE
    ============================================================ */
-.psi-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
-  gap:clamp(1rem,2vw,1.75rem);
-  max-width:720px;
-  margin:0 auto;
-  justify-items:center;
-}
+.psi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:clamp(1rem,2vw,1.75rem);max-width:720px;margin:0 auto;justify-items:center}
 .psi-item{display:flex;flex-direction:column;align-items:center;gap:.65rem;text-align:center}
-.psi-ring{
-  width:80px;height:80px;border-radius:50%;border:3px solid var(--ok);
-  display:grid;place-items:center;position:relative;
-  background:color-mix(in srgb,var(--ok) 8%,transparent);
-}
+.psi-ring{width:80px;height:80px;border-radius:50%;border:3px solid var(--ok);display:grid;place-items:center;position:relative;background:color-mix(in srgb,var(--ok) 8%,transparent)}
 .psi-score{font-family:var(--mono);font-size:1.5rem;font-weight:800;color:var(--ok);line-height:1}
 .psi-ring--pill{width:auto;height:auto;border-radius:999px;padding:.75rem 1.1rem;display:inline-flex;align-items:baseline;gap:.15rem}
 .psi-ring--pill .psi-score{font-size:1.15rem}
@@ -895,10 +595,7 @@ details.card[open]{border-color:color-mix(in srgb,var(--accent) 40%,var(--border
 .field.full{grid-column:1/-1}
 label{font-size:.86rem;font-weight:600;display:flex;align-items:center;gap:.4rem}
 label .req{color:var(--danger);font-size:.9em}
-.field input,.field textarea{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);
-  padding:.75rem .9rem;font-size:.94rem;transition:border-color .2s,box-shadow .2s;width:100%;
-}
+.field input,.field textarea{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.75rem .9rem;font-size:.94rem;transition:border-color .2s,box-shadow .2s;width:100%}
 .field textarea{min-height:140px;resize:vertical;font-family:inherit}
 .field input:hover,.field textarea:hover{border-color:color-mix(in srgb,var(--accent) 40%,var(--border))}
 .field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:var(--ring)}
@@ -908,10 +605,7 @@ label .req{color:var(--danger);font-size:.9em}
 .check{display:flex;gap:.65rem;align-items:flex-start;font-size:.86rem;font-weight:400;line-height:1.55;color:var(--muted)}
 .check input{width:18px;height:18px;flex:none;margin-top:.18rem;accent-color:var(--accent)}
 .hp{position:absolute!important;left:-9999px!important;opacity:0;pointer-events:none}
-.form-status{
-  padding:.85rem 1rem;border-radius:var(--radius-sm);font-size:.9rem;
-  border:1px solid var(--border);background:var(--surface-2);display:none;
-}
+.form-status{padding:.85rem 1rem;border-radius:var(--radius-sm);font-size:.9rem;border:1px solid var(--border);background:var(--surface-2);display:none}
 .form-status.show{display:block}
 .form-status.ok{border-color:color-mix(in srgb,var(--ok) 50%,transparent);color:var(--ok)}
 .form-status.bad{border-color:color-mix(in srgb,var(--danger) 50%,transparent);color:var(--danger)}
@@ -919,48 +613,21 @@ label .req{color:var(--danger);font-size:.9em}
 /* ============================================================
    17. TOOLTIP
    ============================================================ */
-.tooltip{
-  position:fixed;top:0;left:0;z-index:2000;pointer-events:none;
-  background:var(--text);color:var(--bg);
-  font-size:.78rem;font-weight:600;line-height:1.35;
-  padding:.42rem .7rem;border-radius:8px;max-width:260px;
-  opacity:0;transform:translate(-9999px,-9999px);transition:opacity .16s ease;
-  box-shadow:0 8px 22px -8px rgba(0,0,0,.6);
-}
+.tooltip{position:fixed;top:0;left:0;z-index:2000;pointer-events:none;background:var(--text);color:var(--bg);font-size:.78rem;font-weight:600;line-height:1.35;padding:.42rem .7rem;border-radius:8px;max-width:260px;opacity:0;transform:translate(-9999px,-9999px);transition:opacity .16s ease;box-shadow:0 8px 22px -8px rgba(0,0,0,.6)}
 .tooltip.visible{opacity:1}
-.tooltip::after{
-  content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);
-  border:5px solid transparent;border-top-color:var(--text);
-}
+.tooltip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--text)}
 .tooltip.below::after{top:auto;bottom:100%;border-top-color:transparent;border-bottom-color:var(--text)}
 
 /* ============================================================
    18. COMMAND PALETTE
    ============================================================ */
-.overlay{
-  position:fixed;inset:0;z-index:1500;
-  background:color-mix(in srgb,var(--bg) 72%,transparent);
-  backdrop-filter:blur(6px);
-  display:grid;place-items:start center;padding-top:12vh;
-}
+.overlay{position:fixed;inset:0;z-index:1500;background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(6px);display:grid;place-items:start center;padding-top:12vh}
 .overlay[hidden]{display:none}
-.palette{
-  width:min(100% - 2rem,600px);background:var(--surface);
-  border:1px solid var(--border);border-radius:var(--radius);
-  box-shadow:var(--shadow);overflow:hidden;
-  animation:pop .18s cubic-bezier(.2,.8,.2,1);
-}
+.palette{width:min(100% - 2rem,600px);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;animation:pop .18s cubic-bezier(.2,.8,.2,1)}
 @keyframes pop{from{opacity:0;transform:translateY(-10px) scale(.98)}}
-.palette input{
-  width:100%;background:transparent;border:0;outline:none;
-  padding:1.1rem 1.25rem;font-size:1rem;border-bottom:1px solid var(--border);
-}
+.palette input{width:100%;background:transparent;border:0;outline:none;padding:1.1rem 1.25rem;font-size:1rem;border-bottom:1px solid var(--border)}
 .palette ul{list-style:none;margin:0;padding:.5rem;max-height:min(52vh,420px);overflow-y:auto}
-.palette li button{
-  width:100%;display:flex;align-items:center;gap:.85rem;
-  background:transparent;border:0;text-align:left;padding:.7rem .8rem;
-  border-radius:10px;cursor:pointer;color:var(--text);font-size:.92rem;
-}
+.palette li button{width:100%;display:flex;align-items:center;gap:.85rem;background:transparent;border:0;text-align:left;padding:.7rem .8rem;border-radius:10px;cursor:pointer;color:var(--text);font-size:.92rem}
 .palette li button .k{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
 .palette li button .ic{font-size:1rem;width:1.3em;text-align:center;flex:none}
 .palette li button[aria-selected="true"],.palette li button:hover{background:var(--surface-2)}
@@ -970,13 +637,7 @@ label .req{color:var(--danger);font-size:.9em}
 /* ============================================================
    19. COOKIE BANNER
    ============================================================ */
-.cookie{
-  position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);
-  width:min(100% - 2rem,660px);z-index:1600;
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--radius);box-shadow:var(--shadow);padding:1.25rem;
-  animation:slideUp .35s cubic-bezier(.2,.8,.2,1);
-}
+.cookie{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);width:min(100% - 2rem,660px);z-index:1600;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.25rem;animation:slideUp .35s cubic-bezier(.2,.8,.2,1)}
 @keyframes slideUp{from{opacity:0;transform:translate(-50%,24px)}}
 .cookie[hidden]{display:none}
 .cookie h2{font-size:1.02rem;margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem}
@@ -991,7 +652,7 @@ label .req{color:var(--danger);font-size:.9em}
 .pref span{color:var(--muted);font-size:.8rem}
 
 /* ============================================================
-   20. MATRIX CANVAS + PARTY
+   20. MATRIX + PARTY
    ============================================================ */
 #matrix{position:fixed;inset:0;z-index:1400;pointer-events:none;opacity:0;transition:opacity .4s}
 #matrix.on{opacity:.85}
@@ -1001,16 +662,9 @@ html.party{animation:party 1.2s linear infinite}
 /* ============================================================
    21. CURSOR
    ============================================================ */
-.cursor-dot,.cursor-ring{
-  position:fixed;top:0;left:0;pointer-events:none;z-index:1800;
-  border-radius:50%;mix-blend-mode:difference;
-}
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:1800;border-radius:50%;mix-blend-mode:difference}
 .cursor-dot{width:6px;height:6px;background:#fff;transform:translate(-50%,-50%)}
-.cursor-ring{
-  width:32px;height:32px;border:1.5px solid rgba(255,255,255,.7);
-  transform:translate(-50%,-50%);
-  transition:width .22s cubic-bezier(.2,.8,.2,1),height .22s cubic-bezier(.2,.8,.2,1),border-color .22s,background .22s;
-}
+.cursor-ring{width:32px;height:32px;border:1.5px solid rgba(255,255,255,.7);transform:translate(-50%,-50%);transition:width .22s cubic-bezier(.2,.8,.2,1),height .22s cubic-bezier(.2,.8,.2,1),border-color .22s,background .22s}
 .cursor-ring.hot{width:52px;height:52px;background:rgba(255,255,255,.12);border-color:transparent}
 @media (hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
 
@@ -1022,49 +676,24 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
 .foot-brand{display:flex;align-items:center;gap:.55rem;margin-bottom:.5rem}
 .foot-brand img,.foot-brand svg{width:22px;height:22px;border-radius:5px;flex:none}
 .foot-links{display:flex;gap:1.25rem;flex-wrap:wrap;list-style:none;margin:0;padding:0}
-.foot-links button{
-  background:none;border:0;padding:0;color:var(--muted);cursor:pointer;
-  text-decoration:underline;text-underline-offset:.25em;font-size:inherit;
-}
+.foot-links button{background:none;border:0;padding:0;color:var(--muted);cursor:pointer;text-decoration:underline;text-underline-offset:.25em;font-size:inherit}
 .foot-links button:hover,.foot-links a:hover{color:var(--accent)}
 .foot-links a{color:var(--muted)}
 
 /* ============================================================
    23. RESPONSIVE POLISH
    ============================================================ */
-@media (max-width: 640px){
-  .field input,.field textarea,.term-input-row input,.pg-pane textarea,.palette input{font-size:16px}
-}
-@media (max-width: 380px){
-  #sound-toggle{display:none}
-  .brand{font-size:.9rem}
-  .brand .logo{width:22px;height:22px}
-  .icon-btn{width:34px;height:34px}
-  .icon-btn svg{width:15px;height:15px}
-}
-@media (max-width: 420px){
-  h1.title{font-size:2rem;letter-spacing:-.035em}
-  h1.title br{display:none}
-  .lede{font-size:1rem}
-}
+@media (max-width: 640px){.field input,.field textarea,.term-input-row input,.pg-pane textarea,.palette input{font-size:16px}}
+@media (max-width: 380px){#sound-toggle{display:none}.brand{font-size:.9rem}.brand .logo{width:22px;height:22px}.icon-btn{width:34px;height:34px}.icon-btn svg{width:15px;height:15px}}
+@media (max-width: 420px){h1.title{font-size:2rem;letter-spacing:-.035em}h1.title br{display:none}.lede{font-size:1rem}}
 .card a[href^="mailto:"]{word-break:break-all;overflow-wrap:anywhere}
 @media (max-width: 640px){.term-body{height:220px}}
 .feature code,.card code{word-break:break-word;overflow-wrap:anywhere;font-size:.85em}
 @media (max-width: 860px){#contact .grid-2{grid-template-columns:1fr}}
-@media (max-width: 640px){
-  .pg-pane textarea{min-height:240px;font-size:16px}
-  .pg-pane iframe{min-height:280px}
-  .pg-split{min-height:auto}
-}
-@supports (padding: env(safe-area-inset-bottom)) {
-  .cookie{bottom:calc(1rem + env(safe-area-inset-bottom))}
-  footer.site{padding-bottom:calc(6rem + env(safe-area-inset-bottom))}
-}
+@media (max-width: 640px){.pg-pane textarea{min-height:240px;font-size:16px}.pg-pane iframe{min-height:280px}.pg-split{min-height:auto}}
+@supports (padding: env(safe-area-inset-bottom)){.cookie{bottom:calc(1rem + env(safe-area-inset-bottom))}footer.site{padding-bottom:calc(6rem + env(safe-area-inset-bottom))}}
 .term-line{overflow-wrap:anywhere;word-break:break-word}
-@media (max-width: 480px){
-  .hero-cta{flex-direction:column}
-  .hero-cta .btn{width:100%;justify-content:center}
-}
+@media (max-width: 480px){.hero-cta{flex-direction:column}.hero-cta .btn{width:100%;justify-content:center}}
 </style>
 </head>
 <body>
@@ -1072,17 +701,13 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
 <a class="skip" href="#main">Zum Hauptinhalt springen</a>
 <div id="progress" role="presentation"></div>
 
-<!-- ===================== HEADER ===================== -->
 <header class="site" id="site-header">
   <div class="wrap">
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="#top" class="brand" aria-label="sebastian-nestler.github.io — Startseite von Sebastian Friedrich Nestler">
         <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
           <rect width="100" height="100" rx="18" fill="#ffffff"/>
-          <text x="50" y="74" text-anchor="middle"
-                font-family="'Arial Black','Helvetica Neue',Helvetica,Arial,sans-serif"
-                font-size="72" font-weight="900" letter-spacing="-6"
-                fill="#1a5dff">SN</text>
+          <text x="50" y="74" text-anchor="middle" font-family="'Arial Black','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="72" font-weight="900" letter-spacing="-6" fill="#1a5dff">SN</text>
         </svg>
         nestler<span class="dev">.dev</span>
       </a>
@@ -1103,15 +728,12 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
       <button class="icon-btn" id="palette-open" data-tip="Befehlspalette öffnen — Strg/⌘ + K" aria-label="Befehlspalette öffnen">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       </button>
-
       <button class="icon-btn" id="sound-toggle" aria-pressed="false" data-tip="UI-Sounds an/aus (standardmäßig aus)" aria-label="UI-Sounds umschalten">
         <svg viewBox="0 0 24 24" aria-hidden="true" id="sound-icon"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg>
       </button>
-
       <button class="icon-btn" id="theme-toggle" data-tip="Farbschema wechseln" aria-label="Farbschema wechseln">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.5-.04-1-.1-1.5A7 7 0 0 1 12 3Z"/></svg>
       </button>
-
       <button class="icon-btn menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menü öffnen">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -1121,88 +743,41 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
 
 <main id="main">
 
-<!-- ===================== HERO ===================== -->
 <section class="hero" id="top">
   <div class="wrap">
     <div class="hero-grid">
       <div>
         <p class="status"><span class="dot" aria-hidden="true"></span> Verfügbar für neue Projekte — Q4 2026</p>
-
-        <h1 class="title">
-          Webentwickler für <span class="hl">barrierefreie</span>,<br>
-          schnelle Interfaces<span class="caret" aria-hidden="true"></span>
-        </h1>
-
-        <p class="lede">
-          Ich bin <strong style="color:var(--text)">Sebastian Friedrich Nestler</strong> — Frontend- &amp; Full-Stack-Entwickler.
-          Ich baue Interfaces mit Charakter und Agentic Videos, die Ihr Unternehmen vertreten.
-        </p>
-
+        <h1 class="title">Webentwickler für <span class="hl">barrierefreie</span>,<br>schnelle Interfaces<span class="caret" aria-hidden="true"></span></h1>
+        <p class="lede">Ich bin <strong style="color:var(--text)">Sebastian Friedrich Nestler</strong> — Frontend- &amp; Full-Stack-Entwickler. Ich baue Interfaces mit Charakter und Agentic Videos, die Ihr Unternehmen vertreten.</p>
         <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary" data-tip="Springt direkt zum Kontaktformular">
-            Projekt anfragen
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a href="#preise" class="btn btn-ghost" data-tip="Preise und Pakete ansehen">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg>
-            Preise ansehen
-          </a>
-          <button class="btn btn-ghost" id="hero-terminal-focus" data-tip="Fokussiert das interaktive Terminal">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 17 6-5-6-5M12 19h8"/></svg>
-            Terminal
-          </button>
+          <a href="#contact" class="btn btn-primary" data-tip="Springt direkt zum Kontaktformular">Projekt anfragen<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#preise" class="btn btn-ghost" data-tip="Preise und Pakete ansehen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg>Preise ansehen</a>
+          <button class="btn btn-ghost" id="hero-terminal-focus" data-tip="Fokussiert das interaktive Terminal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 17 6-5-6-5M12 19h8"/></svg>Terminal</button>
         </div>
       </div>
-
       <div class="terminal" aria-labelledby="term-title">
-        <div class="term-bar">
-          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="fname" id="term-title">~/sebastian — zsh</span>
-        </div>
+        <div class="term-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="fname" id="term-title">~/sebastian — zsh</span></div>
         <div class="term-body" id="term-output" role="log" aria-label="Terminal-Ausgabe" tabindex="0">
           <div class="term-line out">Willkommen bei nestler.dev v3.0</div>
           <div class="term-line out">Tippe <span lang="en" style="color:var(--accent)">help</span> für alle Befehle.</div>
         </div>
-        <div class="term-input-row">
-          <span aria-hidden="true">❯</span>
-          <label class="sr-only" for="term-input">Terminal-Befehl eingeben</label>
-          <input id="term-input" type="text" autocomplete="off" spellcheck="false"
-                 placeholder="help" aria-describedby="term-help">
-          <span id="term-help" class="sr-only">Gib einen Befehl ein und drücke Enter. Tippe „help“ für eine Liste.</span>
-        </div>
+        <div class="term-input-row"><span aria-hidden="true">❯</span><label class="sr-only" for="term-input">Terminal-Befehl eingeben</label><input id="term-input" type="text" autocomplete="off" spellcheck="false" placeholder="help" aria-describedby="term-help"><span id="term-help" class="sr-only">Gib einen Befehl ein und drücke Enter. Tippe „help“ für eine Liste.</span></div>
       </div>
     </div>
-
-    <div class="marquee" id="marquee-wrap" aria-hidden="true">
-      <div class="marquee-track" id="marquee"></div>
-    </div>
-    <button type="button" class="marquee-toggle" id="marquee-toggle"
-            aria-pressed="false" aria-label="Laufband anhalten">
-      ⏸ Laufband anhalten
-    </button>
+    <div class="marquee" id="marquee-wrap" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+    <button type="button" class="marquee-toggle" id="marquee-toggle" aria-pressed="false" aria-label="Laufband anhalten">⏸ Laufband anhalten</button>
   </div>
 </section>
 
-<!-- ===================== ABOUT ===================== -->
 <section id="about" aria-labelledby="about-title">
   <div class="wrap">
     <p class="eyebrow reveal">Über mich</p>
     <div class="grid grid-2" style="align-items:start">
+      <div class="reveal"><h2 id="about-title">Code ist Handwerk.<br>Details sind alles.</h2></div>
       <div class="reveal">
-        <h2 id="about-title">Code ist Handwerk.<br>Details sind alles.</h2>
-      </div>
-      <div class="reveal">
-        <p style="color:var(--muted);margin-top:0">
-          Seit über 8 Jahren baue ich für Agenturen, Startups und Mittelstand
-          digitale Produkte — von der Landingpage bis zur komplexen Web-App.
-          Mein Fokus liegt auf dem, was Nutzer:innen tatsächlich spüren:
-          Geschwindigkeit, Klarheit und Reibungslosigkeit.
-        </p>
-        <p style="color:var(--muted)">
-          Barrierefreiheit ist für mich kein Nachgedanke, sondern Teil der Architektur.
-          Ich entwickle nach WCAG 2.2 AA, teste mit Screenreadern und
-          Tastatur — und liefere Code, der auch in zwei Jahren noch wartbar ist.
-        </p>
+        <p style="color:var(--muted);margin-top:0">Seit über 8 Jahren baue ich für Agenturen, Startups und Mittelstand digitale Produkte — von der Landingpage bis zur komplexen Web-App. Mein Fokus liegt auf dem, was Nutzer:innen tatsächlich spüren: Geschwindigkeit, Klarheit und Reibungslosigkeit.</p>
+        <p style="color:var(--muted)">Barrierefreiheit ist für mich kein Nachgedanke, sondern Teil der Architektur. Ich entwickle nach WCAG 2.2 AA, teste mit Screenreadern und Tastatur — und liefere Code, der auch in zwei Jahren noch wartbar ist.</p>
         <ul style="list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:.6rem;color:var(--muted);font-size:.92rem">
           <li>✓ Performance-Budgets statt Bauchgefühl</li>
           <li>✓ Semantisches HTML &amp; ARIA, wo es nötig ist</li>
@@ -1214,103 +789,53 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
   </div>
 </section>
 
-<!-- ===================== SKILLS ===================== -->
 <section id="skills" aria-labelledby="skills-title">
   <div class="wrap">
     <p class="eyebrow reveal">Skills &amp; Stack</p>
     <h2 id="skills-title" class="reveal">TypeScript, React, Svelte &amp; WCAG 2.2</h2>
-
     <div class="grid grid-2" style="margin-top:2.5rem;align-items:start">
       <div class="card reveal" id="skill-card">
         <h3 style="margin-bottom:1.4rem">Kernkompetenzen</h3>
-        <div class="skill">
-          <div class="skill-head"><span>Frontend-Architektur</span><span class="pct">95%</span></div>
-          <div class="bar"><i data-w="95"></i></div>
-        </div>
-        <div class="skill">
-          <div class="skill-head"><span>Accessibility (WCAG 2.2)</span><span class="pct">92%</span></div>
-          <div class="bar"><i data-w="92"></i></div>
-        </div>
-        <div class="skill">
-          <div class="skill-head"><span>Performance &amp; Core Web Vitals</span><span class="pct">90%</span></div>
-          <div class="bar"><i data-w="90"></i></div>
-        </div>
-        <div class="skill">
-          <div class="skill-head"><span>Backend &amp; APIs</span><span class="pct">82%</span></div>
-          <div class="bar"><i data-w="82"></i></div>
-        </div>
-        <div class="skill">
-          <div class="skill-head"><span>DevOps &amp; CI/CD</span><span class="pct">76%</span></div>
-          <div class="bar"><i data-w="76"></i></div>
-        </div>
+        <div class="skill"><div class="skill-head"><span>Frontend-Architektur</span><span class="pct">95%</span></div><div class="bar"><i data-w="95"></i></div></div>
+        <div class="skill"><div class="skill-head"><span>Accessibility (WCAG 2.2)</span><span class="pct">92%</span></div><div class="bar"><i data-w="92"></i></div></div>
+        <div class="skill"><div class="skill-head"><span>Performance &amp; Core Web Vitals</span><span class="pct">90%</span></div><div class="bar"><i data-w="90"></i></div></div>
+        <div class="skill"><div class="skill-head"><span>Backend &amp; APIs</span><span class="pct">82%</span></div><div class="bar"><i data-w="82"></i></div></div>
+        <div class="skill"><div class="skill-head"><span>DevOps &amp; CI/CD</span><span class="pct">76%</span></div><div class="bar"><i data-w="76"></i></div></div>
       </div>
-
       <div class="reveal">
         <div class="card" style="margin-bottom:1.1rem">
           <h3>Werkzeuge</h3>
           <div class="tags">
-            <span class="tag">TypeScript</span><span class="tag">JavaScript</span>
-            <span class="tag">React</span><span class="tag">Svelte</span>
-            <span class="tag">Astro</span><span class="tag">Node.js</span>
-            <span class="tag">PostgreSQL</span><span class="tag">Prisma</span>
-            <span class="tag">Vite</span><span class="tag">Playwright</span>
-            <span class="tag">Vitest</span><span class="tag">Docker</span>
-            <span class="tag">Figma</span><span class="tag">Git</span>
+            <span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Svelte</span><span class="tag">Astro</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">Prisma</span><span class="tag">Vite</span><span class="tag">Playwright</span><span class="tag">Vitest</span><span class="tag">Docker</span><span class="tag">Figma</span><span class="tag">Git</span>
           </div>
         </div>
         <div class="card">
           <h3>Barrierefreiheit im Alltag</h3>
-          <p>
-            Automatisierte Tests mit axe, manuelle Prüfung mit NVDA und VoiceOver,
-            Tastatur-Walkthroughs, Kontrast-Checks und Fokus-Management.
-            Inklusion ist Qualität — nicht Bürokratie.
-          </p>
-          <div class="tags">
-            <span class="tag">WCAG 2.2 AA</span><span class="tag">ARIA</span>
-            <span class="tag">Screenreader</span><span class="tag">Tastatur</span>
-          </div>
+          <p>Automatisierte Tests mit axe, manuelle Prüfung mit NVDA und VoiceOver, Tastatur-Walkthroughs, Kontrast-Checks und Fokus-Management. Inklusion ist Qualität — nicht Bürokratie.</p>
+          <div class="tags"><span class="tag">WCAG 2.2 AA</span><span class="tag">ARIA</span><span class="tag">Screenreader</span><span class="tag">Tastatur</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== PLAYGROUND ===================== -->
 <section id="playground" aria-labelledby="playground-title">
   <div class="wrap">
     <p class="eyebrow reveal">Unique Feature #3</p>
     <h2 id="playground-title" class="reveal">Live Playground: HTML, CSS und JavaScript im Browser</h2>
-    <p class="lede reveal" style="margin-bottom:2rem">
-      Schreib HTML, CSS und JavaScript direkt hier im Browser — die Vorschau
-      aktualisiert sich live. Kein Login, kein Build, kein Tracking.
-    </p>
-
+    <p class="lede reveal" style="margin-bottom:2rem">Schreib HTML, CSS und JavaScript direkt hier im Browser — die Vorschau aktualisiert sich live. Kein Login, kein Build, kein Tracking.</p>
     <div class="playground reveal">
       <div class="pg-tabs" role="tablist" aria-label="Code-Bereiche">
         <button class="pg-tab" role="tab" id="tab-html" aria-controls="pane-html" aria-selected="true">HTML</button>
         <button class="pg-tab" role="tab" id="tab-css" aria-controls="pane-css" aria-selected="false" tabindex="-1">CSS</button>
         <button class="pg-tab" role="tab" id="tab-js" aria-controls="pane-js" aria-selected="false" tabindex="-1">JS</button>
       </div>
-
       <div class="pg-split">
-        <div class="pg-pane" id="pane-html" role="tabpanel" aria-labelledby="tab-html" tabindex="0">
-          <label class="sr-only" for="code-html">HTML-Code</label>
-          <textarea id="code-html" spellcheck="false"></textarea>
-        </div>
-        <div class="pg-pane" id="pane-css" role="tabpanel" aria-labelledby="tab-css" tabindex="0" hidden>
-          <label class="sr-only" for="code-css">CSS-Code</label>
-          <textarea id="code-css" spellcheck="false"></textarea>
-        </div>
-        <div class="pg-pane" id="pane-js" role="tabpanel" aria-labelledby="tab-js" tabindex="0" hidden>
-          <label class="sr-only" for="code-js">JavaScript-Code</label>
-          <textarea id="code-js" spellcheck="false"></textarea>
-        </div>
-        <div class="pg-pane">
-          <iframe id="pg-preview" title="Live-Vorschau des Playground-Codes"
-                  sandbox="allow-scripts allow-modals"></iframe>
-        </div>
+        <div class="pg-pane" id="pane-html" role="tabpanel" aria-labelledby="tab-html" tabindex="0"><label class="sr-only" for="code-html">HTML-Code</label><textarea id="code-html" spellcheck="false"></textarea></div>
+        <div class="pg-pane" id="pane-css" role="tabpanel" aria-labelledby="tab-css" tabindex="0" hidden><label class="sr-only" for="code-css">CSS-Code</label><textarea id="code-css" spellcheck="false"></textarea></div>
+        <div class="pg-pane" id="pane-js" role="tabpanel" aria-labelledby="tab-js" tabindex="0" hidden><label class="sr-only" for="code-js">JavaScript-Code</label><textarea id="code-js" spellcheck="false"></textarea></div>
+        <div class="pg-pane"><iframe id="pg-preview" title="Live-Vorschau des Playground-Codes" sandbox="allow-scripts allow-modals"></iframe></div>
       </div>
-
       <div class="pg-actions">
         <button class="mini" id="pg-run" data-tip="Vorschau sofort neu rendern">▶ Ausführen</button>
         <button class="mini" id="pg-reset" data-tip="Zurück zum Beispiel-Code">↺ Zurücksetzen</button>
@@ -1321,188 +846,61 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
   </div>
 </section>
 
-<!-- ===================== FEATURES ===================== -->
 <section id="features" aria-labelledby="features-title">
   <div class="wrap">
     <p class="eyebrow reveal">Was diese Seite anders macht</p>
     <h2 id="features-title" class="reveal">Fünf Dinge, die du selten findest</h2>
-
     <div class="grid grid-3" style="margin-top:2.5rem">
-      <div class="card reveal">
-        <div class="feature">
-          <span class="ico" aria-hidden="true">⌨️</span>
-          <div>
-            <h3>1 · Interaktives Terminal</h3>
-            <p>Echte Kommandos statt Deko. <code style="font-family:var(--mono);color:var(--accent)" lang="en">whoami</code>,
-               <code style="font-family:var(--mono);color:var(--accent)" lang="en">theme matrix</code> oder
-               <code style="font-family:var(--mono);color:var(--accent)" lang="en">sudo</code> — probier's aus.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card reveal">
-        <div class="feature">
-          <span class="ico" aria-hidden="true">⌘</span>
-          <div>
-            <h3>2 · Command Palette</h3>
-            <p>Drücke <kbd class="kbd-hint">Strg</kbd> <kbd class="kbd-hint">K</kbd> und navigiere,
-               wechsle Themes oder öffne Einstellungen — komplett per Tastatur.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card reveal">
-        <div class="feature">
-          <span class="ico" aria-hidden="true">🧪</span>
-          <div>
-            <h3>3 · Live Playground</h3>
-            <p>HTML, CSS und JS direkt im Browser schreiben und sofort sehen.
-               Sandboxed, ohne Server, ohne Datenverlust.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card reveal">
-        <div class="feature">
-          <span class="ico" aria-hidden="true">🎨</span>
-          <div>
-            <h3>4 · Theme-Studio mit Gedächtnis</h3>
-            <p>Vier Farbschemata, gespeichert in <em>deinem</em> Browser.
-               Plus optionales UI-Sound-Design (standardmäßig aus).</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card reveal">
-        <div class="feature">
-          <span class="ico" aria-hidden="true">🥚</span>
-          <div>
-            <h3>5 · Easter Eggs</h3>
-            <p>Der Konami-Code, eine Gummi-Ente zum Debuggen und ein Matrix-Regen.
-               Weil Software auch Freude machen darf.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card reveal" style="border-color:color-mix(in srgb,var(--accent) 40%,var(--border))">
-        <div class="feature">
-          <span class="ico" aria-hidden="true">♿</span>
-          <div>
-            <h3>Bonus · Barrierefrei by Design</h3>
-            <p>Skip-Link, Fokus-Trap in Dialogen, ARIA-Live-Regionen, Tooltips auch per Tastatur,
-               <code style="font-family:var(--mono);color:var(--accent)" lang="en">prefers-reduced-motion</code>-Support.</p>
-          </div>
-        </div>
-      </div>
+      <div class="card reveal"><div class="feature"><span class="ico" aria-hidden="true">⌨️</span><div><h3>1 · Interaktives Terminal</h3><p>Echte Kommandos statt Deko. <code style="font-family:var(--mono);color:var(--accent)" lang="en">whoami</code>, <code style="font-family:var(--mono);color:var(--accent)" lang="en">theme matrix</code> oder <code style="font-family:var(--mono);color:var(--accent)" lang="en">sudo</code> — probier's aus.</p></div></div></div>
+      <div class="card reveal"><div class="feature"><span class="ico" aria-hidden="true">⌘</span><div><h3>2 · Command Palette</h3><p>Drücke <kbd class="kbd-hint">Strg</kbd> <kbd class="kbd-hint">K</kbd> und navigiere, wechsle Themes oder öffne Einstellungen — komplett per Tastatur.</p></div></div></div>
+      <div class="card reveal"><div class="feature"><span class="ico" aria-hidden="true">🧪</span><div><h3>3 · Live Playground</h3><p>HTML, CSS und JS direkt im Browser schreiben und sofort sehen. Sandboxed, ohne Server, ohne Datenverlust.</p></div></div></div>
+      <div class="card reveal"><div class="feature"><span class="ico" aria-hidden="true">🎨</span><div><h3>4 · Theme-Studio mit Gedächtnis</h3><p>Vier Farbschemata, gespeichert in <em>deinem</em> Browser. Plus optionales UI-Sound-Design (standardmäßig aus).</p></div></div></div>
+      <div class="card reveal"><div class="feature"><span class="ico" aria-hidden="true">🥚</span><div><h3>5 · Easter Eggs</h3><p>Der Konami-Code, eine Gummi-Ente zum Debuggen und ein Matrix-Regen. Weil Software auch Freude machen darf.</p></div></div></div>
+      <div class="card reveal" style="border-color:color-mix(in srgb,var(--accent) 40%,var(--border))"><div class="feature"><span class="ico" aria-hidden="true">♿</span><div><h3>Bonus · Barrierefrei by Design</h3><p>Skip-Link, Fokus-Trap in Dialogen, ARIA-Live-Regionen, Tooltips auch per Tastatur, <code style="font-family:var(--mono);color:var(--accent)" lang="en">prefers-reduced-motion</code>-Support.</p></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ===================== KEIN BALLAST. NUR ERGEBNISSE. ===================== -->
 <section id="ergebnisse" aria-labelledby="ergebnisse-title">
   <div class="wrap">
     <p class="eyebrow reveal">Kein Ballast. Nur Ergebnisse.</p>
     <h2 id="ergebnisse-title" class="reveal">Vier Gründe, warum diese Art Website Ihnen Geld spart</h2>
-    <p class="lede reveal" style="margin-bottom:2.5rem">
-      Nicht Features um der Features willen, sondern messbarer Nutzen.
-      Jeder Punkt ist ein Grund, warum Kunden sich für diesen Ansatz entscheiden.
-    </p>
-
+    <p class="lede reveal" style="margin-bottom:2.5rem">Nicht Features um der Features willen, sondern messbarer Nutzen. Jeder Punkt ist ein Grund, warum Kunden sich für diesen Ansatz entscheiden.</p>
     <div class="grid grid-2" style="align-items:stretch">
       <article class="card reveal value-card">
-        <div class="value-head">
-          <span class="value-badge" aria-hidden="true">100</span>
-          <h3>PageSpeed &amp; SEO — der schnellste Weg zu Rankings</h3>
-        </div>
-        <p>
-          Ladezeiten im Millisekundenbereich führen direkt zu besseren
-          Google-Rankings und höheren Conversion-Raten. Google bewertet
-          Geschwindigkeit als Ranking-Faktor — und Nutzer:innen brechen
-          nach 3 Sekunden Ladezeit ab. Diese Seite lädt in unter 500 ms.
-        </p>
-        <ul class="value-list">
-          <li>Lighthouse Performance 100/100</li>
-          <li>SEO-Score 100/100</li>
-          <li>Erste sinnvolle Darstellung unter 0,5 s</li>
-        </ul>
+        <div class="value-head"><span class="value-badge" aria-hidden="true">100</span><h3>PageSpeed &amp; SEO — der schnellste Weg zu Rankings</h3></div>
+        <p>Ladezeiten im Millisekundenbereich führen direkt zu besseren Google-Rankings und höheren Conversion-Raten. Google bewertet Geschwindigkeit als Ranking-Faktor — und Nutzer:innen brechen nach 3 Sekunden Ladezeit ab. Diese Seite lädt in unter 500 ms.</p>
+        <ul class="value-list"><li>Lighthouse Performance 100/100</li><li>SEO-Score 100/100</li><li>Erste sinnvolle Darstellung unter 0,5 s</li></ul>
       </article>
-
       <article class="card reveal value-card">
-        <div class="value-head">
-          <span class="value-badge" aria-hidden="true">0 €</span>
-          <h3>Pure Vanilla JS — Zero Maintenance</h3>
-        </div>
-        <p>
-          Kein WordPress, keine Plugin-Updates, kein PHP-Maintenance-Vertrag,
-          keine kaputtgehenden Dependency-Updates. Der Kunde hat
-          <strong style="color:var(--text)">0 € Folgekosten</strong> für
-          IT-Wartung und Security-Patches. Die Seite läuft auch in fünf Jahren
-          noch — ohne dass jemand eingreifen muss.
-        </p>
-        <ul class="value-list">
-          <li>Keine monatlichen Wartungskosten</li>
-          <li>Keine Sicherheitslücken durch fremde Module</li>
-          <li>Kein Vendor-Lock-in</li>
-        </ul>
+        <div class="value-head"><span class="value-badge" aria-hidden="true">0 €</span><h3>Pure Vanilla JS — Zero Maintenance</h3></div>
+        <p>Kein WordPress, keine Plugin-Updates, kein PHP-Maintenance-Vertrag, keine kaputtgehenden Dependency-Updates. Der Kunde hat <strong style="color:var(--text)">0 € Folgekosten</strong> für IT-Wartung und Security-Patches. Die Seite läuft auch in fünf Jahren noch — ohne dass jemand eingreifen muss.</p>
+        <ul class="value-list"><li>Keine monatlichen Wartungskosten</li><li>Keine Sicherheitslücken durch fremde Module</li><li>Kein Vendor-Lock-in</li></ul>
       </article>
-
       <article class="card reveal value-card">
-        <div class="value-head">
-          <span class="value-badge" aria-hidden="true">♿</span>
-          <h3>100/100 Barrierefreiheit — BFSG / WCAG 2.2 AA</h3>
-        </div>
-        <p>
-          Vollständige Erfüllung der gesetzlichen Vorgaben zur Barrierefreiheit
-          nach BFSG und WCAG 2.2 AA. Agenturen verlangen allein für ein
-          nachträgliches Accessibility-Audit oft vierstellige Beträge —
-          hier ist die Konformität von Anfang an eingebaut.
-        </p>
-        <ul class="value-list">
-          <li>BFSG-konform ab Tag 1</li>
-          <li>Manuell getestet mit NVDA &amp; VoiceOver</li>
-          <li>Tastaturbedienung vollständig</li>
-        </ul>
+        <div class="value-head"><span class="value-badge" aria-hidden="true">♿</span><h3>100/100 Barrierefreiheit — BFSG / WCAG 2.2 AA</h3></div>
+        <p>Vollständige Erfüllung der gesetzlichen Vorgaben zur Barrierefreiheit nach BFSG und WCAG 2.2 AA. Agenturen verlangen allein für ein nachträgliches Accessibility-Audit oft vierstellige Beträge — hier ist die Konformität von Anfang an eingebaut.</p>
+        <ul class="value-list"><li>BFSG-konform ab Tag 1</li><li>Manuell getestet mit NVDA &amp; VoiceOver</li><li>Tastaturbedienung vollständig</li></ul>
       </article>
-
       <article class="card reveal value-card">
-        <div class="value-head">
-          <span class="value-badge" aria-hidden="true">🔒</span>
-          <h3>Rechtssicherheit &amp; Privacy-First</h3>
-        </div>
-        <p>
-          Durch den Verzicht auf unnötige externe Scripts und Tracking-Tools
-          ist die Seite extrem schlank und DSGVO-konform aufgebaut.
-          Keine Cookie-Banner-Falle, kein Datenabfluss an Dritte,
-          kein Abmahnrisiko wegen fremder CDNs.
-        </p>
-        <ul class="value-list">
-          <li>DSGVO-konform ohne Wenn und Aber</li>
-          <li>Kein Tracking, keine externen Requests</li>
-          <li>Impressum &amp; Datenschutz inklusive</li>
-        </ul>
+        <div class="value-head"><span class="value-badge" aria-hidden="true">🔒</span><h3>Rechtssicherheit &amp; Privacy-First</h3></div>
+        <p>Durch den Verzicht auf unnötige externe Scripts und Tracking-Tools ist die Seite extrem schlank und DSGVO-konform aufgebaut. Keine Cookie-Banner-Falle, kein Datenabfluss an Dritte, kein Abmahnrisiko wegen fremder CDNs.</p>
+        <ul class="value-list"><li>DSGVO-konform ohne Wenn und Aber</li><li>Kein Tracking, keine externen Requests</li><li>Impressum &amp; Datenschutz inklusive</li></ul>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ===================== PREISE ===================== -->
 <section id="preise" aria-labelledby="preise-title">
   <div class="wrap">
     <p class="eyebrow reveal">Preise &amp; Pakete</p>
     <h2 id="preise-title" class="reveal">Transparente Preise. Keine Überraschungen.</h2>
-    <p class="lede reveal" style="margin-bottom:1rem">
-      Festpreis-Angebot nach einem kostenlosen Erstgespräch. Alle Preise
-      netto, zzgl. USt. — bei Kleinunternehmerregelung entfällt die USt.
-    </p>
-
+    <p class="lede reveal" style="margin-bottom:1rem">Festpreis-Angebot nach einem kostenlosen Erstgespräch. Alle Preise netto, zzgl. USt. — bei Kleinunternehmerregelung entfällt die USt.</p>
     <div class="price-grid">
       <article class="card price-card featured reveal">
         <span class="price-tag">BELIEBT</span>
         <h3>Onepager</h3>
-        <div class="price-value">
-          ab 1.995 €
-          <small>netto, Festpreis möglich</small>
-        </div>
+        <div class="price-value">ab 1.995 €<small>netto, Festpreis möglich</small></div>
         <p class="price-note">Lieferung in <strong style="color:var(--text)">10–15 Tagen</strong>.</p>
         <ul>
           <li>Einseitige Website, voll individuell</li>
@@ -1514,18 +912,11 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
           <li>Responsive auf allen Geräten</li>
           <li>1 Korrekturschleife</li>
         </ul>
-        <a href="#contact" class="btn btn-primary" style="justify-content:center">
-          Onepager anfragen
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+        <a href="#contact" class="btn btn-primary" style="justify-content:center">Onepager anfragen<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </article>
-
       <article class="card price-card reveal">
         <h3>Web-App / Design-System</h3>
-        <div class="price-value">
-          ab 12.000 €
-          <small>netto, nach Aufwand</small>
-        </div>
+        <div class="price-value">ab 12.000 €<small>netto, nach Aufwand</small></div>
         <p class="price-note">Lieferung in <strong style="color:var(--text)">6–12 Wochen</strong>.</p>
         <ul>
           <li>Komplette Web-Anwendung</li>
@@ -1537,18 +928,11 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
           <li>DSGVO-konform</li>
           <li>Dokumentation &amp; Einweisung</li>
         </ul>
-        <a href="#contact" class="btn btn-ghost" style="justify-content:center">
-          Web-App anfragen
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+        <a href="#contact" class="btn btn-ghost" style="justify-content:center">Web-App anfragen<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </article>
-
       <article class="card price-card reveal">
         <h3>Support / Wartung</h3>
-        <div class="price-value">
-          auf Anfrage
-          <small>individuelles Stundenpaket</small>
-        </div>
+        <div class="price-value">auf Anfrage<small>individuelles Stundenpaket</small></div>
         <p class="price-note">Unterstützung als <strong style="color:var(--text)">Frontend- oder A11y-Spezialist</strong>.</p>
         <ul>
           <li>Stundenweise, tageweise oder feste Kapazität</li>
@@ -1558,59 +942,30 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
           <li>Integration in bestehende Teams</li>
           <li>Remote oder vor Ort</li>
         </ul>
-        <a href="#contact" class="btn btn-ghost" style="justify-content:center">
-          Kapazität anfragen
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+        <a href="#contact" class="btn btn-ghost" style="justify-content:center">Kapazität anfragen<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </article>
     </div>
-
-    <p class="hint reveal" style="margin-top:1.5rem;text-align:center;max-width:60ch;margin-inline:auto">
-      Alle Preise verstehen sich als Richtwerte für Projekte mit klarem Umfang.
-      Das verbindliche Festpreis-Angebot folgt nach einem kostenlosen Erstgespräch.
-    </p>
+    <p class="hint reveal" style="margin-top:1.5rem;text-align:center;max-width:60ch;margin-inline:auto">Alle Preise verstehen sich als Richtwerte für Projekte mit klarem Umfang. Das verbindliche Festpreis-Angebot folgt nach einem kostenlosen Erstgespräch.</p>
   </div>
 </section>
 
-<!-- ===================== AVATAR / DIGITALER ZWILLING + AGENTIC VIDEOS ===================== -->
 <section id="avatar" aria-labelledby="avatar-title">
   <div class="wrap">
     <span class="avatar-badge reveal" aria-hidden="true">Neue Kooperation</span>
     <h2 id="avatar-title" class="reveal">Ihr digitaler Zwilling — 24/7 erreichbar, in Ihrem Gesicht</h2>
-    <p class="lede reveal" style="margin-bottom:2.5rem">
-      Ein virtueller Avatar, der aussieht wie Sie, klingt wie Sie und jede
-      Frage Ihrer Kund:innen sofort beantwortet — Öffnungszeiten, Anfahrt,
-      Kontaktwege, fachliche Auskünfte. Rund um die Uhr, ohne Urlaub,
-      ohne Krankmeldung, ohne Wartezeit.
-    </p>
+    <p class="lede reveal" style="margin-bottom:2.5rem">Ein virtueller Avatar, der aussieht wie Sie, klingt wie Sie und jede Frage Ihrer Kund:innen sofort beantwortet — Öffnungszeiten, Anfahrt, Kontaktwege, fachliche Auskünfte. Rund um die Uhr, ohne Urlaub, ohne Krankmeldung, ohne Wartezeit.</p>
 
     <div class="grid grid-2" style="align-items:start">
       <div class="card reveal">
         <h3 style="margin-bottom:1.5rem">So einfach läuft es ab</h3>
         <ol class="avatar-steps">
-          <li>
-            <strong>Foto &amp; Stimme</strong>
-            <span>Sie schicken ein Portraitfoto und ein paar Minuten Sprachaufnahme — kein Studio, keine besondere Ausrüstung nötig.</span>
-          </li>
-          <li>
-            <strong>Wissensdatenbank</strong>
-            <span>Ich lade Ihre Öffnungszeiten, Adresse, Kontaktwege und fachlichen Antworten in ein sicheres, DSGVO-konformes System.</span>
-          </li>
-          <li>
-            <strong>Avatar-Erstellung</strong>
-            <span>Ihr Gesicht wird animiert, Ihre Stimme geklont — in wenigen Tagen einsatzbereit, in hoher Qualität.</span>
-          </li>
-          <li>
-            <strong>Integration</strong>
-            <span>Der Avatar kommt auf Ihre Website, an den Empfang oder in Ihr Kundenportal — per Chat, Sprache oder Video.</span>
-          </li>
-          <li>
-            <strong>Laufender Betrieb</strong>
-            <span>Neue Infos? Kurz eintragen — der Avatar weiß es sofort. Ohne technisches Vorwissen.</span>
-          </li>
+          <li><strong>Foto &amp; Stimme</strong><span>Sie schicken ein Portraitfoto und ein paar Minuten Sprachaufnahme — kein Studio, keine besondere Ausrüstung nötig.</span></li>
+          <li><strong>Wissensdatenbank</strong><span>Ich lade Ihre Öffnungszeiten, Adresse, Kontaktwege und fachlichen Antworten in ein sicheres, DSGVO-konformes System.</span></li>
+          <li><strong>Avatar-Erstellung</strong><span>Ihr Gesicht wird animiert, Ihre Stimme geklont — in wenigen Tagen einsatzbereit, in hoher Qualität.</span></li>
+          <li><strong>Integration</strong><span>Der Avatar kommt auf Ihre Website, an den Empfang oder in Ihr Kundenportal — per Chat, Sprache oder Video.</span></li>
+          <li><strong>Laufender Betrieb</strong><span>Neue Infos? Kurz eintragen — der Avatar weiß es sofort. Ohne technisches Vorwissen.</span></li>
         </ol>
       </div>
-
       <div class="card reveal">
         <h3>Was der Avatar für Sie übernimmt</h3>
         <ul class="value-list" style="border-top:0;padding-top:0;margin-top:.5rem">
@@ -1622,38 +977,19 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
           <li>Sammelt Leads und übergibt komplexe Anfragen an Sie</li>
           <li>Lernt neue Inhalte sofort nach Eintrag in die Wissensdatenbank</li>
         </ul>
-
         <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border)">
-          <p style="font-size:.9rem;color:var(--muted);margin:0 0 1.25rem">
-            <strong style="color:var(--text)">Für wen geeignet:</strong>
-            Arztpraxen, Kanzleien, Hotels, Autohäuser, Handwerksbetriebe,
-            Beratungen — überall dort, wo dieselben Fragen täglich kommen
-            und Ihr Team Zeit für Wichtigeres braucht.
-          </p>
-          <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center">
-            Kooperation anfragen
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+          <p style="font-size:.9rem;color:var(--muted);margin:0 0 1.25rem"><strong style="color:var(--text)">Für wen geeignet:</strong> Arztpraxen, Kanzleien, Hotels, Autohäuser, Handwerksbetriebe, Beratungen — überall dort, wo dieselben Fragen täglich kommen und Ihr Team Zeit für Wichtigeres braucht.</p>
+          <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center">Kooperation anfragen<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </div>
 
-    <!-- ==================== AGENTIC VIDEOS ==================== -->
     <div class="agentic-promo reveal">
       <div class="agentic-promo__text">
         <span class="avatar-badge" aria-hidden="true">Agentic Videos</span>
         <h3>Videos, die Ihr Unternehmen vertreten — ohne dass Sie vor der Kamera stehen</h3>
-        <p>
-          <strong style="color:var(--text)">Agentic Videos</strong> sind Videos,
-          die von einem KI-Agenten in Form Ihres Avatars erstellt und gesteuert
-          werden. Sie sehen aus wie Sie, klingen wie Sie — und Sie können sie
-          in Sekunden statt Stunden produzieren.
-        </p>
-        <p>
-          Erklärvideos, Produktdemos, Onboarding-Clips, Werbe-Spots in
-          mehreren Sprachen: Der Avatar liefert, ohne dass Sie Zeit im
-          Studio verbringen oder einen Videografen buchen.
-        </p>
+        <p><strong style="color:var(--text)">Agentic Videos</strong> sind Videos, die von einem KI-Agenten in Form Ihres Avatars erstellt und gesteuert werden. Sie sehen aus wie Sie, klingen wie Sie — und Sie können sie in Sekunden statt Stunden produzieren.</p>
+        <p>Erklärvideos, Produktdemos, Onboarding-Clips, Werbe-Spots in mehreren Sprachen: Der Avatar liefert, ohne dass Sie Zeit im Studio verbringen oder einen Videografen buchen.</p>
         <ul class="agentic-promo__list">
           <li>Skript eingeben, Video erhalten — fertig in Minuten</li>
           <li>Mehrere Sprachen ohne neuen Dreh</li>
@@ -1670,7 +1006,8 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
                class="video-facade__thumb"
                loading="lazy"
                decoding="async"
-               width="1280" height="720">
+               width="1280" height="720"
+               onerror="console.warn('Video-Thumbnail nicht gefunden: /assets/agentic-video-thumb.jpg'); this.style.background='linear-gradient(135deg, #1b1b21, #131317)';">
           <span class="video-facade__play" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="48" height="48"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
           </span>
@@ -1679,370 +1016,91 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
       </div>
     </div>
 
-    <p class="hint reveal" style="margin-top:1.5rem;text-align:center;max-width:60ch;margin-inline:auto">
-      Die genauen Konditionen kläre ich im persönlichen Gespräch — jede Branche
-      und jeder Umfang braucht eine eigene Abstimmung.
-    </p>
+    <p class="hint reveal" style="margin-top:1.5rem;text-align:center;max-width:60ch;margin-inline:auto">Die genauen Konditionen kläre ich im persönlichen Gespräch — jede Branche und jeder Umfang braucht eine eigene Abstimmung.</p>
   </div>
 </section>
 
-<!-- ===================== FAQ ===================== -->
 <section id="faq" aria-labelledby="faq-title">
   <div class="wrap">
     <p class="eyebrow reveal">Häufige Fragen</p>
     <h2 id="faq-title" class="reveal">Was Kund:innen vorher wissen wollen</h2>
-
     <div class="grid grid-2" style="margin-top:2.5rem">
-      <details class="card reveal" style="padding:1.25rem">
-        <summary style="cursor:pointer;font-weight:650;font-size:1rem">
-          Was kostet eine Website bei Sebastian Friedrich Nestler?
-        </summary>
-        <p style="margin-top:.75rem">
-          Ein Onepager startet bei <strong>1.995 €</strong> und wird in
-          <strong>10 bis 15 Tagen</strong> geliefert. Web-Apps und
-          Design-Systeme beginnen bei <strong>12.000 €</strong>. Ein
-          Festpreis-Angebot gibt es nach einem kostenlosen Erstgespräch.
-        </p>
-      </details>
-
-      <details class="card reveal" style="padding:1.25rem">
-        <summary style="cursor:pointer;font-weight:650;font-size:1rem">
-          Wie lange dauert ein Webprojekt?
-        </summary>
-        <p style="margin-top:.75rem">
-          Einen Onepager liefern wir typischerweise in <strong>10 bis 15 Tagen</strong>.
-          Komplexere Web-Apps oder Design-Systeme dauern <strong>6 bis 12 Wochen</strong>.
-          Der genaue Zeitplan wird im Kickoff verbindlich festgelegt.
-        </p>
-      </details>
-
-      <details class="card reveal" style="padding:1.25rem">
-        <summary style="cursor:pointer;font-weight:650;font-size:1rem">
-          Was sind Agentic Videos?
-        </summary>
-        <p style="margin-top:.75rem">
-          Agentic Videos sind Videos, die von KI-Agenten in Form eines
-          virtuellen Avatars erstellt und gesteuert werden. Sie sehen aus
-          und klingen wie eine echte Person und können im Marketing, Vertrieb
-          und Kundenservice eingesetzt werden — für Erklärvideos,
-          Produktdemos oder 24/7-Kundenkommunikation.
-        </p>
-      </details>
-
-      <details class="card reveal" style="padding:1.25rem">
-        <summary style="cursor:pointer;font-weight:650;font-size:1rem">
-          Was ist ein digitaler Zwilling / Avatar-Assistent?
-        </summary>
-        <p style="margin-top:.75rem">
-          Ein virtueller Avatar, der wie Sie aussieht, in Ihrer geklonten
-          Stimme spricht und rund um die Uhr Fragen von Kund:innen beantwortet —
-          zu Öffnungszeiten, Anfahrt, Kontakt und fachlichen Themen.
-          Sie liefern ein Foto und Sprachaufnahmen, wir übernehmen Erstellung,
-          Integration und Wissensdatenbank.
-        </p>
-      </details>
-
-      <details class="card reveal" style="padding:1.25rem">
-        <summary style="cursor:pointer;font-weight:650;font-size:1rem">
-          Was bedeutet Barrierefreiheit nach WCAG 2.2 AA?
-        </summary>
-        <p style="margin-top:.75rem">
-          WCAG 2.2 AA ist der international anerkannte Standard für barrierefreie
-          Websites. Er stellt sicher, dass Menschen mit Seh-, Hör-, motorischen oder
-          kognitiven Einschränkungen die Seite nutzen können. Sebastian entwickelt
-          jede Seite direkt nach diesem Standard.
-        </p>
-      </details>
-
-      <details class="card reveal" style="padding:1.25rem">
-        <summary style="cursor:pointer;font-weight:650;font-size:1rem">
-          Arbeitet Sebastian auch mit bestehenden Teams zusammen?
-        </summary>
-        <p style="margin-top:.75rem">
-          Ja. Neben kompletten Projekten gibt es Unterstützung als Frontend- oder
-          Accessibility-Spezialist für bestehende Teams — stundenweise, tageweise
-          oder als feste Kapazität.
-        </p>
-      </details>
-
-      <details class="card reveal" style="padding:1.25rem">
-        <summary style="cursor:pointer;font-weight:650;font-size:1rem">
-          Welche Technologien setzt Sebastian Friedrich Nestler ein?
-        </summary>
-        <p style="margin-top:.75rem">
-          Hauptsächlich TypeScript, React, Svelte und Astro im Frontend,
-          Node.js und PostgreSQL im Backend. Tools wie Vite, Playwright,
-          Vitest und Docker gehören zum Standard-Setup.
-        </p>
-      </details>
+      <details class="card reveal" style="padding:1.25rem"><summary style="cursor:pointer;font-weight:650;font-size:1rem">Was kostet eine Website bei Sebastian Friedrich Nestler?</summary><p style="margin-top:.75rem">Ein Onepager startet bei <strong>1.995 €</strong> und wird in <strong>10 bis 15 Tagen</strong> geliefert. Web-Apps und Design-Systeme beginnen bei <strong>12.000 €</strong>. Ein Festpreis-Angebot gibt es nach einem kostenlosen Erstgespräch.</p></details>
+      <details class="card reveal" style="padding:1.25rem"><summary style="cursor:pointer;font-weight:650;font-size:1rem">Wie lange dauert ein Webprojekt?</summary><p style="margin-top:.75rem">Einen Onepager liefern wir typischerweise in <strong>10 bis 15 Tagen</strong>. Komplexere Web-Apps oder Design-Systeme dauern <strong>6 bis 12 Wochen</strong>. Der genaue Zeitplan wird im Kickoff verbindlich festgelegt.</p></details>
+      <details class="card reveal" style="padding:1.25rem"><summary style="cursor:pointer;font-weight:650;font-size:1rem">Was sind Agentic Videos?</summary><p style="margin-top:.75rem">Agentic Videos sind Videos, die von KI-Agenten in Form eines virtuellen Avatars erstellt und gesteuert werden. Sie sehen aus und klingen wie eine echte Person und können im Marketing, Vertrieb und Kundenservice eingesetzt werden — für Erklärvideos, Produktdemos oder 24/7-Kundenkommunikation.</p></details>
+      <details class="card reveal" style="padding:1.25rem"><summary style="cursor:pointer;font-weight:650;font-size:1rem">Was ist ein digitaler Zwilling / Avatar-Assistent?</summary><p style="margin-top:.75rem">Ein virtueller Avatar, der wie Sie aussieht, in Ihrer geklonten Stimme spricht und rund um die Uhr Fragen von Kund:innen beantwortet — zu Öffnungszeiten, Anfahrt, Kontakt und fachlichen Themen. Sie liefern ein Foto und Sprachaufnahmen, wir übernehmen Erstellung, Integration und Wissensdatenbank.</p></details>
+      <details class="card reveal" style="padding:1.25rem"><summary style="cursor:pointer;font-weight:650;font-size:1rem">Was bedeutet Barrierefreiheit nach WCAG 2.2 AA?</summary><p style="margin-top:.75rem">WCAG 2.2 AA ist der international anerkannte Standard für barrierefreie Websites. Er stellt sicher, dass Menschen mit Seh-, Hör-, motorischen oder kognitiven Einschränkungen die Seite nutzen können. Sebastian entwickelt jede Seite direkt nach diesem Standard.</p></details>
+      <details class="card reveal" style="padding:1.25rem"><summary style="cursor:pointer;font-weight:650;font-size:1rem">Arbeitet Sebastian auch mit bestehenden Teams zusammen?</summary><p style="margin-top:.75rem">Ja. Neben kompletten Projekten gibt es Unterstützung als Frontend- oder Accessibility-Spezialist für bestehende Teams — stundenweise, tageweise oder als feste Kapazität.</p></details>
+      <details class="card reveal" style="padding:1.25rem"><summary style="cursor:pointer;font-weight:650;font-size:1rem">Welche Technologien setzt Sebastian Friedrich Nestler ein?</summary><p style="margin-top:.75rem">Hauptsächlich TypeScript, React, Svelte und Astro im Frontend, Node.js und PostgreSQL im Backend. Tools wie Vite, Playwright, Vitest und Docker gehören zum Standard-Setup.</p></details>
     </div>
   </div>
 </section>
 
-<!-- ===================== PERFORMANCE ===================== -->
 <section id="performance" aria-labelledby="performance-title">
   <div class="wrap">
     <p class="eyebrow reveal">Nachweis</p>
     <h2 id="performance-title" class="reveal">Gemessene Performance</h2>
-    <p class="lede reveal" style="margin-bottom:2.5rem">
-      Keine Behauptungen — geprüfte Zahlen. Gemessen mit
-      <strong style="color:var(--text)">PageSpeed Insights</strong>
-      (Lighthouse 11, mobile Simulation) am 6. Oktober 2026.
-    </p>
-
+    <p class="lede reveal" style="margin-bottom:2.5rem">Keine Behauptungen — geprüfte Zahlen. Gemessen mit <strong style="color:var(--text)">PageSpeed Insights</strong> (Lighthouse 11, mobile Simulation) am 6. Oktober 2026.</p>
     <div class="card reveal" style="padding:clamp(1.5rem,3vw,2.5rem)">
       <div class="psi-grid" role="list" aria-label="PageSpeed Insights Ergebnisse">
-        <div class="psi-item" role="listitem">
-          <div class="psi-ring" aria-hidden="true"><span class="psi-score">100</span></div>
-          <span class="psi-label">Leistung</span>
-          <span class="sr-only">Score: 100 von 100</span>
-        </div>
-        <div class="psi-item" role="listitem">
-          <div class="psi-ring" aria-hidden="true"><span class="psi-score">100</span></div>
-          <span class="psi-label">Barriere&shy;freiheit</span>
-          <span class="sr-only">Score: 100 von 100</span>
-        </div>
-        <div class="psi-item" role="listitem">
-          <div class="psi-ring" aria-hidden="true"><span class="psi-score">100</span></div>
-          <span class="psi-label">Best Practices</span>
-          <span class="sr-only">Score: 100 von 100</span>
-        </div>
-        <div class="psi-item" role="listitem">
-          <div class="psi-ring" aria-hidden="true"><span class="psi-score">100</span></div>
-          <span class="psi-label">SEO</span>
-          <span class="sr-only">Score: 100 von 100</span>
-        </div>
-        <div class="psi-item" role="listitem">
-          <div class="psi-ring psi-ring--pill" aria-hidden="true">
-            <span class="psi-score">2</span><span class="psi-slash">/2</span>
-          </div>
-          <span class="psi-label">Agentisches<br>Browsing</span>
-          <span class="sr-only">2 von 2 bestanden</span>
-        </div>
+        <div class="psi-item" role="listitem"><div class="psi-ring" aria-hidden="true"><span class="psi-score">100</span></div><span class="psi-label">Leistung</span><span class="sr-only">Score: 100 von 100</span></div>
+        <div class="psi-item" role="listitem"><div class="psi-ring" aria-hidden="true"><span class="psi-score">100</span></div><span class="psi-label">Barriere&shy;freiheit</span><span class="sr-only">Score: 100 von 100</span></div>
+        <div class="psi-item" role="listitem"><div class="psi-ring" aria-hidden="true"><span class="psi-score">100</span></div><span class="psi-label">Best Practices</span><span class="sr-only">Score: 100 von 100</span></div>
+        <div class="psi-item" role="listitem"><div class="psi-ring" aria-hidden="true"><span class="psi-score">100</span></div><span class="psi-label">SEO</span><span class="sr-only">Score: 100 von 100</span></div>
+        <div class="psi-item" role="listitem"><div class="psi-ring psi-ring--pill" aria-hidden="true"><span class="psi-score">2</span><span class="psi-slash">/2</span></div><span class="psi-label">Agentisches<br>Browsing</span><span class="sr-only">2 von 2 bestanden</span></div>
       </div>
-
       <div class="psi-source-wrap">
-        <p class="psi-source">
-          Laborwerte (Mobile, simuliert). Für echte Nutzerdaten reicht das
-          Traffic-Volumen aktuell nicht — die Zahlen sind reproduzierbar.
-        </p>
+        <p class="psi-source">Laborwerte (Mobile, simuliert). Für echte Nutzerdaten reicht das Traffic-Volumen aktuell nicht — die Zahlen sind reproduzierbar.</p>
       </div>
-
       <div style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem">
-        <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fsebastian-nestler.github.io%2F"
-           class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
-           data-tip="Öffnet PageSpeed Insights mit vorausgefüllter URL">
-          Selbst nachprüfen
-          <svg viewBox="0 0 24 24" aria-hidden="true" width="15" height="15"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
-        </a>
-        <a href="/tech-stack.html" class="btn btn-ghost" data-tip="Wie diese Seite gebaut wurde">
-          Wie sie entstand
-          <svg viewBox="0 0 24 24" aria-hidden="true" width="15" height="15"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+        <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fsebastian-nestler.github.io%2F" class="btn btn-ghost" target="_blank" rel="noopener noreferrer" data-tip="Öffnet PageSpeed Insights mit vorausgefüllter URL">Selbst nachprüfen<svg viewBox="0 0 24 24" aria-hidden="true" width="15" height="15"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg></a>
+        <a href="/tech-stack.html" class="btn btn-ghost" data-tip="Wie diese Seite gebaut wurde">Wie sie entstand<svg viewBox="0 0 24 24" aria-hidden="true" width="15" height="15"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== IMPRESSUM ===================== -->
 <section id="imprint" aria-labelledby="imprint-title">
   <div class="wrap">
     <p class="eyebrow reveal">Rechtliches</p>
     <h2 id="imprint-title" class="reveal">Impressum</h2>
-
     <div class="grid grid-2" style="margin-top:2rem;align-items:start">
-      <div class="card reveal">
-        <h3>Angaben gemäß § 5 DDG</h3>
-        <address>
-          <strong>Sebastian Friedrich Nestler</strong><br>
-          Albert-Schweitzer-Str. 19<br>
-          08280 Aue-Bad Schlema OT Aue<br>
-          Deutschland
-        </address>
-      </div>
-
-      <div class="card reveal">
-        <h3>Kontakt</h3>
-        <address>
-          E-Mail: <a href="mailto:nestler@nestler.dev">nestler@nestler.dev</a>
-        </address>
-        <p style="margin-top:.9rem;font-size:.85rem;color:var(--muted)">
-          Anfragen werden in der Regel innerhalb von 24 Stunden beantwortet.
-        </p>
-      </div>
-
-      <div class="card reveal">
-        <h3>Umsatzsteuer</h3>
-        <p style="color:var(--muted);font-size:.92rem">
-          Gemäß § 19 UStG wird keine Umsatzsteuer berechnet
-          (Kleinunternehmerregelung).
-        </p>
-      </div>
-
-      <div class="card reveal">
-        <h3>Verbraucherstreitbeilegung</h3>
-        <p style="color:var(--muted);font-size:.92rem">
-          Ich bin nicht verpflichtet und nicht bereit, an einem
-          Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
-          teilzunehmen. Zur außergerichtlichen Beilegung von Streitigkeiten
-          kontaktiere mich bitte direkt per E-Mail.
-        </p>
-      </div>
-
-      <div class="card reveal" style="grid-column:1/-1">
-        <h3>Haftung für Inhalte</h3>
-        <p style="color:var(--muted);font-size:.92rem;line-height:1.7">
-          Als Diensteanbieter bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte
-          auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
-          Nach §§ 8 bis 10 DDG bin ich als Diensteanbieter jedoch nicht
-          verpflichtet, übermittelte oder gespeicherte fremde Informationen
-          zu überwachen oder nach Umständen zu forschen, die auf eine
-          rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung
-          oder Sperrung der Nutzung von Informationen nach den allgemeinen
-          Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist
-          jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten
-          Rechtsverletzung möglich.
-        </p>
-      </div>
-
-      <div class="card reveal" style="grid-column:1/-1">
-        <h3>Haftung für Links</h3>
-        <p style="color:var(--muted);font-size:.92rem;line-height:1.7">
-          Mein Angebot enthält Links zu externen Websites Dritter, auf deren
-          Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden
-          Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten
-          Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten
-          verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der
-          Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige
-          Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine
-          permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch
-          ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar.
-          Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Links
-          umgehend entfernen.
-        </p>
-      </div>
-
-      <div class="card reveal" style="grid-column:1/-1">
-        <h3>Urheberrecht</h3>
-        <p style="color:var(--muted);font-size:.92rem;line-height:1.7">
-          Die durch mich erstellten Inhalte und Werke auf diesen Seiten
-          unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
-          Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
-          Grenzen des Urheberrechts bedürfen meiner schriftlichen Zustimmung.
-          Downloads und Kopien dieser Seite sind nur für den privaten, nicht
-          kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser
-          Seite nicht von mir erstellt wurden, werden die Urheberrechte
-          Dritter beachtet. Insbesondere werden Inhalte Dritter als solche
-          gekennzeichnet. Solltest du trotzdem auf eine Urheberrechtsverletzung
-          aufmerksam werden, bitte ich um einen entsprechenden Hinweis.
-          Bei Bekanntwerden von Rechtsverletzungen werde ich derartige
-          Inhalte umgehend entfernen.
-        </p>
-      </div>
+      <div class="card reveal"><h3>Angaben gemäß § 5 DDG</h3><address><strong>Sebastian Friedrich Nestler</strong><br>Albert-Schweitzer-Str. 19<br>08280 Aue-Bad Schlema OT Aue<br>Deutschland</address></div>
+      <div class="card reveal"><h3>Kontakt</h3><address>E-Mail: <a href="mailto:nestler@nestler.dev">nestler@nestler.dev</a></address><p style="margin-top:.9rem;font-size:.85rem;color:var(--muted)">Anfragen werden in der Regel innerhalb von 24 Stunden beantwortet.</p></div>
+      <div class="card reveal"><h3>Umsatzsteuer</h3><p style="color:var(--muted);font-size:.92rem">Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).</p></div>
+      <div class="card reveal"><h3>Verbraucherstreitbeilegung</h3><p style="color:var(--muted);font-size:.92rem">Ich bin nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen. Zur außergerichtlichen Beilegung von Streitigkeiten kontaktiere mich bitte direkt per E-Mail.</p></div>
+      <div class="card reveal" style="grid-column:1/-1"><h3>Haftung für Inhalte</h3><p style="color:var(--muted);font-size:.92rem;line-height:1.7">Als Diensteanbieter bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich.</p></div>
+      <div class="card reveal" style="grid-column:1/-1"><h3>Haftung für Links</h3><p style="color:var(--muted);font-size:.92rem;line-height:1.7">Mein Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Links umgehend entfernen.</p></div>
+      <div class="card reveal" style="grid-column:1/-1"><h3>Urheberrecht</h3><p style="color:var(--muted);font-size:.92rem;line-height:1.7">Die durch mich erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen meiner schriftlichen Zustimmung. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht von mir erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Solltest du trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitte ich um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Inhalte umgehend entfernen.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===================== CONTACT ===================== -->
 <section id="contact" aria-labelledby="contact-title">
   <div class="wrap">
     <p class="eyebrow reveal">Kontakt</p>
     <h2 id="contact-title" class="reveal">Webentwickler für dein Projekt anfragen</h2>
-    <p class="lede reveal" style="margin-bottom:2.5rem">
-      Erzähl mir kurz, worum es geht. Ich antworte in der Regel innerhalb von 24 Stunden —
-      ohne Newsletter, ohne Vertrieb.
-    </p>
-
+    <p class="lede reveal" style="margin-bottom:2.5rem">Erzähl mir kurz, worum es geht. Ich antworte in der Regel innerhalb von 24 Stunden — ohne Newsletter, ohne Vertrieb.</p>
     <div class="grid grid-2" style="align-items:start">
       <form class="card reveal" id="contact-form" novalidate>
         <div class="form-grid">
-          <div class="field">
-            <label for="cf-name">Name <span class="req" aria-hidden="true">*</span></label>
-            <input id="cf-name" name="name" type="text" autocomplete="name"
-                   required aria-required="true" aria-describedby="err-name">
-            <span class="err" id="err-name" role="alert"></span>
-          </div>
-
-          <div class="field">
-            <label for="cf-email">E-Mail <span class="req" aria-hidden="true">*</span></label>
-            <input id="cf-email" name="email" type="email" autocomplete="email"
-                   required aria-required="true" aria-describedby="err-email">
-            <span class="err" id="err-email" role="alert"></span>
-          </div>
-
-          <div class="field full">
-            <label for="cf-subject">Betreff</label>
-            <input id="cf-subject" name="subject" type="text" autocomplete="off"
-                   aria-describedby="hint-subject">
-            <span class="hint" id="hint-subject">Optional — z. B. „Onepager“, „Avatar-Kooperation“ oder „Agentic Videos“</span>
-          </div>
-
-          <div class="field full">
-            <label for="cf-message">Nachricht <span class="req" aria-hidden="true">*</span></label>
-            <textarea id="cf-message" name="message" required aria-required="true"
-                      aria-describedby="err-message hint-message"></textarea>
-            <span class="hint" id="hint-message">Mindestens 20 Zeichen. Je konkreter, desto besser.</span>
-            <span class="err" id="err-message" role="alert"></span>
-          </div>
-
-          <div class="field full">
-            <label class="check" for="cf-consent">
-              <input id="cf-consent" name="consent" type="checkbox" required
-                     aria-required="true" aria-describedby="err-consent">
-              <span>
-                Ich habe die <a href="/datenschutz.html">Datenschutzerklärung</a> gelesen und stimme
-                der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu.
-                <span class="req" aria-hidden="true">*</span>
-              </span>
-            </label>
-            <span class="err" id="err-consent" role="alert"></span>
-          </div>
-
-          <div class="hp" aria-hidden="true">
-            <label for="cf-website">Website (bitte leer lassen)</label>
-            <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
-          </div>
+          <div class="field"><label for="cf-name">Name <span class="req" aria-hidden="true">*</span></label><input id="cf-name" name="name" type="text" autocomplete="name" required aria-required="true" aria-describedby="err-name"><span class="err" id="err-name" role="alert"></span></div>
+          <div class="field"><label for="cf-email">E-Mail <span class="req" aria-hidden="true">*</span></label><input id="cf-email" name="email" type="email" autocomplete="email" required aria-required="true" aria-describedby="err-email"><span class="err" id="err-email" role="alert"></span></div>
+          <div class="field full"><label for="cf-subject">Betreff</label><input id="cf-subject" name="subject" type="text" autocomplete="off" aria-describedby="hint-subject"><span class="hint" id="hint-subject">Optional — z. B. „Onepager“, „Avatar-Kooperation“ oder „Agentic Videos“</span></div>
+          <div class="field full"><label for="cf-message">Nachricht <span class="req" aria-hidden="true">*</span></label><textarea id="cf-message" name="message" required aria-required="true" aria-describedby="err-message hint-message"></textarea><span class="hint" id="hint-message">Mindestens 20 Zeichen. Je konkreter, desto besser.</span><span class="err" id="err-message" role="alert"></span></div>
+          <div class="field full"><label class="check" for="cf-consent"><input id="cf-consent" name="consent" type="checkbox" required aria-required="true" aria-describedby="err-consent"><span>Ich habe die <a href="/datenschutz.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu. <span class="req" aria-hidden="true">*</span></span></label><span class="err" id="err-consent" role="alert"></span></div>
+          <div class="hp" aria-hidden="true"><label for="cf-website">Website (bitte leer lassen)</label><input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
         </div>
-
         <div style="margin-top:1.25rem;display:flex;gap:.75rem;align-items:center;flex-wrap:wrap">
-          <button type="submit" class="btn btn-primary" id="cf-submit" data-tip="Formular absenden">
-            Nachricht senden
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7Z"/></svg>
-          </button>
+          <button type="submit" class="btn btn-primary" id="cf-submit" data-tip="Formular absenden">Nachricht senden<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7Z"/></svg></button>
           <span class="hint">Kein Tracking. Keine Weitergabe an Dritte.</span>
         </div>
-
         <div class="form-status" id="form-status" role="status" aria-live="polite" style="margin-top:1rem"></div>
       </form>
-
       <div class="reveal">
-        <div class="card" style="margin-bottom:1.1rem">
-          <h3>Direkt</h3>
-          <p style="margin-bottom:.9rem">Lieber ohne Formular?</p>
-          <p style="font-family:var(--mono);font-size:.9rem">
-            <a href="mailto:nestler@nestler.dev" data-tip="Öffnet dein E-Mail-Programm">nestler@nestler.dev</a>
-          </p>
-        </div>
-
-        <div class="card" style="margin-bottom:1.1rem">
-          <h3>Was ich brauche</h3>
-          <ul style="list-style:none;padding:0;margin:.6rem 0 0;display:grid;gap:.5rem;color:var(--muted);font-size:.9rem">
-            <li>→ Worum geht's (Ziel &amp; Zielgruppe)?</li>
-            <li>→ Zeitrahmen &amp; Budget-Korridor</li>
-            <li>→ Gibt es Design oder muss ich mitdenken?</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Antwortzeit</h3>
-          <p>
-            Montag bis Freitag, meist am selben Tag.
-            Anfragen am Wochenende beantworte ich montags.
-          </p>
-          <p style="margin-top:.8rem;font-family:var(--mono);font-size:.8rem;color:var(--accent)" id="local-time">
-            Ortszeit wird geladen…
-          </p>
-        </div>
+        <div class="card" style="margin-bottom:1.1rem"><h3>Direkt</h3><p style="margin-bottom:.9rem">Lieber ohne Formular?</p><p style="font-family:var(--mono);font-size:.9rem"><a href="mailto:nestler@nestler.dev" data-tip="Öffnet dein E-Mail-Programm">nestler@nestler.dev</a></p></div>
+        <div class="card" style="margin-bottom:1.1rem"><h3>Was ich brauche</h3><ul style="list-style:none;padding:0;margin:.6rem 0 0;display:grid;gap:.5rem;color:var(--muted);font-size:.9rem"><li>→ Worum geht's (Ziel &amp; Zielgruppe)?</li><li>→ Zeitrahmen &amp; Budget-Korridor</li><li>→ Gibt es Design oder muss ich mitdenken?</li></ul></div>
+        <div class="card"><h3>Antwortzeit</h3><p>Montag bis Freitag, meist am selben Tag. Anfragen am Wochenende beantworte ich montags.</p><p style="margin-top:.8rem;font-family:var(--mono);font-size:.8rem;color:var(--accent)" id="local-time">Ortszeit wird geladen…</p></div>
       </div>
     </div>
   </div>
@@ -2050,7 +1108,6 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
 
 </main>
 
-<!-- ===================== FOOTER ===================== -->
 <footer class="site">
   <div class="wrap">
     <div class="foot-grid">
@@ -2058,18 +1115,12 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
         <div class="foot-brand">
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
             <rect width="100" height="100" rx="18" fill="#ffffff"/>
-            <text x="50" y="74" text-anchor="middle"
-                  font-family="'Arial Black','Helvetica Neue',Helvetica,Arial,sans-serif"
-                  font-size="72" font-weight="900" letter-spacing="-6"
-                  fill="#1a5dff">SN</text>
+            <text x="50" y="74" text-anchor="middle" font-family="'Arial Black','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="72" font-weight="900" letter-spacing="-6" fill="#1a5dff">SN</text>
           </svg>
-          <p style="font-family:var(--mono);font-weight:700;color:var(--text);margin:0">
-            nestler<span style="color:var(--accent)">.dev</span>
-          </p>
+          <p style="font-family:var(--mono);font-weight:700;color:var(--text);margin:0">nestler<span style="color:var(--accent)">.dev</span></p>
         </div>
         <p style="margin:0">Sebastian Friedrich Nestler · Webentwicklung mit Anspruch.</p>
       </div>
-
       <ul class="foot-links" aria-label="Rechtliches und Navigation">
         <li><a href="#about">Über</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -2085,118 +1136,62 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
         <li><button type="button" id="cookie-reopen">Cookie-Einstellungen</button></li>
       </ul>
     </div>
-
-    <p style="margin-top:2rem;font-size:.78rem">
-      © <span id="year"></span> Sebastian Friedrich Nestler ·
-      Gebaut mit Vanilla JS, ohne Framework-Overhead.
-      <a href="/tech-stack.html" style="color:var(--muted);text-decoration:underline;text-underline-offset:.25em">
-        Wie diese Seite entstand →
-      </a>
-      <br>
-      <span style="color:var(--muted)">
-        KI-gestützte Entwicklung, menschlich verantwortet ·
-        Strg+K für die Palette · Konami-Code für Überraschung
-      </span>
-    </p>
+    <p style="margin-top:2rem;font-size:.78rem">© <span id="year"></span> Sebastian Friedrich Nestler · Gebaut mit Vanilla JS, ohne Framework-Overhead. <a href="/tech-stack.html" style="color:var(--muted);text-decoration:underline;text-underline-offset:.25em">Wie diese Seite entstand →</a><br><span style="color:var(--muted)">KI-gestützte Entwicklung, menschlich verantwortet · Strg+K für die Palette · Konami-Code für Überraschung</span></p>
   </div>
 </footer>
 
-<!-- ===================== COMMAND PALETTE ===================== -->
 <div class="overlay" id="palette-overlay" hidden>
   <div class="palette" role="dialog" aria-modal="true" aria-labelledby="palette-label">
     <h2 class="sr-only" id="palette-label">Befehlspalette</h2>
     <label class="sr-only" for="palette-input">Befehl suchen</label>
-    <input id="palette-input" type="text" placeholder="Befehl suchen… (Navigation, Theme, Aktionen)"
-           autocomplete="off" spellcheck="false" role="combobox"
-           aria-expanded="false" aria-controls="palette-list" aria-autocomplete="list">
+    <input id="palette-input" type="text" placeholder="Befehl suchen… (Navigation, Theme, Aktionen)" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="palette-list" aria-autocomplete="list">
     <ul id="palette-list" role="listbox" aria-label="Verfügbare Befehle"></ul>
   </div>
 </div>
 
-<!-- ===================== COOKIE BANNER ===================== -->
-<div class="cookie" id="cookie-banner" role="region"
-     aria-labelledby="cookie-title" aria-describedby="cookie-desc" hidden>
+<div class="cookie" id="cookie-banner" role="region" aria-labelledby="cookie-title" aria-describedby="cookie-desc" hidden>
   <h2 id="cookie-title"><span aria-hidden="true">🍪</span> Kurz &amp; transparent</h2>
-  <p id="cookie-desc">
-    Diese Seite setzt <strong>keine</strong> Tracking- oder Marketing-Cookies.
-    Videos werden erst nach einem Klick geladen, dann über
-    <code>youtube-nocookie.com</code> — DSGVO-konform.
-    Details in der <a href="/datenschutz.html">Datenschutzerklärung</a>.
-  </p>
-
+  <p id="cookie-desc">Diese Seite setzt <strong>keine</strong> Tracking- oder Marketing-Cookies. Videos werden erst nach einem Klick geladen, dann über <code>youtube-nocookie.com</code> — DSGVO-konform. Details in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
   <div class="cookie-actions">
     <button class="btn btn-primary" id="ck-accept">Alle akzeptieren</button>
     <button class="btn btn-ghost" id="ck-necessary">Nur notwendige</button>
-    <button class="btn btn-ghost" id="ck-settings" aria-expanded="false" aria-controls="cookie-prefs">
-      Einstellungen
-    </button>
+    <button class="btn btn-ghost" id="ck-settings" aria-expanded="false" aria-controls="cookie-prefs">Einstellungen</button>
   </div>
-
   <div class="cookie-prefs" id="cookie-prefs">
-    <div class="pref">
-      <input type="checkbox" id="pref-necessary" checked disabled>
-      <label for="pref-necessary" style="font-weight:400">
-        <strong>Notwendig</strong>
-        <span>Theme-Präferenz, Cookie-Auswahl. Immer aktiv, da für den Betrieb erforderlich.</span>
-      </label>
-    </div>
-    <div class="pref">
-      <input type="checkbox" id="pref-stats">
-      <label for="pref-stats" style="font-weight:400">
-        <strong>Statistik</strong>
-        <span>Aktuell nicht im Einsatz. Würde anonymisierte Nutzungszahlen erfassen.</span>
-      </label>
-    </div>
-    <div class="pref">
-      <input type="checkbox" id="pref-media">
-      <label for="pref-media" style="font-weight:400">
-        <strong>Externe Medien</strong>
-        <span>Erlaubt das Laden externer Videos. Aktuell nur bei aktivem Klick auf das Video-Thumbnail.</span>
-      </label>
-    </div>
+    <div class="pref"><input type="checkbox" id="pref-necessary" checked disabled><label for="pref-necessary" style="font-weight:400"><strong>Notwendig</strong><span>Theme-Präferenz, Cookie-Auswahl. Immer aktiv, da für den Betrieb erforderlich.</span></label></div>
+    <div class="pref"><input type="checkbox" id="pref-stats"><label for="pref-stats" style="font-weight:400"><strong>Statistik</strong><span>Aktuell nicht im Einsatz. Würde anonymisierte Nutzungszahlen erfassen.</span></label></div>
+    <div class="pref"><input type="checkbox" id="pref-media"><label for="pref-media" style="font-weight:400"><strong>Externe Medien</strong><span>Erlaubt das Laden externer Videos. Aktuell nur bei aktivem Klick auf das Video-Thumbnail.</span></label></div>
     <button class="btn btn-primary" id="ck-save" style="margin-top:.85rem">Auswahl speichern</button>
   </div>
 </div>
 
-<!-- ===================== MATRIX EASTER EGG ===================== -->
 <canvas id="matrix" aria-hidden="true"></canvas>
 
 <script>
 (function () {
   'use strict';
-
-  /* ==========================================================
-     Helpers
-     ========================================================== */
   const $  = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer  = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  /* ==========================================================
-     SOUND
-     ========================================================== */
-  let audioCtx = null;
-  let soundOn  = false;
-
+  /* SOUND */
+  let audioCtx = null, soundOn = false;
   function blip(freq = 660, dur = 0.07, type = 'sine', vol = 0.03) {
     if (!soundOn) return;
     try {
       audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
       if (audioCtx.state === 'suspended') audioCtx.resume();
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
+      const osc = audioCtx.createOscillator(), gain = audioCtx.createGain();
       osc.type = type;
       osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
       gain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
       gain.gain.exponentialRampToValueAtTime(vol, audioCtx.currentTime + 0.008);
       gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur);
       osc.connect(gain).connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + dur + 0.02);
-    } catch (_) { /* ignore */ }
+      osc.start(); osc.stop(audioCtx.currentTime + dur + 0.02);
+    } catch (_) {}
   }
-
   const soundBtn = $('#sound-toggle');
   soundBtn.addEventListener('click', () => {
     soundOn = !soundOn;
@@ -2218,12 +1213,9 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
     setTimeout(() => { liveRegion.textContent = msg; }, 60);
   }
 
-  /* ==========================================================
-     THEME ENGINE
-     ========================================================== */
+  /* THEME */
   const THEMES = ['dark', 'light', 'synth', 'matrix'];
   const THEME_KEY = 'nestler.theme';
-
   function setTheme(name, silent) {
     if (!THEMES.includes(name)) return false;
     document.documentElement.setAttribute('data-theme', name);
@@ -2233,32 +1225,21 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
       const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
       if (bg) meta.setAttribute('content', bg);
     }
-    if (!silent) {
-      blip(520, 0.08, 'sine', 0.035);
-      announce('Farbschema: ' + name);
-    }
+    if (!silent) { blip(520, 0.08, 'sine', 0.035); announce('Farbschema: ' + name); }
     return true;
   }
-
   (function initTheme() {
     let saved = null;
     try { saved = localStorage.getItem(THEME_KEY); } catch (_) {}
-    if (saved && THEMES.includes(saved)) {
-      setTheme(saved, true);
-    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      setTheme('light', true);
-    }
+    if (saved && THEMES.includes(saved)) setTheme(saved, true);
+    else if (window.matchMedia('(prefers-color-scheme: light)').matches) setTheme('light', true);
   })();
-
   $('#theme-toggle').addEventListener('click', () => {
     const cur = document.documentElement.getAttribute('data-theme');
-    const idx = THEMES.indexOf(cur);
-    setTheme(THEMES[(idx + 1) % THEMES.length]);
+    setTheme(THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length]);
   });
 
-  /* ==========================================================
-     MARQUEE
-     ========================================================== */
+  /* MARQUEE */
   (function buildMarquee() {
     const items = ['TypeScript', 'React', 'Svelte', 'Astro', 'Node.js', 'Accessibility',
                    'Performance', 'Design Systems', 'PostgreSQL', 'Testing', 'CI/CD', 'UX',
@@ -2268,12 +1249,9 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
     const html = items.map(t => `<span>${t}</span>`).join('');
     track.innerHTML = html + html;
   })();
-
   (function marqueeControl() {
-    const wrap = $('#marquee-wrap');
-    const btn  = $('#marquee-toggle');
+    const wrap = $('#marquee-wrap'), btn = $('#marquee-toggle');
     if (!wrap || !btn) return;
-
     btn.addEventListener('click', () => {
       const paused = wrap.classList.toggle('paused');
       btn.setAttribute('aria-pressed', String(paused));
@@ -2283,13 +1261,9 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
     });
   })();
 
-  /* ==========================================================
-     HEADER
-     ========================================================== */
-  const header = $('#site-header');
-  const progress = $('#progress');
+  /* HEADER */
+  const header = $('#site-header'), progress = $('#progress');
   let ticking = false;
-
   function onScroll() {
     const y = window.scrollY;
     header.classList.toggle('stuck', y > 8);
@@ -2301,9 +1275,7 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
     if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
   }, { passive: true });
   onScroll();
-
-  const menuToggle = $('#menu-toggle');
-  const navLinks = $('#nav-links');
+  const menuToggle = $('#menu-toggle'), navLinks = $('#nav-links');
   menuToggle.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
     menuToggle.setAttribute('aria-expanded', String(open));
@@ -2317,15 +1289,12 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
     }
   });
 
-  /* ==========================================================
-     REVEAL ON SCROLL + SKILL BARS
-     ========================================================== */
+  /* REVEAL */
   const revealObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('in');
       obs.unobserve(entry.target);
-
       if (entry.target.id === 'skill-card') {
         $$('.bar i', entry.target).forEach((bar, i) => {
           const w = bar.getAttribute('data-w');
@@ -2334,77 +1303,50 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
       }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-  $$('.reveal').forEach(el => {
-    if (reduceMotion) { el.classList.add('in'); }
-    revealObserver.observe(el);
-  });
+  $$('.reveal').forEach(el => { if (reduceMotion) el.classList.add('in'); revealObserver.observe(el); });
   const skillCard = $('#skill-card');
-  if (skillCard && reduceMotion) {
-    $$('.bar i', skillCard).forEach(b => { b.style.width = b.getAttribute('data-w') + '%'; });
-  }
+  if (skillCard && reduceMotion) $$('.bar i', skillCard).forEach(b => { b.style.width = b.getAttribute('data-w') + '%'; });
 
-  /* ==========================================================
-     TOOLTIPS — ARIA-Fix
-     ========================================================== */
+  /* TOOLTIPS */
   const tooltip = document.createElement('div');
   tooltip.className = 'tooltip';
   tooltip.id = 'global-tooltip';
   tooltip.setAttribute('aria-hidden', 'true');
   document.body.appendChild(tooltip);
-
   let tipTrigger = null;
-
   function showTip(el) {
     const text = el.getAttribute('data-tip');
     if (!text) return;
-
     tooltip.textContent = text;
     tooltip.setAttribute('role', 'tooltip');
     tooltip.setAttribute('aria-hidden', 'false');
     tooltip.classList.add('visible');
     tipTrigger = el;
-
     tooltip.style.transform = 'translate(-9999px,-9999px)';
     const r = el.getBoundingClientRect();
     const t = tooltip.getBoundingClientRect();
-
     let left = r.left + r.width / 2 - t.width / 2;
     let top = r.top - t.height - 11;
     let below = false;
-
     if (top < 8) { top = r.bottom + 11; below = true; }
     left = Math.max(8, Math.min(left, window.innerWidth - t.width - 8));
-
     tooltip.classList.toggle('below', below);
     tooltip.style.transform = `translate(${left}px, ${top}px)`;
-
-    if (!el.hasAttribute('aria-describedby')) {
-      el.setAttribute('aria-describedby', 'global-tooltip');
-    } else if (!el.dataset.tipPrevDesc) {
-      el.dataset.tipPrevDesc = el.getAttribute('aria-describedby');
-      el.setAttribute('aria-describedby', 'global-tooltip ' + el.dataset.tipPrevDesc);
-    }
+    if (!el.hasAttribute('aria-describedby')) el.setAttribute('aria-describedby', 'global-tooltip');
+    else if (!el.dataset.tipPrevDesc) { el.dataset.tipPrevDesc = el.getAttribute('aria-describedby'); el.setAttribute('aria-describedby', 'global-tooltip ' + el.dataset.tipPrevDesc); }
   }
-
   function hideTip() {
     tooltip.classList.remove('visible');
     tooltip.style.transform = 'translate(-9999px,-9999px)';
     tooltip.setAttribute('aria-hidden', 'true');
     tooltip.removeAttribute('role');
     tooltip.textContent = '';
-
     if (tipTrigger) {
-      if (tipTrigger.dataset.tipPrevDesc) {
-        tipTrigger.setAttribute('aria-describedby', tipTrigger.dataset.tipPrevDesc);
-        delete tipTrigger.dataset.tipPrevDesc;
-      } else {
-        tipTrigger.removeAttribute('aria-describedby');
-      }
+      if (tipTrigger.dataset.tipPrevDesc) { tipTrigger.setAttribute('aria-describedby', tipTrigger.dataset.tipPrevDesc); delete tipTrigger.dataset.tipPrevDesc; }
+      else tipTrigger.removeAttribute('aria-describedby');
     }
     tipTrigger = null;
   }
-
   function attachTips(root) {
     $$('[data-tip]', root || document).forEach(el => {
       if (el.dataset.tipReady) return;
@@ -2419,36 +1361,24 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
   attachTips();
   window.addEventListener('scroll', hideTip, { passive: true });
 
-  /* ==========================================================
-     FOCUS TRAP
-     ========================================================== */
+  /* FOCUS TRAP */
   function trapFocus(container, e) {
-    const focusables = $$(
-      'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
-      container
-    ).filter(el => el.offsetParent !== null || el === document.activeElement);
-
+    const focusables = $$('a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])', container)
+      .filter(el => el.offsetParent !== null || el === document.activeElement);
     if (focusables.length === 0) return;
-    const first = focusables[0];
-    const last = focusables[focusables.length - 1];
-
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault(); last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault(); first.focus();
-    }
+    const first = focusables[0], last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
 
-  /* ==========================================================
-     YOUTUBE VIDEO FACADE — DSGVO-konform
-     ========================================================== */
+  /* VIDEO FACADE */
   (function initVideoFacade() {
     const facade = document.getElementById('agentic-video');
     if (!facade) return;
-
     const button = facade.querySelector('.video-facade__button');
     const container = facade.querySelector('.video-facade__iframe-container');
     const videoId = 'ZoPidtYYCzw';
+    if (!button || !container) return;
 
     button.addEventListener('click', () => {
       const iframe = document.createElement('iframe');
@@ -2457,25 +1387,19 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
       iframe.allowFullscreen = true;
       iframe.loading = 'lazy';
-
       container.innerHTML = '';
       container.appendChild(iframe);
       button.style.display = 'none';
-
       setTimeout(() => iframe.focus(), 50);
       announce('Video wird geladen');
     });
   })();
 
-  /* ==========================================================
-     COMMAND PALETTE
-     ========================================================== */
+  /* COMMAND PALETTE */
   const paletteOverlay = $('#palette-overlay');
   const paletteInput   = $('#palette-input');
   const paletteList    = $('#palette-list');
-  let paletteIndex = 0;
-  let lastFocused = null;
-
+  let paletteIndex = 0, lastFocused = null;
   const COMMANDS = [
     { id: 'nav-top',         icon: '◆', label: 'Startseite',            hint: 'G H', run: () => go('#top') },
     { id: 'nav-about',       icon: '👤', label: 'Über mich',             hint: 'G A', run: () => go('#about') },
@@ -2504,38 +1428,24 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
     { id: 'party',           icon: '🎉', label: 'Party-Modus',           hint: '',    run: () => party() },
     { id: 'email',           icon: '📧', label: 'E-Mail kopieren',       hint: '',    run: () => copyEmail() }
   ];
-
   function go(sel) {
     const el = document.querySelector(sel);
     if (!el) return;
     closePalette();
     const top = el.getBoundingClientRect().top + window.scrollY - 90;
     window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
-    setTimeout(() => {
-      el.setAttribute('tabindex', '-1');
-      el.focus({ preventScroll: true });
-    }, reduceMotion ? 0 : 500);
+    setTimeout(() => { el.setAttribute('tabindex', '-1'); el.focus({ preventScroll: true }); }, reduceMotion ? 0 : 500);
   }
-
   function copyEmail() {
     const mail = 'nestler@nestler.dev';
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(mail)
-        .then(() => announce('E-Mail-Adresse kopiert'))
-        .catch(() => announce('Kopieren nicht möglich'));
-    } else {
-      announce('E-Mail: ' + mail);
-    }
+      navigator.clipboard.writeText(mail).then(() => announce('E-Mail-Adresse kopiert')).catch(() => announce('Kopieren nicht möglich'));
+    } else announce('E-Mail: ' + mail);
   }
-
   function renderPalette(query) {
     const q = query.trim().toLowerCase();
-    const filtered = q
-      ? COMMANDS.filter(c => c.label.toLowerCase().includes(q) || c.id.includes(q))
-      : COMMANDS;
-
+    const filtered = q ? COMMANDS.filter(c => c.label.toLowerCase().includes(q) || c.id.includes(q)) : COMMANDS;
     paletteList.innerHTML = '';
-
     if (filtered.length === 0) {
       const li = document.createElement('li');
       li.className = 'empty';
@@ -2544,113 +1454,60 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
       paletteInput.removeAttribute('aria-activedescendant');
       return;
     }
-
     paletteIndex = Math.min(paletteIndex, filtered.length - 1);
-
     filtered.forEach((cmd, i) => {
       const li = document.createElement('li');
       li.setAttribute('role', 'presentation');
-
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.id = 'cmd-' + cmd.id;
       btn.setAttribute('role', 'option');
       btn.setAttribute('aria-selected', String(i === paletteIndex));
-      btn.innerHTML = `<span class="ic" aria-hidden="true">${cmd.icon}</span>
-                       <span>${cmd.label}</span>
-                       ${cmd.hint ? `<span class="k">${cmd.hint}</span>` : ''}`;
-
+      btn.innerHTML = `<span class="ic" aria-hidden="true">${cmd.icon}</span><span>${cmd.label}</span>${cmd.hint ? `<span class="k">${cmd.hint}</span>` : ''}`;
       btn.addEventListener('click', () => { closePalette(); cmd.run(); });
-      btn.addEventListener('mousemove', () => {
-        paletteIndex = i;
-        $$('button', paletteList).forEach((b, j) =>
-          b.setAttribute('aria-selected', String(j === i)));
-      });
-
+      btn.addEventListener('mousemove', () => { paletteIndex = i; $$('button', paletteList).forEach((b, j) => b.setAttribute('aria-selected', String(j === i))); });
       li.appendChild(btn);
       paletteList.appendChild(li);
     });
-
     const active = paletteList.querySelectorAll('button')[paletteIndex];
     if (active) paletteInput.setAttribute('aria-activedescendant', active.id);
     else paletteInput.removeAttribute('aria-activedescendant');
-
     paletteList._filtered = filtered;
   }
-
   function openPalette() {
     lastFocused = document.activeElement;
     paletteOverlay.hidden = false;
     paletteInput.setAttribute('aria-expanded', 'true');
-    paletteIndex = 0;
-    paletteInput.value = '';
+    paletteIndex = 0; paletteInput.value = '';
     renderPalette('');
     setTimeout(() => paletteInput.focus(), 20);
     blip(880, 0.06, 'sine', 0.03);
   }
-
   function closePalette() {
     paletteOverlay.hidden = true;
     paletteInput.setAttribute('aria-expanded', 'false');
     if (lastFocused && lastFocused.focus) lastFocused.focus();
   }
-
   $('#palette-open').addEventListener('click', openPalette);
-
-  paletteInput.addEventListener('input', () => {
-    paletteIndex = 0;
-    renderPalette(paletteInput.value);
-  });
-
+  paletteInput.addEventListener('input', () => { paletteIndex = 0; renderPalette(paletteInput.value); });
   paletteInput.addEventListener('keydown', e => {
     const filtered = paletteList._filtered || [];
-
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      paletteIndex = Math.min(paletteIndex + 1, filtered.length - 1);
-      renderPalette(paletteInput.value);
-      blip(620, 0.03, 'sine', 0.02);
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      paletteIndex = Math.max(paletteIndex - 1, 0);
-      renderPalette(paletteInput.value);
-      blip(580, 0.03, 'sine', 0.02);
-    } else if (e.key === 'Enter') {
-      e.preventDefault();
-      const cmd = filtered[paletteIndex];
-      if (cmd) { closePalette(); cmd.run(); }
-    } else if (e.key === 'Escape') {
-      e.preventDefault();
-      closePalette();
-    } else if (e.key === 'Tab') {
-      trapFocus(paletteOverlay, e);
-    }
+    if (e.key === 'ArrowDown') { e.preventDefault(); paletteIndex = Math.min(paletteIndex + 1, filtered.length - 1); renderPalette(paletteInput.value); blip(620, 0.03, 'sine', 0.02); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); paletteIndex = Math.max(paletteIndex - 1, 0); renderPalette(paletteInput.value); blip(580, 0.03, 'sine', 0.02); }
+    else if (e.key === 'Enter') { e.preventDefault(); const cmd = filtered[paletteIndex]; if (cmd) { closePalette(); cmd.run(); } }
+    else if (e.key === 'Escape') { e.preventDefault(); closePalette(); }
+    else if (e.key === 'Tab') trapFocus(paletteOverlay, e);
   });
-
-  paletteOverlay.addEventListener('mousedown', e => {
-    if (e.target === paletteOverlay) closePalette();
-  });
-
+  paletteOverlay.addEventListener('mousedown', e => { if (e.target === paletteOverlay) closePalette(); });
   document.addEventListener('keydown', e => {
     const mod = e.ctrlKey || e.metaKey;
-    if (mod && e.key.toLowerCase() === 'k') {
-      e.preventDefault();
-      paletteOverlay.hidden ? openPalette() : closePalette();
-    }
-    if (e.key === 'Escape') {
-      if (!paletteOverlay.hidden) closePalette();
-      hideTip();
-    }
+    if (mod && e.key.toLowerCase() === 'k') { e.preventDefault(); paletteOverlay.hidden ? openPalette() : closePalette(); }
+    if (e.key === 'Escape') { if (!paletteOverlay.hidden) closePalette(); hideTip(); }
   });
 
-  /* ==========================================================
-     INTERACTIVE TERMINAL
-     ========================================================== */
-  const termOut   = $('#term-output');
-  const termInput = $('#term-input');
-  const history   = [];
-  let historyIdx  = -1;
-
+  /* TERMINAL */
+  const termOut = $('#term-output'), termInput = $('#term-input');
+  const history = []; let historyIdx = -1;
   function termPrint(text, cls = 'out') {
     const div = document.createElement('div');
     div.className = 'term-line ' + cls;
@@ -2658,10 +1515,8 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
     termOut.appendChild(div);
     termOut.scrollTop = termOut.scrollHeight;
   }
-
   const COMMANDS_TERM = {
-    help() {
-      termPrint(
+    help() { termPrint(
 `Verfügbare Befehle:
   help              Diese Übersicht
   whoami            Wer ist Sebastian?
@@ -2677,141 +1532,42 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
   duck              🦆 Gummi-Ente
   sudo              😏
   clear             Terminal leeren
-  exit              Terminal ausblenden`, 'out');
-    },
-    whoami() {
-      termPrint('Sebastian Friedrich Nestler — Webentwickler (Frontend & Full-Stack)', 'ok');
-      termPrint('Fokus: Performance, Accessibility, Design-Systeme.');
-      termPrint('Status: verfügbar ab Q4 2026 für neue Projekte.');
-    },
-    skills() {
-      termPrint('TypeScript · JavaScript · React · Svelte · Astro', 'ok');
-      termPrint('Node.js · PostgreSQL · Prisma · Docker · CI/CD');
-      termPrint('WCAG 2.2 AA · ARIA · Playwright · Vitest · Vite');
-    },
-    contact() {
-      termPrint('E-Mail: nestler@nestler.dev', 'ok');
-      termPrint('Formular: Abschnitt „Kontakt“ weiter unten.');
-      termPrint('Antwortzeit: in der Regel < 24 h.');
-    },
-    preise() {
-      termPrint('Pakete:', 'ok');
-      termPrint('  Onepager .......... ab 1.995 €  (Lieferung 10–15 Tage)');
-      termPrint('  Web-App / Design .. ab 12.000 € (Lieferung 6–12 Wochen)');
-      termPrint('  Support / Wartung .. auf Anfrage');
-      termPrint('  Avatar / Videos .... auf Anfrage');
-      termPrint('→ Details: sebastian-nestler.github.io/#preise');
-    },
-    avatar() {
-      termPrint('Digitaler Zwilling — virtuelle:r Avatar-Assistent:in', 'ok');
-      termPrint('  · Look & Stimme: aus Foto + Sprachaufnahme');
-      termPrint('  · Wissen: Öffnungszeiten, Anfahrt, Kontakt, Fachfragen');
-      termPrint('  · Verfügbar: 24/7 im Web, am Telefon, am Empfang');
-      termPrint('  · Integration: Website, Kundenportal, Terminal');
-      termPrint('→ Details: sebastian-nestler.github.io/#avatar');
-    },
-    videos() {
-      termPrint('Agentic Videos — Videos aus KI-Agenten', 'ok');
-      termPrint('  · Skript eingeben, Video erhalten — in Minuten');
-      termPrint('  · Mehrere Sprachen ohne neuen Dreh');
-      termPrint('  · Ein Gesicht, viele Botschaften');
-      termPrint('  · Ideal für Marketing, Vertrieb, HR, Kundenservice');
-      termPrint('→ Details: sebastian-nestler.github.io/#avatar');
-    },
-    perf() {
-      termPrint('PageSpeed Insights — 06.10.2026 (Mobile):', 'ok');
-      termPrint('  Leistung ......... 100');
-      termPrint('  Barrierefreiheit .. 100');
-      termPrint('  Best Practices .... 100');
-      termPrint('  SEO ............... 100');
-      termPrint('  Agentisches ....... 2/2');
-      termPrint('→ Details: sebastian-nestler.github.io/#performance');
-    },
-    theme(args) {
-      const name = (args[0] || '').toLowerCase();
-      if (!name) { termPrint('Aktuell: ' + document.documentElement.getAttribute('data-theme'), 'ok'); return; }
-      if (setTheme(name)) termPrint('Theme gewechselt → ' + name, 'ok');
-      else termPrint('Unbekanntes Theme. Verfügbar: ' + THEMES.join(', '), 'err');
-    },
-    sound(args) {
-      const v = (args[0] || '').toLowerCase();
-      if (v === 'on') { if (!soundOn) soundBtn.click(); termPrint('Sounds an.', 'ok'); }
-      else if (v === 'off') { if (soundOn) soundBtn.click(); termPrint('Sounds aus.', 'ok'); }
-      else termPrint('Nutzung: sound on|off', 'err');
-    },
-    matrix() {
-      termPrint('Wake up, Neo…', 'ok');
-      startMatrix();
-    },
-    duck() {
-      termPrint('🦆 Quak! Beschreib mir das Problem, als wäre ich fünf.', 'ok');
-    },
-    sudo() {
-      termPrint('Nice try. 😏  Aber du bist hier schon Root.', 'err');
-    },
-    coffee() {
-      termPrint('☕ Kaffee wird gebrüht… Fertig. Produktivität +200 %.', 'ok');
-    },
-    clear() {
-      termOut.innerHTML = '';
-    },
-    exit() {
-      termPrint('Bis gleich. 👋', 'out');
-      termInput.blur();
-    }
+  exit              Terminal ausblenden`, 'out'); },
+    whoami() { termPrint('Sebastian Friedrich Nestler — Webentwickler (Frontend & Full-Stack)', 'ok'); termPrint('Fokus: Performance, Accessibility, Design-Systeme.'); termPrint('Status: verfügbar ab Q4 2026 für neue Projekte.'); },
+    skills() { termPrint('TypeScript · JavaScript · React · Svelte · Astro', 'ok'); termPrint('Node.js · PostgreSQL · Prisma · Docker · CI/CD'); termPrint('WCAG 2.2 AA · ARIA · Playwright · Vitest · Vite'); },
+    contact() { termPrint('E-Mail: nestler@nestler.dev', 'ok'); termPrint('Formular: Abschnitt „Kontakt“ weiter unten.'); termPrint('Antwortzeit: in der Regel < 24 h.'); },
+    preise() { termPrint('Pakete:', 'ok'); termPrint('  Onepager .......... ab 1.995 €  (Lieferung 10–15 Tage)'); termPrint('  Web-App / Design .. ab 12.000 € (Lieferung 6–12 Wochen)'); termPrint('  Support / Wartung .. auf Anfrage'); termPrint('  Avatar / Videos .... auf Anfrage'); },
+    avatar() { termPrint('Digitaler Zwilling — virtuelle:r Avatar-Assistent:in', 'ok'); termPrint('  · Look & Stimme: aus Foto + Sprachaufnahme'); termPrint('  · Wissen: Öffnungszeiten, Anfahrt, Kontakt, Fachfragen'); termPrint('  · Verfügbar: 24/7 im Web, am Telefon, am Empfang'); },
+    videos() { termPrint('Agentic Videos — Videos aus KI-Agenten', 'ok'); termPrint('  · Skript eingeben, Video erhalten — in Minuten'); termPrint('  · Mehrere Sprachen ohne neuen Dreh'); termPrint('  · Ein Gesicht, viele Botschaften'); },
+    perf() { termPrint('PageSpeed Insights — 06.10.2026 (Mobile):', 'ok'); termPrint('  Leistung ......... 100'); termPrint('  Barrierefreiheit .. 100'); termPrint('  Best Practices .... 100'); termPrint('  SEO ............... 100'); termPrint('  Agentisches ....... 2/2'); },
+    theme(args) { const name = (args[0] || '').toLowerCase(); if (!name) { termPrint('Aktuell: ' + document.documentElement.getAttribute('data-theme'), 'ok'); return; } if (setTheme(name)) termPrint('Theme gewechselt → ' + name, 'ok'); else termPrint('Unbekanntes Theme. Verfügbar: ' + THEMES.join(', '), 'err'); },
+    sound(args) { const v = (args[0] || '').toLowerCase(); if (v === 'on') { if (!soundOn) soundBtn.click(); termPrint('Sounds an.', 'ok'); } else if (v === 'off') { if (soundOn) soundBtn.click(); termPrint('Sounds aus.', 'ok'); } else termPrint('Nutzung: sound on|off', 'err'); },
+    matrix() { termPrint('Wake up, Neo…', 'ok'); startMatrix(); },
+    duck() { termPrint('🦆 Quak! Beschreib mir das Problem, als wäre ich fünf.', 'ok'); },
+    sudo() { termPrint('Nice try. 😏  Aber du bist hier schon Root.', 'err'); },
+    coffee() { termPrint('☕ Kaffee wird gebrüht… Fertig. Produktivität +200 %.', 'ok'); },
+    clear() { termOut.innerHTML = ''; },
+    exit() { termPrint('Bis gleich. 👋', 'out'); termInput.blur(); }
   };
-
   function runTermCommand(raw) {
-    const input = raw.trim();
-    if (!input) return;
-
+    const input = raw.trim(); if (!input) return;
     termPrint(input, 'cmd');
-
     const parts = input.split(/\s+/);
     const cmd = parts[0].toLowerCase();
     const args = parts.slice(1);
-
     const fn = COMMANDS_TERM[cmd];
-    if (typeof fn === 'function') {
-      try { fn(args); blip(760, 0.05, 'sine', 0.028); }
-      catch (err) { termPrint('Fehler: ' + err.message, 'err'); }
-    } else {
-      termPrint(`Befehl nicht gefunden: "${cmd}". Tippe "help".`, 'err');
-      blip(220, 0.1, 'square', 0.03);
-    }
+    if (typeof fn === 'function') { try { fn(args); blip(760, 0.05, 'sine', 0.028); } catch (err) { termPrint('Fehler: ' + err.message, 'err'); } }
+    else { termPrint(`Befehl nicht gefunden: "${cmd}". Tippe "help".`, 'err'); blip(220, 0.1, 'square', 0.03); }
   }
-
   termInput.addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-      const val = termInput.value;
-      if (val.trim()) { history.push(val); historyIdx = history.length; }
-      runTermCommand(val);
-      termInput.value = '';
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      if (history.length) {
-        historyIdx = Math.max(0, historyIdx - 1);
-        termInput.value = history[historyIdx] || '';
-      }
-    } else if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      if (history.length) {
-        historyIdx = Math.min(history.length, historyIdx + 1);
-        termInput.value = historyIdx >= history.length ? '' : history[historyIdx];
-      }
-    }
+    if (e.key === 'Enter') { const val = termInput.value; if (val.trim()) { history.push(val); historyIdx = history.length; } runTermCommand(val); termInput.value = ''; }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); if (history.length) { historyIdx = Math.max(0, historyIdx - 1); termInput.value = history[historyIdx] || ''; } }
+    else if (e.key === 'ArrowDown') { e.preventDefault(); if (history.length) { historyIdx = Math.min(history.length, historyIdx + 1); termInput.value = historyIdx >= history.length ? '' : history[historyIdx]; } }
   });
-
   termOut.addEventListener('click', () => termInput.focus());
-  $('#hero-terminal-focus').addEventListener('click', () => {
-    termInput.focus();
-    termOut.scrollTop = termOut.scrollHeight;
-    blip(700, 0.05);
-  });
+  $('#hero-terminal-focus').addEventListener('click', () => { termInput.focus(); termOut.scrollTop = termOut.scrollHeight; blip(700, 0.05); });
 
-  /* ==========================================================
-     PLAYGROUND
-     ========================================================== */
+  /* PLAYGROUND */
   const DEFAULT_CODE = {
     html: `<div class="card">
   <span class="badge">Live Preview</span>
@@ -2821,139 +1577,50 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
   <p class="out" id="out" aria-live="polite"></p>
 </div>`,
     css: `* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  font-family: system-ui, -apple-system, sans-serif;
-  background: linear-gradient(135deg, #0f0f14, #1b1b28);
-  color: #e9e9ec;
-  padding: 2rem;
-}
-
-.card {
-  background: #16161d;
-  border: 1px solid #2a2a35;
-  border-radius: 18px;
-  padding: 2rem;
-  max-width: 420px;
-  text-align: center;
-  box-shadow: 0 24px 60px -20px rgba(0,0,0,.8);
-}
-
-.badge {
-  display: inline-block;
-  font-size: .7rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: #4a86ff;
-  border: 1px solid #4a86ff55;
-  border-radius: 999px;
-  padding: .25rem .7rem;
-  margin-bottom: 1rem;
-}
-
-h1 { margin: 0 0 .6rem; font-size: 1.6rem; letter-spacing: -.02em; }
-p  { color: #9a9aa6; line-height: 1.6; margin: 0 0 1.2rem; }
-
-button {
-  background: #4a86ff;
-  color: #0a0a0b;
-  border: 0;
-  padding: .7rem 1.4rem;
-  border-radius: 999px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform .15s ease;
-}
-button:hover { transform: translateY(-2px); }
-button:focus-visible { outline: 3px solid #4a86ff; outline-offset: 3px; }
-
-.out { color: #4a86ff; font-weight: 600; margin-top: 1rem; }`,
+body { margin:0; min-height:100vh; display:grid; place-items:center; font-family:system-ui,-apple-system,sans-serif; background:linear-gradient(135deg,#0f0f14,#1b1b28); color:#e9e9ec; padding:2rem; }
+.card { background:#16161d; border:1px solid #2a2a35; border-radius:18px; padding:2rem; max-width:420px; text-align:center; box-shadow:0 24px 60px -20px rgba(0,0,0,.8); }
+.badge { display:inline-block; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:#4a86ff; border:1px solid #4a86ff55; border-radius:999px; padding:.25rem .7rem; margin-bottom:1rem; }
+h1 { margin:0 0 .6rem; font-size:1.6rem; letter-spacing:-.02em; }
+p  { color:#9a9aa6; line-height:1.6; margin:0 0 1.2rem; }
+button { background:#4a86ff; color:#0a0a0b; border:0; padding:.7rem 1.4rem; border-radius:999px; font-weight:700; cursor:pointer; transition:transform .15s ease; }
+button:hover { transform:translateY(-2px); }
+button:focus-visible { outline:3px solid #4a86ff; outline-offset:3px; }
+.out { color:#4a86ff; font-weight:600; margin-top:1rem; }`,
     js: `const btn = document.getElementById('btn');
 const out = document.getElementById('out');
 let count = 0;
-
 btn.addEventListener('click', () => {
   count++;
   out.textContent = \`🎉 \${count} Klick\${count === 1 ? '' : 's'}!\`;
 });`
   };
-
-  const codeHtml = $('#code-html');
-  const codeCss  = $('#code-css');
-  const codeJs   = $('#code-js');
-  const preview  = $('#pg-preview');
-  const pgStatus = $('#pg-status');
-
-  function loadDefaults() {
-    codeHtml.value = DEFAULT_CODE.html;
-    codeCss.value  = DEFAULT_CODE.css;
-    codeJs.value   = DEFAULT_CODE.js;
-  }
+  const codeHtml = $('#code-html'), codeCss = $('#code-css'), codeJs = $('#code-js');
+  const preview = $('#pg-preview'), pgStatus = $('#pg-status');
+  function loadDefaults() { codeHtml.value = DEFAULT_CODE.html; codeCss.value = DEFAULT_CODE.css; codeJs.value = DEFAULT_CODE.js; }
   loadDefaults();
-
   let renderTimer = null;
   function renderPreview() {
-    const doc = `<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>${codeCss.value}</style>
-</head>
-<body>
-${codeHtml.value}
-<script>
-try {
-${codeJs.value}
-} catch (e) {
-  document.body.insertAdjacentHTML('beforeend',
-    '<pre style="color:#ff6b6b;font:12px monospace;padding:1rem;white-space:pre-wrap">' +
-    String(e) + '</pre>');
-}
-<\/script>
-</body>
-</html>`;
+    const doc = `<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>${codeCss.value}</style></head><body>${codeHtml.value}<script>try {${codeJs.value}} catch (e) { document.body.insertAdjacentHTML('beforeend', '<pre style="color:#ff6b6b;font:12px monospace;padding:1rem;white-space:pre-wrap">' + String(e) + '</pre>'); }<\/script></body></html>`;
     preview.srcdoc = doc;
     pgStatus.textContent = 'Aktualisiert ' + new Date().toLocaleTimeString('de-DE');
   }
-
-  function scheduleRender() {
-    clearTimeout(renderTimer);
-    pgStatus.textContent = 'Tippt…';
-    renderTimer = setTimeout(renderPreview, 500);
-  }
-
+  function scheduleRender() { clearTimeout(renderTimer); pgStatus.textContent = 'Tippt…'; renderTimer = setTimeout(renderPreview, 500); }
   [codeHtml, codeCss, codeJs].forEach(ta => {
     ta.addEventListener('input', scheduleRender);
     ta.addEventListener('keydown', e => {
-      if (e.key === 'Tab' && !e.shiftKey) {
-        e.preventDefault();
-        const s = ta.selectionStart, en = ta.selectionEnd;
-        ta.value = ta.value.slice(0, s) + '  ' + ta.value.slice(en);
-        ta.selectionStart = ta.selectionEnd = s + 2;
-        scheduleRender();
-      }
+      if (e.key === 'Tab' && !e.shiftKey) { e.preventDefault(); const s = ta.selectionStart, en = ta.selectionEnd; ta.value = ta.value.slice(0, s) + '  ' + ta.value.slice(en); ta.selectionStart = ta.selectionEnd = s + 2; scheduleRender(); }
     });
   });
-
   $('#pg-run').addEventListener('click', () => { renderPreview(); blip(820, 0.06); });
-  $('#pg-reset').addEventListener('click', () => {
-    loadDefaults(); renderPreview(); announce('Playground zurückgesetzt'); blip(520, 0.08);
-  });
-
+  $('#pg-reset').addEventListener('click', () => { loadDefaults(); renderPreview(); announce('Playground zurückgesetzt'); blip(520, 0.08); });
   const tabs = $$('.pg-tab');
   tabs.forEach((tab, i) => {
     tab.addEventListener('click', () => selectTab(i));
     tab.addEventListener('keydown', e => {
       if (e.key === 'ArrowRight') { e.preventDefault(); selectTab((i + 1) % tabs.length); tabs[(i + 1) % tabs.length].focus(); }
-      if (e.key === 'ArrowLeft')  { e.preventDefault(); selectTab((i - 1 + tabs.length) % tabs.length); tabs[(i - 1 + tabs.length) % tabs.length].focus(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); selectTab((i - 1 + tabs.length) % tabs.length); tabs[(i - 1 + tabs.length) % tabs.length].focus(); }
     });
   });
-
   function selectTab(index) {
     tabs.forEach((t, i) => {
       const selected = i === index;
@@ -2964,109 +1631,55 @@ ${codeJs.value}
     });
     blip(640, 0.03, 'sine', 0.02);
   }
-
   renderPreview();
 
-  /* ==========================================================
-     LOCAL TIME
-     ========================================================== */
+  /* LOCAL TIME */
   (function localTime() {
-    const el = $('#local-time');
-    if (!el) return;
+    const el = $('#local-time'); if (!el) return;
     const tz = 'Europe/Berlin';
-    function tick() {
-      try {
-        const now = new Date().toLocaleTimeString('de-DE', {
-          timeZone: tz, hour: '2-digit', minute: '2-digit'
-        });
-        el.textContent = '🕐 ' + now + ' (MEZ/MESZ)';
-      } catch (_) {
-        el.textContent = '';
-      }
-    }
-    tick();
-    setInterval(tick, 30000);
+    function tick() { try { const now = new Date().toLocaleTimeString('de-DE', { timeZone: tz, hour: '2-digit', minute: '2-digit' }); el.textContent = '🕐 ' + now + ' (MEZ/MESZ)'; } catch (_) { el.textContent = ''; } }
+    tick(); setInterval(tick, 30000);
   })();
 
-  /* ==========================================================
-     CARD SPOTLIGHT
-     ========================================================== */
+  /* CARD SPOTLIGHT */
   if (finePointer && !reduceMotion) {
     $$('.card').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
-      });
+      card.addEventListener('mousemove', e => { const r = card.getBoundingClientRect(); card.style.setProperty('--mx', (e.clientX - r.left) + 'px'); card.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
     });
   }
 
-  /* ==========================================================
-     MAGNETIC CURSOR
-     ========================================================== */
+  /* MAGNETIC CURSOR */
   if (finePointer && !reduceMotion) {
-    const dot  = document.createElement('div');
-    const ring = document.createElement('div');
+    const dot = document.createElement('div'), ring = document.createElement('div');
     dot.className = 'cursor-dot';
     ring.className = 'cursor-ring';
     document.body.append(dot, ring);
-
-    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-    let rx = mx, ry = my;
-
-    window.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%,-50%)`;
-    }, { passive: true });
-
-    (function loop() {
-      rx += (mx - rx) * 0.16;
-      ry += (my - ry) * 0.16;
-      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%,-50%)`;
-      requestAnimationFrame(loop);
-    })();
-
+    let mx = window.innerWidth / 2, my = window.innerHeight / 2, rx = mx, ry = my;
+    window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%,-50%)`; }, { passive: true });
+    (function loop() { rx += (mx - rx) * 0.16; ry += (my - ry) * 0.16; ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%,-50%)`; requestAnimationFrame(loop); })();
     const HOT = 'a, button, input, textarea, select, [data-tip], summary';
-    document.addEventListener('mouseover', e => {
-      if (e.target.closest(HOT)) ring.classList.add('hot');
-    });
-    document.addEventListener('mouseout', e => {
-      if (e.target.closest(HOT)) ring.classList.remove('hot');
-    });
-    document.addEventListener('mouseleave', () => {
-      dot.style.opacity = '0'; ring.style.opacity = '0';
-    });
-    document.addEventListener('mouseenter', () => {
-      dot.style.opacity = '1'; ring.style.opacity = '1';
-    });
+    document.addEventListener('mouseover', e => { if (e.target.closest(HOT)) ring.classList.add('hot'); });
+    document.addEventListener('mouseout', e => { if (e.target.closest(HOT)) ring.classList.remove('hot'); });
+    document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '1'; });
   }
 
-  /* ==========================================================
-     MATRIX EASTER EGG
-     ========================================================== */
+  /* MATRIX */
   const matrixCanvas = $('#matrix');
-  let matrixRAF = null;
-  let matrixStop = null;
-
+  let matrixRAF = null, matrixStop = null;
   function startMatrix() {
-    const ctx = matrixCanvas.getContext('2d');
-    if (!ctx) return;
-
-    matrixCanvas.width  = window.innerWidth;
-    matrixCanvas.height = window.innerHeight;
+    const ctx = matrixCanvas.getContext('2d'); if (!ctx) return;
+    matrixCanvas.width = window.innerWidth; matrixCanvas.height = window.innerHeight;
     matrixCanvas.classList.add('on');
-
     const fontSize = 15;
     const cols = Math.floor(matrixCanvas.width / fontSize);
     const drops = new Array(cols).fill(1);
     const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEF<>/{}[]()=+-*';
-
     function draw() {
       ctx.fillStyle = 'rgba(0, 6, 0, 0.08)';
       ctx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
       ctx.fillStyle = '#22ff6b';
       ctx.font = fontSize + 'px monospace';
-
       for (let i = 0; i < drops.length; i++) {
         const text = chars.charAt(Math.floor(Math.random() * chars.length));
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
@@ -3075,141 +1688,73 @@ ${codeJs.value}
       }
       matrixRAF = requestAnimationFrame(draw);
     }
-
     cancelAnimationFrame(matrixRAF);
     clearTimeout(matrixStop);
     draw();
-
     matrixStop = setTimeout(stopMatrix, 7000);
   }
-
   function stopMatrix() {
     cancelAnimationFrame(matrixRAF);
     matrixCanvas.classList.remove('on');
-    setTimeout(() => {
-      const ctx = matrixCanvas.getContext('2d');
-      if (ctx) ctx.clearRect(0, 0, matrixCanvas.width, matrixCanvas.height);
-    }, 420);
+    setTimeout(() => { const ctx = matrixCanvas.getContext('2d'); if (ctx) ctx.clearRect(0, 0, matrixCanvas.width, matrixCanvas.height); }, 420);
   }
-
   window.addEventListener('resize', () => {
-    if (matrixCanvas.classList.contains('on')) {
-      matrixCanvas.width  = window.innerWidth;
-      matrixCanvas.height = window.innerHeight;
-    }
+    if (matrixCanvas.classList.contains('on')) { matrixCanvas.width = window.innerWidth; matrixCanvas.height = window.innerHeight; }
   });
 
-  /* ==========================================================
-     PARTY MODE (Konami)
-     ========================================================== */
+  /* PARTY */
   function party() {
     document.documentElement.classList.add('party');
     announce('🎉 Party-Modus aktiviert');
     blip(1046, 0.12, 'triangle', 0.05);
     setTimeout(() => blip(1318, 0.12, 'triangle', 0.05), 130);
     setTimeout(() => blip(1568, 0.2, 'triangle', 0.05), 260);
-    setTimeout(() => {
-      document.documentElement.classList.remove('party');
-      announce('Party-Modus beendet');
-    }, 6000);
+    setTimeout(() => { document.documentElement.classList.remove('party'); announce('Party-Modus beendet'); }, 6000);
   }
-
   const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
   let konamiPos = 0;
   document.addEventListener('keydown', e => {
     const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
-    if (key === KONAMI[konamiPos]) {
-      konamiPos++;
-      if (konamiPos === KONAMI.length) {
-        konamiPos = 0;
-        party();
-        startMatrix();
-      }
-    } else {
-      konamiPos = (key === KONAMI[0]) ? 1 : 0;
-    }
+    if (key === KONAMI[konamiPos]) { konamiPos++; if (konamiPos === KONAMI.length) { konamiPos = 0; party(); startMatrix(); } }
+    else konamiPos = (key === KONAMI[0]) ? 1 : 0;
   });
 
-  /* ==========================================================
-     CONTACT FORM
-     ========================================================== */
-  const form = $('#contact-form');
-  const formStatus = $('#form-status');
-  const submitBtn = $('#cf-submit');
-
+  /* FORM */
+  const form = $('#contact-form'), formStatus = $('#form-status'), submitBtn = $('#cf-submit');
   const validators = {
-    name(value) {
-      if (!value.trim()) return 'Bitte gib deinen Namen an.';
-      if (value.trim().length < 2) return 'Der Name ist etwas zu kurz.';
-      return '';
-    },
-    email(value) {
-      if (!value.trim()) return 'Bitte gib deine E-Mail-Adresse an.';
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-      if (!re.test(value.trim())) return 'Das sieht nicht nach einer gültigen E-Mail aus.';
-      return '';
-    },
-    message(value) {
-      if (!value.trim()) return 'Bitte schreib mir ein paar Zeilen.';
-      if (value.trim().length < 20) return 'Mindestens 20 Zeichen — sonst kann ich nicht viel damit anfangen.';
-      return '';
-    },
-    consent(checked) {
-      if (!checked) return 'Ohne deine Zustimmung darf ich die Daten nicht verarbeiten.';
-      return '';
-    }
+    name(v) { if (!v.trim()) return 'Bitte gib deinen Namen an.'; if (v.trim().length < 2) return 'Der Name ist etwas zu kurz.'; return ''; },
+    email(v) { if (!v.trim()) return 'Bitte gib deine E-Mail-Adresse an.'; const re = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/; if (!re.test(v.trim())) return 'Das sieht nicht nach einer gültigen E-Mail aus.'; return ''; },
+    message(v) { if (!v.trim()) return 'Bitte schreib mir ein paar Zeilen.'; if (v.trim().length < 20) return 'Mindestens 20 Zeichen — sonst kann ich nicht viel damit anfangen.'; return ''; },
+    consent(c) { if (!c) return 'Ohne deine Zustimmung darf ich die Daten nicht verarbeiten.'; return ''; }
   };
-
   function setFieldError(fieldId, message) {
     const field = document.getElementById(fieldId);
     const errEl = document.getElementById('err-' + fieldId.replace('cf-', ''));
     if (!field || !errEl) return;
-
-    if (message) {
-      field.setAttribute('aria-invalid', 'true');
-      errEl.textContent = message;
-    } else {
-      field.removeAttribute('aria-invalid');
-      errEl.textContent = '';
-    }
+    if (message) { field.setAttribute('aria-invalid', 'true'); errEl.textContent = message; }
+    else { field.removeAttribute('aria-invalid'); errEl.textContent = ''; }
   }
-
   function validateField(name) {
     const field = document.getElementById('cf-' + name);
     if (!field) return true;
-
     let msg = '';
     if (name === 'consent') msg = validators.consent(field.checked);
     else msg = validators[name] ? validators[name](field.value) : '';
-
     setFieldError('cf-' + name, msg);
     return !msg;
   }
-
   ['name', 'email', 'message', 'consent'].forEach(name => {
     const field = document.getElementById('cf-' + name);
     if (!field) return;
     field.addEventListener('blur', () => validateField(name));
-    field.addEventListener('input', () => {
-      if (field.getAttribute('aria-invalid') === 'true') validateField(name);
-    });
-    field.addEventListener('change', () => {
-      if (field.getAttribute('aria-invalid') === 'true') validateField(name);
-    });
+    field.addEventListener('input', () => { if (field.getAttribute('aria-invalid') === 'true') validateField(name); });
+    field.addEventListener('change', () => { if (field.getAttribute('aria-invalid') === 'true') validateField(name); });
   });
-
   form.addEventListener('submit', async e => {
     e.preventDefault();
-
-    if ($('#cf-website').value) {
-      formStatus.className = 'form-status show ok';
-      formStatus.textContent = 'Danke!';
-      return;
-    }
-
+    if ($('#cf-website').value) { formStatus.className = 'form-status show ok'; formStatus.textContent = 'Danke!'; return; }
     const results = ['name', 'email', 'message', 'consent'].map(validateField);
     const allValid = results.every(Boolean);
-
     if (!allValid) {
       formStatus.className = 'form-status show bad';
       formStatus.textContent = 'Bitte prüfe die markierten Felder.';
@@ -3219,79 +1764,34 @@ ${codeJs.value}
       blip(220, 0.12, 'square', 0.03);
       return;
     }
-
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = '.65';
+    submitBtn.disabled = true; submitBtn.style.opacity = '.65';
     formStatus.className = 'form-status show';
     formStatus.textContent = 'Wird gesendet…';
-
-    const payload = {
-      name: $('#cf-name').value.trim(),
-      email: $('#cf-email').value.trim(),
-      subject: $('#cf-subject').value.trim(),
-      message: $('#cf-message').value.trim(),
-      consent: true,
-      timestamp: new Date().toISOString()
-    };
-
+    const payload = { name: $('#cf-name').value.trim(), email: $('#cf-email').value.trim(), subject: $('#cf-subject').value.trim(), message: $('#cf-message').value.trim(), consent: true, timestamp: new Date().toISOString() };
     try {
       const ENDPOINT = 'https://formsubmit.co/ajax/80c5984bee05d716423ff081c5932487';
-
-      const res = await fetch(ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          ...payload,
-          _subject: 'Neue Anfrage über sebastian-nestler.github.io',
-          _template: 'table',
-          _captcha: 'false'
-        })
-      });
+      const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ ...payload, _subject: 'Neue Anfrage über sebastian-nestler.github.io', _template: 'table', _captcha: 'false' }) });
       if (!res.ok) throw new Error('Server antwortete mit ' + res.status);
-
       formStatus.className = 'form-status show ok';
-      formStatus.innerHTML =
-        '<strong>Danke, ' + escapeHtml(payload.name.split(' ')[0]) + '!</strong> ' +
-        'Deine Nachricht ist angekommen. Ich melde mich innerhalb von 24 Stunden.';
+      formStatus.innerHTML = '<strong>Danke, ' + escapeHtml(payload.name.split(' ')[0]) + '!</strong> Deine Nachricht ist angekommen. Ich melde mich innerhalb von 24 Stunden.';
       form.reset();
       announce('Nachricht erfolgreich gesendet');
       blip(880, 0.1, 'triangle', 0.05);
       setTimeout(() => blip(1174, 0.16, 'triangle', 0.05), 120);
-
     } catch (err) {
       formStatus.className = 'form-status show bad';
-      formStatus.innerHTML =
-        'Da ist etwas schiefgelaufen. Schreib mir bitte direkt an ' +
-        '<a href="mailto:nestler@nestler.dev">nestler@nestler.dev</a>.';
+      formStatus.innerHTML = 'Da ist etwas schiefgelaufen. Schreib mir bitte direkt an <a href="mailto:nestler@nestler.dev">nestler@nestler.dev</a>.';
       announce('Senden fehlgeschlagen');
       console.error(err);
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.style.opacity = '';
-    }
+    } finally { submitBtn.disabled = false; submitBtn.style.opacity = ''; }
   });
+  function escapeHtml(str) { return String(str).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]); }
 
-  function escapeHtml(str) {
-    return String(str).replace(/[&<>"']/g, c => ({
-      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-    })[c]);
-  }
-
-  /* ==========================================================
-     COOKIE / CONSENT
-     ========================================================== */
+  /* COOKIE */
   const CONSENT_KEY = 'nestler.consent.v1';
-  const banner = $('#cookie-banner');
-  const prefsBox = $('#cookie-prefs');
+  const banner = $('#cookie-banner'), prefsBox = $('#cookie-prefs');
   let lastFocusBeforeCookie = null;
-
-  function getConsent() {
-    try {
-      const raw = localStorage.getItem(CONSENT_KEY);
-      return raw ? JSON.parse(raw) : null;
-    } catch (_) { return null; }
-  }
-
+  function getConsent() { try { const raw = localStorage.getItem(CONSENT_KEY); return raw ? JSON.parse(raw) : null; } catch (_) { return null; } }
   function saveConsent(obj) {
     try { localStorage.setItem(CONSENT_KEY, JSON.stringify(obj)); } catch (_) {}
     banner.hidden = true;
@@ -3299,85 +1799,33 @@ ${codeJs.value}
     announce('Cookie-Einstellungen gespeichert');
     blip(760, 0.08, 'sine', 0.035);
   }
-
   function openCookies() {
     lastFocusBeforeCookie = document.activeElement;
     const c = getConsent();
-    if (c) {
-      $('#pref-stats').checked  = !!c.stats;
-      $('#pref-media').checked  = !!c.media;
-    }
+    if (c) { $('#pref-stats').checked = !!c.stats; $('#pref-media').checked = !!c.media; }
     banner.hidden = false;
     prefsBox.classList.add('open');
     $('#ck-settings').setAttribute('aria-expanded', 'true');
     setTimeout(() => $('#ck-accept').focus(), 30);
   }
-
-  function initCookies() {
-    const consent = getConsent();
-    if (consent) {
-      banner.hidden = true;
-      return;
-    }
-    setTimeout(() => {
-      banner.hidden = false;
-      lastFocusBeforeCookie = document.activeElement;
-    }, 900);
-  }
-
-  $('#ck-accept').addEventListener('click', () => {
-    saveConsent({ necessary: true, stats: true, media: true, date: new Date().toISOString() });
-  });
-
-  $('#ck-necessary').addEventListener('click', () => {
-    saveConsent({ necessary: true, stats: false, media: false, date: new Date().toISOString() });
-  });
-
-  $('#ck-settings').addEventListener('click', e => {
-    const open = prefsBox.classList.toggle('open');
-    e.currentTarget.setAttribute('aria-expanded', String(open));
-    if (open) setTimeout(() => $('#pref-stats').focus(), 30);
-  });
-
-  $('#ck-save').addEventListener('click', () => {
-    saveConsent({
-      necessary: true,
-      stats: $('#pref-stats').checked,
-      media: $('#pref-media').checked,
-      date: new Date().toISOString()
-    });
-  });
-
+  function initCookies() { const consent = getConsent(); if (consent) { banner.hidden = true; return; } setTimeout(() => { banner.hidden = false; lastFocusBeforeCookie = document.activeElement; }, 900); }
+  $('#ck-accept').addEventListener('click', () => { saveConsent({ necessary: true, stats: true, media: true, date: new Date().toISOString() }); });
+  $('#ck-necessary').addEventListener('click', () => { saveConsent({ necessary: true, stats: false, media: false, date: new Date().toISOString() }); });
+  $('#ck-settings').addEventListener('click', e => { const open = prefsBox.classList.toggle('open'); e.currentTarget.setAttribute('aria-expanded', String(open)); if (open) setTimeout(() => $('#pref-stats').focus(), 30); });
+  $('#ck-save').addEventListener('click', () => { saveConsent({ necessary: true, stats: $('#pref-stats').checked, media: $('#pref-media').checked, date: new Date().toISOString() }); });
   $('#cookie-reopen').addEventListener('click', openCookies);
-
-  banner.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      saveConsent({
-        necessary: true, stats: false, media: false,
-        date: new Date().toISOString()
-      });
-    }
-  });
-
+  banner.addEventListener('keydown', e => { if (e.key === 'Escape') saveConsent({ necessary: true, stats: false, media: false, date: new Date().toISOString() }); });
   initCookies();
 
-  /* ==========================================================
-     MISC
-     ========================================================== */
+  /* MISC */
   $('#year').textContent = new Date().getFullYear();
-
   window.addEventListener('load', () => attachTips());
-
   (function paletteHint() {
     let seen = false;
     try { seen = localStorage.getItem('nestler.paletteHint') === '1'; } catch (_) {}
     if (seen || reduceMotion) return;
-    setTimeout(() => {
-      announce('Tipp: Drücke Strg plus K für die Befehlspalette.');
-      try { localStorage.setItem('nestler.paletteHint', '1'); } catch (_) {}
-    }, 4000);
+    setTimeout(() => { announce('Tipp: Drücke Strg plus K für die Befehlspalette.'); try { localStorage.setItem('nestler.paletteHint', '1'); } catch (_) {} }, 4000);
   })();
-
 })();
 </script>
 </body>
