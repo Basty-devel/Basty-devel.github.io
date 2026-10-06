@@ -11,7 +11,7 @@
     <image:image>
       <image:loc>https://sebastian-nestler.github.io/og-image.png</image:loc>
       <image:title>Sebastian Friedrich Nestler – Webentwickler für barrierefreie Interfaces</image:title>
-      <image:caption>Schnelle, barrierefreie Web-Interfaces mit Charakter.</image:caption>
+      <image:caption>Schnelle, barrierefreie Web-Interfaces mit Charakter. Onepager ab 1.995 €.</image:caption>
     </image:image>
   </url>
 
@@ -42,6 +42,20 @@
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sebastian-nestler.github.io/#ergebnisse</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://sebastian-nestler.github.io/#preise</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
