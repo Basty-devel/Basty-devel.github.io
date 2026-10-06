@@ -1,2 +1,2 @@
-# Basty-devel.github.io or www.nestler.dev
+# Basty-devel.github.io or https://nestler.dev
 Homepage of Sebastian Friedrich Nestler
