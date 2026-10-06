@@ -1,7 +1,7 @@
 {
-  "name": "Sebastian Friedrich Nestler – Webentwickler für barrierefreie Interfaces",
+  "name": "Sebastian Friedrich Nestler – Webentwickler & Avatar-Assistenten",
   "short_name": "nestler.dev",
-  "description": "Freelance Webentwickler für schnelle, barrierefreie Interfaces mit Charakter. Frontend, Full-Stack, WCAG 2.2 AA.",
+  "description": "Barrierefreie Onepager ab 1.995 €, Web-Apps und virtuelle Avatar-Assistenten. WCAG 2.2 AA, DSGVO-konform.",
   "lang": "de-DE",
   "dir": "ltr",
   "start_url": "/?utm_source=pwa",
@@ -58,17 +58,17 @@
       "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
-      "name": "Playground",
-      "short_name": "Playground",
-      "description": "Live HTML/CSS/JS Editor öffnen",
-      "url": "/#playground",
+      "name": "Preise",
+      "short_name": "Preise",
+      "description": "Onepager ab 1.995 €",
+      "url": "/#preise",
       "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
-      "name": "FAQ",
-      "short_name": "FAQ",
-      "description": "Häufige Fragen zu Webentwicklung",
-      "url": "/#faq",
+      "name": "Avatar",
+      "short_name": "Avatar",
+      "description": "Digitaler Zwilling / Avatar-Assistent",
+      "url": "/#avatar",
       "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     }
   ],
