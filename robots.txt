@@ -1,4 +1,4 @@
-# https://basty-devel.github.io/robots.txt
+# https://sebastian-nestler.github.io/robots.txt
 # Letzte Aktualisierung: 2026-10-06
 
 # ============================================================
@@ -98,4 +98,4 @@ Disallow: /
 # ============================================================
 # 5. SITEMAP — Verweis für alle Crawler
 # ============================================================
-Sitemap: https://basty-devel.github.io/sitemap.xml
+Sitemap: https://sebastian-nestler.github.io/sitemap.xml
