@@ -150,7 +150,7 @@
           "name": "Was kostet eine Website bei Sebastian Friedrich Nestler?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Projekte starten je nach Umfang bei etwa 2.499 € für eine Landingpage und bis zu 15.000 € für Web-Apps oder Design-Systeme. Ein Festpreis-Angebot gibt es nach einem kostenlosen Erstgespräch."
+            "text": "Projekte starten je nach Umfang bei etwa 4.000 € für eine Landingpage und ab 12.000 € für Web-Apps oder Design-Systeme. Ein Festpreis-Angebot gibt es nach einem kostenlosen Erstgespräch."
           }
         },
         {
@@ -158,7 +158,7 @@
           "name": "Wie lange dauert ein Webprojekt?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Eine Landingpage dauert typischerweise 10 Tage bis 3 Wochen, komplexere Web-Apps oder Design-Systeme 6–12 Wochen. Der genaue Zeitplan wird im Kickoff verbindlich festgelegt."
+            "text": "Eine Landingpage dauert typischerweise 2–3 Wochen, komplexere Web-Apps oder Design-Systeme 6–12 Wochen. Der genaue Zeitplan wird im Kickoff verbindlich festgelegt."
           }
         },
         {
@@ -873,8 +873,8 @@ footer.site{
 <header class="site" id="site-header">
   <div class="wrap">
     <nav class="nav" aria-label="Hauptnavigation">
-      <a href="#top" class="brand" aria-label="Sebastian Friedrich Nestler — zur Startseite">
-        <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SN">
+      <a href="#top" class="brand" aria-label="nestler.dev — Startseite von Sebastian Friedrich Nestler">
+        <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
           <rect width="100" height="100" rx="18" fill="#ffffff"/>
           <text x="50" y="74" text-anchor="middle"
                 font-family="'Arial Black','Helvetica Neue',Helvetica,Arial,sans-serif"
@@ -955,7 +955,7 @@ footer.site{
           <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
           <span class="fname" id="term-title">~/sebastian — zsh</span>
         </div>
-        <div class="term-body" id="term-output" role="log" aria-live="polite" aria-label="Terminal-Ausgabe" tabindex="0">
+        <div class="term-body" id="term-output" role="log" aria-label="Terminal-Ausgabe" tabindex="0">
           <div class="term-line out">Willkommen bei nestler.dev v3.0</div>
           <div class="term-line out">Tippe <span lang="en" style="color:var(--accent)">help</span> für alle Befehle.</div>
         </div>
@@ -981,16 +981,17 @@ footer.site{
 </section>
 
 <!-- ===================== ABOUT ===================== -->
-<section id="about">
+<section id="about" aria-labelledby="about-title">
   <div class="wrap">
     <p class="eyebrow reveal">Über mich</p>
     <div class="grid grid-2" style="align-items:start">
       <div class="reveal">
-        <h2>Code ist Handwerk.<br>Details sind alles.</h2>
+        <h2 id="about-title">Code ist Handwerk.<br>Details sind alles.</h2>
       </div>
       <div class="reveal">
         <p style="color:var(--muted);margin-top:0">
-          Seit über 6 Jahren baue ich digitale Produkte — von der Landingpage bis zur komplexen Web-App.
+          Seit über 8 Jahren baue ich für Agenturen, Startups und Mittelstand
+          digitale Produkte — von der Landingpage bis zur komplexen Web-App.
           Mein Fokus liegt auf dem, was Nutzer:innen tatsächlich spüren:
           Geschwindigkeit, Klarheit und Reibungslosigkeit.
         </p>
@@ -1011,10 +1012,10 @@ footer.site{
 </section>
 
 <!-- ===================== SKILLS ===================== -->
-<section id="skills">
+<section id="skills" aria-labelledby="skills-title">
   <div class="wrap">
     <p class="eyebrow reveal">Skills &amp; Stack</p>
-    <h2 class="reveal">TypeScript, React, Svelte &amp; WCAG 2.2</h2>
+    <h2 id="skills-title" class="reveal">TypeScript, React, Svelte &amp; WCAG 2.2</h2>
 
     <div class="grid grid-2" style="margin-top:2.5rem;align-items:start">
       <div class="card reveal" id="skill-card">
@@ -1072,10 +1073,10 @@ footer.site{
 </section>
 
 <!-- ===================== PLAYGROUND ===================== -->
-<section id="playground">
+<section id="playground" aria-labelledby="playground-title">
   <div class="wrap">
     <p class="eyebrow reveal">Unique Feature #3</p>
-    <h2 class="reveal">Live Playground: HTML, CSS und JavaScript im Browser</h2>
+    <h2 id="playground-title" class="reveal">Live Playground: HTML, CSS und JavaScript im Browser</h2>
     <p class="lede reveal" style="margin-bottom:2rem">
       Schreib HTML, CSS und JavaScript direkt hier im Browser — die Vorschau
       aktualisiert sich live. Kein Login, kein Build, kein Tracking.
@@ -1118,10 +1119,10 @@ footer.site{
 </section>
 
 <!-- ===================== FEATURES ===================== -->
-<section id="features">
+<section id="features" aria-labelledby="features-title">
   <div class="wrap">
     <p class="eyebrow reveal">Was diese Seite anders macht</p>
-    <h2 class="reveal">Fünf Dinge, die du selten findest</h2>
+    <h2 id="features-title" class="reveal">Fünf Dinge, die du selten findest</h2>
 
     <div class="grid grid-3" style="margin-top:2.5rem">
       <div class="card reveal">
@@ -1360,10 +1361,10 @@ footer.site{
 </section>
 
 <!-- ===================== CONTACT ===================== -->
-<section id="contact">
+<section id="contact" aria-labelledby="contact-title">
   <div class="wrap">
     <p class="eyebrow reveal">Kontakt</p>
-    <h2 class="reveal">Webentwickler für dein Projekt anfragen</h2>
+    <h2 id="contact-title" class="reveal">Webentwickler für dein Projekt anfragen</h2>
     <p class="lede reveal" style="margin-bottom:2.5rem">
       Erzähl mir kurz, worum es geht. Ich antworte in der Regel innerhalb von 24 Stunden —
       ohne Newsletter, ohne Vertrieb.
@@ -1473,7 +1474,7 @@ footer.site{
     <div class="foot-grid">
       <div>
         <div class="foot-brand">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SN">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
             <rect width="100" height="100" rx="18" fill="#ffffff"/>
             <text x="50" y="74" text-anchor="middle"
                   font-family="'Arial Black','Helvetica Neue',Helvetica,Arial,sans-serif"
@@ -1487,7 +1488,7 @@ footer.site{
         <p style="margin:0">Sebastian Friedrich Nestler · Webentwicklung mit Anspruch.</p>
       </div>
 
-      <ul class="foot-links">
+      <ul class="foot-links" aria-label="Rechtliches und Navigation">
         <li><a href="#about">Über</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -1521,13 +1522,13 @@ footer.site{
     <label class="sr-only" for="palette-input">Befehl suchen</label>
     <input id="palette-input" type="text" placeholder="Befehl suchen… (Navigation, Theme, Aktionen)"
            autocomplete="off" spellcheck="false" role="combobox"
-           aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list">
+           aria-expanded="false" aria-controls="palette-list" aria-autocomplete="list">
     <ul id="palette-list" role="listbox" aria-label="Verfügbare Befehle"></ul>
   </div>
 </div>
 
 <!-- ===================== COOKIE BANNER ===================== -->
-<div class="cookie" id="cookie-banner" role="dialog" aria-modal="false"
+<div class="cookie" id="cookie-banner" role="region"
      aria-labelledby="cookie-title" aria-describedby="cookie-desc" hidden>
   <h2 id="cookie-title"><span aria-hidden="true">🍪</span> Kurz &amp; transparent</h2>
   <p id="cookie-desc">
@@ -1958,6 +1959,7 @@ footer.site{
   function openPalette() {
     lastFocused = document.activeElement;
     paletteOverlay.hidden = false;
+    paletteInput.setAttribute('aria-expanded', 'true');
     paletteIndex = 0;
     paletteInput.value = '';
     renderPalette('');
@@ -1967,6 +1969,7 @@ footer.site{
 
   function closePalette() {
     paletteOverlay.hidden = true;
+    paletteInput.setAttribute('aria-expanded', 'false');
     if (lastFocused && lastFocused.focus) lastFocused.focus();
   }
 
@@ -2694,7 +2697,7 @@ ${codeJs.value}
 
   /*
    * WCAG 2.1.2 No Keyboard Trap:
-   * Cookie-Banner ist aria-modal="false" — kein Fokus-Trap.
+   * Cookie-Banner ist role="region", kein aria-modal — kein Fokus-Trap.
    * Escape schließt mit "Nur notwendige".
    */
   banner.addEventListener('keydown', e => {
