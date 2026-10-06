@@ -4,62 +4,119 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
+<!-- ===== NO-FOUC THEME BOOTSTRAP (must run before paint) ===== -->
+<script>
+(function(){
+  var t = null;
+  try { t = localStorage.getItem('nestler.theme'); } catch(e){}
+  if (t === 'dark' || t === 'light' || t === 'synth' || t === 'matrix') {
+    document.documentElement.setAttribute('data-theme', t);
+  } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
+
+<!-- ===== PRIMARY SEO ===== -->
 <title>Wie diese Seite gebaut wurde · Sebastian Friedrich Nestler</title>
 <meta name="description" content="Transparenz-Bericht: Wie nestler.dev entstand — Vanilla HTML/CSS/JS, KI als Werkzeug, menschliche Verantwortung für jede Zeile Code.">
 <link rel="canonical" href="https://sebastian-nestler.github.io/tech-stack.html">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="googlebot" content="index, follow">
 <meta name="author" content="Sebastian Friedrich Nestler">
-<meta name="language" content="de">
+<meta name="publisher" content="Sebastian Friedrich Nestler">
 
+<!-- ===== OPEN GRAPH ===== -->
 <meta property="og:type" content="article">
+<meta property="og:site_name" content="Sebastian Friedrich Nestler">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://sebastian-nestler.github.io/tech-stack.html">
 <meta property="og:title" content="Wie diese Seite gebaut wurde · nestler.dev">
 <meta property="og:description" content="Vanilla HTML/CSS/JS, kein Framework, KI-gestützt entwickelt — vollständig menschlich geprüft und verantwortet.">
-<meta property="og:url" content="https://sebastian-nestler.github.io/tech-stack.html">
-<meta property="og:locale" content="de_DE">
 <meta property="og:image" content="https://sebastian-nestler.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Wie diese Seite gebaut wurde — Transparenz-Bericht von Sebastian Friedrich Nestler.">
+<meta property="og:image:type" content="image/png">
 
+<!-- ===== TWITTER / X ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wie diese Seite gebaut wurde · nestler.dev">
+<meta name="twitter:description" content="Vanilla HTML/CSS/JS, kein Framework, KI-gestützt entwickelt — vollständig menschlich geprüft und verantwortet.">
+<meta name="twitter:image" content="https://sebastian-nestler.github.io/og-image.png">
+<meta name="twitter:image:alt" content="Wie diese Seite gebaut wurde — Transparenz-Bericht.">
+
+<!-- ===== ICONS & PWA ===== -->
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f6f6f3" media="(prefers-color-scheme: light)">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="/manifest.webmanifest">
 
+<!-- ===== CRITICAL CSS (inline — above-the-fold, no FOUC) ===== -->
 <style>
 /* ============================================================
-   0. TOKENS / THEMES
+   CRITICAL CSS — Tokens, Reset, Header, Breadcrumb, Hero
    ============================================================ */
+
+/* 0. TOKENS / THEMES — synchron mit index.html & datenschutz.html */
 :root{
-  --bg:#0a0a0b; --surface:#131317; --surface-2:#1b1b21; --border:#2a2a33;
-  --text:#e9e9ec; --muted:#8d8d99;
-  --accent:#4a86ff; --accent-ink:#0a0a0b; --accent-2:#00d5ff;
-  --danger:#ff6b6b; --ok:#3ddc97;
-  --radius:16px; --radius-sm:10px;
+  --bg:#0a0a0b;--surface:#131317;--surface-2:#1b1b21;--border:#3a3a45;
+  --text:#e9e9ec;--muted:#a8a8b3;--accent:#4a86ff;--accent-ink:#0a0a0b;
+  --accent-2:#00d5ff;--danger:#ff6b6b;--ok:#3ddc97;
+  --radius:16px;--radius-sm:10px;
   --shadow:0 18px 50px -12px rgba(0,0,0,.75);
+  --ring:0 0 0 3px color-mix(in srgb, var(--accent) 55%, transparent);
   --max:1140px;
   --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
 }
 [data-theme="light"]{
-  --bg:#f6f6f3; --surface:#ffffff; --surface-2:#eeeceb; --border:#dcdad4;
-  --text:#14141a; --muted:#5b5b68;
-  --accent:#1a5dff; --accent-ink:#ffffff; --accent-2:#0043c7;
+  --bg:#f6f6f3;--surface:#ffffff;--surface-2:#eeeceb;--border:#b8b6ae;
+  --text:#14141a;--muted:#4a4a5c;--accent:#1a5dff;--accent-ink:#ffffff;
+  --accent-2:#0043c7;--danger:#c53030;--ok:#0e8a5a;
   --shadow:0 18px 50px -18px rgba(20,20,26,.28);
 }
+[data-theme="synth"]{
+  --bg:#0d0716;--surface:#170d24;--surface-2:#211334;--border:#4a2d73;
+  --text:#f4ecff;--muted:#b9a4d4;--accent:#ff4fd8;--accent-ink:#12001a;
+  --accent-2:#33e1ff;--shadow:0 18px 60px -12px rgba(255,79,216,.28);
+}
+[data-theme="matrix"]{
+  --bg:#000600;--surface:#041004;--surface-2:#072007;--border:#1a5c1a;
+  --text:#c8ffc8;--muted:#7ac47a;--accent:#22ff6b;--accent-ink:#001100;
+  --accent-2:#00d5ff;--shadow:0 18px 50px -12px rgba(34,255,107,.25);
+}
 
+/* 1. BASE */
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+}
 body{
-  margin:0; background:var(--bg); color:var(--text); font-family:var(--font);
-  font-size:clamp(1rem,.95rem + .25vw,1.0625rem); line-height:1.65;
-  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  margin:0;background:var(--bg);color:var(--text);font-family:var(--font);
+  font-size:clamp(1rem,.95rem + .25vw,1.0625rem);line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay;
 }
 img,svg,canvas{max-width:100%;display:block}
+button,input,textarea,select{font:inherit;color:inherit}
 a{color:var(--accent);text-underline-offset:.25em}
 a:hover{text-decoration-thickness:2px}
-:where(a,button,[tabindex]):focus-visible{
-  outline:2px solid var(--accent); outline-offset:3px; border-radius:6px;
+::placeholder{color:var(--muted);opacity:1}
+:where(a,button,input,textarea,select,summary,[tabindex]):focus-visible{
+  outline:2px solid var(--accent);outline-offset:3px;border-radius:6px;
 }
+:where(section,[id],a,button,input,textarea,select,summary,details,h1,h2,h3){scroll-margin-top:90px}
 ::selection{background:var(--accent);color:var(--accent-ink)}
 .sr-only{
   position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
@@ -73,70 +130,111 @@ a:hover{text-decoration-thickness:2px}
 }
 .skip:focus{top:0}
 
+/* 2. LAYOUT */
 .wrap{width:min(100% - 2.5rem,var(--max));margin-inline:auto;position:relative;z-index:2}
-:where(h1,h2,h3,section,[id],a,button){scroll-margin-top:90px}
 
-/* ============================================================
-   HEADER
-   ============================================================ */
+/* 3. PROGRESS + HEADER */
+#progress{
+  position:fixed;top:0;left:0;height:2px;width:0%;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  z-index:1000;transition:width .1s linear;
+}
+@media (prefers-reduced-motion:reduce){#progress{transition:none}}
 header.site{
   position:sticky;top:0;z-index:900;
   backdrop-filter:blur(14px) saturate(1.4);
   background:color-mix(in srgb,var(--bg) 78%,transparent);
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid transparent;
+  transition:border-color .25s ease,background .25s ease;
 }
+header.site.stuck{border-bottom-color:var(--border)}
 .nav{display:flex;align-items:center;gap:1rem;padding:.85rem 0}
 .brand{
   font-family:var(--mono);font-weight:700;font-size:1rem;
   text-decoration:none;color:var(--text);letter-spacing:-.02em;
-  display:flex;align-items:center;gap:.55rem;
+  margin-right:auto;display:flex;align-items:center;gap:.55rem;
 }
 .brand .logo{
   width:26px;height:26px;flex:none;border-radius:6px;
-  transition:transform .4s cubic-bezier(.2,.8,.2,1);
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .3s;
   box-shadow:0 2px 8px -2px rgba(26,93,255,.4);
 }
-.brand:hover .logo{transform:rotate(-6deg) scale(1.08)}
+.brand:hover .logo{transform:rotate(-6deg) scale(1.08);box-shadow:0 4px 14px -2px rgba(26,93,255,.6)}
 .brand .dev{color:var(--accent)}
-.back-link{
-  margin-left:auto;color:var(--muted);text-decoration:none;
-  font-size:.9rem;font-weight:500;padding:.5rem .8rem;border-radius:8px;
-  transition:color .2s,background .2s;
+.nav-links{display:flex;gap:.25rem;align-items:center;list-style:none;margin:0;padding:0}
+.nav-links a{
+  color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;
+  padding:.5rem .7rem;border-radius:8px;transition:color .2s,background .2s;
 }
-.back-link:hover{color:var(--text);background:var(--surface-2)}
+.nav-links a:hover{color:var(--text);background:var(--surface-2)}
+.icon-btn{
+  background:var(--surface);border:1px solid var(--border);color:var(--text);
+  width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
+  cursor:pointer;transition:transform .18s cubic-bezier(.2,.8,.2,1),border-color .2s,background .2s;
+  flex:none;
+}
+.icon-btn:hover{border-color:var(--accent);background:var(--surface-2);transform:translateY(-2px)}
+.icon-btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.menu-toggle{display:none}
+@media (max-width:860px){
+  .nav-links{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;
+    background:var(--surface);border-bottom:1px solid var(--border);
+    padding:.75rem 1.25rem 1.25rem;gap:.15rem;display:none;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:.8rem .6rem;font-size:1rem}
+  .menu-toggle{display:grid}
+}
 
-/* ============================================================
-   HERO
-   ============================================================ */
-.hero{
-  padding:clamp(3.5rem,7vw,6rem) 0 clamp(2.5rem,5vw,4rem);
-  border-bottom:1px solid var(--border);
+/* 4. BREADCRUMB */
+.breadcrumb{padding:1.5rem 0 0;font-size:.82rem;color:var(--muted);font-family:var(--mono)}
+.breadcrumb ol{
+  list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;
 }
+.breadcrumb li{display:flex;align-items:center;gap:.4rem}
+.breadcrumb li:not(:last-child)::after{content:"/";opacity:.4}
+.breadcrumb a{color:var(--muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--accent);text-decoration:underline}
+.breadcrumb [aria-current="page"]{color:var(--text)}
+
+/* 5. HERO */
+.hero{padding:clamp(2.5rem,5vw,4rem) 0 clamp(2.5rem,5vw,4rem)}
 .eyebrow{
   font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--accent);margin:0 0 .9rem;
   display:flex;align-items:center;gap:.6rem;
 }
 .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);flex:none}
-h1{
+.hero h1{
   font-size:clamp(2rem,1.4rem + 3.4vw,3.6rem);
   line-height:1.08;letter-spacing:-.03em;margin:0 0 1rem;font-weight:800;
   max-width:20ch;
 }
-.lede{
+.hero .lede{
   font-size:clamp(1.08rem,1rem + .5vw,1.28rem);
   color:var(--muted);max-width:62ch;margin:0 0 1.5rem;
 }
-.meta{
+.hero .meta{
   display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;
   font-family:var(--mono);font-size:.8rem;color:var(--muted);
 }
-.meta span{display:inline-flex;align-items:center;gap:.4rem}
-.meta strong{color:var(--text);font-weight:600}
+.hero .meta span{display:inline-flex;align-items:center;gap:.4rem}
+.hero .meta strong{color:var(--text);font-weight:600}
+</style>
 
+<!-- ===== FULL STYLESHEET (external, blocking, cached) ===== -->
+<link rel="stylesheet" href="/style.css">
+
+<!-- ===== PAGE-SPECIFIC CSS (below-the-fold, unik für tech-stack.html) ===== -->
+<style>
 /* ============================================================
-   SECTION
+   PAGE CSS — nur Komponenten, die es NUR auf dieser Seite gibt.
+   (Card, Btn, Grid, Footer kommen aus /style.css.)
    ============================================================ */
+
+/* Sections */
 section{padding:clamp(3rem,6vw,5rem) 0;position:relative}
 section + section{border-top:1px solid var(--border)}
 section h2{
@@ -147,43 +245,46 @@ section h3{
   font-size:1.08rem;line-height:1.25;letter-spacing:-.01em;
   margin:0 0 .5rem;font-weight:700;
 }
-p{margin:0 0 1rem;color:var(--muted)}
-p:last-child{margin-bottom:0}
-strong{color:var(--text);font-weight:650}
-ul,ol{margin:0 0 1rem;padding-left:1.25rem;color:var(--muted)}
-li{margin-bottom:.4rem}
-li:last-child{margin-bottom:0}
-code{
+section p{margin:0 0 1rem;color:var(--muted)}
+section p:last-child{margin-bottom:0}
+section strong{color:var(--text);font-weight:650}
+section ul,section ol{margin:0 0 1rem;padding-left:1.25rem;color:var(--muted)}
+section li{margin-bottom:.4rem}
+section li:last-child{margin-bottom:0}
+section code{
   font-family:var(--mono);font-size:.88em;
   background:var(--surface-2);border:1px solid var(--border);
   border-radius:5px;padding:.1em .4em;color:var(--text);
 }
-kbd{
+section kbd{
   font-family:var(--mono);font-size:.78em;
   background:var(--surface);border:1px solid var(--border);
   border-radius:5px;padding:.15em .45em;color:var(--text);
 }
 
-/* ============================================================
-   GRIDS / CARDS
-   ============================================================ */
-.grid-2{
-  display:grid;gap:1.1rem;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-}
-.grid-3{
-  display:grid;gap:1.1rem;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-}
-
-.card{
+/* Mini-TOC im Hero */
+.toc{
   background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--radius);padding:1.5rem;
-  transition:border-color .25s,transform .25s cubic-bezier(.2,.8,.2,1);
+  border-radius:var(--radius);padding:1.25rem 1.5rem;margin:2rem 0 0;
 }
-.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 40%,var(--border))}
-.card h3{margin-bottom:.5rem}
-.card p{font-size:.94rem}
+.toc h2{
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 .75rem;font-family:var(--mono);font-weight:700;
+}
+.toc ol{
+  margin:0;padding:0;list-style:none;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:.35rem 1.25rem;counter-reset:toc;
+}
+.toc li{counter-increment:toc;font-size:.9rem;color:var(--muted)}
+.toc li::before{
+  content:counter(toc) ". ";color:var(--accent);font-family:var(--mono);
+  font-weight:700;margin-right:.15rem;
+}
+.toc a{color:var(--text);text-decoration:none}
+.toc a:hover{color:var(--accent);text-decoration:underline}
+
+/* .card .ico — Icon im Stack-Grid */
 .card .ico{
   display:inline-grid;place-items:center;
   width:40px;height:40px;border-radius:11px;margin-bottom:1rem;
@@ -191,10 +292,10 @@ kbd{
   border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);
   font-size:1.15rem;
 }
+.card h3{margin-bottom:.5rem}
+.card p{font-size:.94rem}
 
-/* ============================================================
-   STEPS (Prozess)
-   ============================================================ */
+/* Steps (Prozess) */
 .steps{
   display:grid;gap:1.25rem;margin:0;padding:0;list-style:none;
   counter-reset:step;
@@ -216,9 +317,7 @@ kbd{
 }
 .step h3{margin-top:.1rem}
 
-/* ============================================================
-   HONEST NOTE
-   ============================================================ */
+/* Note (hervorgehobener Kasten) */
 .note{
   background:var(--surface);
   border:1px solid var(--border);
@@ -227,18 +326,19 @@ kbd{
   padding:1.25rem 1.5rem;
   margin:1.5rem 0;
 }
-.note h3{color:var(--accent);font-family:var(--mono);font-size:.85rem;
-  text-transform:uppercase;letter-spacing:.14em;margin-bottom:.65rem}
+.note h3{
+  color:var(--accent);font-family:var(--mono);font-size:.85rem;
+  text-transform:uppercase;letter-spacing:.14em;margin-bottom:.65rem;
+}
 .note p:last-child{margin-bottom:0}
 
-/* ============================================================
-   FACTS
-   ============================================================ */
+/* Facts */
 .facts{
   display:grid;gap:1px;background:var(--border);
   border:1px solid var(--border);border-radius:var(--radius);
   overflow:hidden;
   grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  margin:0;
 }
 .fact{
   background:var(--surface);padding:1.25rem;
@@ -254,64 +354,66 @@ kbd{
 }
 .fact dd small{font-size:.7em;color:var(--muted);font-weight:500;letter-spacing:0}
 
-/* ============================================================
-   CTA
-   ============================================================ */
+/* CTA-Box */
 .cta{
   background:var(--surface);border:1px solid var(--border);
   border-radius:var(--radius);padding:clamp(1.75rem,3vw,2.5rem);
   display:flex;flex-wrap:wrap;gap:1rem;align-items:center;
   justify-content:space-between;
 }
-.cta p{margin:0;max-width:50ch;font-size:1.02rem}
-.btn{
-  display:inline-flex;align-items:center;gap:.55rem;
-  padding:.78rem 1.4rem;border-radius:999px;
-  font-weight:650;font-size:.93rem;text-decoration:none;
-  cursor:pointer;border:1px solid transparent;
-  transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .2s,border-color .2s;
-  flex:none;
-}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{
-  background:var(--accent);color:var(--accent-ink);
-  box-shadow:0 6px 24px -8px color-mix(in srgb,var(--accent) 65%,transparent);
-}
-.btn-ghost{background:var(--surface);border-color:var(--border);color:var(--text)}
-.btn-ghost:hover{border-color:var(--accent)}
-.btn svg{width:15px;height:15px;stroke:currentColor;fill:none;
-  stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cta p{margin:0;max-width:50ch;font-size:1.02rem;color:var(--muted)}
+.cta strong{color:var(--text)}
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
-footer.site{
-  border-top:1px solid var(--border);
-  padding:2.5rem 0 calc(4rem + env(safe-area-inset-bottom, 0px));
-  font-size:.85rem;color:var(--muted);
+/* Responsive */
+@media (max-width:520px){
+  .step{grid-template-columns:1fr;gap:.75rem}
+  .step::before{width:2.2em;height:2.2em;font-size:1rem}
+  .cta{flex-direction:column;align-items:stretch;text-align:left}
+  .cta .btn{justify-content:center}
 }
-.foot-grid{
-  display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;
-  align-items:flex-start;margin-bottom:1.5rem;
-}
-.foot-brand{display:flex;align-items:center;gap:.55rem;margin-bottom:.5rem}
-.foot-brand img,
-.foot-brand svg{width:22px;height:22px;border-radius:5px;flex:none}
-.foot-links{display:flex;gap:1.25rem;flex-wrap:wrap;list-style:none;margin:0;padding:0}
-.foot-links a{color:var(--muted);text-decoration:underline;text-underline-offset:.25em}
-.foot-links a:hover{color:var(--accent)}
-.foot-note{font-size:.75rem;color:var(--muted);opacity:.7;margin-top:1rem}
 </style>
+
+<!-- ===== STRUCTURED DATA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sebastian-nestler.github.io/tech-stack.html",
+      "url": "https://sebastian-nestler.github.io/tech-stack.html",
+      "name": "Wie diese Seite gebaut wurde",
+      "description": "Transparenz-Bericht: Wie nestler.dev entstand — Vanilla HTML/CSS/JS, KI als Werkzeug, menschliche Verantwortung für jede Zeile Code.",
+      "inLanguage": "de-DE",
+      "isPartOf": { "@id": "https://sebastian-nestler.github.io/#website" },
+      "about": { "@id": "https://sebastian-nestler.github.io/#person" },
+      "datePublished": "2026-10-06",
+      "dateModified": "2026-10-06",
+      "breadcrumb": { "@id": "https://sebastian-nestler.github.io/tech-stack.html#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sebastian-nestler.github.io/tech-stack.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://sebastian-nestler.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Wie diese Seite gebaut wurde", "item": "https://sebastian-nestler.github.io/tech-stack.html" }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <a class="skip" href="#main">Zum Hauptinhalt springen</a>
+<div id="progress" role="presentation"></div>
 
-<header class="site">
+<!-- ===================== HEADER ===================== -->
+<header class="site" id="site-header">
   <div class="wrap">
     <nav class="nav" aria-label="Hauptnavigation">
-      <a href="/" class="brand" aria-label="Zur Startseite nestler.dev">
-        <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SN">
+      <a href="/" class="brand" aria-label="Zur Startseite von Sebastian Friedrich Nestler">
+        <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
           <rect width="100" height="100" rx="18" fill="#ffffff"/>
           <text x="50" y="74" text-anchor="middle"
                 font-family="'Arial Black','Helvetica Neue',Helvetica,Arial,sans-serif"
@@ -320,18 +422,45 @@ footer.site{
         </svg>
         nestler<span class="dev">.dev</span>
       </a>
-      <a href="/" class="back-link">← Zur Startseite</a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/#about">Über</a></li>
+        <li><a href="/#preise">Preise</a></li>
+        <li><a href="/#avatar">Avatar</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="/#contact">Kontakt</a></li>
+        <li><a href="/#imprint">Impressum</a></li>
+        <li><a href="/datenschutz.html">Datenschutz</a></li>
+      </ul>
+
+      <button class="icon-btn" id="theme-toggle" data-tip="Farbschema wechseln" aria-label="Farbschema wechseln">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.5-.04-1-.1-1.5A7 7 0 0 1 12 3Z"/></svg>
+      </button>
+
+      <button class="icon-btn menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menü öffnen">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </nav>
   </div>
 </header>
 
 <main id="main">
 
+<!-- ===================== BREADCRUMB ===================== -->
+<div class="wrap">
+  <nav class="breadcrumb" aria-label="Brotkrumen-Navigation">
+    <ol>
+      <li><a href="/">Startseite</a></li>
+      <li><span aria-current="page">Wie diese Seite gebaut wurde</span></li>
+    </ol>
+  </nav>
+</div>
+
 <!-- ===================== HERO ===================== -->
-<section class="hero">
+<section class="hero" aria-labelledby="page-title">
   <div class="wrap">
     <p class="eyebrow">Transparenz</p>
-    <h1>Wie diese Seite gebaut wurde</h1>
+    <h1 id="page-title">Wie diese Seite gebaut wurde</h1>
     <p class="lede">
       Diese Website ist zu 100 % Vanilla — HTML, CSS, JavaScript. Kein React,
       kein Build-Step, keine externen CDNs. Und: Sie wurde mit
@@ -340,15 +469,27 @@ footer.site{
     <div class="meta">
       <span>Stand: <strong>6. Oktober 2026</strong></span>
       <span>Version: <strong>3.0</strong></span>
-      <span>Umfang: <strong>~1 Datei, ~70 KB</strong></span>
+      <span>Umfang: <strong>3 Dateien, ~75 KB</strong></span>
     </div>
+
+    <nav class="toc" aria-label="Inhaltsverzeichnis">
+      <h2>Inhalt</h2>
+      <ol>
+        <li><a href="#hintergrund">Worum es hier geht</a></li>
+        <li><a href="#stack">Der Stack</a></li>
+        <li><a href="#zahlen">Zahlen zur Seite</a></li>
+        <li><a href="#prozess">Der Entwicklungsprozess</a></li>
+        <li><a href="#grenzen">Wo KI bewusst nicht eingesetzt wurde</a></li>
+        <li><a href="#warum">Warum ich das offenlege</a></li>
+      </ol>
+    </nav>
   </div>
 </section>
 
 <!-- ===================== 1. WORUM ES GEHT ===================== -->
-<section id="hintergrund">
+<section id="hintergrund" aria-labelledby="hintergrund-title">
   <div class="wrap">
-    <h2>Worum es hier geht</h2>
+    <h2 id="hintergrund-title">Worum es hier geht</h2>
     <p>
       „Vibe Coding" ist in aller Munde — und wird oft missverstanden als
       „Code, der von KI zusammengewürfelt wurde, ohne dass jemand hingeschaut hat".
@@ -373,12 +514,14 @@ footer.site{
 </section>
 
 <!-- ===================== 2. STACK ===================== -->
-<section id="stack">
+<section id="stack" aria-labelledby="stack-title">
   <div class="wrap">
-    <h2>Der Stack</h2>
+    <h2 id="stack-title">Der Stack</h2>
     <p>
       Bewusst minimal. Kein Framework, kein Bundler, kein Node.js-Server.
-      Eine einzige <code>index.html</code> plus statische Assets.
+      Drei statische Dateien — <code>/index.html</code>,
+      <code>/style.css</code>, <code>/script.js</code> — die ohne
+      Build-Step direkt aus dem Repository ausgeliefert werden.
     </p>
 
     <div class="grid-2" style="margin-top:2rem">
@@ -428,9 +571,9 @@ footer.site{
 </section>
 
 <!-- ===================== 3. FACTS ===================== -->
-<section id="zahlen">
+<section id="zahlen" aria-labelledby="zahlen-title">
   <div class="wrap">
-    <h2>Zahlen zur Seite</h2>
+    <h2 id="zahlen-title">Zahlen zur Seite</h2>
     <p style="margin-bottom:1.75rem">
       Alles gemessen mit den DevTools, ohne Caching, im Inkognito-Modus.
     </p>
@@ -438,11 +581,11 @@ footer.site{
     <dl class="facts">
       <div class="fact">
         <dt>Seitengröße</dt>
-        <dd>~70 <small>KB</small></dd>
+        <dd>~75 <small>KB</small></dd>
       </div>
       <div class="fact">
         <dt>HTTP-Requests</dt>
-        <dd>1</dd>
+        <dd>2</dd>
       </div>
       <div class="fact">
         <dt>Externe Requests</dt>
@@ -465,9 +608,9 @@ footer.site{
 </section>
 
 <!-- ===================== 4. PROZESS ===================== -->
-<section id="prozess">
+<section id="prozess" aria-labelledby="prozess-title">
   <div class="wrap">
-    <h2>Der Entwicklungsprozess</h2>
+    <h2 id="prozess-title">Der Entwicklungsprozess</h2>
     <p style="margin-bottom:2rem">
       Sieben Schritte, in denen KI an genau definierten Stellen geholfen hat —
       und an anderen bewusst nicht.
@@ -554,9 +697,9 @@ footer.site{
 </section>
 
 <!-- ===================== 5. WAS KI NICHT MACHT ===================== -->
-<section id="grenzen">
+<section id="grenzen" aria-labelledby="grenzen-title">
   <div class="wrap">
-    <h2>Wo KI bewusst nicht eingesetzt wurde</h2>
+    <h2 id="grenzen-title">Wo KI bewusst nicht eingesetzt wurde</h2>
 
     <div class="grid-2" style="margin-top:1.5rem">
       <div class="card">
@@ -597,9 +740,9 @@ footer.site{
 </section>
 
 <!-- ===================== 6. WARUM DAS WICHTIG IST ===================== -->
-<section id="warum">
+<section id="warum" aria-labelledby="warum-title">
   <div class="wrap">
-    <h2>Warum ich das offenlege</h2>
+    <h2 id="warum-title">Warum ich das offenlege</h2>
     <p>
       Weil Transparenz in der Softwareentwicklung nicht optional ist.
       Wer KI nutzt und das verschweigt, nimmt Kunden die Möglichkeit,
@@ -629,8 +772,9 @@ footer.site{
 </section>
 
 <!-- ===================== 7. CTA ===================== -->
-<section id="cta-section">
+<section id="cta-section" aria-labelledby="cta-title">
   <div class="wrap">
+    <h2 id="cta-title" class="sr-only">Kontakt aufnehmen</h2>
     <div class="cta">
       <p>
         <strong>Fragen zum Prozess?</strong><br>
@@ -647,12 +791,13 @@ footer.site{
 
 </main>
 
+<!-- ===================== FOOTER ===================== -->
 <footer class="site">
   <div class="wrap">
     <div class="foot-grid">
       <div>
         <div class="foot-brand">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SN">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
             <rect width="100" height="100" rx="18" fill="#ffffff"/>
             <text x="50" y="74" text-anchor="middle"
                   font-family="'Arial Black','Helvetica Neue',Helvetica,Arial,sans-serif"
@@ -666,7 +811,7 @@ footer.site{
         <p style="margin:0">Sebastian Friedrich Nestler · Webentwicklung mit Anspruch.</p>
       </div>
 
-      <ul class="foot-links">
+      <ul class="foot-links" aria-label="Rechtliches und Navigation">
         <li><a href="/">Startseite</a></li>
         <li><a href="/#imprint">Impressum</a></li>
         <li><a href="/datenschutz.html">Datenschutz</a></li>
@@ -674,48 +819,104 @@ footer.site{
       </ul>
     </div>
 
-    <p class="foot-note">
+    <p style="margin-top:1.5rem;font-size:.78rem;color:var(--muted)">
       © <span id="year"></span> Sebastian Friedrich Nestler ·
       KI-gestützte Entwicklung, menschlich verantwortet.
     </p>
   </div>
 </footer>
 
+<!-- ===================== MINIMAL PAGE SCRIPT ===================== -->
 <script>
 (function () {
   'use strict';
 
-  /* Theme aus localStorage übernehmen */
-  try {
-    var saved = localStorage.getItem('nestler.theme');
-    if (saved && ['dark','light','synth','matrix'].indexOf(saved) !== -1) {
-      document.documentElement.setAttribute('data-theme', saved);
-    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      document.documentElement.setAttribute('data-theme', 'light');
+  const $  = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+  /* ---------- THEME ---------- */
+  const THEMES = ['dark', 'light', 'synth', 'matrix'];
+  const THEME_KEY = 'nestler.theme';
+
+  function setTheme(name) {
+    if (!THEMES.includes(name)) return false;
+    document.documentElement.setAttribute('data-theme', name);
+    try { localStorage.setItem(THEME_KEY, name); } catch (_) {}
+    const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
+    if (bg) {
+      $$('meta[name="theme-color"]').forEach(m => m.setAttribute('content', bg));
     }
-  } catch (_) { /* ignore */ }
+    return true;
+  }
 
-  var y = document.getElementById('year');
-  if (y) y.textContent = new Date().getFullYear();
+  const themeBtn = $('#theme-toggle');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme');
+      const idx = THEMES.indexOf(cur);
+      setTheme(THEMES[(idx + 1) % THEMES.length]);
+    });
+  }
 
-  /* Smooth-Scroll für Anchor-Links */
-  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-    a.addEventListener('click', function (e) {
-      var id = a.getAttribute('href').slice(1);
-      var el = document.getElementById(id);
+  /* ---------- MOBILE MENU ---------- */
+  const menuToggle = $('#menu-toggle');
+  const navLinks = $('#nav-links');
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    });
+    navLinks.addEventListener('click', e => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ---------- HEADER STUCK + PROGRESS ---------- */
+  const header = $('#site-header');
+  const progress = $('#progress');
+  let ticking = false;
+
+  function onScroll() {
+    const y = window.scrollY;
+    if (header) header.classList.toggle('stuck', y > 8);
+    if (progress) {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  onScroll();
+
+  /* ---------- YEAR ---------- */
+  const yearEl = $('#year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------- SMOOTH SCROLL + FOCUS (TOC) ---------- */
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  $$('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
       if (!el) return;
       e.preventDefault();
-      var top = el.getBoundingClientRect().top + window.scrollY - 90;
-      window.scrollTo({ top: top, behavior: 'smooth' });
-      setTimeout(function () {
+      const top = el.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
+      setTimeout(() => {
         el.setAttribute('tabindex', '-1');
         el.focus({ preventScroll: true });
-      }, 500);
+      }, reduceMotion ? 0 : 400);
       history.replaceState(null, '', '#' + id);
     });
   });
+
 })();
 </script>
-
 </body>
 </html>
