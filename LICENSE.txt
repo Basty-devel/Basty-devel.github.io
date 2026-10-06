@@ -1,0 +1,101 @@
+Copyright (c) 2026 Sebastian Friedrich Nestler
+Alle Rechte vorbehalten / All Rights Reserved.
+
+================================================================
+DEUTSCHE FASSUNG (rechtlich maßgeblich)
+================================================================
+
+Dieses Werk — einschließlich aller Inhalte, Quelltexte, Designs,
+Grafiken, Texte, Marken und sonstiger Bestandteile dieser Website
+und des zugehörigen Quellcode-Repositories — ist urheberrechtlich
+geschützt.
+
+Jede Form der Vervielfältigung, Bearbeitung, Verbreitung,
+öffentlichen Zugänglichmachung oder sonstigen Verwertung außerhalb
+der Grenzen des Urheberrechts bedarf der vorherigen schriftlichen
+Zustimmung des Urhebers.
+
+Dies gilt insbesondere, aber nicht abschließend, für:
+
+  – das Kopieren oder Klonen der Website oder einzelner Bestandteile
+  – die Nutzung des Quelltextes in eigenen oder fremden Projekten
+  – die Nutzung der Texte, Bilder, Grafiken oder Design-Elemente
+  – die Weitergabe an Dritte, auch in veränderter Form
+  – die kommerzielle Nutzung jeglicher Art
+  – das Trainieren von KI- oder Machine-Learning-Modellen mit
+    Bestandteilen dieses Werkes
+
+Ausdrücklich gestattet ist:
+
+  – die bestimmungsgemäße Nutzung der Website durch Besucher:innen
+    über einen Webbrowser
+  – Zitate im Rahmen des § 51 UrhG (Zitatrecht) mit korrekter
+    Quellenangabe
+  – die private, nicht-kommerzielle Nutzung im gesetzlich
+    zulässigen Rahmen
+
+Ungeachtet der vorstehenden Regelungen bleiben die gesetzlich
+erlaubten Schranken des Urheberrechts (§§ 44a ff. UrhG) unberührt.
+
+Anfragen für eine über den gesetzlichen Rahmen hinausgehende
+Nutzung — etwa für Lizenzen, Kooperationen oder Auftragsarbeiten —
+richten Sie bitte an:
+
+  Sebastian Friedrich Nestler
+  Albert-Schweitzer-Str. 19
+  08280 Aue-Bad Schlema
+  Deutschland
+  E-Mail: nestler@nestler.dev
+
+================================================================
+ENGLISH VERSION (informal, non-binding translation)
+================================================================
+
+This work — including all content, source code, designs,
+graphics, texts, trademarks and other components of this website
+and the associated source code repository — is protected by
+copyright.
+
+Any form of reproduction, modification, distribution, public
+communication or other exploitation beyond the limits of copyright
+law requires the prior written consent of the author.
+
+This applies in particular, but not exclusively, to:
+
+  – copying or cloning the website or any of its components
+  – use of the source code in own or third-party projects
+  – use of texts, images, graphics or design elements
+  – passing on to third parties, including in modified form
+  – commercial use of any kind
+  – training AI or machine learning models using any part of
+    this work
+
+Expressly permitted is:
+
+  – the intended use of the website by visitors via a web browser
+  – quotations within the scope of § 51 UrhG (German right of
+    quotation) with proper attribution
+  – private, non-commercial use within the legally permitted scope
+
+The legally permitted limitations of copyright (§§ 44a ff. UrhG)
+remain unaffected.
+
+For requests beyond the legal scope — such as licensing,
+cooperation or commissioned work — please contact:
+
+  Sebastian Friedrich Nestler
+  Albert-Schweitzer-Str. 19
+  08280 Aue-Bad Schlema
+  Germany
+  E-Mail: nestler@nestler.dev
+
+================================================================
+HAFTUNGSAUSSCHLUSS / DISCLAIMER
+================================================================
+
+DIESES WERK WIRD OHNE JEGLICHE AUSDRÜCKLICHE ODER STILLSCHWEIGENDE
+GEWÄHRLEISTUNG BEREITGESTELLT. DER URHEBER HAFTET NICHT FÜR
+SCHÄDEN, DIE AUS DER NUTZUNG DIESES WERKES ENTSTEHEN — SOWEIT
+GESETZLICH ZULÄSSIG.
+
+Stand: 6. Oktober 2026
