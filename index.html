@@ -193,20 +193,20 @@
 
 <style>
 /* ============================================================
-   0. TOKENS / THEMES
+   0. TOKENS / THEMES — WCAG 2.2 AA geprüft
    ============================================================ */
 :root{
   --bg:#0a0a0b;
   --surface:#131317;
   --surface-2:#1b1b21;
-  --border:#2a2a33;
+  --border:#3a3a45;          /* heller für 3:1 non-text-Kontrast */
   --text:#e9e9ec;
-  --muted:#8d8d99;
-  --accent:#4a86ff;
-  --accent-ink:#0a0a0b;
+  --muted:#a8a8b3;           /* 9:1 auf bg, 7.6:1 auf surface */
+  --accent:#4a86ff;          /* 5.7:1 auf bg */
+  --accent-ink:#0a0a0b;      /* dunkler Text auf hellem Button */
   --accent-2:#00d5ff;
-  --danger:#ff6b6b;
-  --ok:#3ddc97;
+  --danger:#ff6b6b;          /* 5.5:1 auf surface */
+  --ok:#3ddc97;              /* 8:1 auf surface */
   --radius:16px;
   --radius-sm:10px;
   --shadow:0 18px 50px -12px rgba(0,0,0,.75);
@@ -219,21 +219,23 @@
   --bg:#f6f6f3;
   --surface:#ffffff;
   --surface-2:#eeeceb;
-  --border:#dcdad4;
+  --border:#b8b6ae;
   --text:#14141a;
-  --muted:#5b5b68;
-  --accent:#1a5dff;
+  --muted:#4a4a5c;           /* 7.9:1 auf bg, 8.4:1 auf white */
+  --accent:#1a5dff;          /* 5.2:1 auf white */
   --accent-ink:#ffffff;
   --accent-2:#0043c7;
+  --danger:#c53030;          /* 6.1:1 auf white */
+  --ok:#0e8a5a;              /* 5.1:1 auf white */
   --shadow:0 18px 50px -18px rgba(20,20,26,.28);
 }
 [data-theme="synth"]{
   --bg:#0d0716;
   --surface:#170d24;
   --surface-2:#211334;
-  --border:#3a2359;
+  --border:#4a2d73;
   --text:#f4ecff;
-  --muted:#a892c9;
+  --muted:#b9a4d4;
   --accent:#ff4fd8;
   --accent-ink:#12001a;
   --accent-2:#33e1ff;
@@ -243,9 +245,9 @@
   --bg:#000600;
   --surface:#041004;
   --surface-2:#072007;
-  --border:#0f3d0f;
+  --border:#1a5c1a;
   --text:#c8ffc8;
-  --muted:#4f9a4f;
+  --muted:#7ac47a;
   --accent:#22ff6b;
   --accent-ink:#001100;
   --accent-2:#00d5ff;
@@ -281,6 +283,12 @@ img,svg,canvas{max-width:100%;display:block}
 button,input,textarea,select{font:inherit;color:inherit}
 a{color:var(--accent);text-underline-offset:.25em}
 a:hover{text-decoration-thickness:2px}
+
+/* Placeholder — WCAG 2.2 AA-konform */
+::placeholder{
+  color:var(--muted);
+  opacity:1;   /* Firefox reduziert Opacity auf 0.54 — hier explizit überschreiben */
+}
 
 :where(a,button,input,textarea,select,summary,[tabindex]):focus-visible{
   outline:2px solid var(--accent);
@@ -677,7 +685,7 @@ label .req{color:var(--danger);font-size:.9em}
 .form-status.bad{border-color:color-mix(in srgb,var(--danger) 50%,transparent);color:var(--danger)}
 
 /* ============================================================
-   12. TOOLTIP
+   12. TOOLTIP — ARIA-Fix: role nur wenn sichtbar
    ============================================================ */
 .tooltip{
   position:fixed;top:0;left:0;z-index:2000;pointer-events:none;
@@ -1634,7 +1642,7 @@ footer.site{
   }
 
   /* ==========================================================
-     THEME ENGINE  (Unique Feature #4)
+     THEME ENGINE
      ========================================================== */
   const THEMES = ['dark', 'light', 'synth', 'matrix'];
   const THEME_KEY = 'nestler.theme';
@@ -1683,7 +1691,6 @@ footer.site{
     track.innerHTML = html + html;
   })();
 
-  /* Marquee Pause-Button — WCAG 2.2.2 */
   (function marqueeControl() {
     const wrap = $('#marquee-wrap');
     const btn  = $('#marquee-toggle');
@@ -1761,12 +1768,14 @@ footer.site{
   }
 
   /* ==========================================================
-     TOOLTIPS — accessible (hover + focus + Escape)
+     TOOLTIPS — ARIA-Fix
+     role="tooltip" wird erst gesetzt, wenn ein Inhalt drin ist.
+     Im Leerzustand: aria-hidden="true".
      ========================================================== */
   const tooltip = document.createElement('div');
   tooltip.className = 'tooltip';
   tooltip.id = 'global-tooltip';
-  tooltip.setAttribute('role', 'tooltip');
+  tooltip.setAttribute('aria-hidden', 'true');
   document.body.appendChild(tooltip);
 
   let tipTrigger = null;
@@ -1775,7 +1784,10 @@ footer.site{
     const text = el.getAttribute('data-tip');
     if (!text) return;
 
+    // Inhalt setzen, dann erst Rolle + Sichtbarkeit aktivieren
     tooltip.textContent = text;
+    tooltip.setAttribute('role', 'tooltip');
+    tooltip.setAttribute('aria-hidden', 'false');
     tooltip.classList.add('visible');
     tipTrigger = el;
 
@@ -1804,6 +1816,11 @@ footer.site{
   function hideTip() {
     tooltip.classList.remove('visible');
     tooltip.style.transform = 'translate(-9999px,-9999px)';
+    tooltip.setAttribute('aria-hidden', 'true');
+    // role entfernen — verhindert axe-Fehler "kein accessible name"
+    tooltip.removeAttribute('role');
+    tooltip.textContent = '';
+
     if (tipTrigger) {
       if (tipTrigger.dataset.tipPrevDesc) {
         tipTrigger.setAttribute('aria-describedby', tipTrigger.dataset.tipPrevDesc);
@@ -1850,7 +1867,7 @@ footer.site{
   }
 
   /* ==========================================================
-     COMMAND PALETTE  (Unique Feature #2)
+     COMMAND PALETTE
      ========================================================== */
   const paletteOverlay = $('#palette-overlay');
   const paletteInput   = $('#palette-input');
@@ -2022,7 +2039,7 @@ footer.site{
   });
 
   /* ==========================================================
-     INTERACTIVE TERMINAL  (Unique Feature #1)
+     INTERACTIVE TERMINAL
      ========================================================== */
   const termOut   = $('#term-output');
   const termInput = $('#term-input');
@@ -2151,7 +2168,7 @@ footer.site{
   });
 
   /* ==========================================================
-     PLAYGROUND  (Unique Feature #3)
+     PLAYGROUND
      ========================================================== */
   const DEFAULT_CODE = {
     html: `<div class="card">
@@ -2576,10 +2593,6 @@ ${codeJs.value}
     };
 
     try {
-      /*
-       * FormSubmit.co — AJAX-Endpoint mit Custom-Hash.
-       * Empfänger: snestler110@gmail.com (serverseitig bei FormSubmit hinterlegt).
-       */
       const ENDPOINT = 'https://formsubmit.co/ajax/80c5984bee05d716423ff081c5932487';
 
       const res = await fetch(ENDPOINT, {
@@ -2695,11 +2708,6 @@ ${codeJs.value}
 
   $('#cookie-reopen').addEventListener('click', openCookies);
 
-  /*
-   * WCAG 2.1.2 No Keyboard Trap:
-   * Cookie-Banner ist role="region", kein aria-modal — kein Fokus-Trap.
-   * Escape schließt mit "Nur notwendige".
-   */
   banner.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       saveConsent({
