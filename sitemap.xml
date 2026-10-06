@@ -58,12 +58,12 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- ==================== Rechtliches ==================== -->
+  <!-- ==================== Unterseiten ==================== -->
   <url>
-    <loc>https://nestler.dev/#imprint</loc>
+    <loc>https://nestler.dev/tech-stack.html</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.6</priority>
   </url>
 
   <url>
@@ -71,6 +71,14 @@
     <lastmod>2026-10-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+
+  <!-- ==================== Rechtliches (Anker) ==================== -->
+  <url>
+    <loc>https://nestler.dev/#imprint</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>
