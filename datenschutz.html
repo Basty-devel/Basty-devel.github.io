@@ -4,54 +4,119 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
+<!-- ===== NO-FOUC THEME BOOTSTRAP ===== -->
+<script>
+(function(){
+  var t = null;
+  try { t = localStorage.getItem('nestler.theme'); } catch(e){}
+  if (t === 'dark' || t === 'light' || t === 'synth' || t === 'matrix') {
+    document.documentElement.setAttribute('data-theme', t);
+  } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
+
+<!-- ===== SEO ===== -->
 <title>Datenschutzerklärung · Sebastian Friedrich Nestler</title>
-<meta name="description" content="Datenschutzerklärung von nestler.dev: Welche Daten verarbeitet werden, warum, wie lange und welche Rechte Sie haben. DSGVO-konform, transparent, ohne Tracking.">
+<meta name="description" content="Datenschutzerklärung von sebastian-nestler.github.io: keine Cookies, kein Tracking. Informationen zu Hosting, Kontaktformular (Formspree EU), YouTube und Ihren Rechten nach DSGVO.">
 <link rel="canonical" href="https://sebastian-nestler.github.io/datenschutz.html">
 <meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
 <meta name="author" content="Sebastian Friedrich Nestler">
-<meta name="language" content="de">
+<meta name="publisher" content="Sebastian Friedrich Nestler">
 
+<!-- ===== OPEN GRAPH ===== -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Datenschutzerklärung · nestler.dev">
-<meta property="og:description" content="DSGVO-konforme Datenschutzerklärung: keine Cookies, kein Tracking, nur was nötig ist.">
-<meta property="og:url" content="https://sebastian-nestler.github.io/datenschutz.html">
+<meta property="og:site_name" content="Sebastian Friedrich Nestler">
 <meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://sebastian-nestler.github.io/datenschutz.html">
+<meta property="og:title" content="Datenschutzerklärung · Sebastian Friedrich Nestler">
+<meta property="og:description" content="Keine Cookies, kein Tracking. Transparente Informationen zu Hosting, Kontaktformular und DSGVO-Rechten.">
+<meta property="og:image" content="https://sebastian-nestler.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Datenschutzerklärung von Sebastian Friedrich Nestler.">
 
+<!-- ===== TWITTER / X ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Datenschutzerklärung · Sebastian Friedrich Nestler">
+<meta name="twitter:description" content="Keine Cookies, kein Tracking. Transparente Informationen zu Hosting, Kontaktformular und DSGVO-Rechten.">
+<meta name="twitter:image" content="https://sebastian-nestler.github.io/og-image.png">
+
+<!-- ===== ICONS & PWA ===== -->
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f6f6f3" media="(prefers-color-scheme: light)">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="/manifest.webmanifest">
 
+<!-- ===== CRITICAL CSS (inline — above-the-fold, no FOUC) ===== -->
 <style>
+/* ============================================================
+   CRITICAL CSS — nur Above-the-Fold
+   Tokens, Reset, Header, Breadcrumb, Seiten-Header.
+   Der Rest liegt in /style.css (extern, blockierend).
+   ============================================================ */
+
+/* 0. TOKENS / THEMES */
 :root{
-  --bg:#0a0a0b; --surface:#131317; --surface-2:#1b1b21; --border:#2a2a33;
-  --text:#e9e9ec; --muted:#8d8d99; --accent:#c6ff3d; --accent-ink:#0a0a0b;
-  --accent-2:#7c5cff; --danger:#ff6b6b; --ok:#3ddc97;
-  --radius:16px; --radius-sm:10px;
+  --bg:#0a0a0b;--surface:#131317;--surface-2:#1b1b21;--border:#3a3a45;
+  --text:#e9e9ec;--muted:#a8a8b3;--accent:#4a86ff;--accent-ink:#0a0a0b;
+  --accent-2:#00d5ff;--danger:#ff6b6b;--ok:#3ddc97;
+  --radius:16px;--radius-sm:10px;
   --shadow:0 18px 50px -12px rgba(0,0,0,.75);
+  --ring:0 0 0 3px color-mix(in srgb, var(--accent) 55%, transparent);
   --max:1140px;
   --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
 }
 [data-theme="light"]{
-  --bg:#f6f6f3; --surface:#ffffff; --surface-2:#eeeceb; --border:#dcdad4;
-  --text:#14141a; --muted:#5b5b68; --accent:#14713a; --accent-ink:#ffffff;
-  --accent-2:#5b3df5; --shadow:0 18px 50px -18px rgba(20,20,26,.28);
+  --bg:#f6f6f3;--surface:#ffffff;--surface-2:#eeeceb;--border:#b8b6ae;
+  --text:#14141a;--muted:#4a4a5c;--accent:#1a5dff;--accent-ink:#ffffff;
+  --accent-2:#0043c7;--danger:#c53030;--ok:#0e8a5a;
+  --shadow:0 18px 50px -18px rgba(20,20,26,.28);
+}
+[data-theme="synth"]{
+  --bg:#0d0716;--surface:#170d24;--surface-2:#211334;--border:#4a2d73;
+  --text:#f4ecff;--muted:#b9a4d4;--accent:#ff4fd8;--accent-ink:#12001a;
+  --accent-2:#33e1ff;--shadow:0 18px 60px -12px rgba(255,79,216,.28);
+}
+[data-theme="matrix"]{
+  --bg:#000600;--surface:#041004;--surface-2:#072007;--border:#1a5c1a;
+  --text:#c8ffc8;--muted:#7ac47a;--accent:#22ff6b;--accent-ink:#001100;
+  --accent-2:#00d5ff;--shadow:0 18px 50px -12px rgba(34,255,107,.25);
 }
 
+/* 1. BASE */
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  margin:0; background:var(--bg); color:var(--text); font-family:var(--font);
-  font-size:clamp(1rem,.95rem + .25vw,1.0625rem); line-height:1.65;
-  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
 }
-img,svg{max-width:100%;display:block}
+body{
+  margin:0;background:var(--bg);color:var(--text);font-family:var(--font);
+  font-size:clamp(1rem,.95rem + .25vw,1.0625rem);line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay;
+}
+img,svg,canvas{max-width:100%;display:block}
+button,input,textarea,select{font:inherit;color:inherit}
 a{color:var(--accent);text-underline-offset:.25em}
 a:hover{text-decoration-thickness:2px}
-:where(a,button,[tabindex]):focus-visible{
-  outline:2px solid var(--accent); outline-offset:3px; border-radius:6px;
+::placeholder{color:var(--muted);opacity:1}
+:where(a,button,input,textarea,select,summary,[tabindex]):focus-visible{
+  outline:2px solid var(--accent);outline-offset:3px;border-radius:6px;
 }
+:where(section,[id],a,button,input,textarea,select,summary,details){scroll-margin-top:90px}
 ::selection{background:var(--accent);color:var(--accent-ink)}
 .sr-only{
   position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
@@ -65,552 +130,641 @@ a:hover{text-decoration-thickness:2px}
 }
 .skip:focus{top:0}
 
+/* 2. LAYOUT */
 .wrap{width:min(100% - 2.5rem,var(--max));margin-inline:auto;position:relative;z-index:2}
-:where(h1,h2,h3,section,[id],a,button){scroll-margin-top:90px}
-
-header.site{
-  position:sticky;top:0;z-index:900;
-  backdrop-filter:blur(14px) saturate(1.4);
-  background:color-mix(in srgb,var(--bg) 78%,transparent);
-  border-bottom:1px solid var(--border);
-}
-.nav{display:flex;align-items:center;gap:1rem;padding:.85rem 0}
-.brand{
-  font-family:var(--mono);font-weight:700;font-size:1rem;
-  text-decoration:none;color:var(--text);letter-spacing:-.02em;
-  display:flex;align-items:center;gap:.5rem;
-}
-.brand .mark{
-  width:10px;height:10px;background:var(--accent);border-radius:2px;
-  transform:rotate(45deg);flex:none;transition:transform .4s cubic-bezier(.2,.8,.2,1);
-}
-.brand:hover .mark{transform:rotate(225deg) scale(1.2)}
-.back-link{
-  margin-left:auto;color:var(--muted);text-decoration:none;
-  font-size:.9rem;font-weight:500;padding:.5rem .8rem;border-radius:8px;
-  transition:color .2s,background .2s;
-}
-.back-link:hover{color:var(--text);background:var(--surface-2)}
-
-main{padding:clamp(3rem,7vw,6rem) 0 clamp(4rem,8vw,7rem)}
+section{padding:clamp(3rem,6vw,5rem) 0;position:relative}
 .eyebrow{
   font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--accent);margin:0 0 .9rem;
   display:flex;align-items:center;gap:.6rem;
 }
 .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);flex:none}
-h1{font-size:clamp(2rem,1.4rem + 3vw,3.4rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 .8rem;font-weight:800}
-h2{
-  font-size:clamp(1.35rem,1.1rem + 1.2vw,1.85rem);
-  line-height:1.2;letter-spacing:-.02em;margin:0 0 .8rem;font-weight:800;
+h1,h2,h3{line-height:1.2;letter-spacing:-.025em;margin:0 0 .6em;font-weight:800}
+h1{font-size:clamp(2rem,1.4rem + 2.6vw,3rem);letter-spacing:-.035em}
+h2{font-size:clamp(1.35rem,1.1rem + 1vw,1.75rem);margin-top:2.5em}
+h3{font-size:1.05rem;margin-top:1.75em;letter-spacing:-.01em}
+h2:first-child,h3:first-child{margin-top:0}
+p{margin:0 0 1em}
+.lede{font-size:clamp(1.05rem,1rem + .5vw,1.2rem);color:var(--muted);max-width:62ch;margin:0 0 1em}
+
+/* 3. PROGRESS + HEADER */
+#progress{
+  position:fixed;top:0;left:0;height:2px;width:0%;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  z-index:1000;transition:width .1s linear;
 }
-h3{font-size:1.08rem;line-height:1.25;letter-spacing:-.01em;margin:0 0 .5rem;font-weight:700}
-p{margin:0 0 1rem;color:var(--muted)}
-p:last-child{margin-bottom:0}
-ul,ol{margin:0 0 1rem;padding-left:1.25rem;color:var(--muted)}
-li{margin-bottom:.35rem}
-strong{color:var(--text);font-weight:650}
-code{
-  font-family:var(--mono);font-size:.88em;
+@media (prefers-reduced-motion:reduce){#progress{transition:none}}
+header.site{
+  position:sticky;top:0;z-index:900;
+  backdrop-filter:blur(14px) saturate(1.4);
+  background:color-mix(in srgb,var(--bg) 78%,transparent);
+  border-bottom:1px solid transparent;
+  transition:border-color .25s ease,background .25s ease;
+}
+header.site.stuck{border-bottom-color:var(--border)}
+.nav{display:flex;align-items:center;gap:1rem;padding:.85rem 0}
+.brand{
+  font-family:var(--mono);font-weight:700;font-size:1rem;
+  text-decoration:none;color:var(--text);letter-spacing:-.02em;
+  margin-right:auto;display:flex;align-items:center;gap:.55rem;
+}
+.brand .logo{
+  width:26px;height:26px;flex:none;border-radius:6px;
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .3s;
+  box-shadow:0 2px 8px -2px rgba(26,93,255,.4);
+}
+.brand:hover .logo{transform:rotate(-6deg) scale(1.08);box-shadow:0 4px 14px -2px rgba(26,93,255,.6)}
+.brand .dev{color:var(--accent)}
+.nav-links{display:flex;gap:.25rem;align-items:center;list-style:none;margin:0;padding:0}
+.nav-links a{
+  color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;
+  padding:.5rem .7rem;border-radius:8px;transition:color .2s,background .2s;
+}
+.nav-links a:hover{color:var(--text);background:var(--surface-2)}
+.icon-btn{
+  background:var(--surface);border:1px solid var(--border);color:var(--text);
+  width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
+  cursor:pointer;transition:transform .18s cubic-bezier(.2,.8,.2,1),border-color .2s,background .2s;
+  flex:none;
+}
+.icon-btn:hover{border-color:var(--accent);background:var(--surface-2);transform:translateY(-2px)}
+.icon-btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.menu-toggle{display:none}
+@media (max-width:860px){
+  .nav-links{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;
+    background:var(--surface);border-bottom:1px solid var(--border);
+    padding:.75rem 1.25rem 1.25rem;gap:.15rem;display:none;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:.8rem .6rem;font-size:1rem}
+  .menu-toggle{display:grid}
+}
+
+/* 4. BREADCRUMB */
+.breadcrumb{padding:1.5rem 0 0;font-size:.82rem;color:var(--muted);font-family:var(--mono)}
+.breadcrumb ol{
+  list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;
+}
+.breadcrumb li{display:flex;align-items:center;gap:.4rem}
+.breadcrumb li:not(:last-child)::after{content:"/";opacity:.4}
+.breadcrumb a{color:var(--muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--accent);text-decoration:underline}
+.breadcrumb [aria-current="page"]{color:var(--text)}
+
+/* 5. LEGAL-PAGE-SPEZIFISCH */
+.legal-page{padding-bottom:clamp(4rem,8vw,7rem)}
+.legal-page .toc{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.25rem 1.5rem;margin:2rem 0 3rem;
+}
+.legal-page .toc h2{
+  font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 .75rem;font-family:var(--mono);font-weight:700;
+}
+.legal-page .toc ol{
+  margin:0;padding:0;list-style:none;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.35rem 1.25rem;
+  counter-reset:toc;
+}
+.legal-page .toc li{counter-increment:toc;font-size:.92rem}
+.legal-page .toc li::before{
+  content:counter(toc) ". ";color:var(--accent);font-family:var(--mono);
+  font-weight:700;margin-right:.15rem;
+}
+.legal-page .toc a{color:var(--text);text-decoration:none}
+.legal-page .toc a:hover{color:var(--accent);text-decoration:underline}
+.legal-page .prose{max-width:70ch}
+.legal-page .prose p,
+.legal-page .prose li{color:var(--muted)}
+.legal-page .prose strong{color:var(--text)}
+.legal-page .prose ul,
+.legal-page .prose ol{padding-left:1.25rem;margin:0 0 1em}
+.legal-page .prose li{margin-bottom:.4em}
+.legal-page .prose li::marker{color:var(--accent)}
+.legal-page .prose a{word-break:break-word;overflow-wrap:anywhere}
+.legal-page .prose code{
+  font-family:var(--mono);font-size:.85em;
   background:var(--surface-2);border:1px solid var(--border);
-  border-radius:5px;padding:.1em .4em;color:var(--text);
+  padding:.1em .45em;border-radius:5px;color:var(--accent);
 }
-.lede{font-size:clamp(1.05rem,1rem + .4vw,1.2rem);max-width:62ch}
-
-.toc{
+.legal-page .meta-box{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);
+  padding:1rem 1.25rem;margin:2rem 0;font-size:.88rem;color:var(--muted);
+  font-family:var(--mono);
+}
+.legal-page .meta-box strong{color:var(--text);font-weight:600}
+.legal-page .info-card{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  padding:1.5rem;margin:2.5rem 0 3rem;
+  padding:1.5rem 1.75rem;margin:1.5rem 0;
 }
-.toc h2{font-size:1rem;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-family:var(--mono);font-weight:700;margin-bottom:1rem}
-.toc ol{columns:2;column-gap:2rem;margin:0;padding-left:1.25rem;list-style:decimal}
-@media (max-width:620px){.toc ol{columns:1}}
-.toc li{margin-bottom:.4rem;break-inside:avoid}
-.toc a{text-decoration:none;color:var(--muted);transition:color .2s}
-.toc a:hover{color:var(--accent);text-decoration:underline}
+.legal-page .info-card h3{margin-top:0}
+.legal-page .info-card address{font-style:normal;line-height:1.8;color:var(--muted)}
+.legal-page .info-card address strong{color:var(--text)}
+.legal-page .back-link{
+  display:inline-flex;align-items:center;gap:.55rem;margin-top:3rem;
+  padding:.7rem 1.25rem;background:var(--surface);border:1px solid var(--border);
+  border-radius:999px;color:var(--text);text-decoration:none;font-weight:600;font-size:.92rem;
+  transition:transform .18s cubic-bezier(.2,.8,.2,1),border-color .2s,background .2s;
+}
+.legal-page .back-link:hover{
+  border-color:var(--accent);background:var(--surface-2);transform:translateY(-2px);
+}
+.legal-page .back-link svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-.policy-section{
-  padding:2.5rem 0;
-  border-top:1px solid var(--border);
-}
-.policy-section:first-of-type{border-top:0;padding-top:0}
-
-.info-box{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  padding:1.25rem 1.5rem;margin:1.25rem 0;
-}
-.info-box.accent{
-  border-color:color-mix(in srgb,var(--accent) 40%,var(--border));
-  background:color-mix(in srgb,var(--accent) 6%,var(--surface));
-}
-.info-box h3{color:var(--accent);font-family:var(--mono);font-size:.85rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:.75rem}
-.info-box p, .info-box ul{font-size:.94rem}
-.info-box p:last-child, .info-box ul:last-child{margin-bottom:0}
-
-address{
-  font-style:normal;line-height:1.8;color:var(--muted);
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--radius-sm);padding:1rem 1.25rem;
-}
-address strong{color:var(--text)}
-
-.updated{
-  font-family:var(--mono);font-size:.82rem;color:var(--muted);
-  margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);
-}
-
+/* 6. FOOTER (minimal) */
 footer.site{
-  border-top:1px solid var(--border);
-  padding:2.5rem 0 calc(4rem + env(safe-area-inset-bottom, 0px));
+  border-top:1px solid var(--border);padding:2.5rem 0 4rem;
   font-size:.85rem;color:var(--muted);
 }
-.foot-links{display:flex;gap:1.25rem;flex-wrap:wrap;list-style:none;margin:0;padding:0}
-.foot-links a{color:var(--muted);text-decoration:underline;text-underline-offset:.25em}
-.foot-links a:hover{color:var(--accent)}
+.foot-min{display:flex;flex-direction:column;gap:1rem;text-align:center;align-items:center}
+.foot-min nav{display:flex;flex-wrap:wrap;gap:1.25rem;justify-content:center}
+.foot-min nav a{color:var(--muted);text-decoration:none;font-size:.85rem}
+.foot-min nav a:hover{color:var(--accent);text-decoration:underline}
+.foot-min p{margin:0;font-size:.78rem}
 
-::selection{background:var(--accent);color:var(--accent-ink)}
+/* 7. RESPONSIVE POLISH */
+@media (max-width:420px){
+  h1{font-size:1.75rem}
+  .legal-page .toc{padding:1rem 1.1rem}
+  .legal-page .info-card{padding:1.25rem 1.25rem}
+}
 </style>
+
+<!-- ===== FULL STYLESHEET (external, blocking, cached across pages) ===== -->
+<link rel="stylesheet" href="/style.css">
+
+<!-- ===== STRUCTURED DATA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://sebastian-nestler.github.io/datenschutz.html",
+  "url": "https://sebastian-nestler.github.io/datenschutz.html",
+  "name": "Datenschutzerklärung",
+  "inLanguage": "de-DE",
+  "isPartOf": { "@id": "https://sebastian-nestler.github.io/#website" },
+  "about": { "@id": "https://sebastian-nestler.github.io/#person" },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://sebastian-nestler.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Datenschutz", "item": "https://sebastian-nestler.github.io/datenschutz.html" }
+    ]
+  }
+}
+</script>
 </head>
 <body>
 
 <a class="skip" href="#main">Zum Hauptinhalt springen</a>
+<div id="progress" role="presentation"></div>
 
-<header class="site">
+<!-- ===================== HEADER ===================== -->
+<header class="site" id="site-header">
   <div class="wrap">
     <nav class="nav" aria-label="Hauptnavigation">
-      <a href="/" class="brand" aria-label="Zur Startseite sebastian-nestler.github.io">
-        <span class="mark" aria-hidden="true"></span>nestler<span style="color:var(--accent)">.dev</span>
+      <a href="/" class="brand" aria-label="Zur Startseite von Sebastian Friedrich Nestler">
+        <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <rect width="100" height="100" rx="18" fill="#ffffff"/>
+          <text x="50" y="74" text-anchor="middle"
+                font-family="'Arial Black','Helvetica Neue',Helvetica,Arial,sans-serif"
+                font-size="72" font-weight="900" letter-spacing="-6"
+                fill="#1a5dff">SN</text>
+        </svg>
+        nestler<span class="dev">.dev</span>
       </a>
-      <a href="/" class="back-link">← Zur Startseite</a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/#about">Über</a></li>
+        <li><a href="/#preise">Preise</a></li>
+        <li><a href="/#avatar">Avatar</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="/#contact">Kontakt</a></li>
+        <li><a href="/impressum.html">Impressum</a></li>
+        <li><a href="/datenschutz.html" aria-current="page">Datenschutz</a></li>
+      </ul>
+
+      <button class="icon-btn" id="theme-toggle" data-tip="Farbschema wechseln" aria-label="Farbschema wechseln">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.5-.04-1-.1-1.5A7 7 0 0 1 12 3Z"/></svg>
+      </button>
+
+      <button class="icon-btn menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menü öffnen">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </nav>
   </div>
 </header>
 
 <main id="main">
-  <div class="wrap">
 
+<!-- ===================== BREADCRUMB ===================== -->
+<div class="wrap">
+  <nav class="breadcrumb" aria-label="Brotkrumen-Navigation">
+    <ol>
+      <li><a href="/">Startseite</a></li>
+      <li><span aria-current="page">Datenschutz</span></li>
+    </ol>
+  </nav>
+</div>
+
+<!-- ===================== DATENSCHUTZ ===================== -->
+<section class="legal-page" aria-labelledby="page-title">
+  <div class="wrap">
     <p class="eyebrow">Rechtliches</p>
-    <h1>Datenschutzerklärung</h1>
-    <p class="lede" style="margin-bottom:2rem">
-      Der Schutz deiner persönlichen Daten ist mir wichtig. Diese Erklärung
-      informiert dich transparent darüber, welche Daten diese Website
-      verarbeitet, warum und welche Rechte du hast — nach der
-      Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG).
+    <h1 id="page-title">Datenschutzerklärung</h1>
+    <p class="lede">
+      Der Schutz Ihrer personenbezogenen Daten ist mir wichtig. Diese
+      Erklärung informiert Sie transparent darüber, welche Daten beim Besuch
+      dieser Website verarbeitet werden — und vor allem, welche <strong>nicht</strong>.
     </p>
+
+    <div class="meta-box">
+      <strong>Stand:</strong> 6. Oktober 2026<br>
+      <strong>Kurzfassung:</strong> Keine Cookies. Kein Tracking. Keine Werbenetzwerke. Keine Weitergabe an Dritte ohne Ihre Einwilligung.
+    </div>
 
     <nav class="toc" aria-label="Inhaltsverzeichnis">
       <h2>Inhalt</h2>
       <ol>
         <li><a href="#verantwortlicher">Verantwortlicher</a></li>
-        <li><a href="#hosting">Hosting &amp; Server-Logs</a></li>
-        <li><a href="#kontaktformular">Kontaktformular</a></li>
-        <li><a href="#localstorage">localStorage &amp; Cookies</a></li>
-        <li><a href="#keine-tracking">Kein Tracking, keine Analyse</a></li>
-        <li><a href="#rechte">Deine Rechte</a></li>
-        <li><a href="#beschwerde">Beschwerderecht</a></li>
-        <li><a href="#ssl">SSL/TLS-Verschlüsselung</a></li>
-        <li><a href="#aenderungen">Änderungen</a></li>
+        <li><a href="#allgemein">Allgemeines zur Datenverarbeitung</a></li>
+        <li><a href="#hosting">Hosting durch GitHub Pages</a></li>
+        <li><a href="#logfiles">Server-Logfiles</a></li>
+        <li><a href="#localstorage">Lokale Speicherung im Browser</a></li>
+        <li><a href="#kontaktformular">Kontaktformular &amp; E-Mail</a></li>
+        <li><a href="#youtube">Externe Videos (YouTube)</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#ssl">SSL-/TLS-Verschlüsselung</a></li>
+        <li><a href="#rechte">Ihre Rechte nach DSGVO</a></li>
+        <li><a href="#beschwerde">Beschwerderecht bei der Aufsichtsbehörde</a></li>
+        <li><a href="#profiling">Keine automatisierte Entscheidungsfindung</a></li>
+        <li><a href="#aktualitaet">Aktualität und Änderung</a></li>
       </ol>
     </nav>
 
-    <!-- 1 -->
-    <section class="policy-section" id="verantwortlicher" aria-labelledby="verantwortlicher-title">
-      <h2 id="verantwortlicher-title">1. Verantwortlicher</h2>
-      <p>
-        Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne
-        von Art. 4 Nr. 7 DSGVO ist:
-      </p>
-      <address>
-        <strong>Sebastian Friedrich Nestler</strong><br>
-        Albert-Schweitzer-Str. 19<br>
-        08280 Aue-Bad Schlema OT Aue<br>
-        Deutschland<br><br>
-        E-Mail: <a href="mailto:snestler110@gmail.com">snestler110@gmail.com</a>
-      </address>
-      <p style="margin-top:1rem">
-        Ein Datenschutzbeauftragter ist gesetzlich nicht erforderlich, da die
-        Verarbeitungstätigkeiten die Schwellenwerte des Art. 37 DSGVO nicht
-        erreichen.
-      </p>
-    </section>
+    <div class="prose">
 
-    <!-- 2 -->
-    <section class="policy-section" id="hosting" aria-labelledby="hosting-title">
-      <h2 id="hosting-title">2. Hosting &amp; Server-Logfiles</h2>
-      <p>
-        Diese Website wird bei einem externen Dienstleister gehostet
-        (Auftragsverarbeiter). Der Hosting-Anbieter verarbeitet in unserem
-        Auftrag alle Daten, die beim Aufruf dieser Website anfallen.
-      </p>
-
-      <div class="info-box">
-        <h3>Hosting-Anbieter</h3>
-        <p style="margin:0">
-          <strong>Namecheap, Inc.</strong><br>
-          4600 East Washington Street, Suite 305<br>
-          Phoenix, AZ 85034, USA
-        </p>
+      <!-- 1 -->
+      <h2 id="verantwortlicher">1. Verantwortlicher</h2>
+      <div class="info-card">
+        <address>
+          <strong>Sebastian Friedrich Nestler</strong><br>
+          Albert-Schweitzer-Str. 19<br>
+          08280 Aue-Bad Schlema OT Aue<br>
+          Deutschland<br><br>
+          E-Mail: <a href="mailto:nestler@nestler.dev">nestler@nestler.dev</a>
+        </address>
       </div>
+      <p>
+        Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) und
+        anderer nationaler Datenschutzgesetze ist die oben genannte Person.
+        Ein betrieblicher Datenschutzbeauftragter ist gesetzlich nicht
+        erforderlich und wurde nicht bestellt.
+      </p>
 
+      <!-- 2 -->
+      <h2 id="allgemein">2. Allgemeines zur Datenverarbeitung</h2>
+      <p>
+        Diese Website folgt dem Grundsatz der <strong>Datenminimierung</strong>.
+        Es werden ausschließlich die Daten verarbeitet, die für den technischen
+        Betrieb, für die Beantwortung Ihrer Anfragen und zur Erfüllung
+        gesetzlicher Pflichten notwendig sind.
+      </p>
+      <p>Konkret bedeutet das:</p>
+      <ul>
+        <li>Es werden <strong>keine</strong> Tracking-, Analyse- oder Werbe-Tools eingesetzt.</li>
+        <li>Es werden <strong>keine</strong> Profile über Ihr Nutzungsverhalten erstellt.</li>
+        <li>Es werden <strong>keine</strong> Daten an Dritte zu Marketing- oder Werbezwecken weitergegeben.</li>
+        <li>Alle Formulardaten werden ausschließlich auf Servern innerhalb der EU verarbeitet.</li>
+      </ul>
+
+      <!-- 3 -->
+      <h2 id="hosting">3. Hosting durch GitHub Pages</h2>
+      <p>
+        Diese Website wird über <strong>GitHub Pages</strong> gehostet, einen Dienst der
+        GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA
+        („GitHub").
+      </p>
+      <p>
+        Beim Aufruf der Seite verarbeitet GitHub automatisch technische
+        Zugriffsdaten (siehe Punkt 4). GitHub handelt dabei als
+        <strong>Auftragsverarbeiter</strong> im Sinne von Art. 28 DSGVO. Die
+        Verarbeitung kann auch in den USA erfolgen. Die Übermittlung stützt
+        sich auf die <strong>Standardvertragsklauseln</strong> der Europäischen
+        Kommission gemäß Art. 46 Abs. 2 lit. c DSGVO.
+      </p>
+      <p>
+        Weitere Informationen:
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+           target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a>.
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO
+        (berechtigtes Interesse an einem sicheren und stabilen Betrieb der Website).
+      </p>
+
+      <!-- 4 -->
+      <h2 id="logfiles">4. Server-Logfiles</h2>
       <p>
         Beim Aufruf dieser Website werden durch den Hosting-Anbieter
         automatisch Informationen in sogenannten Server-Logfiles gespeichert,
-        die dein Browser übermittelt:
+        die Ihr Browser übermittelt:
       </p>
       <ul>
-        <li>IP-Adresse (in der Regel gekürzt oder anonymisiert)</li>
+        <li>gekürzte oder anonymisierte IP-Adresse</li>
         <li>Datum und Uhrzeit der Anfrage</li>
-        <li>aufgerufene Seite / Datei</li>
+        <li>Name und URL der abgerufenen Datei</li>
         <li>übertragene Datenmenge</li>
-        <li>Browsertyp und Browserversion</li>
-        <li>Betriebssystem</li>
-        <li>Referrer-URL (zuvor besuchte Seite)</li>
+        <li>Meldung über erfolgreichen Abruf (HTTP-Statuscode)</li>
+        <li>Browsertyp und -version, verwendetes Betriebssystem</li>
+        <li>Referrer-URL (die zuvor besuchte Seite)</li>
       </ul>
-
       <p>
-        <strong>Zweck:</strong> Die Verarbeitung erfolgt zur Sicherstellung
-        eines störungsfreien Betriebs, zur Verbesserung der Sicherheit und
-        zur Fehleranalyse.<br>
-        <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO
-        (berechtigtes Interesse an einem sicheren und stabilen Betrieb).<br>
-        <strong>Speicherdauer:</strong> Die Logfiles werden nach
-        spätestens 30 Tagen automatisch gelöscht, sofern sie nicht zur
-        Aufklärung eines konkreten Missbrauchsfalls benötigt werden.
+        Diese Daten werden nicht mit anderen Datenquellen zusammengeführt und
+        dienen ausschließlich der Sicherstellung eines störungsfreien Betriebs
+        sowie der Verbesserung der Sicherheit. Nach spätestens
+        <strong>30 Tagen</strong> werden die Logfiles gelöscht, sofern keine
+        sicherheitsrelevanten Vorfälle eine längere Speicherung erfordern.
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO.
       </p>
 
+      <!-- 5 -->
+      <h2 id="localstorage">5. Lokale Speicherung im Browser (localStorage)</h2>
       <p>
-        Da der Hosting-Anbieter seinen Sitz in den USA hat, kann eine
-        Übermittlung personenbezogener Daten in die USA stattfinden. Die
-        Übermittlung erfolgt auf Grundlage des EU-US Data Privacy Framework
-        (Art. 45 DSGVO) bzw. von Standardvertragsklauseln (Art. 46 Abs. 2
-        lit. c DSGVO). Weitere Informationen findest du in der
-        Datenschutzerklärung von Namecheap.
+        Diese Website verwendet <strong>keine Cookies</strong>. Für einige
+        Komfortfunktionen werden jedoch Werte im sogenannten
+        <code>localStorage</code> Ihres Browsers abgelegt:
       </p>
-    </section>
-
-    <!-- 3 -->
-    <section class="policy-section" id="kontaktformular" aria-labelledby="kontakt-title">
-      <h2 id="kontakt-title">3. Kontaktformular &amp; E-Mail-Kontakt</h2>
+      <ul>
+        <li><code>nestler.theme</code> — Ihre gewählte Farbvariante (dark, light, synth oder matrix)</li>
+        <li><code>nestler.consent.v1</code> — Ihre Auswahl im Hinweis zur Datenspeicherung</li>
+        <li><code>nestler.paletteHint</code> — Merker, ob ein Nutzungshinweis zur Befehlspalette bereits angezeigt wurde</li>
+      </ul>
       <p>
-        Wenn du mir über das Kontaktformular oder per E-Mail eine Anfrage
-        sendest, werden die von dir angegebenen Daten
-        (Name, E-Mail-Adresse, optional Betreff und Nachricht) zum Zweck
-        der Bearbeitung deiner Anfrage und für mögliche Anschlussfragen
-        bei mir gespeichert.
+        Diese Werte enthalten <strong>keine personenbezogenen Daten</strong>,
+        werden <strong>nicht an mich oder an Dritte übertragen</strong> und
+        verbleiben ausschließlich auf Ihrem Endgerät, bis Sie sie selbst
+        löschen (z. B. über die Browsereinstellungen „Websitedaten löschen").
       </p>
-
-      <div class="info-box">
-        <h3>Versand über FormSubmit</h3>
-        <p style="margin:0">
-          Für die technische Übermittlung des Formulars nutze ich den Dienst
-          <strong>FormSubmit.co</strong> (Betreiber: FormSubmit, USA). Die
-          eingegebenen Formulardaten werden zur Weiterleitung an meine
-          E-Mail-Adresse über die Server von FormSubmit übertragen.
-        </p>
-      </div>
-
-      <p>
-        <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO
-        (Vertragsanbahnung bzw. Erfüllung eines Vertrags) sowie
-        Art. 6 Abs. 1 lit. a DSGVO (deine ausdrückliche Einwilligung per
-        Checkbox).<br>
-        <strong>Speicherdauer:</strong> Deine Daten werden gelöscht, sobald
-        sie für die Erreichung des Zwecks ihrer Erhebung nicht mehr
-        erforderlich sind — in der Regel nach Abschluss der Korrespondenz.
-        Gesetzliche Aufbewahrungspflichten (z. B. aus dem HGB oder der AO)
-        bleiben unberührt.<br>
-        <strong>Widerruf:</strong> Du kannst deine Einwilligung jederzeit
-        mit Wirkung für die Zukunft widerrufen. Eine formlose E-Mail an
-        <a href="mailto:snestler110@gmail.com">snestler110@gmail.com</a>
-        genügt.
-      </p>
-
-      <p>
-        Die Übermittlung in die USA erfolgt auch hier auf Grundlage des
-        EU-US Data Privacy Framework bzw. von Standardvertragsklauseln.
-      </p>
-    </section>
-
-    <!-- 4 -->
-    <section class="policy-section" id="localstorage" aria-labelledby="ls-title">
-      <h2 id="ls-title">4. lokale Speicherung (localStorage) &amp; Cookies</h2>
-
-      <div class="info-box accent">
-        <h3>Keine Cookies</h3>
-        <p style="margin:0">
-          Diese Website setzt <strong>keine Cookies</strong> im Sinne des
-          § 25 TDDDG. Es werden weder Session-Cookies noch Tracking- oder
-          Marketing-Cookies verwendet.
-        </p>
-      </div>
-
-      <p>
-        Zur Verbesserung der Nutzererfahrung speichere ich zwei Werte
-        ausschließlich lokal in deinem Browser (<code>localStorage</code>).
-        Diese Daten verlassen dein Gerät <strong>nicht</strong> und werden
-        nicht an mich oder Dritte übertragen:
-      </p>
-
-      <div class="info-box">
-        <h3>Gespeicherte Werte</h3>
-        <ul style="margin-bottom:0">
-          <li>
-            <code>nestler.theme</code> — dein gewähltes Farbschema
-            (<em>dark</em>, <em>light</em>, <em>synth</em> oder <em>matrix</em>),
-            damit beim nächsten Besuch das gleiche Design erscheint.
-          </li>
-          <li>
-            <code>nestler.consent.v1</code> — deine Auswahl im
-            Cookie-Hinweis, damit dieser nicht bei jedem Besuch erneut
-            eingeblendet wird.
-          </li>
-          <li>
-            <code>nestler.paletteHint</code> — merkt sich, dass der
-            Hinweis zur Tastenkombination <kbd>Strg</kbd>+<kbd>K</kbd>
-            bereits angezeigt wurde.
-          </li>
-        </ul>
-      </div>
-
       <p>
         <strong>Rechtsgrundlage:</strong> § 25 Abs. 2 Nr. 2 TDDDG
-        (unbedingt erforderliche Speicherung zur Erbringung eines vom Nutzer
-        ausdrücklich gewünschten Dienstes) sowie Art. 6 Abs. 1 lit. f DSGVO
-        (berechtigtes Interesse an einer konsistenten Nutzererfahrung).<br>
-        <strong>Speicherdauer:</strong> bis du diese Werte in deinem Browser
-        löschst.<br>
-        <strong>Löschen:</strong> Du kannst die Werte jederzeit über die
-        Entwicklertools deines Browsers oder über die Browsereinstellungen
-        („Websitedaten löschen") entfernen.
+        (technisch erforderliche Speicherung) — eine Einwilligung ist hierfür
+        nicht erforderlich.
       </p>
-    </section>
 
-    <!-- 5 -->
-    <section class="policy-section" id="keine-tracking" aria-labelledby="tracking-title">
-      <h2 id="tracking-title">5. Kein Tracking, keine Analyse, keine Werbung</h2>
+      <!-- 6 -->
+      <h2 id="kontaktformular">6. Kontaktformular und E-Mail-Kontakt</h2>
       <p>
-        Diese Website verwendet <strong>keine</strong> Analyse- oder
-        Trackingdienste (kein Google Analytics, kein Matomo, kein Plausible,
-        keine Pixel, keine Social-Media-Plugins). Es werden
-        <strong>keine</strong> Werbenetzwerke eingebunden und
-        <strong>keine</strong> externen Schriftarten, CDNs oder Skripte von
-        Drittanbietern geladen. Die gesamte Seite ist self-contained.
-      </p>
-      <p>
-        Aus diesem Grund benötigt die Website keine Einwilligung für
-        Statistik- oder Marketing-Zwecke. Der Hinweis beim ersten Besuch
-        dient allein der Transparenz und der Speicherung deiner Auswahl.
-      </p>
-    </section>
-
-    <!-- 6 -->
-    <section class="policy-section" id="rechte" aria-labelledby="rechte-title">
-      <h2 id="rechte-title">6. Deine Rechte als betroffene Person</h2>
-      <p>
-        Nach der DSGVO stehen dir gegenüber dem Verantwortlichen folgende
-        Rechte zu:
+        Wenn Sie das Kontaktformular nutzen oder mir direkt per E-Mail
+        schreiben, verarbeite ich folgende Daten:
       </p>
       <ul>
-        <li>
-          <strong>Auskunft (Art. 15 DSGVO)</strong> — du kannst eine
-          Bestätigung darüber verlangen, ob und welche personenbezogenen
-          Daten ich über dich verarbeite, sowie eine Kopie dieser Daten.
-        </li>
-        <li>
-          <strong>Berichtigung (Art. 16 DSGVO)</strong> — du kannst die
-          unverzügliche Berichtigung oder Vervollständigung unrichtiger
-          Daten verlangen.
-        </li>
-        <li>
-          <strong>Löschung (Art. 17 DSGVO)</strong> — du kannst die
-          Löschung deiner personenbezogenen Daten verlangen, sofern keine
-          gesetzliche Aufbewahrungspflicht entgegensteht.
-        </li>
-        <li>
-          <strong>Einschränkung (Art. 18 DSGVO)</strong> — du kannst die
-          Einschränkung der Verarbeitung verlangen, etwa solange die
-          Richtigkeit der Daten geprüft wird.
-        </li>
-        <li>
-          <strong>Datenübertragbarkeit (Art. 20 DSGVO)</strong> — du kannst
-          die von dir bereitgestellten Daten in einem strukturierten,
-          gängigen und maschinenlesbaren Format erhalten oder an einen
-          anderen Verantwortlichen übermitteln lassen.
-        </li>
-        <li>
-          <strong>Widerspruch (Art. 21 DSGVO)</strong> — du kannst der
-          Verarbeitung widersprechen, die auf Art. 6 Abs. 1 lit. f DSGVO
-          (berechtigtes Interesse) beruht.
-        </li>
-        <li>
-          <strong>Widerruf der Einwilligung (Art. 7 Abs. 3 DSGVO)</strong> —
-          erteilte Einwilligungen kannst du jederzeit mit Wirkung für die
-          Zukunft widerrufen.
-        </li>
+        <li>Name</li>
+        <li>E-Mail-Adresse</li>
+        <li>Betreff (optional)</li>
+        <li>Inhalt Ihrer Nachricht</li>
+        <li>Ihre Einwilligung in die Verarbeitung inkl. Zeitstempel</li>
       </ul>
       <p>
-        Zur Ausübung deiner Rechte genügt eine formlose E-Mail an
-        <a href="mailto:snestler110@gmail.com">snestler110@gmail.com</a>.
-        Ich antworte unverzüglich, spätestens innerhalb eines Monats
-        (Art. 12 Abs. 3 DSGVO).
+        <strong>Zweck:</strong> Bearbeitung und Beantwortung Ihrer Anfrage.<br>
+        <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO
+        (Anbahnung bzw. Erfüllung eines Vertrags) sowie Art. 6 Abs. 1 lit. a
+        DSGVO (Einwilligung durch das Häkchen im Formular).
       </p>
-    </section>
 
-    <!-- 7 -->
-    <section class="policy-section" id="beschwerde" aria-labelledby="beschwerde-title">
-      <h2 id="beschwerde-title">7. Beschwerderecht bei der Aufsichtsbehörde</h2>
+      <h3>Versand über Formspree (EU-Region)</h3>
       <p>
-        Unbeschadet eines anderweitigen verwaltungsrechtlichen oder
-        gerichtlichen Rechtsbehelfs steht dir das Recht auf Beschwerde bei
-        einer Aufsichtsbehörde zu, wenn du der Ansicht bist, dass die
-        Verarbeitung deiner personenbezogenen Daten gegen die DSGVO
-        verstößt (Art. 77 DSGVO).
+        Der technische Versand des Kontaktformulars erfolgt über den Dienst
+        <strong>Formspree</strong> (Formspree Inc., 340 S Lemon Ave #4019,
+        Walnut, CA 91789, USA) in der Konfiguration
+        <strong>„EU Data Residency"</strong>. Die Verarbeitung und Speicherung
+        erfolgt dadurch in Rechenzentren innerhalb der Europäischen Union
+        (Frankfurt am Main). Formspree ist als Auftragsverarbeiter gemäß
+        Art. 28 DSGVO tätig.
       </p>
       <p>
-        Für mich zuständig ist:
+        Weitere Informationen:
+        <a href="https://formspree.io/legal/privacy-policy/"
+           target="_blank" rel="noopener noreferrer">Formspree Privacy Policy</a>.
       </p>
-      <address>
-        <strong>Die Sächsische Datenschutz- und Transparenzbeauftragte</strong><br>
-        Devrientstraße 5<br>
-        01067 Dresden<br>
-        Telefon: +49 351 85471 101<br>
-        E-Mail: <a href="mailto:post@sdtb.sachsen.de">post@sdtb.sachsen.de</a><br>
-        Web: <a href="https://www.datenschutz.sachsen.de" target="_blank" rel="noopener noreferrer">www.datenschutz.sachsen.de</a>
-      </address>
-      <p style="margin-top:1rem">
-        Du kannst dich auch an die Aufsichtsbehörde deines gewöhnlichen
-        Aufenthaltsorts oder deines Arbeitsplatzes wenden.
+      <p>
+        <strong>Speicherdauer:</strong> Ihre Anfrage wird gelöscht, sobald sie
+        abschließend bearbeitet ist und keine gesetzlichen Aufbewahrungspflichten
+        (z. B. §§ 147 AO, 257 HGB) entgegenstehen — in der Regel spätestens
+        <strong>6 Monate</strong> nach Abschluss der Korrespondenz.
       </p>
-    </section>
 
-    <!-- 7b -->
-    <section class="policy-section" id="avatar" aria-labelledby="avatar-title">
-      <h2 id="avatar-title">7b. Digitaler Zwilling / Avatar-Assistent</h2>
+      <!-- 7 -->
+      <h2 id="youtube">7. Externe Videos (YouTube)</h2>
       <p>
-        Im Rahmen der angebotenen Kooperation „Digitaler Zwilling" verarbeiten wir
-        personenbezogene Daten zur Erstellung eines virtuellen Avatar-Assistenten.
-        Verarbeitet werden:
+        Auf dieser Website werden Videos über YouTube eingebunden. Um Ihre
+        Privatsphäre zu schützen, wird ein <strong>Click-to-Load-Verfahren</strong>
+        eingesetzt:
       </p>
-      <ul>
-        <li>ein Portraitfoto der auftraggebenden Person,</li>
-        <li>Sprachaufnahmen zur Nachbildung der Stimme,</li>
-        <li>inhaltliche Daten (z. B. Öffnungszeiten, Adresse, fachliche Antworten),</li>
-        <li>Interaktionsdaten aus dem späteren Betrieb des Assistenten.</li>
-      </ul>
-        <p>
-          <strong>Zweck:</strong> Erstellung und Betrieb eines virtuellen Assistenten, der
-          Anfragen von Nutzer:innen beantwortet.<br>
-          <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung)
-          sowie Art. 6 Abs. 1 lit. a DSGVO (ausdrückliche Einwilligung der abgebildeten
-          Person).<br>
-          <strong>Auftragsverarbeitung:</strong> Die technische Erstellung und der Betrieb
-          erfolgen über spezialisierte Dienstleister (Auftragsverarbeiter). Mit diesen
-          bestehen Verträge zur Auftragsverarbeitung gemäß Art. 28 DSGVO.<br>
-          <strong>Übermittlung in Drittländer:</strong> Sofern eine Übermittlung in die USA
-          stattfindet, erfolgt sie auf Grundlage des EU-US Data Privacy Framework
-          (Art. 45 DSGVO) bzw. von Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO).<br>
-          <strong>Speicherdauer:</strong> Foto- und Sprachaufnahmen werden bis zum
-          Widerruf der Einwilligung gespeichert. Der Avatar selbst kann jederzeit
-          deaktiviert und gelöscht werden.
-        </p>
-        <p>
-          Die abgebildete Person kann ihre Einwilligung jederzeit mit Wirkung für die
-          Zukunft widerrufen. Eine formlose E-Mail an
-          <a href="mailto:nestler@nestler.dev">nestler@nestler.dev</a> genügt.
-        </p>
-    </section>
-
-    <!-- 8 -->
-    <section class="policy-section" id="ssl" aria-labelledby="ssl-title">
-      <h2 id="ssl-title">8. SSL- bzw. TLS-Verschlüsselung</h2>
       <p>
-        Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der
-        Übertragung vertraulicher Inhalte — wie zum Beispiel Anfragen über
-        das Kontaktformular — eine SSL- bzw. TLS-Verschlüsselung. Eine
-        verschlüsselte Verbindung erkennst du daran, dass die
+        Beim Aufruf der Seite werden <strong>keine Verbindungen zu
+        YouTube-Servern</strong> hergestellt. Erst wenn Sie aktiv auf das
+        Video-Vorschaubild klicken, wird das Video geladen — und zwar über die
+        datenschutzfreundliche Domain <code>youtube-nocookie.com</code>.
+      </p>
+      <p>
+        Beim Abspielen verarbeitet die <strong>Google Ireland Limited</strong>,
+        Gordon House, Barrow Street, Dublin 4, Irland (für Nutzer:innen im
+        Europäischen Wirtschaftsraum), Daten wie Ihre IP-Adresse,
+        Browserinformationen und Interaktionsdaten. Eine Verarbeitung in den
+        USA kann nicht ausgeschlossen werden. Weitere Informationen:
+        <a href="https://policies.google.com/privacy"
+           target="_blank" rel="noopener noreferrer">Google Datenschutzerklärung</a>.
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Ihre
+        Einwilligung durch den aktiven Klick) sowie § 25 Abs. 1 TDDDG für den
+        Zugriff auf Ihr Endgerät.
+      </p>
+
+      <!-- 8 -->
+      <h2 id="cookies">8. Cookies</h2>
+      <p>
+        Diese Website setzt <strong>keine Cookies</strong> ein — weder eigene
+        noch solche von Drittanbietern, und weder zu Analyse-, Werbe- noch zu
+        Reichweitenmessungszwecken. Ein Cookie-Banner ist daher technisch nicht
+        erforderlich. Der Hinweis beim ersten Besuch informiert ausschließlich
+        über die lokale Speicherung nach Punkt 5.
+      </p>
+
+      <!-- 9 -->
+      <h2 id="ssl">9. SSL-/TLS-Verschlüsselung</h2>
+      <p>
+        Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung
+        vertraulicher Inhalte eine <strong>SSL-/TLS-Verschlüsselung</strong>.
+        Eine verschlüsselte Verbindung erkennen Sie daran, dass die
         Adresszeile des Browsers von <code>http://</code> auf
-        <code>https://</code> wechselt und am Schloss-Symbol in der
-        Browserzeile.
+        <code>https://</code> wechselt und ein Schloss-Symbol angezeigt wird.
+        Bei aktivierter Verschlüsselung können die Daten, die Sie an mich
+        übermitteln, nicht von Dritten mitgelesen werden.
       </p>
-      <p>
-        Bei aktivierter Verschlüsselung können die Daten, die du an mich
-        übermittelst, nicht von Dritten mitgelesen werden.
-      </p>
-    </section>
 
-    <!-- 9 -->
-    <section class="policy-section" id="aenderungen" aria-labelledby="aenderungen-title">
-      <h2 id="aenderungen-title">9. Änderungen dieser Datenschutzerklärung</h2>
+      <!-- 10 -->
+      <h2 id="rechte">10. Ihre Rechte als betroffene Person</h2>
+      <p>Sie haben nach der DSGVO folgende Rechte:</p>
+      <ul>
+        <li><strong>Auskunft</strong> über die zu Ihrer Person verarbeiteten Daten (Art. 15 DSGVO)</li>
+        <li><strong>Berichtigung</strong> unrichtiger oder unvollständiger Daten (Art. 16 DSGVO)</li>
+        <li><strong>Löschung</strong> Ihrer Daten, sofern keine Aufbewahrungspflichten entgegenstehen (Art. 17 DSGVO)</li>
+        <li><strong>Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li>
+        <li><strong>Datenübertragbarkeit</strong> in einem strukturierten, gängigen Format (Art. 20 DSGVO)</li>
+        <li><strong>Widerspruch</strong> gegen eine Verarbeitung auf Grundlage berechtigter Interessen (Art. 21 DSGVO)</li>
+        <li><strong>Widerruf einer erteilten Einwilligung</strong> jederzeit mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
+      </ul>
       <p>
-        Ich behalte mir vor, diese Datenschutzerklärung anzupassen, um sie
-        stets den aktuellen rechtlichen Anforderungen entsprechen zu lassen
-        oder um Änderungen meiner Leistungen umzusetzen — etwa bei der
-        Einführung neuer Dienste. Für deinen erneuten Besuch gilt dann die
-        jeweils aktuelle Fassung.
+        Zur Ausübung Ihrer Rechte genügt eine formlose Nachricht an
+        <a href="mailto:nestler@nestler.dev">nestler@nestler.dev</a>.
       </p>
+
+      <!-- 11 -->
+      <h2 id="beschwerde">11. Beschwerderecht bei der Aufsichtsbehörde</h2>
       <p>
-        Es empfiehlt sich daher, diese Datenschutzerklärung bei Bedarf
-        erneut zu lesen.
+        Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über
+        die Verarbeitung Ihrer personenbezogenen Daten durch mich zu
+        beschweren. Die für mich zuständige Aufsichtsbehörde ist:
       </p>
-    </section>
+      <div class="info-card">
+        <address>
+          <strong>Sächsischer Datenschutzbeauftragter</strong><br>
+          Devrientstraße 5<br>
+          01067 Dresden<br>
+          Deutschland<br><br>
+          Telefon: +49 351 85471-101<br>
+          E-Mail: <a href="mailto:poststelle@saechsdsb.de">poststelle@saechsdsb.de</a><br>
+          Web: <a href="https://www.saechsdsb.de/" target="_blank" rel="noopener noreferrer">www.saechsdsb.de</a>
+        </address>
+      </div>
 
-    <p class="updated">
-      Stand dieser Datenschutzerklärung: 6. Oktober 2026<br>
-      Version 1.0
-    </p>
+      <!-- 12 -->
+      <h2 id="profiling">12. Keine automatisierte Entscheidungsfindung</h2>
+      <p>
+        Auf dieser Website findet <strong>keine automatisierte
+        Entscheidungsfindung</strong> einschließlich Profiling im Sinne des
+        Art. 22 DSGVO statt.
+      </p>
 
+      <!-- 13 -->
+      <h2 id="aktualitaet">13. Aktualität und Änderung dieser Datenschutzerklärung</h2>
+      <p>
+        Diese Datenschutzerklärung ist aktuell gültig (Stand:
+        <strong>6. Oktober 2026</strong>). Durch die Weiterentwicklung dieser
+        Website oder aufgrund geänderter gesetzlicher bzw. behördlicher
+        Vorgaben kann es notwendig werden, sie anzupassen. Die jeweils
+        aktuelle Fassung ist stets auf dieser Seite abrufbar.
+      </p>
+
+    </div>
+
+    <a href="/" class="back-link">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Zurück zur Startseite
+    </a>
   </div>
+</section>
+
 </main>
 
+<!-- ===================== FOOTER ===================== -->
 <footer class="site">
   <div class="wrap">
-    <ul class="foot-links">
-      <li><a href="/">Startseite</a></li>
-      <li><a href="/#imprint">Impressum</a></li>
-      <li><a href="/datenschutz.html">Datenschutz</a></li>
-      <li><a href="/#contact">Kontakt</a></li>
-    </ul>
-    <p style="margin-top:1rem;font-size:.78rem;color:var(--muted)">
-      © <span id="year"></span> Sebastian Friedrich Nestler · Webentwicklung mit Anspruch.
-    </p>
+    <div class="foot-min">
+      <nav aria-label="Rechtliches und Navigation">
+        <a href="/">Startseite</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html" aria-current="page">Datenschutz</a>
+        <a href="/tech-stack.html">Wie diese Seite entstand</a>
+        <a href="/#contact">Kontakt</a>
+      </nav>
+      <p>
+        © <span id="year"></span> Sebastian Friedrich Nestler ·
+        Gebaut mit Vanilla JS, ohne Framework-Overhead.
+      </p>
+    </div>
   </div>
 </footer>
 
+<!-- ===================== MINIMAL PAGE SCRIPT ===================== -->
 <script>
 (function () {
   'use strict';
 
-  /* Theme aus localStorage übernehmen, damit die Datenschutz-Seite
-     farblich mit der Hauptseite übereinstimmt */
-  try {
-    var saved = localStorage.getItem('nestler.theme');
-    if (saved && ['dark','light','synth','matrix'].indexOf(saved) !== -1) {
-      document.documentElement.setAttribute('data-theme', saved);
-    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      document.documentElement.setAttribute('data-theme', 'light');
+  const $  = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+  /* ---------- THEME ---------- */
+  const THEMES = ['dark', 'light', 'synth', 'matrix'];
+  const THEME_KEY = 'nestler.theme';
+
+  function setTheme(name) {
+    if (!THEMES.includes(name)) return false;
+    document.documentElement.setAttribute('data-theme', name);
+    try { localStorage.setItem(THEME_KEY, name); } catch (_) {}
+    const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
+    if (bg) {
+      $$('meta[name="theme-color"]').forEach(m => m.setAttribute('content', bg));
     }
-  } catch (_) { /* ignore */ }
+    return true;
+  }
 
-  var y = document.getElementById('year');
-  if (y) y.textContent = new Date().getFullYear();
-
-  /* Smooth-Scroll für die TOC-Links + Fokus-Sichtbarkeit */
-  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-    a.addEventListener('click', function (e) {
-      var id = a.getAttribute('href').slice(1);
-      var el = document.getElementById(id);
-      if (!el) return;
-      e.preventDefault();
-      var top = el.getBoundingClientRect().top + window.scrollY - 90;
-      window.scrollTo({ top: top, behavior: 'smooth' });
-      setTimeout(function () {
-        el.setAttribute('tabindex', '-1');
-        el.focus({ preventScroll: true });
-      }, 500);
-      history.replaceState(null, '', '#' + id);
+  const themeBtn = $('#theme-toggle');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme');
+      const idx = THEMES.indexOf(cur);
+      setTheme(THEMES[(idx + 1) % THEMES.length]);
     });
-  });
+  }
+
+  /* ---------- MOBILE MENU ---------- */
+  const menuToggle = $('#menu-toggle');
+  const navLinks = $('#nav-links');
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    });
+    navLinks.addEventListener('click', e => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ---------- HEADER STUCK + PROGRESS ---------- */
+  const header = $('#site-header');
+  const progress = $('#progress');
+  let ticking = false;
+
+  function onScroll() {
+    const y = window.scrollY;
+    if (header) header.classList.toggle('stuck', y > 8);
+    if (progress) {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  onScroll();
+
+  /* ---------- YEAR ---------- */
+  const yearEl = $('#year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
 })();
 </script>
-
 </body>
 </html>
