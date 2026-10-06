@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Wie diese Seite gebaut wurde · Sebastian Friedrich Nestler</title>
+<meta name="description" content="Transparenz-Bericht: Wie nestler.dev entstand — Vanilla HTML/CSS/JS, KI als Werkzeug, menschliche Verantwortung für jede Zeile Code.">
+<link rel="canonical" href="https://nestler.dev/tech-stack.html">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Sebastian Friedrich Nestler">
+<meta name="language" content="de">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wie diese Seite gebaut wurde · nestler.dev">
+<meta property="og:description" content="Vanilla HTML/CSS/JS, kein Framework, KI-gestützt entwickelt — vollständig menschlich geprüft und verantwortet.">
+<meta property="og:url" content="https://nestler.dev/tech-stack.html">
+<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://nestler.dev/og-image.png">
+
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f6f3" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+
+<style>
+/* ============================================================
+   0. TOKENS / THEMES
+   ============================================================ */
+:root{
+  --bg:#0a0a0b; --surface:#131317; --surface-2:#1b1b21; --border:#2a2a33;
+  --text:#e9e9ec; --muted:#8d8d99;
+  --accent:#4a86ff; --accent-ink:#0a0a0b; --accent-2:#00d5ff;
+  --danger:#ff6b6b; --ok:#3ddc97;
+  --radius:16px; --radius-sm:10px;
+  --shadow:0 18px 50px -12px rgba(0,0,0,.75);
+  --max:1140px;
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
+}
+[data-theme="light"]{
+  --bg:#f6f6f3; --surface:#ffffff; --surface-2:#eeeceb; --border:#dcdad4;
+  --text:#14141a; --muted:#5b5b68;
+  --accent:#1a5dff; --accent-ink:#ffffff; --accent-2:#0043c7;
+  --shadow:0 18px 50px -18px rgba(20,20,26,.28);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text); font-family:var(--font);
+  font-size:clamp(1rem,.95rem + .25vw,1.0625rem); line-height:1.65;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+img,svg,canvas{max-width:100%;display:block}
+a{color:var(--accent);text-underline-offset:.25em}
+a:hover{text-decoration-thickness:2px}
+:where(a,button,[tabindex]):focus-visible{
+  outline:2px solid var(--accent); outline-offset:3px; border-radius:6px;
+}
+::selection{background:var(--accent);color:var(--accent-ink)}
+.sr-only{
+  position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+.skip{
+  position:fixed;top:-100px;left:16px;z-index:9999;
+  background:var(--accent);color:var(--accent-ink);
+  padding:.75rem 1.25rem;border-radius:0 0 var(--radius-sm) var(--radius-sm);
+  font-weight:700;text-decoration:none;transition:top .18s ease;
+}
+.skip:focus{top:0}
+
+.wrap{width:min(100% - 2.5rem,var(--max));margin-inline:auto;position:relative;z-index:2}
+:where(h1,h2,h3,section,[id],a,button){scroll-margin-top:90px}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+header.site{
+  position:sticky;top:0;z-index:900;
+  backdrop-filter:blur(14px) saturate(1.4);
+  background:color-mix(in srgb,var(--bg) 78%,transparent);
+  border-bottom:1px solid var(--border);
+}
+.nav{display:flex;align-items:center;gap:1rem;padding:.85rem 0}
+.brand{
+  font-family:var(--mono);font-weight:700;font-size:1rem;
+  text-decoration:none;color:var(--text);letter-spacing:-.02em;
+  display:flex;align-items:center;gap:.55rem;
+}
+.brand .logo{
+  width:26px;height:26px;flex:none;border-radius:6px;
+  transition:transform .4s cubic-bezier(.2,.8,.2,1);
+  box-shadow:0 2px 8px -2px rgba(26,93,255,.4);
+}
+.brand:hover .logo{transform:rotate(-6deg) scale(1.08)}
+.brand .dev{color:var(--accent)}
+.back-link{
+  margin-left:auto;color:var(--muted);text-decoration:none;
+  font-size:.9rem;font-weight:500;padding:.5rem .8rem;border-radius:8px;
+  transition:color .2s,background .2s;
+}
+.back-link:hover{color:var(--text);background:var(--surface-2)}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  padding:clamp(3.5rem,7vw,6rem) 0 clamp(2.5rem,5vw,4rem);
+  border-bottom:1px solid var(--border);
+}
+.eyebrow{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 .9rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);flex:none}
+h1{
+  font-size:clamp(2rem,1.4rem + 3.4vw,3.6rem);
+  line-height:1.08;letter-spacing:-.03em;margin:0 0 1rem;font-weight:800;
+  max-width:20ch;
+}
+.lede{
+  font-size:clamp(1.08rem,1rem + .5vw,1.28rem);
+  color:var(--muted);max-width:62ch;margin:0 0 1.5rem;
+}
+.meta{
+  display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;
+  font-family:var(--mono);font-size:.8rem;color:var(--muted);
+}
+.meta span{display:inline-flex;align-items:center;gap:.4rem}
+.meta strong{color:var(--text);font-weight:600}
+
+/* ============================================================
+   SECTION
+   ============================================================ */
+section{padding:clamp(3rem,6vw,5rem) 0;position:relative}
+section + section{border-top:1px solid var(--border)}
+section h2{
+  font-size:clamp(1.6rem,1.2rem + 1.6vw,2.2rem);
+  line-height:1.15;letter-spacing:-.025em;margin:0 0 .9rem;font-weight:800;
+}
+section h3{
+  font-size:1.08rem;line-height:1.25;letter-spacing:-.01em;
+  margin:0 0 .5rem;font-weight:700;
+}
+p{margin:0 0 1rem;color:var(--muted)}
+p:last-child{margin-bottom:0}
+strong{color:var(--text);font-weight:650}
+ul,ol{margin:0 0 1rem;padding-left:1.25rem;color:var(--muted)}
+li{margin-bottom:.4rem}
+li:last-child{margin-bottom:0}
+code{
+  font-family:var(--mono);font-size:.88em;
+  background:var(--surface-2);border:1px solid var(--border);
+  border-radius:5px;padding:.1em .4em;color:var(--text);
+}
+kbd{
+  font-family:var(--mono);font-size:.78em;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:5px;padding:.15em .45em;color:var(--text);
+}
+
+/* ============================================================
+   GRIDS / CARDS
+   ============================================================ */
+.grid-2{
+  display:grid;gap:1.1rem;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+}
+.grid-3{
+  display:grid;gap:1.1rem;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+
+.card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:1.5rem;
+  transition:border-color .25s,transform .25s cubic-bezier(.2,.8,.2,1);
+}
+.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 40%,var(--border))}
+.card h3{margin-bottom:.5rem}
+.card p{font-size:.94rem}
+.card .ico{
+  display:inline-grid;place-items:center;
+  width:40px;height:40px;border-radius:11px;margin-bottom:1rem;
+  background:color-mix(in srgb,var(--accent) 14%,transparent);
+  border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);
+  font-size:1.15rem;
+}
+
+/* ============================================================
+   STEPS (Prozess)
+   ============================================================ */
+.steps{
+  display:grid;gap:1.25rem;margin:0;padding:0;list-style:none;
+  counter-reset:step;
+}
+.step{
+  display:grid;grid-template-columns:auto 1fr;gap:1.25rem;align-items:start;
+  counter-increment:step;
+}
+.step::before{
+  content:counter(step,decimal-leading-zero);
+  font-family:var(--mono);font-weight:700;font-size:1.1rem;
+  color:var(--accent);
+  width:2.4em;height:2.4em;
+  display:grid;place-items:center;
+  border:1px solid color-mix(in srgb,var(--accent) 40%,var(--border));
+  border-radius:12px;
+  background:color-mix(in srgb,var(--accent) 8%,transparent);
+  flex:none;
+}
+.step h3{margin-top:.1rem}
+
+/* ============================================================
+   HONEST NOTE
+   ============================================================ */
+.note{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-left:3px solid var(--accent);
+  border-radius:var(--radius-sm);
+  padding:1.25rem 1.5rem;
+  margin:1.5rem 0;
+}
+.note h3{color:var(--accent);font-family:var(--mono);font-size:.85rem;
+  text-transform:uppercase;letter-spacing:.14em;margin-bottom:.65rem}
+.note p:last-child{margin-bottom:0}
+
+/* ============================================================
+   FACTS
+   ============================================================ */
+.facts{
+  display:grid;gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+}
+.fact{
+  background:var(--surface);padding:1.25rem;
+  display:flex;flex-direction:column;gap:.25rem;
+}
+.fact dt{
+  font-family:var(--mono);font-size:.72rem;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.12em;
+}
+.fact dd{
+  margin:0;font-size:1.5rem;font-weight:800;letter-spacing:-.02em;
+  color:var(--text);line-height:1.2;
+}
+.fact dd small{font-size:.7em;color:var(--muted);font-weight:500;letter-spacing:0}
+
+/* ============================================================
+   CTA
+   ============================================================ */
+.cta{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:clamp(1.75rem,3vw,2.5rem);
+  display:flex;flex-wrap:wrap;gap:1rem;align-items:center;
+  justify-content:space-between;
+}
+.cta p{margin:0;max-width:50ch;font-size:1.02rem}
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.78rem 1.4rem;border-radius:999px;
+  font-weight:650;font-size:.93rem;text-decoration:none;
+  cursor:pointer;border:1px solid transparent;
+  transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .2s,border-color .2s;
+  flex:none;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{
+  background:var(--accent);color:var(--accent-ink);
+  box-shadow:0 6px 24px -8px color-mix(in srgb,var(--accent) 65%,transparent);
+}
+.btn-ghost{background:var(--surface);border-color:var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent)}
+.btn svg{width:15px;height:15px;stroke:currentColor;fill:none;
+  stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer.site{
+  border-top:1px solid var(--border);
+  padding:2.5rem 0 calc(4rem + env(safe-area-inset-bottom, 0px));
+  font-size:.85rem;color:var(--muted);
+}
+.foot-grid{
+  display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;
+  align-items:flex-start;margin-bottom:1.5rem;
+}
+.foot-brand{display:flex;align-items:center;gap:.55rem;margin-bottom:.5rem}
+.foot-brand img,
+.foot-brand svg{width:22px;height:22px;border-radius:5px;flex:none}
+.foot-links{display:flex;gap:1.25rem;flex-wrap:wrap;list-style:none;margin:0;padding:0}
+.foot-links a{color:var(--muted);text-decoration:underline;text-underline-offset:.25em}
+.foot-links a:hover{color:var(--accent)}
+.foot-note{font-size:.75rem;color:var(--muted);opacity:.7;margin-top:1rem}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Zum Hauptinhalt springen</a>
+
+<header class="site">
+  <div class="wrap">
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="/" class="brand" aria-label="Zur Startseite nestler.dev">
+        <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SN">
+          <rect width="100" height="100" rx="18" fill="#ffffff"/>
+          <text x="50" y="74" text-anchor="middle"
+                font-family="'Arial Black','Helvetica Neue',Helvetica,Arial,sans-serif"
+                font-size="72" font-weight="900" letter-spacing="-6"
+                fill="#1a5dff">SN</text>
+        </svg>
+        nestler<span class="dev">.dev</span>
+      </a>
+      <a href="/" class="back-link">← Zur Startseite</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Transparenz</p>
+    <h1>Wie diese Seite gebaut wurde</h1>
+    <p class="lede">
+      Diese Website ist zu 100 % Vanilla — HTML, CSS, JavaScript. Kein React,
+      kein Build-Step, keine externen CDNs. Und: Sie wurde mit
+      KI-Unterstützung entwickelt. Was das genau heißt, steht hier.
+    </p>
+    <div class="meta">
+      <span>Stand: <strong>6. Oktober 2026</strong></span>
+      <span>Version: <strong>3.0</strong></span>
+      <span>Umfang: <strong>~1 Datei, ~70 KB</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 1. WORUM ES GEHT ===================== -->
+<section id="hintergrund">
+  <div class="wrap">
+    <h2>Worum es hier geht</h2>
+    <p>
+      „Vibe Coding" ist in aller Munde — und wird oft missverstanden als
+      „Code, der von KI zusammengewürfelt wurde, ohne dass jemand hingeschaut hat".
+      Genau das ist hier <strong>nicht</strong> passiert.
+    </p>
+    <p>
+      Ich halte es für richtig, transparent zu sein: <strong>Ja</strong>, ich habe
+      bei der Entwicklung dieser Seite KI-Werkzeuge benutzt. <strong>Nein</strong>,
+      die KI hat nicht entschieden, wie diese Seite aussieht, funktioniert oder
+      ausgeliefert wird. Jede Zeile, die hier steht, habe ich gelesen, geprüft
+      und freigegeben.
+    </p>
+    <div class="note">
+      <h3>Kurzfassung</h3>
+      <p>
+        KI als Werkzeug, Mensch als Verantwortlicher.
+        Der gesamte Code ist manuell reviewt, mit echten Screenreadern getestet,
+        gegen WCAG 2.2 AA geprüft und von mir persönlich freigegeben.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. STACK ===================== -->
+<section id="stack">
+  <div class="wrap">
+    <h2>Der Stack</h2>
+    <p>
+      Bewusst minimal. Kein Framework, kein Bundler, kein Node.js-Server.
+      Eine einzige <code>index.html</code> plus statische Assets.
+    </p>
+
+    <div class="grid-2" style="margin-top:2rem">
+      <div class="card">
+        <span class="ico" aria-hidden="true">📄</span>
+        <h3>HTML5</h3>
+        <p>
+          Semantische Struktur mit <code>&lt;header&gt;</code>,
+          <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+          <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>.
+          Landmarks, die Screenreader und Tastaturnutzer direkt anspringen können.
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="ico" aria-hidden="true">🎨</span>
+        <h3>CSS3</h3>
+        <p>
+          Custom Properties für Theming, Grid und Flexbox für Layouts,
+          <code>clamp()</code> für fluide Typografie,
+          <code>color-mix()</code> für dynamische Farben.
+          Kein Sass, kein PostCSS, kein Tailwind.
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="ico" aria-hidden="true">⚡</span>
+        <h3>Vanilla JavaScript</h3>
+        <p>
+          Eine IIFE, ~700 Zeilen, keine Abhängigkeiten. Web-Audio-API für
+          UI-Sounds, Canvas für Easter Eggs, IntersectionObserver für Animationen,
+          localStorage für Theme-Präferenzen.
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="ico" aria-hidden="true">📦</span>
+        <h3>Kein Build-Step</h3>
+        <p>
+          Keine Transpiler, keine Bundler, keine Node-Modules.
+          Was im Browser läuft, ist exakt das, was im Repository steht.
+          Wartbar auch in fünf Jahren.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. FACTS ===================== -->
+<section id="zahlen">
+  <div class="wrap">
+    <h2>Zahlen zur Seite</h2>
+    <p style="margin-bottom:1.75rem">
+      Alles gemessen mit den DevTools, ohne Caching, im Inkognito-Modus.
+    </p>
+
+    <dl class="facts">
+      <div class="fact">
+        <dt>Seitengröße</dt>
+        <dd>~70 <small>KB</small></dd>
+      </div>
+      <div class="fact">
+        <dt>HTTP-Requests</dt>
+        <dd>1</dd>
+      </div>
+      <div class="fact">
+        <dt>Externe Requests</dt>
+        <dd>0</dd>
+      </div>
+      <div class="fact">
+        <dt>Frameworks</dt>
+        <dd>0</dd>
+      </div>
+      <div class="fact">
+        <dt>Lighthouse Performance</dt>
+        <dd>100</dd>
+      </div>
+      <div class="fact">
+        <dt>WCAG 2.2 AA</dt>
+        <dd>0 <small>Verstöße</small></dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ===================== 4. PROZESS ===================== -->
+<section id="prozess">
+  <div class="wrap">
+    <h2>Der Entwicklungsprozess</h2>
+    <p style="margin-bottom:2rem">
+      Sieben Schritte, in denen KI an genau definierten Stellen geholfen hat —
+      und an anderen bewusst nicht.
+    </p>
+
+    <ol class="steps">
+      <li class="step">
+        <div>
+          <h3>Konzept &amp; Architektur — 100 % Mensch</h3>
+          <p>
+            Zielgruppe, Design-Sprache, Sektionen, Farb-System, Typografie,
+            Accessibility-Strategie. Diese Entscheidungen sind zu fundamental,
+            um sie an ein Sprachmodell zu delegieren.
+          </p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div>
+          <h3>Struktur-Entwurf — KI als Sparringspartner</h3>
+          <p>
+            Die KI hat bei der Erstellung der HTML-Grundstruktur geholfen:
+            Landmarks, ARIA-Rollen, semantische Elemente. Ergebnis wurde von mir
+            Zeile für Zeile geprüft und an mehreren Stellen umgebaut.
+          </p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div>
+          <h3>CSS-Gerüst — KI als Boilerplate-Generator</h3>
+          <p>
+            Für wiederkehrende Muster (Buttons, Cards, Formular-Felder) hat die
+            KI Vorlagen geliefert. Das Farb-System, die Theme-Logik und alle
+            Animationen kommen von mir.
+          </p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div>
+          <h3>JavaScript-Logik — 90 % Mensch</h3>
+          <p>
+            Command-Palette, Terminal-Emulator, Playground, Formular-Validierung:
+            Architektur und Logik stammen von mir. Die KI hat bei einzelnen
+            Utility-Funktionen und Debugging geholfen.
+          </p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div>
+          <h3>Content &amp; Texte — Mensch mit KI-Review</h3>
+          <p>
+            Alle Texte habe ich selbst geschrieben. Die KI hat Rechtschreibung,
+            Konsistenz und Tonalität gegengelesen — nicht umgekehrt.
+          </p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div>
+          <h3>Accessibility-Audit — 100 % Mensch</h3>
+          <p>
+            Manuelle Prüfung mit NVDA und VoiceOver, Tastatur-Walkthroughs,
+            Kontrast-Checks, Test gegen WCAG 2.2 AA mit axe DevTools.
+            KI ist für diesen Schritt grundsätzlich ungeeignet.
+          </p>
+        </div>
+      </li>
+
+      <li class="step">
+        <div>
+          <h3>Testing, Launch, Freigabe — 100 % Mensch</h3>
+          <p>
+            Cross-Browser-Tests, Responsive-Prüfung auf echten Geräten,
+            Formular-Tests mit End-to-End-Versand, Deployment.
+            Die Verantwortung für jede ausgelieferte Zeile Code liegt bei mir.
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== 5. WAS KI NICHT MACHT ===================== -->
+<section id="grenzen">
+  <div class="wrap">
+    <h2>Wo KI bewusst nicht eingesetzt wurde</h2>
+
+    <div class="grid-2" style="margin-top:1.5rem">
+      <div class="card">
+        <h3>Design-Entscheidungen</h3>
+        <p>
+          Welche Farbe, welche Typografie, welche Interaktion — das ist
+          Handwerk und Erfahrung. Ein Sprachmodell hat keinen Geschmack.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Accessibility</h3>
+        <p>
+          Screenreader-Tests, Tastatur-Walkthroughs, Fokus-Management,
+          ARIA-Logik: Hier zählt gelebte Erfahrung. KI kennt die
+          Nuancen nicht.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Sicherheit</h3>
+        <p>
+          DSGVO-Konformität, Formular-Validierung, Honeypot-Logik,
+          Content-Security: bewusst ohne KI-Unterstützung geplant und umgesetzt.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Rechtstexte</h3>
+        <p>
+          Impressum und Datenschutzerklärung habe ich aus rechtssicheren
+          Vorlagen angepasst. KI-generierte Rechtstexte sind riskant
+          und nicht empfehlenswert.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. WARUM DAS WICHTIG IST ===================== -->
+<section id="warum">
+  <div class="wrap">
+    <h2>Warum ich das offenlege</h2>
+    <p>
+      Weil Transparenz in der Softwareentwicklung nicht optional ist.
+      Wer KI nutzt und das verschweigt, nimmt Kunden die Möglichkeit,
+      informierte Entscheidungen zu treffen.
+    </p>
+    <p>
+      Wer KI nutzt und es falsch deklariert — als „Vibe Coding" oder als
+      „100 % handgeschrieben" — schadet entweder seinem Ruf oder der
+      Wahrheit. Beides ist unnötig.
+    </p>
+    <p>
+      Die ehrliche Position liegt in der Mitte: <strong>KI als Werkzeug,
+      Mensch als Verantwortlicher.</strong> Das ist der Standard, den ich
+      auch für Kundenprojekte ansetze.
+    </p>
+
+    <div class="note">
+      <h3>Für Auftraggeber:innen</h3>
+      <p>
+        Wenn Sie ein Projekt bei mir anfragen, gilt dieselbe Regel:
+        KI-Werkzeuge dürfen den Prozess beschleunigen, aber jede Zeile
+        ausgelieferten Codes ist geprüft, getestet und von mir freigegeben.
+        Auf Wunsch dokumentiere ich das im Projektbericht.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. CTA ===================== -->
+<section id="cta-section">
+  <div class="wrap">
+    <div class="cta">
+      <p>
+        <strong>Fragen zum Prozess?</strong><br>
+        Wenn Sie wissen wollen, wie ich in Ihrem Projekt mit KI umgehe,
+        schreiben Sie mir kurz.
+      </p>
+      <a href="/#contact" class="btn btn-primary">
+        Kontakt aufnehmen
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SN">
+            <rect width="100" height="100" rx="18" fill="#ffffff"/>
+            <text x="50" y="74" text-anchor="middle"
+                  font-family="'Arial Black','Helvetica Neue',Helvetica,Arial,sans-serif"
+                  font-size="72" font-weight="900" letter-spacing="-6"
+                  fill="#1a5dff">SN</text>
+          </svg>
+          <p style="font-family:var(--mono);font-weight:700;color:var(--text);margin:0">
+            nestler<span style="color:var(--accent)">.dev</span>
+          </p>
+        </div>
+        <p style="margin:0">Sebastian Friedrich Nestler · Webentwicklung mit Anspruch.</p>
+      </div>
+
+      <ul class="foot-links">
+        <li><a href="/">Startseite</a></li>
+        <li><a href="/#imprint">Impressum</a></li>
+        <li><a href="/datenschutz.html">Datenschutz</a></li>
+        <li><a href="/#contact">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <p class="foot-note">
+      © <span id="year"></span> Sebastian Friedrich Nestler ·
+      KI-gestützte Entwicklung, menschlich verantwortet.
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* Theme aus localStorage übernehmen */
+  try {
+    var saved = localStorage.getItem('nestler.theme');
+    if (saved && ['dark','light','synth','matrix'].indexOf(saved) !== -1) {
+      document.documentElement.setAttribute('data-theme', saved);
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  } catch (_) { /* ignore */ }
+
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  /* Smooth-Scroll für Anchor-Links */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href').slice(1);
+      var el = document.getElementById(id);
+      if (!el) return;
+      e.preventDefault();
+      var top = el.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+      setTimeout(function () {
+        el.setAttribute('tabindex', '-1');
+        el.focus({ preventScroll: true });
+      }, 500);
+      history.replaceState(null, '', '#' + id);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
