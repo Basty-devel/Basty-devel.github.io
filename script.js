@@ -80,6 +80,7 @@
     return true;
   }
 
+  /* Initial-Theme ist bereits im <head> gesetzt — hier nur UI-Sync */
   (function syncInitialTheme() {
     const cur = document.documentElement.getAttribute('data-theme') || 'dark';
     let saved = null;
@@ -327,7 +328,7 @@
     { id: 'nav-avatar',      icon: '🎭', label: 'Digitaler Zwilling & Agentic Videos', hint: 'G V', run: () => go('#avatar') },
     { id: 'nav-faq',         icon: '❓', label: 'FAQ',                   hint: 'G Q', run: () => go('#faq') },
     { id: 'nav-performance', icon: '⚡', label: 'Performance-Nachweis',  hint: 'G L', run: () => go('#performance') },
-    { id: 'nav-imprint',     icon: '📄', label: 'Impressum',             hint: 'G I', run: () => go('#imprint') },
+    { id: 'nav-imprint',     icon: '📄', label: 'Impressum',             hint: 'G I', run: () => { window.location.href = '/impressum.html'; } },
     { id: 'nav-privacy',     icon: '🔒', label: 'Datenschutz',           hint: 'G D', run: () => { window.location.href = '/datenschutz.html'; } },
     { id: 'nav-tech',        icon: '⚙️', label: 'Wie diese Seite gebaut wurde', hint: 'G B', run: () => { window.location.href = '/tech-stack.html'; } },
     { id: 'nav-contact',     icon: '✉️', label: 'Kontakt',               hint: 'G C', run: () => go('#contact') },
@@ -1007,8 +1008,7 @@ ${codeJs.value}
   const submitBtn = $('#cf-submit');
 
   /* Formspree EU:
-     - Account/Formular in der Formspree-Verwaltung auf "EU Data Residency" stellen.
-     - Endpoint-Format bleibt https://formspree.io/f/{formId}.
+     - In Formspree-Verwaltung "EU Data Residency" aktivieren.
      - formId unten durch deine eigene ID ersetzen. */
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xxxxxxxx';
 
