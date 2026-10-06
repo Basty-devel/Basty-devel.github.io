@@ -12,7 +12,7 @@
 <meta name="googlebot" content="index, follow">
 <meta name="author" content="Sebastian Friedrich Nestler">
 <meta name="publisher" content="Sebastian Friedrich Nestler">
-<meta name="keywords" content="Webentwickler, Frontend Entwickler, Barrierefreiheit, WCAG 2.2, Freelance Developer, Sachsen, TypeScript, React, Performance">
+<meta name="keywords" content="Webentwickler, Frontend Entwickler, Barrierefreiheit, WCAG 2.2, Freelance Developer, Sachsen, TypeScript, React, Performance, Digitaler Zwilling, Avatar, KI-Chatbot">
 <meta name="language" content="de">
 <meta name="geo.region" content="DE">
 <meta name="geo.placename" content="Aue-Bad Schlema">
@@ -100,7 +100,7 @@
       "name": "Nestler Webentwicklung",
       "url": "https://sebastian-nestler.github.io/",
       "image": "https://sebastian-nestler.github.io/og-image.png",
-      "description": "Freelance Webentwicklung: barrierefreie Onepager, Web-Apps, Design-Systeme und Performance-Optimierung.",
+      "description": "Freelance Webentwicklung: barrierefreie Onepager, Web-Apps, Design-Systeme, Performance-Optimierung und virtuelle Avatar-Assistenten.",
       "provider": { "@id": "https://sebastian-nestler.github.io/#person" },
       "address": {
         "@type": "PostalAddress",
@@ -118,7 +118,10 @@
         "Frontend-Entwicklung",
         "Barrierefreiheits-Audit",
         "Performance-Optimierung",
-        "Design-System-Entwicklung"
+        "Design-System-Entwicklung",
+        "Digitaler Zwilling",
+        "Avatar-Assistent",
+        "KI-Chatbot"
       ],
       "priceRange": "€€",
       "hasOfferCatalog": {
@@ -146,6 +149,11 @@
               "priceCurrency": "EUR",
               "valueAddedTaxIncluded": false
             }
+          },
+          {
+            "@type": "Offer",
+            "name": "Digitaler Zwilling / Avatar-Assistent",
+            "description": "Virtueller Avatar in Ihrem Gesicht und mit Ihrer Stimme, 24/7 erreichbar, beantwortet Fragen zu Öffnungszeiten, Anfahrt und Fachthemen."
           }
         ]
       }
@@ -157,9 +165,11 @@
         { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://sebastian-nestler.github.io/#top" },
         { "@type": "ListItem", "position": 2, "name": "Über", "item": "https://sebastian-nestler.github.io/#about" },
         { "@type": "ListItem", "position": 3, "name": "Ergebnisse", "item": "https://sebastian-nestler.github.io/#ergebnisse" },
-        { "@type": "ListItem", "position": 4, "name": "Performance", "item": "https://sebastian-nestler.github.io/#performance" },
-        { "@type": "ListItem", "position": 5, "name": "Impressum", "item": "https://sebastian-nestler.github.io/#imprint" },
-        { "@type": "ListItem", "position": 6, "name": "Kontakt", "item": "https://sebastian-nestler.github.io/#contact" }
+        { "@type": "ListItem", "position": 4, "name": "Preise", "item": "https://sebastian-nestler.github.io/#preise" },
+        { "@type": "ListItem", "position": 5, "name": "Avatar", "item": "https://sebastian-nestler.github.io/#avatar" },
+        { "@type": "ListItem", "position": 6, "name": "Performance", "item": "https://sebastian-nestler.github.io/#performance" },
+        { "@type": "ListItem", "position": 7, "name": "Impressum", "item": "https://sebastian-nestler.github.io/#imprint" },
+        { "@type": "ListItem", "position": 8, "name": "Kontakt", "item": "https://sebastian-nestler.github.io/#contact" }
       ]
     },
     {
@@ -196,6 +206,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ja. Neben kompletten Projekten gibt es Unterstützung als Frontend- oder Accessibility-Spezialist für bestehende Teams — stundenweise, tageweise oder als feste Kapazität."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist ein digitaler Zwilling / Avatar-Assistent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ein virtueller Avatar, der wie Sie aussieht, in Ihrer geklonten Stimme spricht und rund um die Uhr Fragen von Kund:innen beantwortet — zu Öffnungszeiten, Anfahrt, Kontakt und fachlichen Themen. Sie liefern ein Foto und Sprachaufnahmen, wir übernehmen Erstellung, Integration und Wissensdatenbank."
           }
         },
         {
@@ -787,7 +805,75 @@ h1.title .dev{color:var(--muted);font-weight:400}
 }
 
 /* ============================================================
-   11. FAQ
+   11. AVATAR / DIGITALER ZWILLING
+   ============================================================ */
+.avatar-steps{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:1.1rem;
+  counter-reset:avatar-step;
+}
+.avatar-steps li{
+  counter-increment:avatar-step;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:0 .9rem;
+  align-items:start;
+}
+.avatar-steps li::before{
+  content:counter(avatar-step,decimal-leading-zero);
+  grid-row:1 / span 2;
+  grid-column:1;
+  font-family:var(--mono);
+  font-weight:700;
+  font-size:.9rem;
+  color:var(--accent);
+  width:2.2em;
+  height:2.2em;
+  display:grid;
+  place-items:center;
+  border:1px solid color-mix(in srgb,var(--accent) 40%,var(--border));
+  border-radius:10px;
+  background:color-mix(in srgb,var(--accent) 8%,transparent);
+  align-self:start;
+}
+.avatar-steps li strong{
+  grid-column:2;
+  grid-row:1;
+  display:block;
+  color:var(--text);
+  font-size:.95rem;
+  font-weight:700;
+  letter-spacing:-.01em;
+  margin-bottom:.2rem;
+}
+.avatar-steps li span{
+  grid-column:2;
+  grid-row:2;
+  color:var(--muted);
+  font-size:.88rem;
+  line-height:1.6;
+}
+.avatar-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--accent);
+  border:1px solid color-mix(in srgb,var(--accent) 45%,var(--border));
+  background:color-mix(in srgb,var(--accent) 10%,transparent);
+  padding:.3rem .7rem;
+  border-radius:999px;
+  margin-bottom:1rem;
+}
+
+/* ============================================================
+   12. FAQ
    ============================================================ */
 details.card summary{
   list-style:none;
@@ -804,7 +890,7 @@ details.card[open] summary::before{transform:rotate(45deg)}
 details.card[open]{border-color:color-mix(in srgb,var(--accent) 40%,var(--border))}
 
 /* ============================================================
-   12. PERFORMANCE / PSI-SEKTION
+   13. PERFORMANCE / PSI-SEKTION
    ============================================================ */
 .psi-grid{
   display:grid;
@@ -862,11 +948,19 @@ details.card[open]{border-color:color-mix(in srgb,var(--accent) 40%,var(--border
   line-height:1.3;
   max-width:130px;
 }
-.psi-source{
-  display:block;
+/* psi-source — robuste Zentrierung per Flex-Wrapper */
+.psi-source-wrap{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
   margin:2.5rem auto 0;
   padding:0 1rem 1rem;
+}
+.psi-source{
+  margin:0;
   max-width:52ch;
+  width:100%;
   text-align:center;
   font-size:.85rem;
   color:var(--muted);
@@ -879,7 +973,7 @@ details.card[open]{border-color:color-mix(in srgb,var(--accent) 40%,var(--border
 }
 
 /* ============================================================
-   13. IMPRESSUM
+   14. IMPRESSUM
    ============================================================ */
 #imprint address{
   font-style:normal;
@@ -889,7 +983,7 @@ details.card[open]{border-color:color-mix(in srgb,var(--accent) 40%,var(--border
 #imprint address strong{color:var(--text)}
 
 /* ============================================================
-   14. FORM
+   15. FORM
    ============================================================ */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 @media (max-width:640px){.form-grid{grid-template-columns:1fr}}
@@ -923,7 +1017,7 @@ label .req{color:var(--danger);font-size:.9em}
 .form-status.bad{border-color:color-mix(in srgb,var(--danger) 50%,transparent);color:var(--danger)}
 
 /* ============================================================
-   15. TOOLTIP
+   16. TOOLTIP
    ============================================================ */
 .tooltip{
   position:fixed;top:0;left:0;z-index:2000;pointer-events:none;
@@ -941,7 +1035,7 @@ label .req{color:var(--danger);font-size:.9em}
 .tooltip.below::after{top:auto;bottom:100%;border-top-color:transparent;border-bottom-color:var(--text)}
 
 /* ============================================================
-   16. COMMAND PALETTE
+   17. COMMAND PALETTE
    ============================================================ */
 .overlay{
   position:fixed;inset:0;z-index:1500;
@@ -974,7 +1068,7 @@ label .req{color:var(--danger);font-size:.9em}
 .palette .empty{padding:2rem;text-align:center;color:var(--muted);font-size:.9rem}
 
 /* ============================================================
-   17. COOKIE BANNER
+   18. COOKIE BANNER
    ============================================================ */
 .cookie{
   position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);
@@ -997,7 +1091,7 @@ label .req{color:var(--danger);font-size:.9em}
 .pref span{color:var(--muted);font-size:.8rem}
 
 /* ============================================================
-   18. MATRIX CANVAS + PARTY
+   19. MATRIX CANVAS + PARTY
    ============================================================ */
 #matrix{position:fixed;inset:0;z-index:1400;pointer-events:none;opacity:0;transition:opacity .4s}
 #matrix.on{opacity:.85}
@@ -1005,7 +1099,7 @@ html.party{animation:party 1.2s linear infinite}
 @keyframes party{to{filter:hue-rotate(360deg)}}
 
 /* ============================================================
-   19. CURSOR
+   20. CURSOR
    ============================================================ */
 .cursor-dot,.cursor-ring{
   position:fixed;top:0;left:0;pointer-events:none;z-index:1800;
@@ -1021,7 +1115,7 @@ html.party{animation:party 1.2s linear infinite}
 @media (hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
 
 /* ============================================================
-   20. FOOTER
+   21. FOOTER
    ============================================================ */
 footer.site{
   border-top:1px solid var(--border);padding:3rem 0 6rem;
@@ -1040,7 +1134,7 @@ footer.site{
 .foot-links a{color:var(--muted)}
 
 /* ============================================================
-   21. RESPONSIVE POLISH
+   22. RESPONSIVE POLISH
    ============================================================ */
 @media (max-width: 640px){
   .field input,
@@ -1137,6 +1231,7 @@ footer.site{
         <li><a href="#features">Features</a></li>
         <li><a href="#ergebnisse">Ergebnisse</a></li>
         <li><a href="#preise">Preise</a></li>
+        <li><a href="#avatar">Avatar</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#performance">Performance</a></li>
         <li><a href="#contact">Kontakt</a></li>
@@ -1617,6 +1712,79 @@ footer.site{
   </div>
 </section>
 
+<!-- ===================== AVATAR / DIGITALER ZWILLING ===================== -->
+<section id="avatar" aria-labelledby="avatar-title">
+  <div class="wrap">
+    <span class="avatar-badge reveal" aria-hidden="true">Neue Kooperation</span>
+    <h2 id="avatar-title" class="reveal">Ihr digitaler Zwilling — 24/7 erreichbar, in Ihrem Gesicht</h2>
+    <p class="lede reveal" style="margin-bottom:2.5rem">
+      Ein virtueller Avatar, der aussieht wie Sie, klingt wie Sie und jede
+      Frage Ihrer Kund:innen sofort beantwortet — Öffnungszeiten, Anfahrt,
+      Kontaktwege, fachliche Auskünfte. Rund um die Uhr, ohne Urlaub,
+      ohne Krankmeldung, ohne Wartezeit.
+    </p>
+
+    <div class="grid grid-2" style="align-items:start">
+      <div class="card reveal">
+        <h3 style="margin-bottom:1.5rem">So einfach läuft es ab</h3>
+        <ol class="avatar-steps">
+          <li>
+            <strong>Foto &amp; Stimme</strong>
+            <span>Sie schicken ein Portraitfoto und ein paar Minuten Sprachaufnahme — kein Studio, keine besondere Ausrüstung nötig.</span>
+          </li>
+          <li>
+            <strong>Wissensdatenbank</strong>
+            <span>Ich lade Ihre Öffnungszeiten, Adresse, Kontaktwege und fachlichen Antworten in ein sicheres, DSGVO-konformes System.</span>
+          </li>
+          <li>
+            <strong>Avatar-Erstellung</strong>
+            <span>Ihr Gesicht wird animiert, Ihre Stimme geklont — in wenigen Tagen einsatzbereit, in hoher Qualität.</span>
+          </li>
+          <li>
+            <strong>Integration</strong>
+            <span>Der Avatar kommt auf Ihre Website, an den Empfang oder in Ihr Kundenportal — per Chat, Sprache oder Video.</span>
+          </li>
+          <li>
+            <strong>Laufender Betrieb</strong>
+            <span>Neue Infos? Kurz eintragen — der Avatar weiß es sofort. Ohne technisches Vorwissen.</span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="card reveal">
+        <h3>Was der Avatar für Sie übernimmt</h3>
+        <ul class="value-list" style="border-top:0;padding-top:0;margin-top:.5rem">
+          <li>Beantwortet wiederkehrende Fragen rund um die Uhr</li>
+          <li>Nimmt Termine auf und gibt Auskunft zu Öffnungszeiten</li>
+          <li>Erklärt Anfahrt, Adresse und Kontaktwege</li>
+          <li>Beantwortet fachliche Standardfragen in Ihrem Ton</li>
+          <li>Spricht in Ihrer geklonten Stimme — im Web oder am Telefon</li>
+          <li>Sammelt Leads und übergibt komplexe Anfragen an Sie</li>
+          <li>Lernt neue Inhalte sofort nach Eintrag in die Wissensdatenbank</li>
+        </ul>
+
+        <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border)">
+          <p style="font-size:.9rem;color:var(--muted);margin:0 0 1.25rem">
+            <strong style="color:var(--text)">Für wen geeignet:</strong>
+            Arztpraxen, Kanzleien, Hotels, Autohäuser, Handwerksbetriebe,
+            Beratungen — überall dort, wo dieselben Fragen täglich kommen
+            und Ihr Team Zeit für Wichtigeres braucht.
+          </p>
+          <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center">
+            Kooperation anfragen
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="hint reveal" style="margin-top:1.5rem;text-align:center;max-width:60ch;margin-inline:auto">
+      Die genauen Konditionen kläre ich im persönlichen Gespräch — jede Branche
+      und jeder Umfang braucht eine eigene Abstimmung.
+    </p>
+  </div>
+</section>
+
 <!-- ===================== FAQ ===================== -->
 <section id="faq" aria-labelledby="faq-title">
   <div class="wrap">
@@ -1644,6 +1812,19 @@ footer.site{
           Einen Onepager liefern wir typischerweise in <strong>10 bis 15 Tagen</strong>.
           Komplexere Web-Apps oder Design-Systeme dauern <strong>6 bis 12 Wochen</strong>.
           Der genaue Zeitplan wird im Kickoff verbindlich festgelegt.
+        </p>
+      </details>
+
+      <details class="card reveal" style="padding:1.25rem">
+        <summary style="cursor:pointer;font-weight:650;font-size:1rem">
+          Was ist ein digitaler Zwilling / Avatar-Assistent?
+        </summary>
+        <p style="margin-top:.75rem">
+          Ein virtueller Avatar, der wie Sie aussieht, in Ihrer geklonten
+          Stimme spricht und rund um die Uhr Fragen von Kund:innen beantwortet —
+          zu Öffnungszeiten, Anfahrt, Kontakt und fachlichen Themen.
+          Sie liefern ein Foto und Sprachaufnahmen, wir übernehmen Erstellung,
+          Integration und Wissensdatenbank.
         </p>
       </details>
 
@@ -1739,10 +1920,12 @@ footer.site{
         </div>
       </div>
 
-      <p class="psi-source">
-        Laborwerte (Mobile, simuliert). Für echte Nutzerdaten reicht das
-        Traffic-Volumen aktuell nicht — die Zahlen sind reproduzierbar.
-      </p>
+      <div class="psi-source-wrap">
+        <p class="psi-source">
+          Laborwerte (Mobile, simuliert). Für echte Nutzerdaten reicht das
+          Traffic-Volumen aktuell nicht — die Zahlen sind reproduzierbar.
+        </p>
+      </div>
 
       <div style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem">
         <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fsebastian-nestler.github.io%2F"
@@ -1892,7 +2075,7 @@ footer.site{
             <label for="cf-subject">Betreff</label>
             <input id="cf-subject" name="subject" type="text" autocomplete="off"
                    aria-describedby="hint-subject">
-            <span class="hint" id="hint-subject">Optional — z. B. „Onepager ab 1.995 €“</span>
+            <span class="hint" id="hint-subject">Optional — z. B. „Onepager ab 1.995 €“ oder „Avatar-Kooperation“</span>
           </div>
 
           <div class="field full">
@@ -1994,6 +2177,7 @@ footer.site{
         <li><a href="#skills">Skills</a></li>
         <li><a href="#ergebnisse">Ergebnisse</a></li>
         <li><a href="#preise">Preise</a></li>
+        <li><a href="#avatar">Avatar</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#performance">Performance</a></li>
         <li><a href="#imprint">Impressum</a></li>
@@ -2374,6 +2558,7 @@ footer.site{
     { id: 'nav-features',    icon: '✨', label: 'Features',              hint: 'G F', run: () => go('#features') },
     { id: 'nav-ergebnisse',  icon: '💡', label: 'Kein Ballast. Nur Ergebnisse.', hint: 'G E', run: () => go('#ergebnisse') },
     { id: 'nav-preise',      icon: '💶', label: 'Preise & Pakete',       hint: 'G €', run: () => go('#preise') },
+    { id: 'nav-avatar',      icon: '🎭', label: 'Digitaler Zwilling / Avatar', hint: 'G V', run: () => go('#avatar') },
     { id: 'nav-faq',         icon: '❓', label: 'FAQ',                   hint: 'G Q', run: () => go('#faq') },
     { id: 'nav-performance', icon: '⚡', label: 'Performance-Nachweis',  hint: 'G L', run: () => go('#performance') },
     { id: 'nav-imprint',     icon: '📄', label: 'Impressum',             hint: 'G I', run: () => go('#imprint') },
@@ -2557,6 +2742,7 @@ footer.site{
   skills            Tech-Stack
   contact           Kontaktwege
   preise            Pakete & Preise
+  avatar            Digitaler Zwilling
   perf              PageSpeed-Werte
   theme <name>      dark | light | synth | matrix
   sound <on|off>    UI-Sounds
@@ -2587,6 +2773,14 @@ footer.site{
       termPrint('  Web-App / Design .. ab 12.000 € (Lieferung 6–12 Wochen)');
       termPrint('  Support / Wartung .. auf Anfrage');
       termPrint('→ Details: sebastian-nestler.github.io/#preise');
+    },
+    avatar() {
+      termPrint('Digitaler Zwilling — virtuelle:r Avatar-Assistent:in', 'ok');
+      termPrint('  · Look & Stimme: aus Foto + Sprachaufnahme');
+      termPrint('  · Wissen: Öffnungszeiten, Anfahrt, Kontakt, Fachfragen');
+      termPrint('  · Verfügbar: 24/7 im Web, am Telefon, am Empfang');
+      termPrint('  · Integration: Website, Kundenportal, Terminal');
+      termPrint('→ Details: sebastian-nestler.github.io/#avatar');
     },
     perf() {
       termPrint('PageSpeed Insights — 06.10.2026 (Mobile):', 'ok');
