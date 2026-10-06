@@ -61,225 +61,20 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 <link rel="manifest" href="/manifest.webmanifest">
 
-<!-- ===== NO-JS FALLBACK FOR REVEAL ANIMATIONS ===== -->
-<noscript>
-  <style>.reveal{opacity:1 !important;transform:none !important}</style>
-</noscript>
-
-<!-- ===== STRUCTURED DATA ===== -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://sebastian-nestler.github.io/#person",
-      "name": "Sebastian Friedrich Nestler",
-      "alternateName": "Sebastian Nestler",
-      "givenName": "Sebastian",
-      "additionalName": "Friedrich",
-      "familyName": "Nestler",
-      "url": "https://sebastian-nestler.github.io/",
-      "email": "nestler@nestler.dev",
-      "jobTitle": "Webentwickler & Full-Stack Developer",
-      "description": "Freelance Webentwickler für barrierefreie, schnelle Interfaces und Agentic Videos. Spezialisiert auf TypeScript, React, Svelte und WCAG 2.2 AA.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Albert-Schweitzer-Str. 19",
-        "postalCode": "08280",
-        "addressLocality": "Aue-Bad Schlema",
-        "addressRegion": "Sachsen",
-        "addressCountry": "DE"
-      },
-      "knowsAbout": [
-        "Webentwicklung",
-        "Frontend-Architektur",
-        "Barrierefreiheit",
-        "WCAG 2.2",
-        "TypeScript",
-        "React",
-        "Svelte",
-        "Astro",
-        "Node.js",
-        "Core Web Vitals",
-        "Agentic Videos",
-        "KI-Avatare"
-      ],
-      "sameAs": [
-        "https://github.com/Sebastian-Nestler"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://sebastian-nestler.github.io/#website",
-      "url": "https://sebastian-nestler.github.io/",
-      "name": "sebastian-nestler.github.io",
-      "inLanguage": "de-DE",
-      "publisher": { "@id": "https://sebastian-nestler.github.io/#person" }
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": "https://sebastian-nestler.github.io/#service",
-      "name": "Nestler Webentwicklung",
-      "url": "https://sebastian-nestler.github.io/",
-      "image": "https://sebastian-nestler.github.io/og-image.png",
-      "description": "Freelance Webentwicklung: barrierefreie Onepager, Web-Apps, Design-Systeme, Performance-Optimierung, virtuelle Avatar-Assistenten und Agentic Videos.",
-      "provider": { "@id": "https://sebastian-nestler.github.io/#person" },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Albert-Schweitzer-Str. 19",
-        "postalCode": "08280",
-        "addressLocality": "Aue-Bad Schlema",
-        "addressCountry": "DE"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Deutschland"
-      },
-      "serviceType": [
-        "Webentwicklung",
-        "Frontend-Entwicklung",
-        "Barrierefreiheits-Audit",
-        "Performance-Optimierung",
-        "Design-System-Entwicklung",
-        "Digitaler Zwilling",
-        "Avatar-Assistent",
-        "KI-Chatbot",
-        "Agentic Videos"
-      ],
-      "priceRange": "€€",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Leistungen",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "name": "Onepager",
-            "description": "Einseitige Website, barrierefrei, DSGVO-konform, Lighthouse 100/100. Lieferung in 10–15 Tagen.",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "price": "1995",
-              "priceCurrency": "EUR",
-              "valueAddedTaxIncluded": false
-            }
-          },
-          {
-            "@type": "Offer",
-            "name": "Web-Apps & Design-Systeme",
-            "description": "Komplexe Web-Anwendungen und Design-Systeme. Lieferung in 6–12 Wochen.",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "price": "12000",
-              "priceCurrency": "EUR",
-              "valueAddedTaxIncluded": false
-            }
-          },
-          {
-            "@type": "Offer",
-            "name": "Digitaler Zwilling / Avatar-Assistent & Agentic Videos",
-            "description": "Virtueller Avatar in Ihrem Gesicht und mit Ihrer Stimme, 24/7 erreichbar, plus Agentic Videos für Marketing und Vertrieb."
-          }
-        ]
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://sebastian-nestler.github.io/#breadcrumb",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://sebastian-nestler.github.io/#top" },
-        { "@type": "ListItem", "position": 2, "name": "Über", "item": "https://sebastian-nestler.github.io/#about" },
-        { "@type": "ListItem", "position": 3, "name": "Ergebnisse", "item": "https://sebastian-nestler.github.io/#ergebnisse" },
-        { "@type": "ListItem", "position": 4, "name": "Preise", "item": "https://sebastian-nestler.github.io/#preise" },
-        { "@type": "ListItem", "position": 5, "name": "Avatar & Agentic Videos", "item": "https://sebastian-nestler.github.io/#avatar" },
-        { "@type": "ListItem", "position": 6, "name": "Performance", "item": "https://sebastian-nestler.github.io/#performance" },
-        { "@type": "ListItem", "position": 7, "name": "Impressum", "item": "https://sebastian-nestler.github.io/#imprint" },
-        { "@type": "ListItem", "position": 8, "name": "Kontakt", "item": "https://sebastian-nestler.github.io/#contact" }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://sebastian-nestler.github.io/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Was kostet eine Website bei Sebastian Friedrich Nestler?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ein Onepager startet bei 1.995 € und wird in 10 bis 15 Tagen geliefert. Web-Apps und Design-Systeme beginnen bei 12.000 €. Ein Festpreis-Angebot gibt es nach einem kostenlosen Erstgespräch."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Wie lange dauert ein Webprojekt?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Einen Onepager liefern wir typischerweise in 10 bis 15 Tagen. Komplexere Web-Apps oder Design-Systeme dauern 6 bis 12 Wochen. Der genaue Zeitplan wird im Kickoff verbindlich festgelegt."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Was sind Agentic Videos?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Agentic Videos sind Videos, die von KI-Agenten in Form eines virtuellen Avatars erstellt und gesteuert werden. Sie sehen aus und klingen wie eine echte Person und können im Marketing, Vertrieb und Kundenservice eingesetzt werden — für Erklärvideos, Produktdemos oder 24/7-Kundenkommunikation."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Was ist ein digitaler Zwilling / Avatar-Assistent?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ein virtueller Avatar, der wie Sie aussieht, in Ihrer geklonten Stimme spricht und rund um die Uhr Fragen von Kund:innen beantwortet — zu Öffnungszeiten, Anfahrt, Kontakt und fachlichen Themen. Sie liefern ein Foto und Sprachaufnahmen, wir übernehmen Erstellung, Integration und Wissensdatenbank."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Was bedeutet Barrierefreiheit nach WCAG 2.2 AA?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "WCAG 2.2 AA ist der international anerkannte Standard für barrierefreie Websites. Er stellt sicher, dass Menschen mit Seh-, Hör-, motorischen oder kognitiven Einschränkungen die Seite nutzen können. Sebastian entwickelt jede Seite direkt nach diesem Standard."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Arbeitet Sebastian auch mit bestehenden Teams zusammen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ja. Neben kompletten Projekten gibt es Unterstützung als Frontend- oder Accessibility-Spezialist für bestehende Teams — stundenweise, tageweise oder als feste Kapazität."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Welche Technologien setzt Sebastian Friedrich Nestler ein?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hauptsächlich TypeScript, React, Svelte und Astro im Frontend, Node.js und PostgreSQL im Backend. Tools wie Vite, Playwright, Vitest und Docker gehören zum Standard-Setup."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
-
+<!-- ===== CRITICAL CSS (inline — above-the-fold, no FOUC) ===== -->
 <style>
 /* ============================================================
-   0. TOKENS / THEMES — WCAG 2.2 AA geprüft
+   CRITICAL CSS — nur Above-the-Fold
+   Tokens, Reset, Header, Hero, Terminal, Marquee, Reveal.
+   Der Rest liegt in /style.css (extern, blockierend).
    ============================================================ */
+
+/* 0. TOKENS / THEMES */
 :root{
-  --bg:#0a0a0b;
-  --surface:#131317;
-  --surface-2:#1b1b21;
-  --border:#3a3a45;
-  --text:#e9e9ec;
-  --muted:#a8a8b3;
-  --accent:#4a86ff;
-  --accent-ink:#0a0a0b;
-  --accent-2:#00d5ff;
-  --danger:#ff6b6b;
-  --ok:#3ddc97;
-  --radius:16px;
-  --radius-sm:10px;
+  --bg:#0a0a0b;--surface:#131317;--surface-2:#1b1b21;--border:#3a3a45;
+  --text:#e9e9ec;--muted:#a8a8b3;--accent:#4a86ff;--accent-ink:#0a0a0b;
+  --accent-2:#00d5ff;--danger:#ff6b6b;--ok:#3ddc97;
+  --radius:16px;--radius-sm:10px;
   --shadow:0 18px 50px -12px rgba(0,0,0,.75);
   --ring:0 0 0 3px color-mix(in srgb, var(--accent) 55%, transparent);
   --max:1140px;
@@ -287,47 +82,23 @@
   --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
 }
 [data-theme="light"]{
-  --bg:#f6f6f3;
-  --surface:#ffffff;
-  --surface-2:#eeeceb;
-  --border:#b8b6ae;
-  --text:#14141a;
-  --muted:#4a4a5c;
-  --accent:#1a5dff;
-  --accent-ink:#ffffff;
-  --accent-2:#0043c7;
-  --danger:#c53030;
-  --ok:#0e8a5a;
+  --bg:#f6f6f3;--surface:#ffffff;--surface-2:#eeeceb;--border:#b8b6ae;
+  --text:#14141a;--muted:#4a4a5c;--accent:#1a5dff;--accent-ink:#ffffff;
+  --accent-2:#0043c7;--danger:#c53030;--ok:#0e8a5a;
   --shadow:0 18px 50px -18px rgba(20,20,26,.28);
 }
 [data-theme="synth"]{
-  --bg:#0d0716;
-  --surface:#170d24;
-  --surface-2:#211334;
-  --border:#4a2d73;
-  --text:#f4ecff;
-  --muted:#b9a4d4;
-  --accent:#ff4fd8;
-  --accent-ink:#12001a;
-  --accent-2:#33e1ff;
-  --shadow:0 18px 60px -12px rgba(255,79,216,.28);
+  --bg:#0d0716;--surface:#170d24;--surface-2:#211334;--border:#4a2d73;
+  --text:#f4ecff;--muted:#b9a4d4;--accent:#ff4fd8;--accent-ink:#12001a;
+  --accent-2:#33e1ff;--shadow:0 18px 60px -12px rgba(255,79,216,.28);
 }
 [data-theme="matrix"]{
-  --bg:#000600;
-  --surface:#041004;
-  --surface-2:#072007;
-  --border:#1a5c1a;
-  --text:#c8ffc8;
-  --muted:#7ac47a;
-  --accent:#22ff6b;
-  --accent-ink:#001100;
-  --accent-2:#00d5ff;
-  --shadow:0 18px 50px -12px rgba(34,255,107,.25);
+  --bg:#000600;--surface:#041004;--surface-2:#072007;--border:#1a5c1a;
+  --text:#c8ffc8;--muted:#7ac47a;--accent:#22ff6b;--accent-ink:#001100;
+  --accent-2:#00d5ff;--shadow:0 18px 50px -12px rgba(34,255,107,.25);
 }
 
-/* ============================================================
-   1. BASE
-   ============================================================ */
+/* 1. BASE */
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){
@@ -335,18 +106,12 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
 }
 body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--font);
-  font-size:clamp(1rem,.95rem + .25vw,1.0625rem);
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
+  margin:0;background:var(--bg);color:var(--text);font-family:var(--font);
+  font-size:clamp(1rem,.95rem + .25vw,1.0625rem);line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 body::before{
-  content:"";
-  position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   mix-blend-mode:overlay;
 }
@@ -354,19 +119,12 @@ img,svg,canvas{max-width:100%;display:block}
 button,input,textarea,select{font:inherit;color:inherit}
 a{color:var(--accent);text-underline-offset:.25em}
 a:hover{text-decoration-thickness:2px}
-
 ::placeholder{color:var(--muted);opacity:1}
-
 :where(a,button,input,textarea,select,summary,[tabindex]):focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:3px;
-  border-radius:6px;
+  outline:2px solid var(--accent);outline-offset:3px;border-radius:6px;
 }
-:where(section, [id], a, button, input, textarea, select, summary, details) {
-  scroll-margin-top: 90px;
-}
+:where(section,[id],a,button,input,textarea,select,summary,details){scroll-margin-top:90px}
 ::selection{background:var(--accent);color:var(--accent-ink)}
-
 .sr-only{
   position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
   overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
@@ -379,9 +137,7 @@ a:hover{text-decoration-thickness:2px}
 }
 .skip:focus{top:0}
 
-/* ============================================================
-   2. LAYOUT
-   ============================================================ */
+/* 2. LAYOUT */
 .wrap{width:min(100% - 2.5rem,var(--max));margin-inline:auto;position:relative;z-index:2}
 section{padding:clamp(4rem,9vw,7.5rem) 0;position:relative}
 .eyebrow{
@@ -396,9 +152,7 @@ h3{font-size:1.15rem;letter-spacing:-.01em}
 .lede{font-size:clamp(1.05rem,1rem + .5vw,1.3rem);color:var(--muted);max-width:62ch;margin:0}
 .hl{color:var(--accent)}
 
-/* ============================================================
-   3. PROGRESS + HEADER
-   ============================================================ */
+/* 3. PROGRESS + HEADER */
 #progress{
   position:fixed;top:0;left:0;height:2px;width:0%;
   background:linear-gradient(90deg,var(--accent),var(--accent-2));
@@ -426,14 +180,12 @@ header.site.stuck{border-bottom-color:var(--border)}
 }
 .brand:hover .logo{transform:rotate(-6deg) scale(1.08);box-shadow:0 4px 14px -2px rgba(26,93,255,.6)}
 .brand .dev{color:var(--accent)}
-
 .nav-links{display:flex;gap:.25rem;align-items:center;list-style:none;margin:0;padding:0}
 .nav-links a{
   color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;
   padding:.5rem .7rem;border-radius:8px;transition:color .2s,background .2s;
 }
 .nav-links a:hover{color:var(--text);background:var(--surface-2)}
-
 .icon-btn{
   background:var(--surface);border:1px solid var(--border);color:var(--text);
   width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
@@ -447,14 +199,12 @@ header.site.stuck{border-bottom-color:var(--border)}
   border:1px solid var(--border);border-radius:6px;padding:.15rem .4rem;
 }
 .menu-toggle{display:none}
-
 @media (max-width:860px){
   .nav-links{
     position:absolute;top:100%;left:0;right:0;
     flex-direction:column;align-items:stretch;
     background:var(--surface);border-bottom:1px solid var(--border);
-    padding:.75rem 1.25rem 1.25rem;gap:.15rem;
-    display:none;
+    padding:.75rem 1.25rem 1.25rem;gap:.15rem;display:none;
   }
   .nav-links.open{display:flex}
   .nav-links a{padding:.8rem .6rem;font-size:1rem}
@@ -462,9 +212,7 @@ header.site.stuck{border-bottom-color:var(--border)}
   .kbd-hint{display:none}
 }
 
-/* ============================================================
-   4. HERO
-   ============================================================ */
+/* 4. HERO */
 .hero{padding-top:clamp(3rem,7vw,6rem);padding-bottom:clamp(3rem,6vw,5rem)}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:start}
 @media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
@@ -492,7 +240,6 @@ h1.title .dev{color:var(--muted);font-weight:400}
 }
 @keyframes blink{50%{opacity:0}}
 .hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
-
 .btn{
   display:inline-flex;align-items:center;gap:.55rem;
   padding:.78rem 1.4rem;border-radius:999px;font-weight:650;font-size:.93rem;
@@ -525,12 +272,11 @@ h1.title .dev{color:var(--muted);font-weight:400}
 .term-bar .fname{color:var(--muted);font-size:.75rem;margin-inline:auto}
 .term-body{
   padding:.9rem 1rem;height:280px;overflow-y:auto;
-  display:flex;flex-direction:column;gap:.15rem;
-  scrollbar-width:thin;
+  display:flex;flex-direction:column;gap:.15rem;scrollbar-width:thin;
 }
 .term-body::-webkit-scrollbar{width:8px}
 .term-body::-webkit-scrollbar-thumb{background:var(--border);border-radius:8px}
-.term-line{white-space:pre-wrap;word-break:break-word}
+.term-line{white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere}
 .term-line.cmd{color:var(--text)}
 .term-line.cmd::before{content:"❯ ";color:var(--accent)}
 .term-line.out{color:var(--muted)}
@@ -563,7 +309,6 @@ h1.title .dev{color:var(--muted);font-weight:400}
   letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;
 }
 .marquee-track span::before{content:"◆ ";color:var(--accent);opacity:.5}
-
 .marquee-toggle{
   display:block;margin:.75rem auto 0;
   background:var(--surface);border:1px solid var(--border);
@@ -574,520 +319,161 @@ h1.title .dev{color:var(--muted);font-weight:400}
 .marquee-toggle:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
 .marquee-toggle[aria-pressed="true"]{color:var(--accent);border-color:var(--accent)}
 
-/* ============================================================
-   5. REVEAL
-   ============================================================ */
+/* 5. REVEAL */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
 
-/* ============================================================
-   6. CARDS / GRIDS
-   ============================================================ */
-.grid{display:grid;gap:1.1rem}
-.grid-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-
-.card{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  padding:1.5rem;position:relative;overflow:hidden;
-  transition:transform .28s cubic-bezier(.2,.8,.2,1),border-color .28s,box-shadow .28s;
+/* Hero-spezifische Responsive-Regeln */
+@media (max-width:420px){
+  h1.title{font-size:2rem;letter-spacing:-.035em}
+  h1.title br{display:none}
+  .lede{font-size:1rem}
 }
-.card::after{
-  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-  background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--accent) 10%,transparent),transparent 65%);
-  opacity:0;transition:opacity .3s;
+@media (max-width:480px){
+  .hero-cta{flex-direction:column}
+  .hero-cta .btn{width:100%;justify-content:center}
 }
-.card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 45%,var(--border));box-shadow:var(--shadow)}
-.card:hover::after{opacity:1}
-.card h3{margin-bottom:.45rem}
-.card p{color:var(--muted);margin:0;font-size:.94rem}
-
-/* Skills */
-.skill{margin-bottom:1.4rem}
-.skill:last-child{margin-bottom:0}
-.skill-head{display:flex;justify-content:space-between;font-size:.88rem;margin-bottom:.5rem}
-.skill-head .pct{font-family:var(--mono);color:var(--muted);font-size:.8rem}
-.bar{height:6px;background:var(--surface-2);border-radius:99px;overflow:hidden}
-.bar i{
-  display:block;height:100%;width:0;border-radius:99px;
-  background:linear-gradient(90deg,var(--accent),var(--accent-2));
-  transition:width 1.1s cubic-bezier(.2,.8,.2,1);
-}
-.tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.4rem}
-.tag{
-  font-family:var(--mono);font-size:.74rem;color:var(--muted);
-  border:1px solid var(--border);border-radius:999px;padding:.28rem .7rem;
-  transition:color .2s,border-color .2s,transform .2s;
-}
-.tag:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
-
-/* ============================================================
-   7. PLAYGROUND
-   ============================================================ */
-.playground{
-  border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
-  background:var(--surface);box-shadow:var(--shadow);
-}
-.pg-tabs{display:flex;gap:.25rem;padding:.55rem .65rem;background:var(--surface-2);border-bottom:1px solid var(--border);flex-wrap:wrap}
-.pg-tab{
-  background:transparent;border:1px solid transparent;color:var(--muted);
-  padding:.4rem .85rem;border-radius:8px;cursor:pointer;font-family:var(--mono);
-  font-size:.78rem;transition:all .2s;
-}
-.pg-tab[aria-selected="true"]{background:var(--surface);border-color:var(--border);color:var(--accent)}
-.pg-tab:hover:not([aria-selected="true"]){color:var(--text)}
-.pg-split{display:grid;grid-template-columns:1fr 1fr;min-height:340px}
-@media (max-width:820px){.pg-split{grid-template-columns:1fr}}
-.pg-pane{position:relative;min-height:340px}
-.pg-pane + .pg-pane{border-left:1px solid var(--border)}
-@media (max-width:820px){.pg-pane + .pg-pane{border-left:0;border-top:1px solid var(--border)}}
-.pg-pane textarea{
-  width:100%;height:100%;min-height:340px;resize:vertical;
-  background:transparent;border:0;outline:none;padding:1rem;
-  font-family:var(--mono);font-size:.82rem;line-height:1.6;color:var(--text);
-  tab-size:2;
-}
-.pg-pane iframe{width:100%;height:100%;min-height:340px;border:0;background:#fff}
-.pg-pane[hidden]{display:none}
-.pg-actions{display:flex;gap:.5rem;align-items:center;padding:.6rem .75rem;border-top:1px solid var(--border);background:var(--surface-2);flex-wrap:wrap}
-.pg-actions .spacer{margin-left:auto}
-.mini{
-  background:var(--surface);border:1px solid var(--border);color:var(--text);
-  padding:.42rem .8rem;border-radius:8px;font-size:.78rem;cursor:pointer;
-  font-family:var(--mono);transition:all .2s;
-}
-.mini:hover{border-color:var(--accent);color:var(--accent)}
-
-/* ============================================================
-   8. FEATURES
-   ============================================================ */
-.feature{display:flex;gap:1rem;align-items:flex-start}
-.feature .ico{
-  width:40px;height:40px;flex:none;border-radius:11px;display:grid;place-items:center;
-  background:color-mix(in srgb,var(--accent) 14%,transparent);
-  border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);
-  font-size:1.1rem;
-}
-.feature h3{margin-bottom:.3rem;font-size:1.02rem}
-
-/* ============================================================
-   9. KEIN BALLAST — Value Cards
-   ============================================================ */
-.value-card{display:flex;flex-direction:column;gap:1rem;height:100%}
-.value-head{display:flex;align-items:center;gap:1rem;margin-bottom:.25rem}
-.value-badge{
-  font-family:var(--mono);font-size:.95rem;font-weight:800;letter-spacing:-.02em;
-  color:var(--accent-ink);background:var(--accent);
-  padding:.35rem .75rem;border-radius:999px;flex:none;line-height:1;
-  box-shadow:0 4px 14px -6px color-mix(in srgb,var(--accent) 60%,transparent);
-}
-.value-head h3{margin:0;font-size:1.05rem;letter-spacing:-.01em;line-height:1.25}
-.value-card p{margin:0;font-size:.94rem;line-height:1.65;color:var(--muted)}
-.value-list{
-  list-style:none;margin:.5rem 0 0;padding:0;
-  display:grid;gap:.4rem;font-size:.85rem;color:var(--muted);
-  border-top:1px solid var(--border);padding-top:1rem;
-}
-.value-list li{display:flex;align-items:flex-start;gap:.55rem}
-.value-list li::before{content:"✓";color:var(--ok);font-weight:800;flex:none;font-size:.9em;margin-top:.05em}
-
-/* ============================================================
-   10. PREISE / ANGEBOT
-   ============================================================ */
-.price-grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:2.5rem}
-.price-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  padding:clamp(1.5rem,3vw,2rem);display:flex;flex-direction:column;gap:.75rem;position:relative;
-}
-.price-card.featured{border-color:color-mix(in srgb,var(--accent) 60%,var(--border));box-shadow:0 12px 40px -14px color-mix(in srgb,var(--accent) 45%,transparent)}
-.price-card .price-tag{
-  position:absolute;top:-12px;right:1.5rem;background:var(--accent);color:var(--accent-ink);
-  font-family:var(--mono);font-size:.72rem;font-weight:800;padding:.3rem .75rem;
-  border-radius:999px;letter-spacing:.05em;
-}
-.price-card h3{margin:0;font-size:1.2rem;letter-spacing:-.015em}
-.price-card .price-value{
-  font-family:var(--mono);font-size:clamp(1.6rem,1.2rem + 1.5vw,2.1rem);font-weight:800;
-  color:var(--text);letter-spacing:-.03em;line-height:1;margin:.25rem 0 .5rem;
-}
-.price-card .price-value small{display:block;font-size:.55em;color:var(--muted);font-weight:500;letter-spacing:0;margin-top:.4rem}
-.price-card .price-note{font-size:.83rem;color:var(--muted)}
-.price-card ul{list-style:none;padding:0;margin:.5rem 0 1rem;display:grid;gap:.5rem;font-size:.9rem;color:var(--muted);flex:1}
-.price-card ul li{display:flex;gap:.55rem;align-items:flex-start}
-.price-card ul li::before{content:"✓";color:var(--ok);font-weight:800;flex:none}
-
-/* ============================================================
-   11. AVATAR / DIGITALER ZWILLING
-   ============================================================ */
-.avatar-steps{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem;counter-reset:avatar-step}
-.avatar-steps li{counter-increment:avatar-step;display:grid;grid-template-columns:auto 1fr;gap:0 .9rem;align-items:start}
-.avatar-steps li::before{
-  content:counter(avatar-step,decimal-leading-zero);
-  grid-row:1 / span 2;grid-column:1;
-  font-family:var(--mono);font-weight:700;font-size:.9rem;color:var(--accent);
-  width:2.2em;height:2.2em;display:grid;place-items:center;
-  border:1px solid color-mix(in srgb,var(--accent) 40%,var(--border));border-radius:10px;
-  background:color-mix(in srgb,var(--accent) 8%,transparent);align-self:start;
-}
-.avatar-steps li strong{grid-column:2;grid-row:1;display:block;color:var(--text);font-size:.95rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.2rem}
-.avatar-steps li span{grid-column:2;grid-row:2;color:var(--muted);font-size:.88rem;line-height:1.6}
-.avatar-badge{
-  display:inline-flex;align-items:center;gap:.5rem;
-  font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,var(--border));
-  background:color-mix(in srgb,var(--accent) 10%,transparent);
-  padding:.3rem .7rem;border-radius:999px;margin-bottom:1rem;
-}
-
-/* ============================================================
-   12. AGENTIC VIDEO — Promotion + Facade
-   ============================================================ */
-.agentic-promo{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:clamp(1.5rem,3vw,2.5rem);
-  margin-top:3rem;
-  align-items:start;
-}
-@media (max-width:860px){
-  .agentic-promo{grid-template-columns:1fr}
-}
-.agentic-promo__text h3{
-  font-size:clamp(1.3rem,1.1rem + 1vw,1.7rem);
-  letter-spacing:-.02em;
-  margin:0 0 .75rem;
-}
-.agentic-promo__text p{
-  color:var(--muted);
-  font-size:.95rem;
-  line-height:1.7;
-  margin:0 0 1rem;
-}
-.agentic-promo__list{
-  list-style:none;
-  padding:0;
-  margin:1.25rem 0 0;
-  display:grid;
-  gap:.6rem;
-  font-size:.9rem;
-  color:var(--muted);
-}
-.agentic-promo__list li{
-  display:flex;
-  gap:.6rem;
-  align-items:flex-start;
-}
-.agentic-promo__list li::before{
-  content:"→";
-  color:var(--accent);
-  font-weight:800;
-  flex:none;
-}
-
-/* Video Facade — DSGVO-konform Click-to-Load */
-.video-facade{
-  position:relative;
-  width:100%;
-  aspect-ratio:16 / 9;
-  border-radius:var(--radius);
-  overflow:hidden;
-  border:1px solid var(--border);
-  background:var(--surface-2);
-  box-shadow:var(--shadow);
-  cursor:pointer;
-  transition:transform .3s cubic-bezier(.2, .8, .2, 1),border-color .3s;
-}
-.video-facade:hover{
-  transform:translateY(-3px);
-  border-color:color-mix(in srgb,var(--accent) 50%,var(--border));
-}
-.video-facade__button{
-  all:unset;
-  display:block;
-  width:100%;
-  height:100%;
-  position:relative;
-  cursor:pointer;
-}
-.video-facade__thumb{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:opacity .4s ease,transform .5s cubic-bezier(.2,.8,.2,1);
-}
-.video-facade:hover .video-facade__thumb{
-  transform:scale(1.03);
-}
-.video-facade__play{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:72px;
-  height:72px;
-  background:var(--accent);
-  color:var(--accent-ink);
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  transition:transform .25s cubic-bezier(.2, .8, .2, 1),background .25s;
-  box-shadow:0 10px 30px -8px color-mix(in srgb,var(--accent) 70%,transparent);
-}
-.video-facade:hover .video-facade__play{
-  transform:translate(-50%,-50%) scale(1.1);
-  background:var(--accent-2);
-}
-.video-facade__play svg{
-  margin-left:4px;
-}
-.video-facade__iframe-container{
-  position:absolute;
-  inset:0;
-  background:#000;
-}
-.video-facade__iframe-container iframe{
-  width:100%;
-  height:100%;
-  border:0;
-  display:block;
-}
-.video-facade__button:focus-visible{
-  outline:3px solid var(--accent);
-  outline-offset:-3px;
-  border-radius:var(--radius);
-}
-
-/* ============================================================
-   13. FAQ
-   ============================================================ */
-details.card summary{list-style:none;display:flex;align-items:center;gap:.6rem}
-details.card summary::-webkit-details-marker{display:none}
-details.card summary::before{
-  content:"+";font-family:var(--mono);font-weight:700;color:var(--accent);
-  font-size:1.15rem;width:1.2em;flex:none;
-  transition:transform .25s cubic-bezier(.2,.8,.2,1);
-}
-details.card[open] summary::before{transform:rotate(45deg)}
-details.card[open]{border-color:color-mix(in srgb,var(--accent) 40%,var(--border))}
-
-/* ============================================================
-   14. PERFORMANCE / PSI-SEKTION
-   ============================================================ */
-.psi-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
-  gap:clamp(1rem,2vw,1.75rem);
-  max-width:720px;
-  margin:0 auto;
-  justify-items:center;
-}
-.psi-item{display:flex;flex-direction:column;align-items:center;gap:.65rem;text-align:center}
-.psi-ring{
-  width:80px;height:80px;border-radius:50%;border:3px solid var(--ok);
-  display:grid;place-items:center;position:relative;
-  background:color-mix(in srgb,var(--ok) 8%,transparent);
-}
-.psi-score{font-family:var(--mono);font-size:1.5rem;font-weight:800;color:var(--ok);line-height:1}
-.psi-ring--pill{width:auto;height:auto;border-radius:999px;padding:.75rem 1.1rem;display:inline-flex;align-items:baseline;gap:.15rem}
-.psi-ring--pill .psi-score{font-size:1.15rem}
-.psi-slash{font-family:var(--mono);font-size:.9rem;color:var(--ok);opacity:.75}
-.psi-label{font-size:.82rem;font-weight:600;color:var(--text);letter-spacing:.01em;line-height:1.3;max-width:130px}
-.psi-source-wrap{display:flex;justify-content:center;align-items:center;width:100%;margin:2.5rem auto 0;padding:0 1rem 1rem}
-.psi-source{margin:0;max-width:52ch;width:100%;text-align:center;font-size:.85rem;color:var(--muted);line-height:1.6}
-@media (max-width:520px){
-  .psi-ring{width:68px;height:68px;border-width:2.5px}
-  .psi-score{font-size:1.25rem}
-  .psi-grid{gap:1rem}
-}
-
-/* ============================================================
-   15. IMPRESSUM
-   ============================================================ */
-#imprint address{font-style:normal;line-height:1.8;color:var(--muted)}
-#imprint address strong{color:var(--text)}
-
-/* ============================================================
-   16. FORM
-   ============================================================ */
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-@media (max-width:640px){.form-grid{grid-template-columns:1fr}}
-.field{display:flex;flex-direction:column;gap:.4rem}
-.field.full{grid-column:1/-1}
-label{font-size:.86rem;font-weight:600;display:flex;align-items:center;gap:.4rem}
-label .req{color:var(--danger);font-size:.9em}
-.field input,.field textarea{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);
-  padding:.75rem .9rem;font-size:.94rem;transition:border-color .2s,box-shadow .2s;width:100%;
-}
-.field textarea{min-height:140px;resize:vertical;font-family:inherit}
-.field input:hover,.field textarea:hover{border-color:color-mix(in srgb,var(--accent) 40%,var(--border))}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:var(--ring)}
-.field input[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:var(--danger)}
-.err{color:var(--danger);font-size:.8rem;min-height:1.1em;font-weight:500}
-.hint{color:var(--muted);font-size:.78rem}
-.check{display:flex;gap:.65rem;align-items:flex-start;font-size:.86rem;font-weight:400;line-height:1.55;color:var(--muted)}
-.check input{width:18px;height:18px;flex:none;margin-top:.18rem;accent-color:var(--accent)}
-.hp{position:absolute!important;left:-9999px!important;opacity:0;pointer-events:none}
-.form-status{
-  padding:.85rem 1rem;border-radius:var(--radius-sm);font-size:.9rem;
-  border:1px solid var(--border);background:var(--surface-2);display:none;
-}
-.form-status.show{display:block}
-.form-status.ok{border-color:color-mix(in srgb,var(--ok) 50%,transparent);color:var(--ok)}
-.form-status.bad{border-color:color-mix(in srgb,var(--danger) 50%,transparent);color:var(--danger)}
-
-/* ============================================================
-   17. TOOLTIP
-   ============================================================ */
-.tooltip{
-  position:fixed;top:0;left:0;z-index:2000;pointer-events:none;
-  background:var(--text);color:var(--bg);
-  font-size:.78rem;font-weight:600;line-height:1.35;
-  padding:.42rem .7rem;border-radius:8px;max-width:260px;
-  opacity:0;transform:translate(-9999px,-9999px);transition:opacity .16s ease;
-  box-shadow:0 8px 22px -8px rgba(0,0,0,.6);
-}
-.tooltip.visible{opacity:1}
-.tooltip::after{
-  content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);
-  border:5px solid transparent;border-top-color:var(--text);
-}
-.tooltip.below::after{top:auto;bottom:100%;border-top-color:transparent;border-bottom-color:var(--text)}
-
-/* ============================================================
-   18. COMMAND PALETTE
-   ============================================================ */
-.overlay{
-  position:fixed;inset:0;z-index:1500;
-  background:color-mix(in srgb,var(--bg) 72%,transparent);
-  backdrop-filter:blur(6px);
-  display:grid;place-items:start center;padding-top:12vh;
-}
-.overlay[hidden]{display:none}
-.palette{
-  width:min(100% - 2rem,600px);background:var(--surface);
-  border:1px solid var(--border);border-radius:var(--radius);
-  box-shadow:var(--shadow);overflow:hidden;
-  animation:pop .18s cubic-bezier(.2,.8,.2,1);
-}
-@keyframes pop{from{opacity:0;transform:translateY(-10px) scale(.98)}}
-.palette input{
-  width:100%;background:transparent;border:0;outline:none;
-  padding:1.1rem 1.25rem;font-size:1rem;border-bottom:1px solid var(--border);
-}
-.palette ul{list-style:none;margin:0;padding:.5rem;max-height:min(52vh,420px);overflow-y:auto}
-.palette li button{
-  width:100%;display:flex;align-items:center;gap:.85rem;
-  background:transparent;border:0;text-align:left;padding:.7rem .8rem;
-  border-radius:10px;cursor:pointer;color:var(--text);font-size:.92rem;
-}
-.palette li button .k{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--muted)}
-.palette li button .ic{font-size:1rem;width:1.3em;text-align:center;flex:none}
-.palette li button[aria-selected="true"],.palette li button:hover{background:var(--surface-2)}
-.palette li button[aria-selected="true"]{box-shadow:inset 2px 0 0 var(--accent)}
-.palette .empty{padding:2rem;text-align:center;color:var(--muted);font-size:.9rem}
-
-/* ============================================================
-   19. COOKIE BANNER
-   ============================================================ */
-.cookie{
-  position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);
-  width:min(100% - 2rem,660px);z-index:1600;
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--radius);box-shadow:var(--shadow);padding:1.25rem;
-  animation:slideUp .35s cubic-bezier(.2,.8,.2,1);
-}
-@keyframes slideUp{from{opacity:0;transform:translate(-50%,24px)}}
-.cookie[hidden]{display:none}
-.cookie h2{font-size:1.02rem;margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem}
-.cookie p{font-size:.85rem;color:var(--muted);margin:0 0 1rem;line-height:1.6}
-.cookie-actions{display:flex;gap:.55rem;flex-wrap:wrap}
-.cookie-actions .btn{padding:.62rem 1.1rem;font-size:.85rem}
-.cookie-prefs{border-top:1px solid var(--border);margin-top:1rem;padding-top:1rem;display:none}
-.cookie-prefs.open{display:block}
-.pref{display:flex;gap:.8rem;align-items:flex-start;padding:.6rem 0;font-size:.85rem}
-.pref input{width:18px;height:18px;accent-color:var(--accent);margin-top:.2rem;flex:none}
-.pref strong{display:block;font-size:.88rem}
-.pref span{color:var(--muted);font-size:.8rem}
-
-/* ============================================================
-   20. MATRIX CANVAS + PARTY
-   ============================================================ */
-#matrix{position:fixed;inset:0;z-index:1400;pointer-events:none;opacity:0;transition:opacity .4s}
-#matrix.on{opacity:.85}
-html.party{animation:party 1.2s linear infinite}
-@keyframes party{to{filter:hue-rotate(360deg)}}
-
-/* ============================================================
-   21. CURSOR
-   ============================================================ */
-.cursor-dot,.cursor-ring{
-  position:fixed;top:0;left:0;pointer-events:none;z-index:1800;
-  border-radius:50%;mix-blend-mode:difference;
-}
-.cursor-dot{width:6px;height:6px;background:#fff;transform:translate(-50%,-50%)}
-.cursor-ring{
-  width:32px;height:32px;border:1.5px solid rgba(255,255,255,.7);
-  transform:translate(-50%,-50%);
-  transition:width .22s cubic-bezier(.2,.8,.2,1),height .22s cubic-bezier(.2,.8,.2,1),border-color .22s,background .22s;
-}
-.cursor-ring.hot{width:52px;height:52px;background:rgba(255,255,255,.12);border-color:transparent}
-@media (hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
-
-/* ============================================================
-   22. FOOTER
-   ============================================================ */
-footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87rem;color:var(--muted)}
-.foot-grid{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start}
-.foot-brand{display:flex;align-items:center;gap:.55rem;margin-bottom:.5rem}
-.foot-brand img,.foot-brand svg{width:22px;height:22px;border-radius:5px;flex:none}
-.foot-links{display:flex;gap:1.25rem;flex-wrap:wrap;list-style:none;margin:0;padding:0}
-.foot-links button{
-  background:none;border:0;padding:0;color:var(--muted);cursor:pointer;
-  text-decoration:underline;text-underline-offset:.25em;font-size:inherit;
-}
-.foot-links button:hover,.foot-links a:hover{color:var(--accent)}
-.foot-links a{color:var(--muted)}
-
-/* ============================================================
-   23. RESPONSIVE POLISH
-   ============================================================ */
-@media (max-width: 640px){
-  .field input,.field textarea,.term-input-row input,.pg-pane textarea,.palette input{font-size:16px}
-}
-@media (max-width: 380px){
+@media (max-width:640px){.term-body{height:220px}}
+@media (max-width:380px){
   #sound-toggle{transform:scale(.9)}
   .brand{font-size:.9rem}
   .brand .logo{width:22px;height:22px}
   .icon-btn{width:34px;height:34px}
   .icon-btn svg{width:15px;height:15px}
 }
-@media (max-width: 420px){
-  h1.title{font-size:2rem;letter-spacing:-.035em}
-  h1.title br{display:none}
-  .lede{font-size:1rem}
-}
-.card a[href^="mailto:"]{word-break:break-all;overflow-wrap:anywhere}
-@media (max-width: 640px){.term-body{height:220px}}
-.feature code,.card code{word-break:break-word;overflow-wrap:anywhere;font-size:.85em}
-@media (max-width: 860px){#contact .grid-2{grid-template-columns:1fr}}
-@media (max-width: 640px){
-  .pg-pane textarea{min-height:240px;font-size:16px}
-  .pg-pane iframe{min-height:280px}
-  .pg-split{min-height:auto}
-}
-@supports (padding: env(safe-area-inset-bottom)) {
-  .cookie{bottom:calc(1rem + env(safe-area-inset-bottom))}
-  footer.site{padding-bottom:calc(6rem + env(safe-area-inset-bottom))}
-}
-.term-line{overflow-wrap:anywhere;word-break:break-word}
-@media (max-width: 480px){
-  .hero-cta{flex-direction:column}
-  .hero-cta .btn{width:100%;justify-content:center}
-}
 </style>
+
+<!-- ===== FULL STYLESHEET (external, blocking, cached across pages) ===== -->
+<link rel="stylesheet" href="/style.css">
+
+<!-- ===== NO-JS FALLBACK ===== -->
+<noscript>
+  <style>.reveal{opacity:1 !important;transform:none !important}</style>
+</noscript>
+
+<!-- ===== STRUCTURED DATA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://sebastian-nestler.github.io/#person",
+      "name": "Sebastian Friedrich Nestler",
+      "alternateName": "Sebastian Nestler",
+      "givenName": "Sebastian",
+      "additionalName": "Friedrich",
+      "familyName": "Nestler",
+      "url": "https://sebastian-nestler.github.io/",
+      "email": "nestler@nestler.dev",
+      "jobTitle": "Webentwickler & Full-Stack Developer",
+      "description": "Freelance Webentwickler für barrierefreie, schnelle Interfaces und Agentic Videos. Spezialisiert auf TypeScript, React, Svelte und WCAG 2.2 AA.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Albert-Schweitzer-Str. 19",
+        "postalCode": "08280",
+        "addressLocality": "Aue-Bad Schlema",
+        "addressRegion": "Sachsen",
+        "addressCountry": "DE"
+      },
+      "knowsAbout": [
+        "Webentwicklung","Frontend-Architektur","Barrierefreiheit","WCAG 2.2",
+        "TypeScript","React","Svelte","Astro","Node.js","Core Web Vitals",
+        "Agentic Videos","KI-Avatare"
+      ],
+      "sameAs": ["https://github.com/Sebastian-Nestler"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sebastian-nestler.github.io/#website",
+      "url": "https://sebastian-nestler.github.io/",
+      "name": "sebastian-nestler.github.io",
+      "inLanguage": "de-DE",
+      "publisher": { "@id": "https://sebastian-nestler.github.io/#person" }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://sebastian-nestler.github.io/#service",
+      "name": "Nestler Webentwicklung",
+      "url": "https://sebastian-nestler.github.io/",
+      "image": "https://sebastian-nestler.github.io/og-image.png",
+      "description": "Freelance Webentwicklung: barrierefreie Onepager, Web-Apps, Design-Systeme, Performance-Optimierung, virtuelle Avatar-Assistenten und Agentic Videos.",
+      "provider": { "@id": "https://sebastian-nestler.github.io/#person" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Albert-Schweitzer-Str. 19",
+        "postalCode": "08280",
+        "addressLocality": "Aue-Bad Schlema",
+        "addressCountry": "DE"
+      },
+      "areaServed": { "@type": "Country", "name": "Deutschland" },
+      "serviceType": [
+        "Webentwicklung","Frontend-Entwicklung","Barrierefreiheits-Audit",
+        "Performance-Optimierung","Design-System-Entwicklung","Digitaler Zwilling",
+        "Avatar-Assistent","KI-Chatbot","Agentic Videos"
+      ],
+      "priceRange": "€€",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Leistungen",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Onepager",
+            "description": "Einseitige Website, barrierefrei, DSGVO-konform, Lighthouse 100/100. Lieferung in 10–15 Tagen.",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "1995","priceCurrency": "EUR","valueAddedTaxIncluded": false
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Web-Apps & Design-Systeme",
+            "description": "Komplexe Web-Anwendungen und Design-Systeme. Lieferung in 6–12 Wochen.",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "12000","priceCurrency": "EUR","valueAddedTaxIncluded": false
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Digitaler Zwilling / Avatar-Assistent & Agentic Videos",
+            "description": "Virtueller Avatar in Ihrem Gesicht und mit Ihrer Stimme, 24/7 erreichbar, plus Agentic Videos für Marketing und Vertrieb."
+          }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sebastian-nestler.github.io/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://sebastian-nestler.github.io/#top" },
+        { "@type": "ListItem", "position": 2, "name": "Über", "item": "https://sebastian-nestler.github.io/#about" },
+        { "@type": "ListItem", "position": 3, "name": "Ergebnisse", "item": "https://sebastian-nestler.github.io/#ergebnisse" },
+        { "@type": "ListItem", "position": 4, "name": "Preise", "item": "https://sebastian-nestler.github.io/#preise" },
+        { "@type": "ListItem", "position": 5, "name": "Avatar & Agentic Videos", "item": "https://sebastian-nestler.github.io/#avatar" },
+        { "@type": "ListItem", "position": 6, "name": "Performance", "item": "https://sebastian-nestler.github.io/#performance" },
+        { "@type": "ListItem", "position": 7, "name": "Impressum", "item": "https://sebastian-nestler.github.io/#imprint" },
+        { "@type": "ListItem", "position": 8, "name": "Kontakt", "item": "https://sebastian-nestler.github.io/#contact" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sebastian-nestler.github.io/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Was kostet eine Website bei Sebastian Friedrich Nestler?", "acceptedAnswer": { "@type": "Answer", "text": "Ein Onepager startet bei 1.995 € und wird in 10 bis 15 Tagen geliefert. Web-Apps und Design-Systeme beginnen bei 12.000 €. Ein Festpreis-Angebot gibt es nach einem kostenlosen Erstgespräch." } },
+        { "@type": "Question", "name": "Wie lange dauert ein Webprojekt?", "acceptedAnswer": { "@type": "Answer", "text": "Einen Onepager liefern wir typischerweise in 10 bis 15 Tagen. Komplexere Web-Apps oder Design-Systeme dauern 6 bis 12 Wochen. Der genaue Zeitplan wird im Kickoff verbindlich festgelegt." } },
+        { "@type": "Question", "name": "Was sind Agentic Videos?", "acceptedAnswer": { "@type": "Answer", "text": "Agentic Videos sind Videos, die von KI-Agenten in Form eines virtuellen Avatars erstellt und gesteuert werden. Sie sehen aus und klingen wie eine echte Person und können im Marketing, Vertrieb und Kundenservice eingesetzt werden — für Erklärvideos, Produktdemos oder 24/7-Kundenkommunikation." } },
+        { "@type": "Question", "name": "Was ist ein digitaler Zwilling / Avatar-Assistent?", "acceptedAnswer": { "@type": "Answer", "text": "Ein virtueller Avatar, der wie Sie aussieht, in Ihrer geklonten Stimme spricht und rund um die Uhr Fragen von Kund:innen beantwortet — zu Öffnungszeiten, Anfahrt, Kontakt und fachlichen Themen. Sie liefern ein Foto und Sprachaufnahmen, wir übernehmen Erstellung, Integration und Wissensdatenbank." } },
+        { "@type": "Question", "name": "Was bedeutet Barrierefreiheit nach WCAG 2.2 AA?", "acceptedAnswer": { "@type": "Answer", "text": "WCAG 2.2 AA ist der international anerkannte Standard für barrierefreie Websites. Er stellt sicher, dass Menschen mit Seh-, Hör-, motorischen oder kognitiven Einschränkungen die Seite nutzen können. Sebastian entwickelt jede Seite direkt nach diesem Standard." } },
+        { "@type": "Question", "name": "Arbeitet Sebastian auch mit bestehenden Teams zusammen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Neben kompletten Projekten gibt es Unterstützung als Frontend- oder Accessibility-Spezialist für bestehende Teams — stundenweise, tageweise oder als feste Kapazität." } },
+        { "@type": "Question", "name": "Welche Technologien setzt Sebastian Friedrich Nestler ein?", "acceptedAnswer": { "@type": "Answer", "text": "Hauptsächlich TypeScript, React, Svelte und Astro im Frontend, Node.js und PostgreSQL im Backend. Tools wie Vite, Playwright, Vitest und Docker gehören zum Standard-Setup." } }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -1660,7 +1046,6 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
       </div>
     </div>
 
-    <!-- ==================== AGENTIC VIDEOS ==================== -->
     <div class="agentic-promo reveal">
       <div class="agentic-promo__text">
         <span class="avatar-badge" aria-hidden="true">Agentic Videos</span>
@@ -2184,1258 +1569,7 @@ footer.site{border-top:1px solid var(--border);padding:3rem 0 6rem;font-size:.87
 <!-- ===================== MATRIX EASTER EGG ===================== -->
 <canvas id="matrix" aria-hidden="true"></canvas>
 
-<script>
-(function () {
-  'use strict';
-
-  /* ==========================================================
-     Helpers
-     ========================================================== */
-  const $  = (sel, root = document) => root.querySelector(sel);
-  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const finePointer  = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-  /* ==========================================================
-     SOUND
-     ========================================================== */
-  let audioCtx = null;
-  let soundOn  = false;
-
-  function blip(freq = 660, dur = 0.07, type = 'sine', vol = 0.03) {
-    if (!soundOn) return;
-    try {
-      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
-      if (audioCtx.state === 'suspended') audioCtx.resume();
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.type = type;
-      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(vol, audioCtx.currentTime + 0.008);
-      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur);
-      osc.connect(gain).connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + dur + 0.02);
-    } catch (_) { /* ignore */ }
-  }
-
-  const soundBtn = $('#sound-toggle');
-  soundBtn.addEventListener('click', () => {
-    soundOn = !soundOn;
-    soundBtn.setAttribute('aria-pressed', String(soundOn));
-    if (soundOn) blip(880, 0.1, 'triangle', 0.045);
-    announce(soundOn ? 'UI-Sounds aktiviert' : 'UI-Sounds deaktiviert');
-  });
-
-  let liveRegion = null;
-  function announce(msg) {
-    if (!liveRegion) {
-      liveRegion = document.createElement('div');
-      liveRegion.className = 'sr-only';
-      liveRegion.setAttribute('role', 'status');
-      liveRegion.setAttribute('aria-live', 'polite');
-      document.body.appendChild(liveRegion);
-    }
-    liveRegion.textContent = '';
-    setTimeout(() => { liveRegion.textContent = msg; }, 60);
-  }
-
-  /* ==========================================================
-     THEME ENGINE
-     ========================================================== */
-  const THEMES = ['dark', 'light', 'synth', 'matrix'];
-  const THEME_KEY = 'nestler.theme';
-
-  function setTheme(name, silent) {
-    if (!THEMES.includes(name)) return false;
-    document.documentElement.setAttribute('data-theme', name);
-    try { localStorage.setItem(THEME_KEY, name); } catch (_) {}
-    const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
-    if (bg) {
-      $$('meta[name="theme-color"]').forEach(m => m.setAttribute('content', bg));
-    }
-    if (!silent) {
-      blip(520, 0.08, 'sine', 0.035);
-      announce('Farbschema: ' + name);
-    }
-    return true;
-  }
-
-  /* Initial-Theme bereits im <head> gesetzt — hier nur die restlichen UI-Syncs.
-     Falls localStorage leer und System hell → setTheme('light', true) synchronisieren. */
-  (function syncInitialTheme() {
-    const cur = document.documentElement.getAttribute('data-theme') || 'dark';
-    let saved = null;
-    try { saved = localStorage.getItem(THEME_KEY); } catch (_) {}
-    if (!saved) {
-      /* Head-Script hat evtl. schon auf light gestellt, aber nichts persistiert */
-      if (cur === 'light') return;
-      if (window.matchMedia('(prefers-color-scheme: light)').matches) setTheme('light', true);
-    }
-  })();
-
-  $('#theme-toggle').addEventListener('click', () => {
-    const cur = document.documentElement.getAttribute('data-theme');
-    const idx = THEMES.indexOf(cur);
-    setTheme(THEMES[(idx + 1) % THEMES.length]);
-  });
-
-  /* ==========================================================
-     MARQUEE
-     ========================================================== */
-  (function buildMarquee() {
-    const items = ['TypeScript', 'React', 'Svelte', 'Astro', 'Node.js', 'Accessibility',
-                   'Performance', 'Design Systems', 'PostgreSQL', 'Testing', 'CI/CD', 'UX',
-                   'Agentic Videos', 'Avatar-Assistent'];
-    const track = $('#marquee');
-    if (!track) return;
-    const html = items.map(t => `<span>${t}</span>`).join('');
-    track.innerHTML = html + html;
-  })();
-
-  (function marqueeControl() {
-    const wrap = $('#marquee-wrap');
-    const btn  = $('#marquee-toggle');
-    if (!wrap || !btn) return;
-
-    btn.addEventListener('click', () => {
-      const paused = wrap.classList.toggle('paused');
-      btn.setAttribute('aria-pressed', String(paused));
-      btn.textContent = paused ? '▶ Laufband fortsetzen' : '⏸ Laufband anhalten';
-      btn.setAttribute('aria-label', paused ? 'Laufband fortsetzen' : 'Laufband anhalten');
-      announce(paused ? 'Laufband angehalten' : 'Laufband läuft weiter');
-    });
-  })();
-
-  /* ==========================================================
-     HEADER
-     ========================================================== */
-  const header = $('#site-header');
-  const progress = $('#progress');
-  let ticking = false;
-
-  function onScroll() {
-    const y = window.scrollY;
-    header.classList.toggle('stuck', y > 8);
-    const h = document.documentElement.scrollHeight - window.innerHeight;
-    progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
-    ticking = false;
-  }
-  window.addEventListener('scroll', () => {
-    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
-  }, { passive: true });
-  onScroll();
-
-  const menuToggle = $('#menu-toggle');
-  const navLinks = $('#nav-links');
-  menuToggle.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', String(open));
-    menuToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
-    blip(open ? 700 : 500, 0.05);
-  });
-  navLinks.addEventListener('click', e => {
-    if (e.target.tagName === 'A') {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  /* ==========================================================
-     REVEAL ON SCROLL + SKILL BARS
-     ========================================================== */
-  const revealObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('in');
-      obs.unobserve(entry.target);
-
-      if (entry.target.id === 'skill-card') {
-        $$('.bar i', entry.target).forEach((bar, i) => {
-          const w = bar.getAttribute('data-w');
-          setTimeout(() => { bar.style.width = w + '%'; }, reduceMotion ? 0 : i * 110);
-        });
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-  $$('.reveal').forEach(el => {
-    if (reduceMotion) { el.classList.add('in'); }
-    revealObserver.observe(el);
-  });
-  const skillCard = $('#skill-card');
-  if (skillCard && reduceMotion) {
-    $$('.bar i', skillCard).forEach(b => { b.style.width = b.getAttribute('data-w') + '%'; });
-  }
-
-  /* ==========================================================
-     TOOLTIPS — ARIA-Fix
-     ========================================================== */
-  const tooltip = document.createElement('div');
-  tooltip.className = 'tooltip';
-  tooltip.id = 'global-tooltip';
-  tooltip.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(tooltip);
-
-  let tipTrigger = null;
-
-  function showTip(el) {
-    const text = el.getAttribute('data-tip');
-    if (!text) return;
-
-    tooltip.textContent = text;
-    tooltip.setAttribute('role', 'tooltip');
-    tooltip.setAttribute('aria-hidden', 'false');
-    tooltip.classList.add('visible');
-    tipTrigger = el;
-
-    tooltip.style.transform = 'translate(-9999px,-9999px)';
-    const r = el.getBoundingClientRect();
-    const t = tooltip.getBoundingClientRect();
-
-    let left = r.left + r.width / 2 - t.width / 2;
-    let top = r.top - t.height - 11;
-    let below = false;
-
-    if (top < 8) { top = r.bottom + 11; below = true; }
-    left = Math.max(8, Math.min(left, window.innerWidth - t.width - 8));
-
-    tooltip.classList.toggle('below', below);
-    tooltip.style.transform = `translate(${left}px, ${top}px)`;
-
-    if (!el.hasAttribute('aria-describedby')) {
-      el.setAttribute('aria-describedby', 'global-tooltip');
-    } else if (!el.dataset.tipPrevDesc) {
-      el.dataset.tipPrevDesc = el.getAttribute('aria-describedby');
-      el.setAttribute('aria-describedby', 'global-tooltip ' + el.dataset.tipPrevDesc);
-    }
-  }
-
-  function hideTip() {
-    tooltip.classList.remove('visible');
-    tooltip.style.transform = 'translate(-9999px,-9999px)';
-    tooltip.setAttribute('aria-hidden', 'true');
-    tooltip.removeAttribute('role');
-    tooltip.textContent = '';
-
-    if (tipTrigger) {
-      if (tipTrigger.dataset.tipPrevDesc) {
-        tipTrigger.setAttribute('aria-describedby', tipTrigger.dataset.tipPrevDesc);
-        delete tipTrigger.dataset.tipPrevDesc;
-      } else {
-        tipTrigger.removeAttribute('aria-describedby');
-      }
-    }
-    tipTrigger = null;
-  }
-
-  function attachTips(root) {
-    $$('[data-tip]', root || document).forEach(el => {
-      if (el.dataset.tipReady) return;
-      el.dataset.tipReady = '1';
-      el.addEventListener('mouseenter', () => showTip(el));
-      el.addEventListener('mouseleave', hideTip);
-      el.addEventListener('focus', () => showTip(el));
-      el.addEventListener('blur', hideTip);
-      el.addEventListener('keydown', e => { if (e.key === 'Escape') hideTip(); });
-    });
-  }
-  attachTips();
-  window.addEventListener('scroll', hideTip, { passive: true });
-
-  /* ==========================================================
-     FOCUS TRAP
-     ========================================================== */
-  function trapFocus(container, e) {
-    const focusables = $$(
-      'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
-      container
-    ).filter(el => el.offsetParent !== null || el === document.activeElement);
-
-    if (focusables.length === 0) return;
-    const first = focusables[0];
-    const last = focusables[focusables.length - 1];
-
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault(); last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault(); first.focus();
-    }
-  }
-
-  /* ==========================================================
-     YOUTUBE VIDEO FACADE — DSGVO-konform
-     ========================================================== */
-  (function initVideoFacade() {
-    const facade = document.getElementById('agentic-video');
-    if (!facade) return;
-
-    const button = facade.querySelector('.video-facade__button');
-    const container = facade.querySelector('.video-facade__iframe-container');
-    const videoId = 'ZoPidtYYCzw';
-
-    button.addEventListener('click', () => {
-      const iframe = document.createElement('iframe');
-      iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
-      iframe.title = 'Agentic Videos für Websites — Erklärvideo';
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-      iframe.allowFullscreen = true;
-      iframe.loading = 'lazy';
-
-      container.innerHTML = '';
-      container.appendChild(iframe);
-      button.style.display = 'none';
-
-      setTimeout(() => iframe.focus(), 50);
-      announce('Video wird geladen');
-    });
-  })();
-
-  /* ==========================================================
-     COMMAND PALETTE
-     ========================================================== */
-  const paletteOverlay = $('#palette-overlay');
-  const paletteInput   = $('#palette-input');
-  const paletteList    = $('#palette-list');
-  let paletteIndex = 0;
-  let lastFocused = null;
-
-  const COMMANDS = [
-    { id: 'nav-top',         icon: '◆', label: 'Startseite',            hint: 'G H', run: () => go('#top') },
-    { id: 'nav-about',       icon: '👤', label: 'Über mich',             hint: 'G A', run: () => go('#about') },
-    { id: 'nav-skills',      icon: '⚡', label: 'Skills & Stack',        hint: 'G S', run: () => go('#skills') },
-    { id: 'nav-playground',  icon: '🧪', label: 'Playground öffnen',     hint: 'G P', run: () => go('#playground') },
-    { id: 'nav-features',    icon: '✨', label: 'Features',              hint: 'G F', run: () => go('#features') },
-    { id: 'nav-ergebnisse',  icon: '💡', label: 'Kein Ballast. Nur Ergebnisse.', hint: 'G E', run: () => go('#ergebnisse') },
-    { id: 'nav-preise',      icon: '💶', label: 'Preise & Pakete',       hint: 'G €', run: () => go('#preise') },
-    { id: 'nav-avatar',      icon: '🎭', label: 'Digitaler Zwilling & Agentic Videos', hint: 'G V', run: () => go('#avatar') },
-    { id: 'nav-faq',         icon: '❓', label: 'FAQ',                   hint: 'G Q', run: () => go('#faq') },
-    { id: 'nav-performance', icon: '⚡', label: 'Performance-Nachweis',  hint: 'G L', run: () => go('#performance') },
-    { id: 'nav-imprint',     icon: '📄', label: 'Impressum',             hint: 'G I', run: () => go('#imprint') },
-    { id: 'nav-privacy',     icon: '🔒', label: 'Datenschutz',           hint: 'G D', run: () => { window.location.href = '/datenschutz.html'; } },
-    { id: 'nav-tech',        icon: '⚙️', label: 'Wie diese Seite gebaut wurde', hint: 'G B', run: () => { window.location.href = '/tech-stack.html'; } },
-    { id: 'nav-contact',     icon: '✉️', label: 'Kontakt',               hint: 'G C', run: () => go('#contact') },
-    { id: 'theme-dark',      icon: '🌑', label: 'Theme: Dark',           hint: '',    run: () => setTheme('dark') },
-    { id: 'theme-light',     icon: '☀️', label: 'Theme: Light',          hint: '',    run: () => setTheme('light') },
-    { id: 'theme-synth',     icon: '🌸', label: 'Theme: Synthwave',      hint: '',    run: () => setTheme('synth') },
-    { id: 'theme-matrix',    icon: '🟢', label: 'Theme: Matrix',         hint: '',    run: () => setTheme('matrix') },
-    { id: 'sound',           icon: '🔊', label: 'UI-Sounds umschalten',  hint: '',    run: () => soundBtn.click() },
-    { id: 'marquee',         icon: '⏸', label: 'Laufband an/aus',        hint: '',    run: () => $('#marquee-toggle').click() },
-    { id: 'cookies',         icon: '🍪', label: 'Cookie-Einstellungen',  hint: '',    run: () => openCookies() },
-    { id: 'terminal',        icon: '⌨️', label: 'Terminal fokussieren',  hint: 'G T', run: () => { go('#top'); setTimeout(() => termInput.focus(), 450); } },
-    { id: 'matrix-egg',      icon: '🕶️', label: 'Matrix-Regen starten',  hint: '',    run: () => startMatrix() },
-    { id: 'duck',            icon: '🦆', label: 'Gummi-Ente rufen',      hint: '',    run: () => { go('#top'); setTimeout(() => termPrint('🦆 Quak! Erzähl mir dein Problem — laut, in kleinen Schritten.', 'ok'), 450); } },
-    { id: 'party',           icon: '🎉', label: 'Party-Modus',           hint: '',    run: () => party() },
-    { id: 'email',           icon: '📧', label: 'E-Mail kopieren',       hint: '',    run: () => copyEmail() }
-  ];
-
-  function go(sel) {
-    const el = document.querySelector(sel);
-    if (!el) return;
-    closePalette();
-    const top = el.getBoundingClientRect().top + window.scrollY - 90;
-    window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
-    setTimeout(() => {
-      el.setAttribute('tabindex', '-1');
-      el.focus({ preventScroll: true });
-    }, reduceMotion ? 0 : 500);
-  }
-
-  function copyEmail() {
-    const mail = 'nestler@nestler.dev';
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(mail)
-        .then(() => announce('E-Mail-Adresse kopiert'))
-        .catch(() => fallbackCopy(mail));
-    } else {
-      fallbackCopy(mail);
-    }
-  }
-  function fallbackCopy(text) {
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    ta.setAttribute('readonly', '');
-    ta.style.position = 'fixed';
-    ta.style.top = '-1000px';
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand('copy'); announce('E-Mail-Adresse kopiert'); }
-    catch (_) { announce('E-Mail: ' + text); }
-    document.body.removeChild(ta);
-  }
-
-  function renderPalette(query) {
-    const q = query.trim().toLowerCase();
-    const filtered = q
-      ? COMMANDS.filter(c => c.label.toLowerCase().includes(q) || c.id.includes(q))
-      : COMMANDS;
-
-    paletteList.innerHTML = '';
-
-    if (filtered.length === 0) {
-      const li = document.createElement('li');
-      li.className = 'empty';
-      li.textContent = 'Keine Treffer für „' + query + '“';
-      paletteList.appendChild(li);
-      paletteInput.removeAttribute('aria-activedescendant');
-      return;
-    }
-
-    paletteIndex = Math.min(paletteIndex, filtered.length - 1);
-
-    filtered.forEach((cmd, i) => {
-      const li = document.createElement('li');
-      li.setAttribute('role', 'presentation');
-
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.id = 'cmd-' + cmd.id;
-      btn.setAttribute('role', 'option');
-      btn.setAttribute('aria-selected', String(i === paletteIndex));
-      btn.innerHTML = `<span class="ic" aria-hidden="true">${cmd.icon}</span>
-                       <span>${cmd.label}</span>
-                       ${cmd.hint ? `<span class="k">${cmd.hint}</span>` : ''}`;
-
-      btn.addEventListener('click', () => { closePalette(); cmd.run(); });
-      btn.addEventListener('mousemove', () => {
-        paletteIndex = i;
-        $$('button', paletteList).forEach((b, j) =>
-          b.setAttribute('aria-selected', String(j === i)));
-      });
-
-      li.appendChild(btn);
-      paletteList.appendChild(li);
-    });
-
-    const active = paletteList.querySelectorAll('button')[paletteIndex];
-    if (active) paletteInput.setAttribute('aria-activedescendant', active.id);
-    else paletteInput.removeAttribute('aria-activedescendant');
-
-    paletteList._filtered = filtered;
-  }
-
-  function openPalette() {
-    lastFocused = document.activeElement;
-    paletteOverlay.hidden = false;
-    paletteInput.setAttribute('aria-expanded', 'true');
-    paletteIndex = 0;
-    paletteInput.value = '';
-    renderPalette('');
-    setTimeout(() => paletteInput.focus(), 20);
-    blip(880, 0.06, 'sine', 0.03);
-  }
-
-  function closePalette() {
-    paletteOverlay.hidden = true;
-    paletteInput.setAttribute('aria-expanded', 'false');
-    if (lastFocused && lastFocused.focus) lastFocused.focus();
-  }
-
-  $('#palette-open').addEventListener('click', openPalette);
-
-  paletteInput.addEventListener('input', () => {
-    paletteIndex = 0;
-    renderPalette(paletteInput.value);
-  });
-
-  paletteInput.addEventListener('keydown', e => {
-    const filtered = paletteList._filtered || [];
-
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      paletteIndex = Math.min(paletteIndex + 1, filtered.length - 1);
-      renderPalette(paletteInput.value);
-      blip(620, 0.03, 'sine', 0.02);
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      paletteIndex = Math.max(paletteIndex - 1, 0);
-      renderPalette(paletteInput.value);
-      blip(580, 0.03, 'sine', 0.02);
-    } else if (e.key === 'Enter') {
-      e.preventDefault();
-      const cmd = filtered[paletteIndex];
-      if (cmd) { closePalette(); cmd.run(); }
-    } else if (e.key === 'Escape') {
-      e.preventDefault();
-      closePalette();
-    } else if (e.key === 'Tab') {
-      trapFocus(paletteOverlay, e);
-    }
-  });
-
-  paletteOverlay.addEventListener('mousedown', e => {
-    if (e.target === paletteOverlay) closePalette();
-  });
-
-  document.addEventListener('keydown', e => {
-    const mod = e.ctrlKey || e.metaKey;
-    if (mod && e.key.toLowerCase() === 'k') {
-      e.preventDefault();
-      paletteOverlay.hidden ? openPalette() : closePalette();
-    }
-    if (e.key === 'Escape') {
-      if (!paletteOverlay.hidden) closePalette();
-      hideTip();
-    }
-  });
-
-  /* ==========================================================
-     INTERACTIVE TERMINAL
-     ========================================================== */
-  const termOut   = $('#term-output');
-  const termInput = $('#term-input');
-  const history   = [];
-  let historyIdx  = -1;
-
-  function termPrint(text, cls = 'out') {
-    const div = document.createElement('div');
-    div.className = 'term-line ' + cls;
-    div.textContent = text;
-    termOut.appendChild(div);
-    termOut.scrollTop = termOut.scrollHeight;
-  }
-
-  const COMMANDS_TERM = {
-    help() {
-      termPrint(
-`Verfügbare Befehle:
-  help              Diese Übersicht
-  whoami            Wer ist Sebastian?
-  skills            Tech-Stack
-  contact           Kontaktwege
-  preise            Pakete & Preise
-  avatar            Digitaler Zwilling
-  videos            Agentic Videos
-  perf              PageSpeed-Werte
-  theme <name>      dark | light | synth | matrix
-  sound <on|off>    UI-Sounds
-  matrix            🕶️  Matrix-Regen
-  duck              🦆 Gummi-Ente
-  sudo              😏
-  clear             Terminal leeren
-  exit              Terminal ausblenden`, 'out');
-    },
-    whoami() {
-      termPrint('Sebastian Friedrich Nestler — Webentwickler (Frontend & Full-Stack)', 'ok');
-      termPrint('Fokus: Performance, Accessibility, Design-Systeme.');
-      termPrint('Status: verfügbar ab Q4 2026 für neue Projekte.');
-    },
-    skills() {
-      termPrint('TypeScript · JavaScript · React · Svelte · Astro', 'ok');
-      termPrint('Node.js · PostgreSQL · Prisma · Docker · CI/CD');
-      termPrint('WCAG 2.2 AA · ARIA · Playwright · Vitest · Vite');
-    },
-    contact() {
-      termPrint('E-Mail: nestler@nestler.dev', 'ok');
-      termPrint('Formular: Abschnitt „Kontakt“ weiter unten.');
-      termPrint('Antwortzeit: in der Regel < 24 h.');
-    },
-    preise() {
-      termPrint('Pakete:', 'ok');
-      termPrint('  Onepager .......... ab 1.995 €  (Lieferung 10–15 Tage)');
-      termPrint('  Web-App / Design .. ab 12.000 € (Lieferung 6–12 Wochen)');
-      termPrint('  Support / Wartung .. auf Anfrage');
-      termPrint('  Avatar / Videos .... auf Anfrage');
-      termPrint('→ Details: sebastian-nestler.github.io/#preise');
-    },
-    avatar() {
-      termPrint('Digitaler Zwilling — virtuelle:r Avatar-Assistent:in', 'ok');
-      termPrint('  · Look & Stimme: aus Foto + Sprachaufnahme');
-      termPrint('  · Wissen: Öffnungszeiten, Anfahrt, Kontakt, Fachfragen');
-      termPrint('  · Verfügbar: 24/7 im Web, am Telefon, am Empfang');
-      termPrint('  · Integration: Website, Kundenportal, Terminal');
-      termPrint('→ Details: sebastian-nestler.github.io/#avatar');
-    },
-    videos() {
-      termPrint('Agentic Videos — Videos aus KI-Agenten', 'ok');
-      termPrint('  · Skript eingeben, Video erhalten — in Minuten');
-      termPrint('  · Mehrere Sprachen ohne neuen Dreh');
-      termPrint('  · Ein Gesicht, viele Botschaften');
-      termPrint('  · Ideal für Marketing, Vertrieb, HR, Kundenservice');
-      termPrint('→ Details: sebastian-nestler.github.io/#avatar');
-    },
-    perf() {
-      termPrint('PageSpeed Insights — 06.10.2026 (Mobile):', 'ok');
-      termPrint('  Leistung ......... 100');
-      termPrint('  Barrierefreiheit .. 100');
-      termPrint('  Best Practices .... 100');
-      termPrint('  SEO ............... 100');
-      termPrint('  Agentisches ....... 2/2');
-      termPrint('→ Details: sebastian-nestler.github.io/#performance');
-    },
-    theme(args) {
-      const name = (args[0] || '').toLowerCase();
-      if (!name) { termPrint('Aktuell: ' + document.documentElement.getAttribute('data-theme'), 'ok'); return; }
-      if (setTheme(name)) termPrint('Theme gewechselt → ' + name, 'ok');
-      else termPrint('Unbekanntes Theme. Verfügbar: ' + THEMES.join(', '), 'err');
-    },
-    sound(args) {
-      const v = (args[0] || '').toLowerCase();
-      if (v === 'on') { if (!soundOn) soundBtn.click(); termPrint('Sounds an.', 'ok'); }
-      else if (v === 'off') { if (soundOn) soundBtn.click(); termPrint('Sounds aus.', 'ok'); }
-      else termPrint('Nutzung: sound on|off', 'err');
-    },
-    matrix() {
-      termPrint('Wake up, Neo…', 'ok');
-      startMatrix();
-    },
-    duck() {
-      termPrint('🦆 Quak! Beschreib mir das Problem, als wäre ich fünf.', 'ok');
-    },
-    sudo() {
-      termPrint('Nice try. 😏  Aber du bist hier schon Root.', 'err');
-    },
-    coffee() {
-      termPrint('☕ Kaffee wird gebrüht… Fertig. Produktivität +200 %.', 'ok');
-    },
-    clear() {
-      termOut.innerHTML = '';
-    },
-    exit() {
-      termPrint('Bis gleich. 👋', 'out');
-      termInput.blur();
-    }
-  };
-
-  function runTermCommand(raw) {
-    const input = raw.trim();
-    if (!input) return;
-
-    termPrint(input, 'cmd');
-
-    const parts = input.split(/\s+/);
-    const cmd = parts[0].toLowerCase();
-    const args = parts.slice(1);
-
-    const fn = COMMANDS_TERM[cmd];
-    if (typeof fn === 'function') {
-      try { fn(args); blip(760, 0.05, 'sine', 0.028); }
-      catch (err) { termPrint('Fehler: ' + err.message, 'err'); }
-    } else {
-      termPrint(`Befehl nicht gefunden: "${cmd}". Tippe "help".`, 'err');
-      blip(220, 0.1, 'square', 0.03);
-    }
-  }
-
-  termInput.addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-      const val = termInput.value;
-      if (val.trim()) { history.push(val); historyIdx = history.length; }
-      runTermCommand(val);
-      termInput.value = '';
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      if (history.length) {
-        historyIdx = Math.max(0, historyIdx - 1);
-        termInput.value = history[historyIdx] || '';
-      }
-    } else if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      if (history.length) {
-        historyIdx = Math.min(history.length, historyIdx + 1);
-        termInput.value = historyIdx >= history.length ? '' : history[historyIdx];
-      }
-    }
-  });
-
-  termOut.addEventListener('click', () => termInput.focus());
-  $('#hero-terminal-focus').addEventListener('click', () => {
-    termInput.focus();
-    termOut.scrollTop = termOut.scrollHeight;
-    blip(700, 0.05);
-  });
-
-  /* ==========================================================
-     PLAYGROUND
-     ========================================================== */
-  const DEFAULT_CODE = {
-    html: `<div class="card">
-  <span class="badge">Live Preview</span>
-  <h1>Hallo, Welt 👋</h1>
-  <p>Editiere den Code links — die Vorschau aktualisiert sich automatisch.</p>
-  <button id="btn">Klick mich</button>
-  <p class="out" id="out" aria-live="polite"></p>
-</div>`,
-    css: `* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  font-family: system-ui, -apple-system, sans-serif;
-  background: linear-gradient(135deg, #0f0f14, #1b1b28);
-  color: #e9e9ec;
-  padding: 2rem;
-}
-
-.card {
-  background: #16161d;
-  border: 1px solid #2a2a35;
-  border-radius: 18px;
-  padding: 2rem;
-  max-width: 420px;
-  text-align: center;
-  box-shadow: 0 24px 60px -20px rgba(0,0,0,.8);
-}
-
-.badge {
-  display: inline-block;
-  font-size: .7rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: #4a86ff;
-  border: 1px solid #4a86ff55;
-  border-radius: 999px;
-  padding: .25rem .7rem;
-  margin-bottom: 1rem;
-}
-
-h1 { margin: 0 0 .6rem; font-size: 1.6rem; letter-spacing: -.02em; }
-p  { color: #9a9aa6; line-height: 1.6; margin: 0 0 1.2rem; }
-
-button {
-  background: #4a86ff;
-  color: #0a0a0b;
-  border: 0;
-  padding: .7rem 1.4rem;
-  border-radius: 999px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform .15s ease;
-}
-button:hover { transform: translateY(-2px); }
-button:focus-visible { outline: 3px solid #4a86ff; outline-offset: 3px; }
-
-.out { color: #4a86ff; font-weight: 600; margin-top: 1rem; }`,
-    js: `const btn = document.getElementById('btn');
-const out = document.getElementById('out');
-let count = 0;
-
-btn.addEventListener('click', () => {
-  count++;
-  out.textContent = \`🎉 \${count} Klick\${count === 1 ? '' : 's'}!\`;
-});`
-  };
-
-  const codeHtml = $('#code-html');
-  const codeCss  = $('#code-css');
-  const codeJs   = $('#code-js');
-  const preview  = $('#pg-preview');
-  const pgStatus = $('#pg-status');
-
-  function loadDefaults() {
-    codeHtml.value = DEFAULT_CODE.html;
-    codeCss.value  = DEFAULT_CODE.css;
-    codeJs.value   = DEFAULT_CODE.js;
-  }
-  loadDefaults();
-
-  let renderTimer = null;
-  function renderPreview() {
-    const doc = `<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>${codeCss.value}</style>
-</head>
-<body>
-${codeHtml.value}
-<script>
-try {
-${codeJs.value}
-} catch (e) {
-  document.body.insertAdjacentHTML('beforeend',
-    '<pre style="color:#ff6b6b;font:12px monospace;padding:1rem;white-space:pre-wrap">' +
-    String(e) + '</pre>');
-}
-<\/script>
-</body>
-</html>`;
-    preview.srcdoc = doc;
-    pgStatus.textContent = 'Aktualisiert ' + new Date().toLocaleTimeString('de-DE');
-  }
-
-  function scheduleRender() {
-    clearTimeout(renderTimer);
-    pgStatus.textContent = 'Tippt…';
-    renderTimer = setTimeout(renderPreview, 500);
-  }
-
-  [codeHtml, codeCss, codeJs].forEach(ta => {
-    ta.addEventListener('input', scheduleRender);
-    ta.addEventListener('keydown', e => {
-      if (e.key === 'Tab' && !e.shiftKey) {
-        e.preventDefault();
-        const s = ta.selectionStart, en = ta.selectionEnd;
-        ta.value = ta.value.slice(0, s) + '  ' + ta.value.slice(en);
-        ta.selectionStart = ta.selectionEnd = s + 2;
-        scheduleRender();
-      }
-    });
-  });
-
-  $('#pg-run').addEventListener('click', () => { renderPreview(); blip(820, 0.06); });
-  $('#pg-reset').addEventListener('click', () => {
-    loadDefaults(); renderPreview(); announce('Playground zurückgesetzt'); blip(520, 0.08);
-  });
-
-  const tabs = $$('.pg-tab');
-  tabs.forEach((tab, i) => {
-    tab.addEventListener('click', () => selectTab(i));
-    tab.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight') { e.preventDefault(); selectTab((i + 1) % tabs.length); tabs[(i + 1) % tabs.length].focus(); }
-      if (e.key === 'ArrowLeft')  { e.preventDefault(); selectTab((i - 1 + tabs.length) % tabs.length); tabs[(i - 1 + tabs.length) % tabs.length].focus(); }
-    });
-  });
-
-  function selectTab(index) {
-    tabs.forEach((t, i) => {
-      const selected = i === index;
-      t.setAttribute('aria-selected', String(selected));
-      t.tabIndex = selected ? 0 : -1;
-      const panel = document.getElementById(t.getAttribute('aria-controls'));
-      if (panel) panel.hidden = !selected;
-    });
-    blip(640, 0.03, 'sine', 0.02);
-  }
-
-  renderPreview();
-
-  /* ==========================================================
-     LOCAL TIME
-     ========================================================== */
-  (function localTime() {
-    const el = $('#local-time');
-    if (!el) return;
-    const tz = 'Europe/Berlin';
-    function tick() {
-      try {
-        const now = new Date().toLocaleTimeString('de-DE', {
-          timeZone: tz, hour: '2-digit', minute: '2-digit'
-        });
-        el.textContent = '🕐 ' + now + ' (MEZ/MESZ)';
-      } catch (_) {
-        el.textContent = '';
-      }
-    }
-    tick();
-    setInterval(tick, 30000);
-  })();
-
-  /* ==========================================================
-     CARD SPOTLIGHT — rAF-throttled, rect-cached
-     ========================================================== */
-  if (finePointer && !reduceMotion) {
-    $$('.card').forEach(card => {
-      let rect = null, raf = null, mx = 0, my = 0;
-
-      card.addEventListener('mouseenter', () => {
-        rect = card.getBoundingClientRect();
-      }, { passive: true });
-
-      card.addEventListener('mousemove', e => {
-        mx = e.clientX; my = e.clientY;
-        if (raf) return;
-        raf = requestAnimationFrame(() => {
-          if (rect) {
-            card.style.setProperty('--mx', (mx - rect.left) + 'px');
-            card.style.setProperty('--my', (my - rect.top) + 'px');
-          }
-          raf = null;
-        });
-      }, { passive: true });
-
-      card.addEventListener('mouseleave', () => {
-        if (raf) { cancelAnimationFrame(raf); raf = null; }
-        rect = null;
-      }, { passive: true });
-    });
-  }
-
-  /* ==========================================================
-     MAGNETIC CURSOR
-     ========================================================== */
-  if (finePointer && !reduceMotion) {
-    const dot  = document.createElement('div');
-    const ring = document.createElement('div');
-    dot.className = 'cursor-dot';
-    ring.className = 'cursor-ring';
-    document.body.append(dot, ring);
-
-    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-    let rx = mx, ry = my;
-
-    window.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%,-50%)`;
-    }, { passive: true });
-
-    (function loop() {
-      rx += (mx - rx) * 0.16;
-      ry += (my - ry) * 0.16;
-      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%,-50%)`;
-      requestAnimationFrame(loop);
-    })();
-
-    const HOT = 'a, button, input, textarea, select, [data-tip], summary';
-    document.addEventListener('mouseover', e => {
-      if (e.target.closest(HOT)) ring.classList.add('hot');
-    });
-    document.addEventListener('mouseout', e => {
-      if (e.target.closest(HOT)) ring.classList.remove('hot');
-    });
-    document.addEventListener('mouseleave', () => {
-      dot.style.opacity = '0'; ring.style.opacity = '0';
-    });
-    document.addEventListener('mouseenter', () => {
-      dot.style.opacity = '1'; ring.style.opacity = '1';
-    });
-  }
-
-  /* ==========================================================
-     MATRIX EASTER EGG
-     ========================================================== */
-  const matrixCanvas = $('#matrix');
-  let matrixRAF = null;
-  let matrixStop = null;
-
-  function startMatrix() {
-    const ctx = matrixCanvas.getContext('2d');
-    if (!ctx) return;
-
-    matrixCanvas.width  = window.innerWidth;
-    matrixCanvas.height = window.innerHeight;
-    matrixCanvas.classList.add('on');
-
-    const fontSize = 15;
-    const cols = Math.floor(matrixCanvas.width / fontSize);
-    const drops = new Array(cols).fill(1);
-    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEF<>/{}[]()=+-*';
-
-    function draw() {
-      ctx.fillStyle = 'rgba(0, 6, 0, 0.08)';
-      ctx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
-      ctx.fillStyle = '#22ff6b';
-      ctx.font = fontSize + 'px monospace';
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = chars.charAt(Math.floor(Math.random() * chars.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) drops[i] = 0;
-        drops[i]++;
-      }
-      matrixRAF = requestAnimationFrame(draw);
-    }
-
-    cancelAnimationFrame(matrixRAF);
-    clearTimeout(matrixStop);
-    draw();
-
-    matrixStop = setTimeout(stopMatrix, 7000);
-  }
-
-  function stopMatrix() {
-    cancelAnimationFrame(matrixRAF);
-    matrixCanvas.classList.remove('on');
-    setTimeout(() => {
-      const ctx = matrixCanvas.getContext('2d');
-      if (ctx) ctx.clearRect(0, 0, matrixCanvas.width, matrixCanvas.height);
-    }, 420);
-  }
-
-  window.addEventListener('resize', () => {
-    if (matrixCanvas.classList.contains('on')) {
-      matrixCanvas.width  = window.innerWidth;
-      matrixCanvas.height = window.innerHeight;
-    }
-  });
-
-  /* ==========================================================
-     PARTY MODE (Konami)
-     ========================================================== */
-  function party() {
-    document.documentElement.classList.add('party');
-    announce('🎉 Party-Modus aktiviert');
-    blip(1046, 0.12, 'triangle', 0.05);
-    setTimeout(() => blip(1318, 0.12, 'triangle', 0.05), 130);
-    setTimeout(() => blip(1568, 0.2, 'triangle', 0.05), 260);
-    setTimeout(() => {
-      document.documentElement.classList.remove('party');
-      announce('Party-Modus beendet');
-    }, 6000);
-  }
-
-  const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
-  let konamiPos = 0;
-  document.addEventListener('keydown', e => {
-    const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
-    if (key === KONAMI[konamiPos]) {
-      konamiPos++;
-      if (konamiPos === KONAMI.length) {
-        konamiPos = 0;
-        party();
-        startMatrix();
-      }
-    } else {
-      konamiPos = (key === KONAMI[0]) ? 1 : 0;
-    }
-  });
-
-  /* ==========================================================
-     CONTACT FORM — Formspree (EU-Region)
-     ========================================================== */
-  const form = $('#contact-form');
-  const formStatus = $('#form-status');
-  const submitBtn = $('#cf-submit');
-
-  /* Formspree EU:
-     - Account/Formular in der Formspree-Verwaltung auf "EU Data Residency" stellen.
-     - Endpoint-Format bleibt https://formspree.io/f/{formId} (Weiterleitung erfolgt serverseitig in der EU-Region).
-     - formId unten durch deine eigene ID ersetzen. */
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xxxxxxxx';
-
-  const validators = {
-    name(value) {
-      if (!value.trim()) return 'Bitte gib deinen Namen an.';
-      if (value.trim().length < 2) return 'Der Name ist etwas zu kurz.';
-      return '';
-    },
-    email(value) {
-      if (!value.trim()) return 'Bitte gib deine E-Mail-Adresse an.';
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-      if (!re.test(value.trim())) return 'Das sieht nicht nach einer gültigen E-Mail aus.';
-      return '';
-    },
-    message(value) {
-      if (!value.trim()) return 'Bitte schreib mir ein paar Zeilen.';
-      if (value.trim().length < 20) return 'Mindestens 20 Zeichen — sonst kann ich nicht viel damit anfangen.';
-      return '';
-    },
-    consent(checked) {
-      if (!checked) return 'Ohne deine Zustimmung darf ich die Daten nicht verarbeiten.';
-      return '';
-    }
-  };
-
-  function setFieldError(fieldId, message) {
-    const field = document.getElementById(fieldId);
-    const errEl = document.getElementById('err-' + fieldId.replace('cf-', ''));
-    if (!field || !errEl) return;
-
-    if (message) {
-      field.setAttribute('aria-invalid', 'true');
-      errEl.textContent = message;
-    } else {
-      field.removeAttribute('aria-invalid');
-      errEl.textContent = '';
-    }
-  }
-
-  function validateField(name) {
-    const field = document.getElementById('cf-' + name);
-    if (!field) return true;
-
-    let msg = '';
-    if (name === 'consent') msg = validators.consent(field.checked);
-    else msg = validators[name] ? validators[name](field.value) : '';
-
-    setFieldError('cf-' + name, msg);
-    return !msg;
-  }
-
-  ['name', 'email', 'message', 'consent'].forEach(name => {
-    const field = document.getElementById('cf-' + name);
-    if (!field) return;
-    field.addEventListener('blur', () => validateField(name));
-    field.addEventListener('input', () => {
-      if (field.getAttribute('aria-invalid') === 'true') validateField(name);
-    });
-    field.addEventListener('change', () => {
-      if (field.getAttribute('aria-invalid') === 'true') validateField(name);
-    });
-  });
-
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-
-    if ($('#cf-website').value) {
-      formStatus.className = 'form-status show ok';
-      formStatus.textContent = 'Danke!';
-      return;
-    }
-
-    const results = ['name', 'email', 'message', 'consent'].map(validateField);
-    const allValid = results.every(Boolean);
-
-    if (!allValid) {
-      formStatus.className = 'form-status show bad';
-      formStatus.textContent = 'Bitte prüfe die markierten Felder.';
-      const firstInvalid = form.querySelector('[aria-invalid="true"]');
-      if (firstInvalid) firstInvalid.focus();
-      announce('Formular enthält Fehler');
-      blip(220, 0.12, 'square', 0.03);
-      return;
-    }
-
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = '.65';
-    formStatus.className = 'form-status show';
-    formStatus.textContent = 'Wird gesendet…';
-
-    const payload = {
-      name: $('#cf-name').value.trim(),
-      email: $('#cf-email').value.trim(),
-      subject: $('#cf-subject').value.trim() || 'Neue Anfrage über sebastian-nestler.github.io',
-      message: $('#cf-message').value.trim(),
-      consent: true
-    };
-
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        const msg = (data && data.errors && data.errors[0] && data.errors[0].message) || ('Server antwortete mit ' + res.status);
-        throw new Error(msg);
-      }
-
-      formStatus.className = 'form-status show ok';
-      formStatus.innerHTML =
-        '<strong>Danke, ' + escapeHtml(payload.name.split(' ')[0]) + '!</strong> ' +
-        'Deine Nachricht ist angekommen. Ich melde mich innerhalb von 24 Stunden.';
-      form.reset();
-      announce('Nachricht erfolgreich gesendet');
-      blip(880, 0.1, 'triangle', 0.05);
-      setTimeout(() => blip(1174, 0.16, 'triangle', 0.05), 120);
-
-    } catch (err) {
-      formStatus.className = 'form-status show bad';
-      formStatus.innerHTML =
-        'Da ist etwas schiefgelaufen. Schreib mir bitte direkt an ' +
-        '<a href="mailto:nestler@nestler.dev">nestler@nestler.dev</a>.';
-      announce('Senden fehlgeschlagen');
-      console.error(err);
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.style.opacity = '';
-    }
-  });
-
-  function escapeHtml(str) {
-    return String(str).replace(/[&<>"']/g, c => ({
-      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-    })[c]);
-  }
-
-  /* ==========================================================
-     COOKIE / CONSENT
-     ========================================================== */
-  const CONSENT_KEY = 'nestler.consent.v1';
-  const banner = $('#cookie-banner');
-  const prefsBox = $('#cookie-prefs');
-  let lastFocusBeforeCookie = null;
-
-  function getConsent() {
-    try {
-      const raw = localStorage.getItem(CONSENT_KEY);
-      return raw ? JSON.parse(raw) : null;
-    } catch (_) { return null; }
-  }
-
-  function saveConsent(obj) {
-    try { localStorage.setItem(CONSENT_KEY, JSON.stringify(obj)); } catch (_) {}
-    banner.hidden = true;
-    if (lastFocusBeforeCookie && lastFocusBeforeCookie.focus) lastFocusBeforeCookie.focus();
-    announce('Cookie-Einstellungen gespeichert');
-    blip(760, 0.08, 'sine', 0.035);
-  }
-
-  function openCookies() {
-    lastFocusBeforeCookie = document.activeElement;
-    const c = getConsent();
-    if (c) {
-      $('#pref-stats').checked  = !!c.stats;
-      $('#pref-media').checked  = !!c.media;
-    }
-    banner.hidden = false;
-    prefsBox.classList.add('open');
-    $('#ck-settings').setAttribute('aria-expanded', 'true');
-    setTimeout(() => $('#ck-accept').focus(), 30);
-  }
-
-  function initCookies() {
-    const consent = getConsent();
-    if (consent) {
-      banner.hidden = true;
-      return;
-    }
-    setTimeout(() => {
-      banner.hidden = false;
-      lastFocusBeforeCookie = document.activeElement;
-    }, 900);
-  }
-
-  $('#ck-accept').addEventListener('click', () => {
-    saveConsent({ necessary: true, stats: true, media: true, date: new Date().toISOString() });
-  });
-
-  $('#ck-necessary').addEventListener('click', () => {
-    saveConsent({ necessary: true, stats: false, media: false, date: new Date().toISOString() });
-  });
-
-  $('#ck-settings').addEventListener('click', e => {
-    const open = prefsBox.classList.toggle('open');
-    e.currentTarget.setAttribute('aria-expanded', String(open));
-    if (open) setTimeout(() => $('#pref-stats').focus(), 30);
-  });
-
-  $('#ck-save').addEventListener('click', () => {
-    saveConsent({
-      necessary: true,
-      stats: $('#pref-stats').checked,
-      media: $('#pref-media').checked,
-      date: new Date().toISOString()
-    });
-  });
-
-  $('#cookie-reopen').addEventListener('click', openCookies);
-
-  banner.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      saveConsent({
-        necessary: true, stats: false, media: false,
-        date: new Date().toISOString()
-      });
-    }
-  });
-
-  initCookies();
-
-  /* ==========================================================
-     MISC
-     ========================================================== */
-  $('#year').textContent = new Date().getFullYear();
-
-  window.addEventListener('load', () => attachTips());
-
-  (function paletteHint() {
-    let seen = false;
-    try { seen = localStorage.getItem('nestler.paletteHint') === '1'; } catch (_) {}
-    if (seen || reduceMotion) return;
-    setTimeout(() => {
-      announce('Tipp: Drücke Strg plus K für die Befehlspalette.');
-      try { localStorage.setItem('nestler.paletteHint', '1'); } catch (_) {}
-    }, 4000);
-  })();
-
-})();
-</script>
+<!-- ===================== EXTERNAL SCRIPT (defer, cached) ===================== -->
+<script src="/script.js" defer></script>
 </body>
 </html>
