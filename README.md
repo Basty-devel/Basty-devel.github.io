@@ -10,3 +10,6 @@ Vanilla HTML/CSS/JS, kein Framework, WCAG 2.2 AA, DSGVO-konform.
 </p>
 
 Gemessen mit Google Developer, PageSpeed Insights, ohne Caching.
+
+## Copyright (c) 2026 Sebastian Friedrich Nestler
+## Alle Rechte vorbehalten / All Rights Reserved.
