@@ -13,8 +13,7 @@ Disallow: /*?s=
 Disallow: /*?replytocom=
 
 # ============================================================
-# 2. KI-SUCHE — explizit erlaubt (Sichtbarkeit in AI-Antworten)
-#    Diese Bots liefern Quellenangaben und Traffic.
+# 2. KI-SUCHE — explizit erlaubt
 # ============================================================
 User-agent: OAI-SearchBot
 Allow: /
@@ -38,8 +37,7 @@ User-agent: Google-CloudVertexBot
 Allow: /
 
 # ============================================================
-# 3. KI-TRAINING — blockiert (kein Nutzen für die Seite)
-#    Modelle werden ohne Quellenangabe trainiert.
+# 3. KI-TRAINING — blockiert
 # ============================================================
 User-agent: GPTBot
 Disallow: /
@@ -78,7 +76,7 @@ User-agent: Timpibot
 Disallow: /
 
 # ============================================================
-# 4. AGGRESSIVE SEO-SCRAPER — blockiert (Serverlast ohne Nutzen)
+# 4. AGGRESSIVE SEO-SCRAPER — blockiert
 # ============================================================
 User-agent: SemrushBot
 Disallow: /
@@ -96,6 +94,6 @@ User-agent: DataForSeoBot
 Disallow: /
 
 # ============================================================
-# 5. SITEMAP — Verweis für alle Crawler
+# 5. SITEMAP
 # ============================================================
 Sitemap: https://sebastian-nestler.github.io/sitemap.xml
