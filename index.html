@@ -1122,7 +1122,7 @@ footer.site{
 <section id="features">
   <div class="wrap">
     <p class="eyebrow reveal">Was diese Seite anders macht</p>
-    <h2 class="reveal">Sechs Dinge, die du selten findest</h2>
+    <h2 class="reveal">Fünf Dinge, die du selten findest</h2>
 
     <div class="grid grid-3" style="margin-top:2.5rem">
       <div class="card reveal">
@@ -1494,14 +1494,23 @@ footer.site{
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#imprint">Impressum</a></li>
         <li><a href="/datenschutz.html">Datenschutz</a></li>
+        <li><a href="/tech-stack.html">Wie diese Seite entstand</a></li>
         <li><a href="#contact">Kontakt</a></li>
         <li><button type="button" id="cookie-reopen">Cookie-Einstellungen</button></li>
       </ul>
     </div>
 
     <p style="margin-top:2rem;font-size:.78rem">
-      © <span id="year"></span> Sebastian Friedrich Nestler · Gebaut mit Vanilla JS, ohne Framework-Overhead.
-      <span style="opacity:.6">· Strg+K für die Palette · Konami-Code für Überraschung</span>
+      © <span id="year"></span> Sebastian Friedrich Nestler ·
+      Gebaut mit Vanilla JS, ohne Framework-Overhead.
+      <a href="/tech-stack.html" style="color:var(--muted);text-decoration:underline;text-underline-offset:.25em">
+        Wie diese Seite entstand →
+      </a>
+      <br>
+      <span style="opacity:.6">
+        KI-gestützte Entwicklung, menschlich verantwortet ·
+        Strg+K für die Palette · Konami-Code für Überraschung
+      </span>
     </p>
   </div>
 </footer>
@@ -1858,6 +1867,7 @@ footer.site{
     { id: 'nav-faq',        icon: '❓', label: 'FAQ',                   hint: 'G Q', run: () => go('#faq') },
     { id: 'nav-imprint',    icon: '📄', label: 'Impressum',             hint: 'G I', run: () => go('#imprint') },
     { id: 'nav-privacy',    icon: '🔒', label: 'Datenschutz',           hint: 'G D', run: () => { window.location.href = '/datenschutz.html'; } },
+    { id: 'nav-tech',       icon: '⚙️', label: 'Wie diese Seite gebaut wurde', hint: 'G B', run: () => { window.location.href = '/tech-stack.html'; } },
     { id: 'nav-contact',    icon: '✉️', label: 'Kontakt',               hint: 'G C', run: () => go('#contact') },
     { id: 'theme-dark',     icon: '🌑', label: 'Theme: Dark',           hint: '',    run: () => setTheme('dark') },
     { id: 'theme-light',    icon: '☀️', label: 'Theme: Light',          hint: '',    run: () => setTheme('light') },
